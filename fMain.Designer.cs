@@ -913,7 +913,7 @@
             this.tabCustomers.Location = new System.Drawing.Point(154, 4);
             this.tabCustomers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabCustomers.Name = "tabCustomers";
-            this.tabCustomers.Size = new System.Drawing.Size(842, 612);
+            this.tabCustomers.Size = new System.Drawing.Size(842, 614);
             this.tabCustomers.TabIndex = 3;
             this.tabCustomers.Text = "Người  dùng";
             this.tabCustomers.UseVisualStyleBackColor = true;
@@ -936,7 +936,7 @@
             this.scCustomer.Panel2.BackColor = System.Drawing.Color.Aquamarine;
             this.scCustomer.Panel2.Controls.Add(this.flpCustomerActionButtons);
             this.scCustomer.Panel2.Controls.Add(this.gbCustomerInfo);
-            this.scCustomer.Size = new System.Drawing.Size(842, 612);
+            this.scCustomer.Size = new System.Drawing.Size(842, 614);
             this.scCustomer.SplitterDistance = 563;
             this.scCustomer.TabIndex = 3;
             // 
@@ -947,7 +947,7 @@
             this.gbCustomers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbCustomers.Location = new System.Drawing.Point(0, 133);
             this.gbCustomers.Name = "gbCustomers";
-            this.gbCustomers.Size = new System.Drawing.Size(563, 479);
+            this.gbCustomers.Size = new System.Drawing.Size(563, 481);
             this.gbCustomers.TabIndex = 2;
             this.gbCustomers.TabStop = false;
             this.gbCustomers.Text = "Danh sách khách hàng";
@@ -961,7 +961,7 @@
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.RowHeadersWidth = 51;
             this.dgvCustomers.RowTemplate.Height = 24;
-            this.dgvCustomers.Size = new System.Drawing.Size(557, 446);
+            this.dgvCustomers.Size = new System.Drawing.Size(557, 448);
             this.dgvCustomers.TabIndex = 3;
             // 
             // pCustomerSearchBar
@@ -1098,7 +1098,7 @@
             this.flpCustomerActionButtons.Controls.Add(this.btnCustomerDelete);
             this.flpCustomerActionButtons.Controls.Add(this.btnCustomerSave);
             this.flpCustomerActionButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpCustomerActionButtons.Location = new System.Drawing.Point(0, 530);
+            this.flpCustomerActionButtons.Location = new System.Drawing.Point(0, 532);
             this.flpCustomerActionButtons.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpCustomerActionButtons.Name = "flpCustomerActionButtons";
             this.flpCustomerActionButtons.Size = new System.Drawing.Size(275, 82);
@@ -1174,7 +1174,7 @@
             this.gbCustomerInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbCustomerInfo.Name = "gbCustomerInfo";
             this.gbCustomerInfo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbCustomerInfo.Size = new System.Drawing.Size(275, 612);
+            this.gbCustomerInfo.Size = new System.Drawing.Size(275, 614);
             this.gbCustomerInfo.TabIndex = 3;
             this.gbCustomerInfo.TabStop = false;
             this.gbCustomerInfo.Text = "Chi tiết";
@@ -1191,7 +1191,7 @@
             this.flpInfoCustomer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpInfoCustomer.Location = new System.Drawing.Point(3, 31);
             this.flpInfoCustomer.Name = "flpInfoCustomer";
-            this.flpInfoCustomer.Size = new System.Drawing.Size(269, 577);
+            this.flpInfoCustomer.Size = new System.Drawing.Size(269, 579);
             this.flpInfoCustomer.TabIndex = 6;
             this.flpInfoCustomer.WrapContents = false;
             // 
@@ -1422,7 +1422,7 @@
             this.tabImports.Location = new System.Drawing.Point(154, 4);
             this.tabImports.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabImports.Name = "tabImports";
-            this.tabImports.Size = new System.Drawing.Size(842, 612);
+            this.tabImports.Size = new System.Drawing.Size(842, 614);
             this.tabImports.TabIndex = 1;
             this.tabImports.Text = "Phiếu nhập";
             this.tabImports.UseVisualStyleBackColor = true;
@@ -1445,7 +1445,7 @@
             this.scImports.Panel2.Controls.Add(this.flpImportTotal);
             this.scImports.Panel2.Controls.Add(this.flpImportActionButtons);
             this.scImports.Panel2.Controls.Add(this.gImportInfo);
-            this.scImports.Size = new System.Drawing.Size(842, 612);
+            this.scImports.Size = new System.Drawing.Size(842, 614);
             this.scImports.SplitterDistance = 558;
             this.scImports.TabIndex = 0;
             // 
@@ -1466,8 +1466,8 @@
             // 
             this.scImportContents.Panel2.BackColor = System.Drawing.Color.Transparent;
             this.scImportContents.Panel2.Controls.Add(this.gbImportDetails);
-            this.scImportContents.Size = new System.Drawing.Size(558, 612);
-            this.scImportContents.SplitterDistance = 355;
+            this.scImportContents.Size = new System.Drawing.Size(558, 614);
+            this.scImportContents.SplitterDistance = 356;
             this.scImportContents.TabIndex = 0;
             // 
             // gbImportList
@@ -1477,7 +1477,7 @@
             this.gbImportList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbImportList.Location = new System.Drawing.Point(0, 128);
             this.gbImportList.Name = "gbImportList";
-            this.gbImportList.Size = new System.Drawing.Size(558, 227);
+            this.gbImportList.Size = new System.Drawing.Size(558, 228);
             this.gbImportList.TabIndex = 2;
             this.gbImportList.TabStop = false;
             this.gbImportList.Text = "Danh sách phiếu nhập";
@@ -1490,7 +1490,7 @@
             this.dgvImports.Name = "dgvImports";
             this.dgvImports.RowHeadersWidth = 51;
             this.dgvImports.RowTemplate.Height = 24;
-            this.dgvImports.Size = new System.Drawing.Size(552, 194);
+            this.dgvImports.Size = new System.Drawing.Size(552, 195);
             this.dgvImports.TabIndex = 1;
             // 
             // pImportSearch
@@ -1669,7 +1669,7 @@
             this.gbImportDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbImportDetails.Location = new System.Drawing.Point(0, 0);
             this.gbImportDetails.Name = "gbImportDetails";
-            this.gbImportDetails.Size = new System.Drawing.Size(558, 253);
+            this.gbImportDetails.Size = new System.Drawing.Size(558, 254);
             this.gbImportDetails.TabIndex = 2;
             this.gbImportDetails.TabStop = false;
             this.gbImportDetails.Text = "Chi tiết phiếu nhập";
@@ -1682,7 +1682,7 @@
             this.dgvImportDetails.Name = "dgvImportDetails";
             this.dgvImportDetails.RowHeadersWidth = 51;
             this.dgvImportDetails.RowTemplate.Height = 24;
-            this.dgvImportDetails.Size = new System.Drawing.Size(552, 220);
+            this.dgvImportDetails.Size = new System.Drawing.Size(552, 221);
             this.dgvImportDetails.TabIndex = 1;
             // 
             // flpImportTotal
@@ -1690,7 +1690,7 @@
             this.flpImportTotal.Controls.Add(this.lImportTotalPrice);
             this.flpImportTotal.Controls.Add(this.txtImportTotalPrice);
             this.flpImportTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpImportTotal.Location = new System.Drawing.Point(0, 461);
+            this.flpImportTotal.Location = new System.Drawing.Point(0, 463);
             this.flpImportTotal.Name = "flpImportTotal";
             this.flpImportTotal.Size = new System.Drawing.Size(280, 69);
             this.flpImportTotal.TabIndex = 7;
@@ -1731,7 +1731,7 @@
             this.flpImportActionButtons.Controls.Add(this.btnImportDelete);
             this.flpImportActionButtons.Controls.Add(this.btnImportSave);
             this.flpImportActionButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpImportActionButtons.Location = new System.Drawing.Point(0, 530);
+            this.flpImportActionButtons.Location = new System.Drawing.Point(0, 532);
             this.flpImportActionButtons.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpImportActionButtons.Name = "flpImportActionButtons";
             this.flpImportActionButtons.Size = new System.Drawing.Size(280, 82);
@@ -1807,7 +1807,7 @@
             this.gImportInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gImportInfo.Name = "gImportInfo";
             this.gImportInfo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gImportInfo.Size = new System.Drawing.Size(280, 612);
+            this.gImportInfo.Size = new System.Drawing.Size(280, 614);
             this.gImportInfo.TabIndex = 3;
             this.gImportInfo.TabStop = false;
             this.gImportInfo.Text = "Chi tiết";
@@ -1826,7 +1826,7 @@
             this.flpInfoImport.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpInfoImport.Location = new System.Drawing.Point(3, 31);
             this.flpInfoImport.Name = "flpInfoImport";
-            this.flpInfoImport.Size = new System.Drawing.Size(274, 577);
+            this.flpInfoImport.Size = new System.Drawing.Size(274, 579);
             this.flpInfoImport.TabIndex = 6;
             this.flpInfoImport.WrapContents = false;
             // 
@@ -2103,7 +2103,7 @@
             this.tabBills.Location = new System.Drawing.Point(154, 4);
             this.tabBills.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabBills.Name = "tabBills";
-            this.tabBills.Size = new System.Drawing.Size(842, 612);
+            this.tabBills.Size = new System.Drawing.Size(842, 614);
             this.tabBills.TabIndex = 2;
             this.tabBills.Text = "Hóa đơn";
             this.tabBills.UseVisualStyleBackColor = true;
@@ -2126,7 +2126,7 @@
             this.scBill.Panel2.Controls.Add(this.flpInfoBillTotal);
             this.scBill.Panel2.Controls.Add(this.flpBillActionButtons);
             this.scBill.Panel2.Controls.Add(this.gbBillInfo);
-            this.scBill.Size = new System.Drawing.Size(842, 612);
+            this.scBill.Size = new System.Drawing.Size(842, 614);
             this.scBill.SplitterDistance = 558;
             this.scBill.TabIndex = 1;
             // 
@@ -2147,8 +2147,8 @@
             // 
             this.scBillContent.Panel2.BackColor = System.Drawing.Color.Transparent;
             this.scBillContent.Panel2.Controls.Add(this.gbBillDetails);
-            this.scBillContent.Size = new System.Drawing.Size(558, 612);
-            this.scBillContent.SplitterDistance = 355;
+            this.scBillContent.Size = new System.Drawing.Size(558, 614);
+            this.scBillContent.SplitterDistance = 356;
             this.scBillContent.TabIndex = 0;
             // 
             // gbBillList
@@ -2158,7 +2158,7 @@
             this.gbBillList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbBillList.Location = new System.Drawing.Point(0, 128);
             this.gbBillList.Name = "gbBillList";
-            this.gbBillList.Size = new System.Drawing.Size(558, 227);
+            this.gbBillList.Size = new System.Drawing.Size(558, 228);
             this.gbBillList.TabIndex = 3;
             this.gbBillList.TabStop = false;
             this.gbBillList.Text = "Danh sách hóa đơn";
@@ -2171,7 +2171,7 @@
             this.dgvBills.Name = "dgvBills";
             this.dgvBills.RowHeadersWidth = 51;
             this.dgvBills.RowTemplate.Height = 24;
-            this.dgvBills.Size = new System.Drawing.Size(552, 194);
+            this.dgvBills.Size = new System.Drawing.Size(552, 195);
             this.dgvBills.TabIndex = 1;
             // 
             // pBillSearchContent
@@ -2349,7 +2349,7 @@
             this.gbBillDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbBillDetails.Location = new System.Drawing.Point(0, 0);
             this.gbBillDetails.Name = "gbBillDetails";
-            this.gbBillDetails.Size = new System.Drawing.Size(558, 253);
+            this.gbBillDetails.Size = new System.Drawing.Size(558, 254);
             this.gbBillDetails.TabIndex = 2;
             this.gbBillDetails.TabStop = false;
             this.gbBillDetails.Text = "Chi tiết hóa đơn";
@@ -2362,7 +2362,7 @@
             this.dgvBillDetails.Name = "dgvBillDetails";
             this.dgvBillDetails.RowHeadersWidth = 51;
             this.dgvBillDetails.RowTemplate.Height = 24;
-            this.dgvBillDetails.Size = new System.Drawing.Size(552, 220);
+            this.dgvBillDetails.Size = new System.Drawing.Size(552, 221);
             this.dgvBillDetails.TabIndex = 1;
             // 
             // flpInfoBillTotal
@@ -2370,7 +2370,7 @@
             this.flpInfoBillTotal.Controls.Add(this.lBillTotalPrice);
             this.flpInfoBillTotal.Controls.Add(this.txtMedicineTotalPrice);
             this.flpInfoBillTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpInfoBillTotal.Location = new System.Drawing.Point(0, 461);
+            this.flpInfoBillTotal.Location = new System.Drawing.Point(0, 463);
             this.flpInfoBillTotal.Name = "flpInfoBillTotal";
             this.flpInfoBillTotal.Size = new System.Drawing.Size(280, 69);
             this.flpInfoBillTotal.TabIndex = 12;
@@ -2411,7 +2411,7 @@
             this.flpBillActionButtons.Controls.Add(this.btnBillDelete);
             this.flpBillActionButtons.Controls.Add(this.btnBillSave);
             this.flpBillActionButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpBillActionButtons.Location = new System.Drawing.Point(0, 530);
+            this.flpBillActionButtons.Location = new System.Drawing.Point(0, 532);
             this.flpBillActionButtons.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpBillActionButtons.Name = "flpBillActionButtons";
             this.flpBillActionButtons.Size = new System.Drawing.Size(280, 82);
@@ -2487,7 +2487,7 @@
             this.gbBillInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbBillInfo.Name = "gbBillInfo";
             this.gbBillInfo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbBillInfo.Size = new System.Drawing.Size(280, 612);
+            this.gbBillInfo.Size = new System.Drawing.Size(280, 614);
             this.gbBillInfo.TabIndex = 5;
             this.gbBillInfo.TabStop = false;
             this.gbBillInfo.Text = "Chi tiết";
@@ -2506,7 +2506,7 @@
             this.flpInfoBill.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpInfoBill.Location = new System.Drawing.Point(3, 31);
             this.flpInfoBill.Name = "flpInfoBill";
-            this.flpInfoBill.Size = new System.Drawing.Size(274, 577);
+            this.flpInfoBill.Size = new System.Drawing.Size(274, 579);
             this.flpInfoBill.TabIndex = 6;
             this.flpInfoBill.WrapContents = false;
             // 
