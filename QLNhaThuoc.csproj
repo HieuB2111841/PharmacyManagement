@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
-    Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -53,6 +52,12 @@
     <Compile Include="fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="fCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCustomer.Designer.cs">
+      <DependentUpon>fCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="fMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCustomer.resx">
+      <DependentUpon>fCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>
@@ -100,16 +108,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\circle-user-solid.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lock-solid.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PicktureLogin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PicktureLogin-removebg-preview.png" />
+    <None Include="Assets\PicktureLogin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
