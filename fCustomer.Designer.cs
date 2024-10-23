@@ -28,40 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCustomer));
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
             this.pHomeCaption = new System.Windows.Forms.Panel();
+            this.lHomeWelcome = new System.Windows.Forms.Label();
             this.lHomeHello = new System.Windows.Forms.Label();
             this.pbHome = new System.Windows.Forms.PictureBox();
             this.tabProfiles = new System.Windows.Forms.TabPage();
-            this.pControl = new System.Windows.Forms.Panel();
-            this.tabHistory = new System.Windows.Forms.TabPage();
-            this.scHistory = new System.Windows.Forms.SplitContainer();
-            this.gbHistory = new System.Windows.Forms.GroupBox();
-            this.dgvHistory = new System.Windows.Forms.DataGridView();
-            this.pBillSearchBar = new System.Windows.Forms.Panel();
-            this.pCustomerIDSearch = new System.Windows.Forms.Panel();
-            this.lBillID = new System.Windows.Forms.Label();
-            this.txtBillIDSearch = new System.Windows.Forms.TextBox();
-            this.pCustomerPurchaseDate = new System.Windows.Forms.Panel();
-            this.lBillPurchaseTo = new System.Windows.Forms.Label();
-            this.dtpBillPurchaseTo = new System.Windows.Forms.DateTimePicker();
-            this.dtpBillPurchaseFrom = new System.Windows.Forms.DateTimePicker();
-            this.lBillPurchaseForm = new System.Windows.Forms.Label();
-            this.btnBillSearch = new System.Windows.Forms.Button();
-            this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiFileExportExcel = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiFileExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAccount = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAccountLogout = new System.Windows.Forms.ToolStripMenuItem();
-            this.msMain = new System.Windows.Forms.MenuStrip();
             this.gbProfile = new System.Windows.Forms.GroupBox();
-            this.btnProfileEdit = new System.Windows.Forms.Button();
-            this.btnProfileSave = new System.Windows.Forms.Button();
-            this.tlpActionButtons = new System.Windows.Forms.TableLayoutPanel();
-            this.btnProfileChangePassword = new System.Windows.Forms.Button();
-            this.pProfileDivider = new System.Windows.Forms.Panel();
             this.flpProfile = new System.Windows.Forms.FlowLayoutPanel();
             this.pProfileName = new System.Windows.Forms.Panel();
             this.lProfileName = new System.Windows.Forms.Label();
@@ -75,12 +56,26 @@
             this.pProfileAddress = new System.Windows.Forms.Panel();
             this.lProfileAddress = new System.Windows.Forms.Label();
             this.rtxtProfileAddress = new System.Windows.Forms.RichTextBox();
-            this.lHomeWelcome = new System.Windows.Forms.Label();
+            this.pProfileDivider = new System.Windows.Forms.Panel();
+            this.tlpActionButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.btnProfileChangePassword = new System.Windows.Forms.Button();
+            this.btnProfileSave = new System.Windows.Forms.Button();
+            this.btnProfileEdit = new System.Windows.Forms.Button();
+            this.pControl = new System.Windows.Forms.Panel();
+            this.tabHistory = new System.Windows.Forms.TabPage();
+            this.scHistory = new System.Windows.Forms.SplitContainer();
+            this.gbHistory = new System.Windows.Forms.GroupBox();
+            this.pBillSearchBar = new System.Windows.Forms.Panel();
+            this.pCustomerIDSearch = new System.Windows.Forms.Panel();
+            this.lBillID = new System.Windows.Forms.Label();
+            this.txtBillIDSearch = new System.Windows.Forms.TextBox();
+            this.pCustomerPurchaseDate = new System.Windows.Forms.Panel();
+            this.lBillPurchaseTo = new System.Windows.Forms.Label();
+            this.dtpBillPurchaseTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpBillPurchaseFrom = new System.Windows.Forms.DateTimePicker();
+            this.lBillPurchaseForm = new System.Windows.Forms.Label();
+            this.btnBillSearch = new System.Windows.Forms.Button();
             this.gbBillInfo = new System.Windows.Forms.GroupBox();
-            this.pInfoBillTotalContainer = new System.Windows.Forms.Panel();
-            this.pInfoBillTotalPrice = new System.Windows.Forms.Panel();
-            this.txtInfoBillTotalPrice = new System.Windows.Forms.TextBox();
-            this.lInfoBillTotalPrice = new System.Windows.Forms.Label();
             this.flpInfoBill = new System.Windows.Forms.FlowLayoutPanel();
             this.pInfoBillID = new System.Windows.Forms.Panel();
             this.txtInfoBillID = new System.Windows.Forms.TextBox();
@@ -92,39 +87,50 @@
             this.dtpInfoBillDate = new System.Windows.Forms.DateTimePicker();
             this.lInfoBillDate = new System.Windows.Forms.Label();
             this.pInfoBillDetails = new System.Windows.Forms.Panel();
-            this.dgvInfoBillDetails = new System.Windows.Forms.DataGridView();
             this.lInfoBillDetails = new System.Windows.Forms.Label();
+            this.pInfoBillTotalContainer = new System.Windows.Forms.Panel();
+            this.pInfoBillTotalPrice = new System.Windows.Forms.Panel();
+            this.txtInfoBillTotalPrice = new System.Windows.Forms.TextBox();
+            this.lInfoBillTotalPrice = new System.Windows.Forms.Label();
+            this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFileExportExcel = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAccount = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAccountLogout = new System.Windows.Forms.ToolStripMenuItem();
+            this.msMain = new System.Windows.Forms.MenuStrip();
+            this.dgvHistory = new System.Windows.Forms.DataGridView();
+            this.dgvInfoBillDetails = new System.Windows.Forms.DataGridView();
             this.tcMain.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.pHomeCaption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
             this.tabProfiles.SuspendLayout();
+            this.gbProfile.SuspendLayout();
+            this.flpProfile.SuspendLayout();
+            this.pProfileName.SuspendLayout();
+            this.pProfileBirthday.SuspendLayout();
+            this.pProfilePhoneNumber.SuspendLayout();
+            this.pProfileAddress.SuspendLayout();
+            this.tlpActionButtons.SuspendLayout();
             this.tabHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scHistory)).BeginInit();
             this.scHistory.Panel1.SuspendLayout();
             this.scHistory.Panel2.SuspendLayout();
             this.scHistory.SuspendLayout();
             this.gbHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
             this.pBillSearchBar.SuspendLayout();
             this.pCustomerIDSearch.SuspendLayout();
             this.pCustomerPurchaseDate.SuspendLayout();
-            this.msMain.SuspendLayout();
-            this.gbProfile.SuspendLayout();
-            this.tlpActionButtons.SuspendLayout();
-            this.flpProfile.SuspendLayout();
-            this.pProfileName.SuspendLayout();
-            this.pProfileBirthday.SuspendLayout();
-            this.pProfilePhoneNumber.SuspendLayout();
-            this.pProfileAddress.SuspendLayout();
             this.gbBillInfo.SuspendLayout();
-            this.pInfoBillTotalContainer.SuspendLayout();
-            this.pInfoBillTotalPrice.SuspendLayout();
             this.flpInfoBill.SuspendLayout();
             this.pInfoBillID.SuspendLayout();
             this.pInfoBillEmployeeName.SuspendLayout();
             this.pInfoBillDate.SuspendLayout();
             this.pInfoBillDetails.SuspendLayout();
+            this.pInfoBillTotalContainer.SuspendLayout();
+            this.pInfoBillTotalPrice.SuspendLayout();
+            this.msMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoBillDetails)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,7 +163,7 @@
             this.tabHome.Location = new System.Drawing.Point(154, 4);
             this.tabHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabHome.Name = "tabHome";
-            this.tabHome.Size = new System.Drawing.Size(842, 612);
+            this.tabHome.Size = new System.Drawing.Size(842, 614);
             this.tabHome.TabIndex = 2;
             this.tabHome.Text = "Trang chủ";
             this.tabHome.UseVisualStyleBackColor = true;
@@ -169,8 +175,20 @@
             this.pHomeCaption.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pHomeCaption.Location = new System.Drawing.Point(0, 425);
             this.pHomeCaption.Name = "pHomeCaption";
-            this.pHomeCaption.Size = new System.Drawing.Size(842, 187);
+            this.pHomeCaption.Size = new System.Drawing.Size(842, 189);
             this.pHomeCaption.TabIndex = 2;
+            // 
+            // lHomeWelcome
+            // 
+            this.lHomeWelcome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lHomeWelcome.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lHomeWelcome.ForeColor = System.Drawing.Color.Black;
+            this.lHomeWelcome.Location = new System.Drawing.Point(0, 67);
+            this.lHomeWelcome.Name = "lHomeWelcome";
+            this.lHomeWelcome.Size = new System.Drawing.Size(842, 122);
+            this.lHomeWelcome.TabIndex = 2;
+            this.lHomeWelcome.Text = "Chào mừng đến với nhà thuốc số 8";
+            this.lHomeWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lHomeHello
             // 
@@ -212,248 +230,6 @@
             this.tabProfiles.TabIndex = 0;
             this.tabProfiles.Text = "Thông tin cá nhân";
             // 
-            // pControl
-            // 
-            this.pControl.AutoSize = true;
-            this.pControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pControl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pControl.Location = new System.Drawing.Point(842, 0);
-            this.pControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pControl.Name = "pControl";
-            this.pControl.Size = new System.Drawing.Size(0, 614);
-            this.pControl.TabIndex = 1;
-            // 
-            // tabHistory
-            // 
-            this.tabHistory.Controls.Add(this.scHistory);
-            this.tabHistory.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tabHistory.ForeColor = System.Drawing.Color.Transparent;
-            this.tabHistory.Location = new System.Drawing.Point(154, 4);
-            this.tabHistory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabHistory.Name = "tabHistory";
-            this.tabHistory.Size = new System.Drawing.Size(842, 614);
-            this.tabHistory.TabIndex = 3;
-            this.tabHistory.Text = "Lịch sử mua thuốc";
-            this.tabHistory.UseVisualStyleBackColor = true;
-            // 
-            // scHistory
-            // 
-            this.scHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scHistory.Location = new System.Drawing.Point(0, 0);
-            this.scHistory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.scHistory.Name = "scHistory";
-            // 
-            // scHistory.Panel1
-            // 
-            this.scHistory.Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.scHistory.Panel1.Controls.Add(this.gbHistory);
-            this.scHistory.Panel1.Controls.Add(this.pBillSearchBar);
-            // 
-            // scHistory.Panel2
-            // 
-            this.scHistory.Panel2.BackColor = System.Drawing.Color.Aquamarine;
-            this.scHistory.Panel2.Controls.Add(this.gbBillInfo);
-            this.scHistory.Size = new System.Drawing.Size(842, 614);
-            this.scHistory.SplitterDistance = 563;
-            this.scHistory.TabIndex = 3;
-            // 
-            // gbHistory
-            // 
-            this.gbHistory.Controls.Add(this.dgvHistory);
-            this.gbHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbHistory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.gbHistory.Location = new System.Drawing.Point(0, 133);
-            this.gbHistory.Name = "gbHistory";
-            this.gbHistory.Size = new System.Drawing.Size(563, 481);
-            this.gbHistory.TabIndex = 2;
-            this.gbHistory.TabStop = false;
-            this.gbHistory.Text = "Lịch sử";
-            // 
-            // dgvHistory
-            // 
-            this.dgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHistory.Location = new System.Drawing.Point(3, 30);
-            this.dgvHistory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvHistory.Name = "dgvHistory";
-            this.dgvHistory.RowHeadersWidth = 51;
-            this.dgvHistory.RowTemplate.Height = 24;
-            this.dgvHistory.Size = new System.Drawing.Size(557, 448);
-            this.dgvHistory.TabIndex = 3;
-            // 
-            // pBillSearchBar
-            // 
-            this.pBillSearchBar.BackColor = System.Drawing.Color.Transparent;
-            this.pBillSearchBar.Controls.Add(this.pCustomerIDSearch);
-            this.pBillSearchBar.Controls.Add(this.pCustomerPurchaseDate);
-            this.pBillSearchBar.Controls.Add(this.btnBillSearch);
-            this.pBillSearchBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pBillSearchBar.Location = new System.Drawing.Point(0, 0);
-            this.pBillSearchBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pBillSearchBar.Name = "pBillSearchBar";
-            this.pBillSearchBar.Padding = new System.Windows.Forms.Padding(20);
-            this.pBillSearchBar.Size = new System.Drawing.Size(563, 133);
-            this.pBillSearchBar.TabIndex = 1;
-            // 
-            // pCustomerIDSearch
-            // 
-            this.pCustomerIDSearch.Controls.Add(this.lBillID);
-            this.pCustomerIDSearch.Controls.Add(this.txtBillIDSearch);
-            this.pCustomerIDSearch.Location = new System.Drawing.Point(20, 23);
-            this.pCustomerIDSearch.Name = "pCustomerIDSearch";
-            this.pCustomerIDSearch.Size = new System.Drawing.Size(523, 30);
-            this.pCustomerIDSearch.TabIndex = 0;
-            // 
-            // lBillID
-            // 
-            this.lBillID.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lBillID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lBillID.ForeColor = System.Drawing.Color.Black;
-            this.lBillID.Location = new System.Drawing.Point(0, 0);
-            this.lBillID.Name = "lBillID";
-            this.lBillID.Size = new System.Drawing.Size(163, 30);
-            this.lBillID.TabIndex = 4;
-            this.lBillID.Text = "Mã đơn";
-            this.lBillID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtBillIDSearch
-            // 
-            this.txtBillIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBillIDSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.txtBillIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBillIDSearch.Location = new System.Drawing.Point(169, 0);
-            this.txtBillIDSearch.Name = "txtBillIDSearch";
-            this.txtBillIDSearch.Size = new System.Drawing.Size(354, 30);
-            this.txtBillIDSearch.TabIndex = 0;
-            // 
-            // pCustomerPurchaseDate
-            // 
-            this.pCustomerPurchaseDate.Controls.Add(this.lBillPurchaseTo);
-            this.pCustomerPurchaseDate.Controls.Add(this.dtpBillPurchaseTo);
-            this.pCustomerPurchaseDate.Controls.Add(this.dtpBillPurchaseFrom);
-            this.pCustomerPurchaseDate.Controls.Add(this.lBillPurchaseForm);
-            this.pCustomerPurchaseDate.Location = new System.Drawing.Point(20, 59);
-            this.pCustomerPurchaseDate.Name = "pCustomerPurchaseDate";
-            this.pCustomerPurchaseDate.Size = new System.Drawing.Size(523, 30);
-            this.pCustomerPurchaseDate.TabIndex = 1;
-            // 
-            // lBillPurchaseTo
-            // 
-            this.lBillPurchaseTo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lBillPurchaseTo.ForeColor = System.Drawing.Color.Black;
-            this.lBillPurchaseTo.Location = new System.Drawing.Point(311, 0);
-            this.lBillPurchaseTo.Name = "lBillPurchaseTo";
-            this.lBillPurchaseTo.Size = new System.Drawing.Size(63, 30);
-            this.lBillPurchaseTo.TabIndex = 8;
-            this.lBillPurchaseTo.Text = "đến";
-            this.lBillPurchaseTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dtpBillPurchaseTo
-            // 
-            this.dtpBillPurchaseTo.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpBillPurchaseTo.CalendarForeColor = System.Drawing.Color.Black;
-            this.dtpBillPurchaseTo.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
-            this.dtpBillPurchaseTo.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
-            this.dtpBillPurchaseTo.CustomFormat = "dd/MM/yyyy";
-            this.dtpBillPurchaseTo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpBillPurchaseTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBillPurchaseTo.Location = new System.Drawing.Point(380, 0);
-            this.dtpBillPurchaseTo.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
-            this.dtpBillPurchaseTo.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dtpBillPurchaseTo.Name = "dtpBillPurchaseTo";
-            this.dtpBillPurchaseTo.Size = new System.Drawing.Size(143, 30);
-            this.dtpBillPurchaseTo.TabIndex = 1;
-            this.dtpBillPurchaseTo.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
-            // 
-            // dtpBillPurchaseFrom
-            // 
-            this.dtpBillPurchaseFrom.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpBillPurchaseFrom.CalendarForeColor = System.Drawing.Color.Black;
-            this.dtpBillPurchaseFrom.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
-            this.dtpBillPurchaseFrom.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
-            this.dtpBillPurchaseFrom.CustomFormat = "dd/MM/yyyy";
-            this.dtpBillPurchaseFrom.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpBillPurchaseFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBillPurchaseFrom.Location = new System.Drawing.Point(169, 0);
-            this.dtpBillPurchaseFrom.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
-            this.dtpBillPurchaseFrom.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dtpBillPurchaseFrom.Name = "dtpBillPurchaseFrom";
-            this.dtpBillPurchaseFrom.Size = new System.Drawing.Size(136, 30);
-            this.dtpBillPurchaseFrom.TabIndex = 0;
-            this.dtpBillPurchaseFrom.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
-            // 
-            // lBillPurchaseForm
-            // 
-            this.lBillPurchaseForm.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lBillPurchaseForm.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lBillPurchaseForm.ForeColor = System.Drawing.Color.Black;
-            this.lBillPurchaseForm.Location = new System.Drawing.Point(0, 0);
-            this.lBillPurchaseForm.Name = "lBillPurchaseForm";
-            this.lBillPurchaseForm.Size = new System.Drawing.Size(163, 30);
-            this.lBillPurchaseForm.TabIndex = 5;
-            this.lBillPurchaseForm.Text = "Mua hàng từ ngày";
-            this.lBillPurchaseForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnBillSearch
-            // 
-            this.btnBillSearch.BackColor = System.Drawing.Color.Aquamarine;
-            this.btnBillSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBillSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnBillSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnBillSearch.Location = new System.Drawing.Point(400, 97);
-            this.btnBillSearch.Name = "btnBillSearch";
-            this.btnBillSearch.Size = new System.Drawing.Size(143, 30);
-            this.btnBillSearch.TabIndex = 2;
-            this.btnBillSearch.Text = "Tìm kiếm";
-            this.btnBillSearch.UseVisualStyleBackColor = false;
-            // 
-            // tsmiFile
-            // 
-            this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiFileExportExcel,
-            this.tsmiFileExit});
-            this.tsmiFile.Name = "tsmiFile";
-            this.tsmiFile.Size = new System.Drawing.Size(46, 24);
-            this.tsmiFile.Text = "File";
-            // 
-            // tsmiFileExportExcel
-            // 
-            this.tsmiFileExportExcel.Name = "tsmiFileExportExcel";
-            this.tsmiFileExportExcel.Size = new System.Drawing.Size(160, 26);
-            this.tsmiFileExportExcel.Text = "Xuất Excel";
-            // 
-            // tsmiFileExit
-            // 
-            this.tsmiFileExit.Name = "tsmiFileExit";
-            this.tsmiFileExit.Size = new System.Drawing.Size(160, 26);
-            this.tsmiFileExit.Text = "Thoát";
-            // 
-            // tsmiAccount
-            // 
-            this.tsmiAccount.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiAccountLogout});
-            this.tsmiAccount.Name = "tsmiAccount";
-            this.tsmiAccount.Size = new System.Drawing.Size(85, 24);
-            this.tsmiAccount.Text = "Tài khoản";
-            // 
-            // tsmiAccountLogout
-            // 
-            this.tsmiAccountLogout.Name = "tsmiAccountLogout";
-            this.tsmiAccountLogout.Size = new System.Drawing.Size(160, 26);
-            this.tsmiAccountLogout.Text = "Đăng xuất";
-            // 
-            // msMain
-            // 
-            this.msMain.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.msMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiFile,
-            this.tsmiAccount});
-            this.msMain.Location = new System.Drawing.Point(0, 0);
-            this.msMain.Name = "msMain";
-            this.msMain.Size = new System.Drawing.Size(1000, 28);
-            this.msMain.TabIndex = 1;
-            this.msMain.Text = "menuStrip1";
-            // 
             // gbProfile
             // 
             this.gbProfile.BackColor = System.Drawing.Color.Transparent;
@@ -469,80 +245,6 @@
             this.gbProfile.TabIndex = 2;
             this.gbProfile.TabStop = false;
             this.gbProfile.Text = "Thông tin cá nhân";
-            // 
-            // btnProfileEdit
-            // 
-            this.btnProfileEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnProfileEdit.BackColor = System.Drawing.SystemColors.Control;
-            this.btnProfileEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnProfileEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfileEdit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnProfileEdit.ForeColor = System.Drawing.Color.Black;
-            this.btnProfileEdit.Location = new System.Drawing.Point(3, 4);
-            this.btnProfileEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnProfileEdit.Name = "btnProfileEdit";
-            this.btnProfileEdit.Size = new System.Drawing.Size(197, 32);
-            this.btnProfileEdit.TabIndex = 0;
-            this.btnProfileEdit.Text = "Sửa thông tin";
-            this.btnProfileEdit.UseVisualStyleBackColor = false;
-            // 
-            // btnProfileSave
-            // 
-            this.btnProfileSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnProfileSave.BackColor = System.Drawing.SystemColors.Control;
-            this.btnProfileSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnProfileSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfileSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnProfileSave.ForeColor = System.Drawing.Color.Black;
-            this.btnProfileSave.Location = new System.Drawing.Point(612, 4);
-            this.btnProfileSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnProfileSave.Name = "btnProfileSave";
-            this.btnProfileSave.Size = new System.Drawing.Size(197, 32);
-            this.btnProfileSave.TabIndex = 2;
-            this.btnProfileSave.Text = "Lưu";
-            this.btnProfileSave.UseVisualStyleBackColor = false;
-            // 
-            // tlpActionButtons
-            // 
-            this.tlpActionButtons.ColumnCount = 4;
-            this.tlpActionButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpActionButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpActionButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpActionButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpActionButtons.Controls.Add(this.btnProfileChangePassword, 1, 0);
-            this.tlpActionButtons.Controls.Add(this.btnProfileSave, 3, 0);
-            this.tlpActionButtons.Controls.Add(this.btnProfileEdit, 0, 0);
-            this.tlpActionButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tlpActionButtons.Location = new System.Drawing.Point(15, 559);
-            this.tlpActionButtons.Name = "tlpActionButtons";
-            this.tlpActionButtons.RowCount = 1;
-            this.tlpActionButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpActionButtons.Size = new System.Drawing.Size(812, 40);
-            this.tlpActionButtons.TabIndex = 1;
-            // 
-            // btnProfileChangePassword
-            // 
-            this.btnProfileChangePassword.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnProfileChangePassword.BackColor = System.Drawing.SystemColors.Control;
-            this.btnProfileChangePassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnProfileChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfileChangePassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnProfileChangePassword.ForeColor = System.Drawing.Color.Black;
-            this.btnProfileChangePassword.Location = new System.Drawing.Point(206, 4);
-            this.btnProfileChangePassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnProfileChangePassword.Name = "btnProfileChangePassword";
-            this.btnProfileChangePassword.Size = new System.Drawing.Size(197, 32);
-            this.btnProfileChangePassword.TabIndex = 1;
-            this.btnProfileChangePassword.Text = "Đổi mật khẩu";
-            this.btnProfileChangePassword.UseVisualStyleBackColor = false;
-            // 
-            // pProfileDivider
-            // 
-            this.pProfileDivider.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pProfileDivider.Location = new System.Drawing.Point(15, 544);
-            this.pProfileDivider.Name = "pProfileDivider";
-            this.pProfileDivider.Size = new System.Drawing.Size(812, 15);
-            this.pProfileDivider.TabIndex = 9;
             // 
             // flpProfile
             // 
@@ -705,17 +407,262 @@
             this.rtxtProfileAddress.TabIndex = 1;
             this.rtxtProfileAddress.Text = "123/abc, đường xyz, quận Ninh Kiều, TP Cần Thơ";
             // 
-            // lHomeWelcome
+            // pProfileDivider
             // 
-            this.lHomeWelcome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lHomeWelcome.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lHomeWelcome.ForeColor = System.Drawing.Color.Black;
-            this.lHomeWelcome.Location = new System.Drawing.Point(0, 67);
-            this.lHomeWelcome.Name = "lHomeWelcome";
-            this.lHomeWelcome.Size = new System.Drawing.Size(842, 120);
-            this.lHomeWelcome.TabIndex = 2;
-            this.lHomeWelcome.Text = "Chào mừng đến với nhà thuốc số 8";
-            this.lHomeWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pProfileDivider.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pProfileDivider.Location = new System.Drawing.Point(15, 544);
+            this.pProfileDivider.Name = "pProfileDivider";
+            this.pProfileDivider.Size = new System.Drawing.Size(812, 15);
+            this.pProfileDivider.TabIndex = 9;
+            // 
+            // tlpActionButtons
+            // 
+            this.tlpActionButtons.ColumnCount = 4;
+            this.tlpActionButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpActionButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpActionButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpActionButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpActionButtons.Controls.Add(this.btnProfileChangePassword, 1, 0);
+            this.tlpActionButtons.Controls.Add(this.btnProfileSave, 3, 0);
+            this.tlpActionButtons.Controls.Add(this.btnProfileEdit, 0, 0);
+            this.tlpActionButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tlpActionButtons.Location = new System.Drawing.Point(15, 559);
+            this.tlpActionButtons.Name = "tlpActionButtons";
+            this.tlpActionButtons.RowCount = 1;
+            this.tlpActionButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpActionButtons.Size = new System.Drawing.Size(812, 40);
+            this.tlpActionButtons.TabIndex = 1;
+            // 
+            // btnProfileChangePassword
+            // 
+            this.btnProfileChangePassword.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnProfileChangePassword.BackColor = System.Drawing.SystemColors.Control;
+            this.btnProfileChangePassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnProfileChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfileChangePassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnProfileChangePassword.ForeColor = System.Drawing.Color.Black;
+            this.btnProfileChangePassword.Location = new System.Drawing.Point(206, 4);
+            this.btnProfileChangePassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnProfileChangePassword.Name = "btnProfileChangePassword";
+            this.btnProfileChangePassword.Size = new System.Drawing.Size(197, 32);
+            this.btnProfileChangePassword.TabIndex = 1;
+            this.btnProfileChangePassword.Text = "Đổi mật khẩu";
+            this.btnProfileChangePassword.UseVisualStyleBackColor = false;
+            // 
+            // btnProfileSave
+            // 
+            this.btnProfileSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnProfileSave.BackColor = System.Drawing.SystemColors.Control;
+            this.btnProfileSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnProfileSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfileSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnProfileSave.ForeColor = System.Drawing.Color.Black;
+            this.btnProfileSave.Location = new System.Drawing.Point(612, 4);
+            this.btnProfileSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnProfileSave.Name = "btnProfileSave";
+            this.btnProfileSave.Size = new System.Drawing.Size(197, 32);
+            this.btnProfileSave.TabIndex = 2;
+            this.btnProfileSave.Text = "Lưu";
+            this.btnProfileSave.UseVisualStyleBackColor = false;
+            // 
+            // btnProfileEdit
+            // 
+            this.btnProfileEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnProfileEdit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnProfileEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnProfileEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfileEdit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnProfileEdit.ForeColor = System.Drawing.Color.Black;
+            this.btnProfileEdit.Location = new System.Drawing.Point(3, 4);
+            this.btnProfileEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnProfileEdit.Name = "btnProfileEdit";
+            this.btnProfileEdit.Size = new System.Drawing.Size(197, 32);
+            this.btnProfileEdit.TabIndex = 0;
+            this.btnProfileEdit.Text = "Sửa thông tin";
+            this.btnProfileEdit.UseVisualStyleBackColor = false;
+            // 
+            // pControl
+            // 
+            this.pControl.AutoSize = true;
+            this.pControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pControl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pControl.Location = new System.Drawing.Point(842, 0);
+            this.pControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pControl.Name = "pControl";
+            this.pControl.Size = new System.Drawing.Size(0, 614);
+            this.pControl.TabIndex = 1;
+            // 
+            // tabHistory
+            // 
+            this.tabHistory.Controls.Add(this.scHistory);
+            this.tabHistory.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tabHistory.ForeColor = System.Drawing.Color.Transparent;
+            this.tabHistory.Location = new System.Drawing.Point(154, 4);
+            this.tabHistory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabHistory.Name = "tabHistory";
+            this.tabHistory.Size = new System.Drawing.Size(842, 614);
+            this.tabHistory.TabIndex = 3;
+            this.tabHistory.Text = "Lịch sử mua thuốc";
+            this.tabHistory.UseVisualStyleBackColor = true;
+            // 
+            // scHistory
+            // 
+            this.scHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scHistory.Location = new System.Drawing.Point(0, 0);
+            this.scHistory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.scHistory.Name = "scHistory";
+            // 
+            // scHistory.Panel1
+            // 
+            this.scHistory.Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.scHistory.Panel1.Controls.Add(this.gbHistory);
+            this.scHistory.Panel1.Controls.Add(this.pBillSearchBar);
+            // 
+            // scHistory.Panel2
+            // 
+            this.scHistory.Panel2.BackColor = System.Drawing.Color.Aquamarine;
+            this.scHistory.Panel2.Controls.Add(this.gbBillInfo);
+            this.scHistory.Size = new System.Drawing.Size(842, 614);
+            this.scHistory.SplitterDistance = 563;
+            this.scHistory.TabIndex = 3;
+            // 
+            // gbHistory
+            // 
+            this.gbHistory.Controls.Add(this.dgvHistory);
+            this.gbHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbHistory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.gbHistory.Location = new System.Drawing.Point(0, 133);
+            this.gbHistory.Name = "gbHistory";
+            this.gbHistory.Size = new System.Drawing.Size(563, 481);
+            this.gbHistory.TabIndex = 2;
+            this.gbHistory.TabStop = false;
+            this.gbHistory.Text = "Lịch sử";
+            // 
+            // pBillSearchBar
+            // 
+            this.pBillSearchBar.BackColor = System.Drawing.Color.Transparent;
+            this.pBillSearchBar.Controls.Add(this.pCustomerIDSearch);
+            this.pBillSearchBar.Controls.Add(this.pCustomerPurchaseDate);
+            this.pBillSearchBar.Controls.Add(this.btnBillSearch);
+            this.pBillSearchBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pBillSearchBar.Location = new System.Drawing.Point(0, 0);
+            this.pBillSearchBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pBillSearchBar.Name = "pBillSearchBar";
+            this.pBillSearchBar.Padding = new System.Windows.Forms.Padding(20);
+            this.pBillSearchBar.Size = new System.Drawing.Size(563, 133);
+            this.pBillSearchBar.TabIndex = 1;
+            // 
+            // pCustomerIDSearch
+            // 
+            this.pCustomerIDSearch.Controls.Add(this.lBillID);
+            this.pCustomerIDSearch.Controls.Add(this.txtBillIDSearch);
+            this.pCustomerIDSearch.Location = new System.Drawing.Point(20, 23);
+            this.pCustomerIDSearch.Name = "pCustomerIDSearch";
+            this.pCustomerIDSearch.Size = new System.Drawing.Size(523, 30);
+            this.pCustomerIDSearch.TabIndex = 0;
+            // 
+            // lBillID
+            // 
+            this.lBillID.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lBillID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lBillID.ForeColor = System.Drawing.Color.Black;
+            this.lBillID.Location = new System.Drawing.Point(0, 0);
+            this.lBillID.Name = "lBillID";
+            this.lBillID.Size = new System.Drawing.Size(163, 30);
+            this.lBillID.TabIndex = 4;
+            this.lBillID.Text = "Mã đơn";
+            this.lBillID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtBillIDSearch
+            // 
+            this.txtBillIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBillIDSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.txtBillIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBillIDSearch.Location = new System.Drawing.Point(169, 0);
+            this.txtBillIDSearch.Name = "txtBillIDSearch";
+            this.txtBillIDSearch.Size = new System.Drawing.Size(354, 30);
+            this.txtBillIDSearch.TabIndex = 0;
+            // 
+            // pCustomerPurchaseDate
+            // 
+            this.pCustomerPurchaseDate.Controls.Add(this.lBillPurchaseTo);
+            this.pCustomerPurchaseDate.Controls.Add(this.dtpBillPurchaseTo);
+            this.pCustomerPurchaseDate.Controls.Add(this.dtpBillPurchaseFrom);
+            this.pCustomerPurchaseDate.Controls.Add(this.lBillPurchaseForm);
+            this.pCustomerPurchaseDate.Location = new System.Drawing.Point(20, 59);
+            this.pCustomerPurchaseDate.Name = "pCustomerPurchaseDate";
+            this.pCustomerPurchaseDate.Size = new System.Drawing.Size(523, 30);
+            this.pCustomerPurchaseDate.TabIndex = 1;
+            // 
+            // lBillPurchaseTo
+            // 
+            this.lBillPurchaseTo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lBillPurchaseTo.ForeColor = System.Drawing.Color.Black;
+            this.lBillPurchaseTo.Location = new System.Drawing.Point(311, 0);
+            this.lBillPurchaseTo.Name = "lBillPurchaseTo";
+            this.lBillPurchaseTo.Size = new System.Drawing.Size(63, 30);
+            this.lBillPurchaseTo.TabIndex = 8;
+            this.lBillPurchaseTo.Text = "đến";
+            this.lBillPurchaseTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dtpBillPurchaseTo
+            // 
+            this.dtpBillPurchaseTo.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpBillPurchaseTo.CalendarForeColor = System.Drawing.Color.Black;
+            this.dtpBillPurchaseTo.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
+            this.dtpBillPurchaseTo.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
+            this.dtpBillPurchaseTo.CustomFormat = "dd/MM/yyyy";
+            this.dtpBillPurchaseTo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpBillPurchaseTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBillPurchaseTo.Location = new System.Drawing.Point(380, 0);
+            this.dtpBillPurchaseTo.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
+            this.dtpBillPurchaseTo.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtpBillPurchaseTo.Name = "dtpBillPurchaseTo";
+            this.dtpBillPurchaseTo.Size = new System.Drawing.Size(143, 30);
+            this.dtpBillPurchaseTo.TabIndex = 1;
+            this.dtpBillPurchaseTo.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            // 
+            // dtpBillPurchaseFrom
+            // 
+            this.dtpBillPurchaseFrom.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpBillPurchaseFrom.CalendarForeColor = System.Drawing.Color.Black;
+            this.dtpBillPurchaseFrom.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
+            this.dtpBillPurchaseFrom.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
+            this.dtpBillPurchaseFrom.CustomFormat = "dd/MM/yyyy";
+            this.dtpBillPurchaseFrom.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpBillPurchaseFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBillPurchaseFrom.Location = new System.Drawing.Point(169, 0);
+            this.dtpBillPurchaseFrom.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
+            this.dtpBillPurchaseFrom.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtpBillPurchaseFrom.Name = "dtpBillPurchaseFrom";
+            this.dtpBillPurchaseFrom.Size = new System.Drawing.Size(136, 30);
+            this.dtpBillPurchaseFrom.TabIndex = 0;
+            this.dtpBillPurchaseFrom.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            // 
+            // lBillPurchaseForm
+            // 
+            this.lBillPurchaseForm.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lBillPurchaseForm.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lBillPurchaseForm.ForeColor = System.Drawing.Color.Black;
+            this.lBillPurchaseForm.Location = new System.Drawing.Point(0, 0);
+            this.lBillPurchaseForm.Name = "lBillPurchaseForm";
+            this.lBillPurchaseForm.Size = new System.Drawing.Size(163, 30);
+            this.lBillPurchaseForm.TabIndex = 5;
+            this.lBillPurchaseForm.Text = "Mua hàng từ ngày";
+            this.lBillPurchaseForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnBillSearch
+            // 
+            this.btnBillSearch.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnBillSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBillSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnBillSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnBillSearch.Location = new System.Drawing.Point(400, 97);
+            this.btnBillSearch.Name = "btnBillSearch";
+            this.btnBillSearch.Size = new System.Drawing.Size(143, 30);
+            this.btnBillSearch.TabIndex = 2;
+            this.btnBillSearch.Text = "Tìm kiếm";
+            this.btnBillSearch.UseVisualStyleBackColor = false;
             // 
             // gbBillInfo
             // 
@@ -732,55 +679,6 @@
             this.gbBillInfo.TabIndex = 3;
             this.gbBillInfo.TabStop = false;
             this.gbBillInfo.Text = "Chi tiết";
-            // 
-            // pInfoBillTotalContainer
-            // 
-            this.pInfoBillTotalContainer.Controls.Add(this.pInfoBillTotalPrice);
-            this.pInfoBillTotalContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pInfoBillTotalContainer.Location = new System.Drawing.Point(3, 530);
-            this.pInfoBillTotalContainer.Name = "pInfoBillTotalContainer";
-            this.pInfoBillTotalContainer.Padding = new System.Windows.Forms.Padding(10);
-            this.pInfoBillTotalContainer.Size = new System.Drawing.Size(269, 80);
-            this.pInfoBillTotalContainer.TabIndex = 1;
-            // 
-            // pInfoBillTotalPrice
-            // 
-            this.pInfoBillTotalPrice.Controls.Add(this.txtInfoBillTotalPrice);
-            this.pInfoBillTotalPrice.Controls.Add(this.lInfoBillTotalPrice);
-            this.pInfoBillTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pInfoBillTotalPrice.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.pInfoBillTotalPrice.Location = new System.Drawing.Point(10, 10);
-            this.pInfoBillTotalPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 6);
-            this.pInfoBillTotalPrice.Name = "pInfoBillTotalPrice";
-            this.pInfoBillTotalPrice.Size = new System.Drawing.Size(249, 60);
-            this.pInfoBillTotalPrice.TabIndex = 0;
-            // 
-            // txtInfoBillTotalPrice
-            // 
-            this.txtInfoBillTotalPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtInfoBillTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInfoBillTotalPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInfoBillTotalPrice.Location = new System.Drawing.Point(0, 30);
-            this.txtInfoBillTotalPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtInfoBillTotalPrice.MaxLength = 50;
-            this.txtInfoBillTotalPrice.Name = "txtInfoBillTotalPrice";
-            this.txtInfoBillTotalPrice.ReadOnly = true;
-            this.txtInfoBillTotalPrice.Size = new System.Drawing.Size(249, 30);
-            this.txtInfoBillTotalPrice.TabIndex = 0;
-            this.txtInfoBillTotalPrice.Text = "12.000.000";
-            this.txtInfoBillTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // lInfoBillTotalPrice
-            // 
-            this.lInfoBillTotalPrice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lInfoBillTotalPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lInfoBillTotalPrice.ForeColor = System.Drawing.Color.Black;
-            this.lInfoBillTotalPrice.Location = new System.Drawing.Point(0, 0);
-            this.lInfoBillTotalPrice.Name = "lInfoBillTotalPrice";
-            this.lInfoBillTotalPrice.Size = new System.Drawing.Size(249, 30);
-            this.lInfoBillTotalPrice.TabIndex = 0;
-            this.lInfoBillTotalPrice.Text = "Tổng tiền (VND):";
-            this.lInfoBillTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // flpInfoBill
             // 
@@ -920,17 +818,6 @@
             this.pInfoBillDetails.Size = new System.Drawing.Size(261, 338);
             this.pInfoBillDetails.TabIndex = 3;
             // 
-            // dgvInfoBillDetails
-            // 
-            this.dgvInfoBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInfoBillDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvInfoBillDetails.Location = new System.Drawing.Point(0, 23);
-            this.dgvInfoBillDetails.Name = "dgvInfoBillDetails";
-            this.dgvInfoBillDetails.RowHeadersWidth = 51;
-            this.dgvInfoBillDetails.RowTemplate.Height = 24;
-            this.dgvInfoBillDetails.Size = new System.Drawing.Size(261, 315);
-            this.dgvInfoBillDetails.TabIndex = 0;
-            // 
             // lInfoBillDetails
             // 
             this.lInfoBillDetails.Dock = System.Windows.Forms.DockStyle.Top;
@@ -941,6 +828,188 @@
             this.lInfoBillDetails.Size = new System.Drawing.Size(261, 23);
             this.lInfoBillDetails.TabIndex = 0;
             this.lInfoBillDetails.Text = "Chi tiết đơn mua:";
+            // 
+            // pInfoBillTotalContainer
+            // 
+            this.pInfoBillTotalContainer.Controls.Add(this.pInfoBillTotalPrice);
+            this.pInfoBillTotalContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pInfoBillTotalContainer.Location = new System.Drawing.Point(3, 530);
+            this.pInfoBillTotalContainer.Name = "pInfoBillTotalContainer";
+            this.pInfoBillTotalContainer.Padding = new System.Windows.Forms.Padding(10);
+            this.pInfoBillTotalContainer.Size = new System.Drawing.Size(269, 80);
+            this.pInfoBillTotalContainer.TabIndex = 1;
+            // 
+            // pInfoBillTotalPrice
+            // 
+            this.pInfoBillTotalPrice.Controls.Add(this.txtInfoBillTotalPrice);
+            this.pInfoBillTotalPrice.Controls.Add(this.lInfoBillTotalPrice);
+            this.pInfoBillTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pInfoBillTotalPrice.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.pInfoBillTotalPrice.Location = new System.Drawing.Point(10, 10);
+            this.pInfoBillTotalPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 6);
+            this.pInfoBillTotalPrice.Name = "pInfoBillTotalPrice";
+            this.pInfoBillTotalPrice.Size = new System.Drawing.Size(249, 60);
+            this.pInfoBillTotalPrice.TabIndex = 0;
+            // 
+            // txtInfoBillTotalPrice
+            // 
+            this.txtInfoBillTotalPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtInfoBillTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInfoBillTotalPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInfoBillTotalPrice.Location = new System.Drawing.Point(0, 30);
+            this.txtInfoBillTotalPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtInfoBillTotalPrice.MaxLength = 50;
+            this.txtInfoBillTotalPrice.Name = "txtInfoBillTotalPrice";
+            this.txtInfoBillTotalPrice.ReadOnly = true;
+            this.txtInfoBillTotalPrice.Size = new System.Drawing.Size(249, 30);
+            this.txtInfoBillTotalPrice.TabIndex = 0;
+            this.txtInfoBillTotalPrice.Text = "12.000.000";
+            this.txtInfoBillTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lInfoBillTotalPrice
+            // 
+            this.lInfoBillTotalPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lInfoBillTotalPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lInfoBillTotalPrice.ForeColor = System.Drawing.Color.Black;
+            this.lInfoBillTotalPrice.Location = new System.Drawing.Point(0, 0);
+            this.lInfoBillTotalPrice.Name = "lInfoBillTotalPrice";
+            this.lInfoBillTotalPrice.Size = new System.Drawing.Size(249, 30);
+            this.lInfoBillTotalPrice.TabIndex = 0;
+            this.lInfoBillTotalPrice.Text = "Tổng tiền (VND):";
+            this.lInfoBillTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tsmiFile
+            // 
+            this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiFileExportExcel,
+            this.tsmiFileExit});
+            this.tsmiFile.Name = "tsmiFile";
+            this.tsmiFile.Size = new System.Drawing.Size(46, 24);
+            this.tsmiFile.Text = "File";
+            // 
+            // tsmiFileExportExcel
+            // 
+            this.tsmiFileExportExcel.Name = "tsmiFileExportExcel";
+            this.tsmiFileExportExcel.Size = new System.Drawing.Size(160, 26);
+            this.tsmiFileExportExcel.Text = "Xuất Excel";
+            // 
+            // tsmiFileExit
+            // 
+            this.tsmiFileExit.Name = "tsmiFileExit";
+            this.tsmiFileExit.Size = new System.Drawing.Size(160, 26);
+            this.tsmiFileExit.Text = "Thoát";
+            // 
+            // tsmiAccount
+            // 
+            this.tsmiAccount.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAccountLogout});
+            this.tsmiAccount.Name = "tsmiAccount";
+            this.tsmiAccount.Size = new System.Drawing.Size(85, 24);
+            this.tsmiAccount.Text = "Tài khoản";
+            // 
+            // tsmiAccountLogout
+            // 
+            this.tsmiAccountLogout.Name = "tsmiAccountLogout";
+            this.tsmiAccountLogout.Size = new System.Drawing.Size(160, 26);
+            this.tsmiAccountLogout.Text = "Đăng xuất";
+            // 
+            // msMain
+            // 
+            this.msMain.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiFile,
+            this.tsmiAccount});
+            this.msMain.Location = new System.Drawing.Point(0, 0);
+            this.msMain.Name = "msMain";
+            this.msMain.Size = new System.Drawing.Size(1000, 28);
+            this.msMain.TabIndex = 1;
+            this.msMain.Text = "menuStrip1";
+            // 
+            // dgvHistory
+            // 
+            this.dgvHistory.AllowUserToAddRows = false;
+            this.dgvHistory.AllowUserToDeleteRows = false;
+            this.dgvHistory.AllowUserToResizeRows = false;
+            this.dgvHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistory.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHistory.Location = new System.Drawing.Point(3, 30);
+            this.dgvHistory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvHistory.MultiSelect = false;
+            this.dgvHistory.Name = "dgvHistory";
+            this.dgvHistory.ReadOnly = true;
+            this.dgvHistory.RowHeadersVisible = false;
+            this.dgvHistory.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistory.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvHistory.RowTemplate.Height = 24;
+            this.dgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHistory.Size = new System.Drawing.Size(557, 448);
+            this.dgvHistory.TabIndex = 5;
+            // 
+            // dgvInfoBillDetails
+            // 
+            this.dgvInfoBillDetails.AllowUserToAddRows = false;
+            this.dgvInfoBillDetails.AllowUserToDeleteRows = false;
+            this.dgvInfoBillDetails.AllowUserToResizeRows = false;
+            this.dgvInfoBillDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvInfoBillDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInfoBillDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvInfoBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInfoBillDetails.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvInfoBillDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvInfoBillDetails.Location = new System.Drawing.Point(0, 23);
+            this.dgvInfoBillDetails.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvInfoBillDetails.MultiSelect = false;
+            this.dgvInfoBillDetails.Name = "dgvInfoBillDetails";
+            this.dgvInfoBillDetails.ReadOnly = true;
+            this.dgvInfoBillDetails.RowHeadersVisible = false;
+            this.dgvInfoBillDetails.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInfoBillDetails.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvInfoBillDetails.RowTemplate.Height = 24;
+            this.dgvInfoBillDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInfoBillDetails.Size = new System.Drawing.Size(261, 315);
+            this.dgvInfoBillDetails.TabIndex = 6;
             // 
             // fCustomer
             // 
@@ -963,21 +1032,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
             this.tabProfiles.ResumeLayout(false);
             this.tabProfiles.PerformLayout();
-            this.tabHistory.ResumeLayout(false);
-            this.scHistory.Panel1.ResumeLayout(false);
-            this.scHistory.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.scHistory)).EndInit();
-            this.scHistory.ResumeLayout(false);
-            this.gbHistory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
-            this.pBillSearchBar.ResumeLayout(false);
-            this.pCustomerIDSearch.ResumeLayout(false);
-            this.pCustomerIDSearch.PerformLayout();
-            this.pCustomerPurchaseDate.ResumeLayout(false);
-            this.msMain.ResumeLayout(false);
-            this.msMain.PerformLayout();
             this.gbProfile.ResumeLayout(false);
-            this.tlpActionButtons.ResumeLayout(false);
             this.flpProfile.ResumeLayout(false);
             this.pProfileName.ResumeLayout(false);
             this.pProfileName.PerformLayout();
@@ -985,10 +1040,18 @@
             this.pProfilePhoneNumber.ResumeLayout(false);
             this.pProfilePhoneNumber.PerformLayout();
             this.pProfileAddress.ResumeLayout(false);
+            this.tlpActionButtons.ResumeLayout(false);
+            this.tabHistory.ResumeLayout(false);
+            this.scHistory.Panel1.ResumeLayout(false);
+            this.scHistory.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scHistory)).EndInit();
+            this.scHistory.ResumeLayout(false);
+            this.gbHistory.ResumeLayout(false);
+            this.pBillSearchBar.ResumeLayout(false);
+            this.pCustomerIDSearch.ResumeLayout(false);
+            this.pCustomerIDSearch.PerformLayout();
+            this.pCustomerPurchaseDate.ResumeLayout(false);
             this.gbBillInfo.ResumeLayout(false);
-            this.pInfoBillTotalContainer.ResumeLayout(false);
-            this.pInfoBillTotalPrice.ResumeLayout(false);
-            this.pInfoBillTotalPrice.PerformLayout();
             this.flpInfoBill.ResumeLayout(false);
             this.pInfoBillID.ResumeLayout(false);
             this.pInfoBillID.PerformLayout();
@@ -996,6 +1059,12 @@
             this.pInfoBillEmployeeName.PerformLayout();
             this.pInfoBillDate.ResumeLayout(false);
             this.pInfoBillDetails.ResumeLayout(false);
+            this.pInfoBillTotalContainer.ResumeLayout(false);
+            this.pInfoBillTotalPrice.ResumeLayout(false);
+            this.pInfoBillTotalPrice.PerformLayout();
+            this.msMain.ResumeLayout(false);
+            this.msMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoBillDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1017,7 +1086,6 @@
         private System.Windows.Forms.Panel pControl;
         private System.Windows.Forms.SplitContainer scHistory;
         private System.Windows.Forms.GroupBox gbHistory;
-        private System.Windows.Forms.DataGridView dgvHistory;
         private System.Windows.Forms.Panel pBillSearchBar;
         private System.Windows.Forms.Panel pCustomerPurchaseDate;
         private System.Windows.Forms.TextBox txtBillIDSearch;
@@ -1063,12 +1131,13 @@
         private System.Windows.Forms.DateTimePicker dtpInfoBillDate;
         private System.Windows.Forms.Label lInfoBillDate;
         private System.Windows.Forms.Panel pInfoBillDetails;
-        private System.Windows.Forms.DataGridView dgvInfoBillDetails;
         private System.Windows.Forms.Label lInfoBillDetails;
         private System.Windows.Forms.Panel pInfoBillTotalContainer;
         private System.Windows.Forms.Panel pInfoBillTotalPrice;
         private System.Windows.Forms.TextBox txtInfoBillTotalPrice;
         private System.Windows.Forms.Label lInfoBillTotalPrice;
+        private System.Windows.Forms.DataGridView dgvHistory;
+        private System.Windows.Forms.DataGridView dgvInfoBillDetails;
     }
 }
 
