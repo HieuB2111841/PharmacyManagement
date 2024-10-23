@@ -1,7 +1,9 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace QLNhaThuoc
 {
@@ -24,7 +26,7 @@ namespace QLNhaThuoc
         private string _server = "localhost";
         private string _database = "quanlynhathuoc";
         private string _uid = "root";
-        private string _password = "";
+        private string _password = "Hieub2111841";
 
         /// <summary>
         ///     Tránh khởi tạo đối tượng MyPublics ở nơi khác
@@ -60,10 +62,7 @@ namespace QLNhaThuoc
             DataTable dtTable = new DataTable();
             try
             {
-                if (_sqlConnection.State == ConnectionState.Closed)
-                {
-                    _sqlConnection.Open();
-                }
+                this.OpenConnection();
 
                 using (MySqlCommand cmd = new MySqlCommand(strSelect, _sqlConnection))
                 {
@@ -84,6 +83,35 @@ namespace QLNhaThuoc
             return dtTable;
         }
 
+        public DataTable GetDataWithParameter(string strSelect, string value)
+            => GetDataWithParameter(strSelect, value, out string _);
+        public DataTable GetDataWithParameter(string strSelect, string value, out string message)
+        {
+            DataTable dtTable = new DataTable();
+            try
+            {
+                this.OpenConnection();
+
+                using (MySqlCommand cmd = new MySqlCommand(strSelect, _sqlConnection))
+                {
+                    cmd.Parameters.AddWithValue("@Value", value);
+                    using (MySqlDataAdapter daDataAdapter = new MySqlDataAdapter(cmd))
+                    {
+                        daDataAdapter.Fill(dtTable);
+                    }
+                }
+
+                message = "Success";
+                _sqlConnection.Close();
+            }
+            catch (Exception e)
+            {
+                message = "Error: " + e.Message;
+            }
+
+            return dtTable;
+        }
+
 
         public DataSet GetDataSet(string strSelect, string strTableName)
             => GetDataSet(strSelect, strTableName, out string _);
@@ -92,10 +120,7 @@ namespace QLNhaThuoc
             DataSet dsDatabase = new DataSet();
             try
             {
-                if (_sqlConnection.State == ConnectionState.Closed)
-                {
-                    _sqlConnection.Open();
-                }
+                this.OpenConnection();
 
                 using (MySqlCommand cmd = new MySqlCommand(strSelect, _sqlConnection))
                 {
@@ -121,10 +146,7 @@ namespace QLNhaThuoc
             bool isExist = false;
             try
             {
-                if (_sqlConnection.State == ConnectionState.Closed)
-                {
-                    _sqlConnection.Open();
-                }
+                this.OpenConnection();
 
                 string sqlSelect = $"SELECT 1 FROM {tableName} WHERE {fieldName} = @Value";
                 using (MySqlCommand cmdCommand = new MySqlCommand(sqlSelect, _sqlConnection))
@@ -144,6 +166,44 @@ namespace QLNhaThuoc
             catch (Exception) { }
 
             return isExist;
+        }
+
+        public DataTable CallProcedure(string procedureName)
+            => CallProcedure(procedureName, out string _);
+        public DataTable CallProcedure(string procedureName, out string message)
+        {
+            DataTable dtTable = new DataTable();
+            try
+            {
+                this.OpenConnection();
+
+                using (MySqlCommand cmd = new MySqlCommand(procedureName, _sqlConnection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    using (MySqlDataAdapter daDataAdapter = new MySqlDataAdapter(cmd))
+                    {
+                        daDataAdapter.Fill(dtTable);
+                    }
+                }
+
+                message = "Success";
+                _sqlConnection.Close();
+            }
+            catch (Exception e)
+            {
+                message = "Error: " + e.Message;
+            }
+
+            return dtTable;
+        }
+
+
+        private void OpenConnection()
+        {
+            if (_sqlConnection.State == ConnectionState.Closed)
+            {
+                _sqlConnection.Open();
+            }
         }
     }
 }
