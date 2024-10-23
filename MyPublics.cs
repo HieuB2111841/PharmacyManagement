@@ -56,8 +56,7 @@ namespace QLNhaThuoc
         }
 
 
-        public DataTable GetData(string strSelect) => GetData(strSelect, out string _);
-        public DataTable GetData(string strSelect, out string message)
+        public DataTable GetData(string strSelect, params (string, string)[] parameters)
         {
             DataTable dtTable = new DataTable();
             try
@@ -66,48 +65,19 @@ namespace QLNhaThuoc
 
                 using (MySqlCommand cmd = new MySqlCommand(strSelect, _sqlConnection))
                 {
+                    foreach ((string, string) parameter in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(parameter.Item1, parameter.Item2);
+                    }
                     using (MySqlDataAdapter daDataAdapter = new MySqlDataAdapter(cmd))
                     {
                         daDataAdapter.Fill(dtTable);
                     }
                 }
 
-                message = "Success";
                 _sqlConnection.Close();
             }
-            catch (Exception e) 
-            {
-                message = "Error: " + e.Message;
-            }
-
-            return dtTable;
-        }
-
-        public DataTable GetDataWithParameter(string strSelect, string value)
-            => GetDataWithParameter(strSelect, value, out string _);
-        public DataTable GetDataWithParameter(string strSelect, string value, out string message)
-        {
-            DataTable dtTable = new DataTable();
-            try
-            {
-                this.OpenConnection();
-
-                using (MySqlCommand cmd = new MySqlCommand(strSelect, _sqlConnection))
-                {
-                    cmd.Parameters.AddWithValue("@Value", value);
-                    using (MySqlDataAdapter daDataAdapter = new MySqlDataAdapter(cmd))
-                    {
-                        daDataAdapter.Fill(dtTable);
-                    }
-                }
-
-                message = "Success";
-                _sqlConnection.Close();
-            }
-            catch (Exception e)
-            {
-                message = "Error: " + e.Message;
-            }
+            catch (Exception){ }
 
             return dtTable;
         }
@@ -168,9 +138,8 @@ namespace QLNhaThuoc
             return isExist;
         }
 
-        public DataTable CallProcedure(string procedureName)
-            => CallProcedure(procedureName, out string _);
-        public DataTable CallProcedure(string procedureName, out string message)
+
+        public DataTable CallProcedure(string procedureName, params (string, string)[] parameters)
         {
             DataTable dtTable = new DataTable();
             try
@@ -180,23 +149,25 @@ namespace QLNhaThuoc
                 using (MySqlCommand cmd = new MySqlCommand(procedureName, _sqlConnection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Thêm tham số
+                    foreach ((string, string) parameter in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(parameter.Item1, parameter.Item2);
+                    }
+
                     using (MySqlDataAdapter daDataAdapter = new MySqlDataAdapter(cmd))
                     {
                         daDataAdapter.Fill(dtTable);
                     }
                 }
 
-                message = "Success";
                 _sqlConnection.Close();
             }
-            catch (Exception e)
-            {
-                message = "Error: " + e.Message;
-            }
+            catch (Exception) { }
 
             return dtTable;
         }
-
 
         private void OpenConnection()
         {
