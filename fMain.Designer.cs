@@ -367,6 +367,7 @@
             this.tabMedicines.Size = new System.Drawing.Size(842, 614);
             this.tabMedicines.TabIndex = 0;
             this.tabMedicines.Text = "Thuốc";
+            this.tabMedicines.Enter += new System.EventHandler(this.tabMedicines_Enter);
             // 
             // scMedicines
             // 
@@ -413,6 +414,7 @@
             this.dgvMedicines.RowTemplate.Height = 24;
             this.dgvMedicines.Size = new System.Drawing.Size(557, 443);
             this.dgvMedicines.TabIndex = 3;
+            this.dgvMedicines.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicines_RowEnter);
             // 
             // pMedicineSearch
             // 
