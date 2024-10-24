@@ -1,4 +1,5 @@
 ﻿using Google.Protobuf.WellKnownTypes;
+using QLNhaThuoc.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -86,6 +87,12 @@ namespace QLNhaThuoc
 
             }
         }
+
+        private void btnMedicineSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
 
         #region Customers Tab
@@ -102,7 +109,6 @@ namespace QLNhaThuoc
             {
                 dgvCustomers.DataSource = customerTable;
                 dgvCustomers.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvCustomers.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
             }
             else
             {
@@ -144,13 +150,87 @@ namespace QLNhaThuoc
                 else
                 {
                     dtpCustomerBirthday.Text = row.Cells[2].Value.ToString();
-                    dtpCustomerBirthday.CustomFormat = "dd/MM/yyyy";
                 }
 
                 DataTable historyTable = MyPublics.Instance.CallProcedure("usp_lichSuMuaCuaKhachHang", ("@in_MaKhachHang", txtCustomerID.Text));
                 dgvCustomerHistoryPurchases.DataSource = historyTable;
             }
         }
+
+        private void dgvCustomerHistoryPurchases_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Format cột tổng tiền
+            if (e.ColumnIndex == 2)
+            {
+                e.Value = StringUtils.FormatNumber(e.Value.ToString());
+            }
+        }
+
+        #endregion
+
+        #region Imports Tab
+        private void tabImports_Enter(object sender, EventArgs e)
+        {
+            if (dvgImports.DataSource != null) return;
+
+            DataTable medicinesTable = MyPublics.Instance.CallProcedure("usp_hienThiDanhSachPhieuNhap",
+                ("@in_count", "20"),
+                ("@in_offset", "0"));
+
+            if (medicinesTable.Rows.Count > 0)
+            {
+                dvgImports.DataSource = medicinesTable;
+                dvgImports.Columns[4].Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("no data");
+            }
+        }
+
+        private void dvgImports_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            
+        }
+
+        private void dvgImports_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            // Kiểm tra xem hàng và cột có hợp lệ không
+            if (e.RowIndex >= 0)
+            {
+                // Lấy DataGridViewRow của hàng được chọn
+                DataGridViewRow row = dvgImports.Rows[e.RowIndex];
+
+                txtImportID.Text = row.Cells[0].Value.ToString();
+                txtImportEmployeeID.Text = row.Cells[1].Value.ToString();
+                txtImportSupplierID.Text = row.Cells[2].Value.ToString();
+                dtpImportDate.Text = row.Cells[3].Value.ToString();
+
+                DataTable detailsTable = MyPublics.Instance.CallProcedure("usp_hienThiChiTietPhieuNhap", ("@in_MaPhieuNhap", txtImportID.Text));
+                dgvImportDetails.DataSource = detailsTable;
+                dgvImportDetails.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                txtImportTotalPrice.Text = StringUtils.FormatNumber(row.Cells[4].Value.ToString());
+            }
+        }
+
+        private void dgvImportDetails_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvImportDetails.Rows[e.RowIndex];
+
+            txtImportDetailsMedicineName.Text = row.Cells[1].Value.ToString();
+            txtImportDetailsMedicineQuantity.Text = row.Cells[2].Value.ToString();
+            txtImportDetailsMedicinePrice.Text = StringUtils.FormatNumber(row.Cells[3].Value.ToString());
+        }
+        private void dgvImportDetails_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Format cột tổng tiền
+            if (e.ColumnIndex == 3)
+            {
+                e.Value = StringUtils.FormatNumber(e.Value.ToString());
+            }
+        }
+
         #endregion
 
 
