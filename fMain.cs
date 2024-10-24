@@ -208,7 +208,17 @@ namespace QLNhaThuoc
 
                 DataTable detailsTable = MyPublics.Instance.CallProcedure("usp_hienThiChiTietPhieuNhap", ("@in_MaPhieuNhap", txtImportID.Text));
                 dgvImportDetails.DataSource = detailsTable;
+
+                // Cột tên thuốc chiếm phần còn lại của view
                 dgvImportDetails.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                // Không có dữ liệu trong phiếu nhập
+                if (dgvImportDetails.Rows.Count <= 0)
+                {
+                    txtImportDetailsMedicineName.Text = string.Empty;
+                    txtImportDetailsMedicineQuantity.Text = string.Empty;
+                    txtImportDetailsMedicinePrice.Text = string.Empty;
+                }
 
                 txtImportTotalPrice.Text = StringUtils.FormatNumber(row.Cells[4].Value.ToString());
             }
@@ -233,6 +243,87 @@ namespace QLNhaThuoc
 
         #endregion
 
+        #region Bills Tab
+        private void tabBills_Enter(object sender, EventArgs e)
+        {
+            if (dgvBills.DataSource != null) return;
 
+            DataTable billsTable = MyPublics.Instance.CallProcedure("usp_hienThiDanhSachPhieuXuat",
+                ("@in_count", "20"),
+                ("@in_offset", "0"));
+
+            if (billsTable.Rows.Count > 0)
+            {
+                dgvBills.DataSource = billsTable;
+                dgvBills.Columns[4].Visible = false;
+            }
+            else
+            {
+                txtBillID.Text = string.Empty;
+                txtBillEmployeeID.Text = string.Empty;
+                txtBillCustomerID.Text = string.Empty;
+                dtpBillDate.Text = string.Empty;
+                
+                MessageBox.Show("no data");
+            }
+        }
+
+        private void dgvBills_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            // Kiểm tra xem hàng và cột có hợp lệ không
+            if (e.RowIndex >= 0)
+            {
+                // Lấy DataGridViewRow của hàng được chọn
+                DataGridViewRow row = dgvBills.Rows[e.RowIndex];
+
+                txtBillID.Text = row.Cells[0].Value.ToString();
+                txtBillEmployeeID.Text = row.Cells[1].Value.ToString();
+                txtBillCustomerID.Text = row.Cells[2].Value.ToString();
+                dtpBillDate.Text = row.Cells[3].Value.ToString();
+
+                DataTable detailsTable = MyPublics.Instance.CallProcedure("usp_hienThiChiTietPhieuXuat", ("@in_MaPhieuXuat", txtBillID.Text));
+                dgvBillDetails.DataSource = detailsTable;
+
+                // Cột tên thuốc chiếm phần còn lại của view
+                dgvBillDetails.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                // Không có dữ liệu trong hóa đơn
+                if (detailsTable.Rows.Count <= 0)
+                {
+                    txtBillDetailsMedicineName.Text = string.Empty;
+                    txtBillDetailsMedicineQuantity.Text = string.Empty;
+                    txtBillDetailsMedicinePrice.Text = string.Empty;
+                }
+
+
+                txtBillTotalPrice.Text = StringUtils.FormatNumber(row.Cells[4].Value.ToString());
+            }
+            
+        }
+
+        private void dgvBillDetails_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Format cột đơn giá
+            if (e.ColumnIndex == 3)
+            {
+                e.Value = StringUtils.FormatNumber(e.Value.ToString());
+            }
+        }
+
+        private void dgvBillDetails_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            // Kiểm tra xem hàng và cột có hợp lệ không
+            if (e.RowIndex >= 0)
+            {
+                // Lấy DataGridViewRow của hàng được chọn
+                DataGridViewRow row = dgvBillDetails.Rows[e.RowIndex];
+
+                txtBillDetailsMedicineName.Text = row.Cells[1].Value.ToString();
+                txtBillDetailsMedicineQuantity.Text = row.Cells[2].Value.ToString();
+                txtBillDetailsMedicinePrice.Text = StringUtils.FormatNumber(row.Cells[3].Value.ToString());
+            }
+        }
+
+        #endregion
     }
 }
