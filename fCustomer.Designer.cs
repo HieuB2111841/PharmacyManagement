@@ -65,6 +65,7 @@
             this.tabHistory = new System.Windows.Forms.TabPage();
             this.scHistory = new System.Windows.Forms.SplitContainer();
             this.gbHistory = new System.Windows.Forms.GroupBox();
+            this.dgvHistory = new System.Windows.Forms.DataGridView();
             this.pBillSearchBar = new System.Windows.Forms.Panel();
             this.pCustomerIDSearch = new System.Windows.Forms.Panel();
             this.lBillID = new System.Windows.Forms.Label();
@@ -81,12 +82,13 @@
             this.txtInfoBillID = new System.Windows.Forms.TextBox();
             this.lInfoBillID = new System.Windows.Forms.Label();
             this.pInfoBillEmployeeName = new System.Windows.Forms.Panel();
-            this.txtBillEmployeeName = new System.Windows.Forms.TextBox();
+            this.txtInfoBillEmployeeName = new System.Windows.Forms.TextBox();
             this.lInfoBillEmployeeName = new System.Windows.Forms.Label();
             this.pInfoBillDate = new System.Windows.Forms.Panel();
             this.dtpInfoBillDate = new System.Windows.Forms.DateTimePicker();
             this.lInfoBillDate = new System.Windows.Forms.Label();
             this.pInfoBillDetails = new System.Windows.Forms.Panel();
+            this.dgvInfoBillDetails = new System.Windows.Forms.DataGridView();
             this.lInfoBillDetails = new System.Windows.Forms.Label();
             this.pInfoBillTotalContainer = new System.Windows.Forms.Panel();
             this.pInfoBillTotalPrice = new System.Windows.Forms.Panel();
@@ -98,8 +100,6 @@
             this.tsmiAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAccountLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.msMain = new System.Windows.Forms.MenuStrip();
-            this.dgvHistory = new System.Windows.Forms.DataGridView();
-            this.dgvInfoBillDetails = new System.Windows.Forms.DataGridView();
             this.tcMain.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.pHomeCaption.SuspendLayout();
@@ -118,6 +118,7 @@
             this.scHistory.Panel2.SuspendLayout();
             this.scHistory.SuspendLayout();
             this.gbHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
             this.pBillSearchBar.SuspendLayout();
             this.pCustomerIDSearch.SuspendLayout();
             this.pCustomerPurchaseDate.SuspendLayout();
@@ -127,11 +128,10 @@
             this.pInfoBillEmployeeName.SuspendLayout();
             this.pInfoBillDate.SuspendLayout();
             this.pInfoBillDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoBillDetails)).BeginInit();
             this.pInfoBillTotalContainer.SuspendLayout();
             this.pInfoBillTotalPrice.SuspendLayout();
             this.msMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoBillDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // tcMain
@@ -167,6 +167,7 @@
             this.tabHome.TabIndex = 2;
             this.tabHome.Text = "Trang chủ";
             this.tabHome.UseVisualStyleBackColor = true;
+            this.tabHome.Enter += new System.EventHandler(this.tabHome_Enter);
             // 
             // pHomeCaption
             // 
@@ -229,6 +230,7 @@
             this.tabProfiles.Size = new System.Drawing.Size(842, 614);
             this.tabProfiles.TabIndex = 0;
             this.tabProfiles.Text = "Thông tin cá nhân";
+            this.tabProfiles.Enter += new System.EventHandler(this.tabProfiles_Enter);
             // 
             // gbProfile
             // 
@@ -335,7 +337,7 @@
             this.dtpProfileBirthday.Name = "dtpProfileBirthday";
             this.dtpProfileBirthday.Size = new System.Drawing.Size(364, 30);
             this.dtpProfileBirthday.TabIndex = 1;
-            this.dtpProfileBirthday.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            this.dtpProfileBirthday.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // pProfilePhoneNumber
             // 
@@ -504,6 +506,7 @@
             this.tabHistory.TabIndex = 3;
             this.tabHistory.Text = "Lịch sử mua thuốc";
             this.tabHistory.UseVisualStyleBackColor = true;
+            this.tabHistory.Enter += new System.EventHandler(this.tabHistory_Enter);
             // 
             // scHistory
             // 
@@ -537,6 +540,51 @@
             this.gbHistory.TabIndex = 2;
             this.gbHistory.TabStop = false;
             this.gbHistory.Text = "Lịch sử";
+            // 
+            // dgvHistory
+            // 
+            this.dgvHistory.AllowUserToAddRows = false;
+            this.dgvHistory.AllowUserToDeleteRows = false;
+            this.dgvHistory.AllowUserToResizeRows = false;
+            this.dgvHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistory.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHistory.Location = new System.Drawing.Point(3, 30);
+            this.dgvHistory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvHistory.MultiSelect = false;
+            this.dgvHistory.Name = "dgvHistory";
+            this.dgvHistory.ReadOnly = true;
+            this.dgvHistory.RowHeadersVisible = false;
+            this.dgvHistory.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistory.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvHistory.RowTemplate.Height = 24;
+            this.dgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHistory.Size = new System.Drawing.Size(557, 448);
+            this.dgvHistory.TabIndex = 5;
+            this.dgvHistory.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHistory_CellFormatting);
+            this.dgvHistory.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistory_RowEnter);
             // 
             // pBillSearchBar
             // 
@@ -683,8 +731,8 @@
             // flpInfoBill
             // 
             this.flpInfoBill.Controls.Add(this.pInfoBillID);
-            this.flpInfoBill.Controls.Add(this.pInfoBillEmployeeName);
             this.flpInfoBill.Controls.Add(this.pInfoBillDate);
+            this.flpInfoBill.Controls.Add(this.pInfoBillEmployeeName);
             this.flpInfoBill.Controls.Add(this.pInfoBillDetails);
             this.flpInfoBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpInfoBill.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -732,27 +780,27 @@
             // 
             // pInfoBillEmployeeName
             // 
-            this.pInfoBillEmployeeName.Controls.Add(this.txtBillEmployeeName);
+            this.pInfoBillEmployeeName.Controls.Add(this.txtInfoBillEmployeeName);
             this.pInfoBillEmployeeName.Controls.Add(this.lInfoBillEmployeeName);
             this.pInfoBillEmployeeName.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.pInfoBillEmployeeName.Location = new System.Drawing.Point(3, 44);
+            this.pInfoBillEmployeeName.Location = new System.Drawing.Point(3, 84);
             this.pInfoBillEmployeeName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 6);
             this.pInfoBillEmployeeName.Name = "pInfoBillEmployeeName";
             this.pInfoBillEmployeeName.Size = new System.Drawing.Size(261, 30);
             this.pInfoBillEmployeeName.TabIndex = 1;
             // 
-            // txtBillEmployeeName
+            // txtInfoBillEmployeeName
             // 
-            this.txtBillEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBillEmployeeName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBillEmployeeName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBillEmployeeName.Location = new System.Drawing.Point(127, 0);
-            this.txtBillEmployeeName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBillEmployeeName.MaxLength = 100;
-            this.txtBillEmployeeName.Name = "txtBillEmployeeName";
-            this.txtBillEmployeeName.ReadOnly = true;
-            this.txtBillEmployeeName.Size = new System.Drawing.Size(134, 30);
-            this.txtBillEmployeeName.TabIndex = 0;
+            this.txtInfoBillEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtInfoBillEmployeeName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInfoBillEmployeeName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInfoBillEmployeeName.Location = new System.Drawing.Point(127, 0);
+            this.txtInfoBillEmployeeName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtInfoBillEmployeeName.MaxLength = 100;
+            this.txtInfoBillEmployeeName.Name = "txtInfoBillEmployeeName";
+            this.txtInfoBillEmployeeName.ReadOnly = true;
+            this.txtInfoBillEmployeeName.Size = new System.Drawing.Size(134, 30);
+            this.txtInfoBillEmployeeName.TabIndex = 0;
             // 
             // lInfoBillEmployeeName
             // 
@@ -771,7 +819,7 @@
             this.pInfoBillDate.Controls.Add(this.dtpInfoBillDate);
             this.pInfoBillDate.Controls.Add(this.lInfoBillDate);
             this.pInfoBillDate.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.pInfoBillDate.Location = new System.Drawing.Point(3, 84);
+            this.pInfoBillDate.Location = new System.Drawing.Point(3, 44);
             this.pInfoBillDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 6);
             this.pInfoBillDate.Name = "pInfoBillDate";
             this.pInfoBillDate.Size = new System.Drawing.Size(261, 30);
@@ -817,6 +865,50 @@
             this.pInfoBillDetails.Name = "pInfoBillDetails";
             this.pInfoBillDetails.Size = new System.Drawing.Size(261, 338);
             this.pInfoBillDetails.TabIndex = 3;
+            // 
+            // dgvInfoBillDetails
+            // 
+            this.dgvInfoBillDetails.AllowUserToAddRows = false;
+            this.dgvInfoBillDetails.AllowUserToDeleteRows = false;
+            this.dgvInfoBillDetails.AllowUserToResizeRows = false;
+            this.dgvInfoBillDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvInfoBillDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInfoBillDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvInfoBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInfoBillDetails.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvInfoBillDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvInfoBillDetails.Location = new System.Drawing.Point(0, 23);
+            this.dgvInfoBillDetails.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvInfoBillDetails.MultiSelect = false;
+            this.dgvInfoBillDetails.Name = "dgvInfoBillDetails";
+            this.dgvInfoBillDetails.ReadOnly = true;
+            this.dgvInfoBillDetails.RowHeadersVisible = false;
+            this.dgvInfoBillDetails.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInfoBillDetails.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvInfoBillDetails.RowTemplate.Height = 24;
+            this.dgvInfoBillDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInfoBillDetails.Size = new System.Drawing.Size(261, 315);
+            this.dgvInfoBillDetails.TabIndex = 6;
+            this.dgvInfoBillDetails.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvInfoBillDetails_CellFormatting);
             // 
             // lInfoBillDetails
             // 
@@ -890,14 +982,15 @@
             // tsmiFileExportExcel
             // 
             this.tsmiFileExportExcel.Name = "tsmiFileExportExcel";
-            this.tsmiFileExportExcel.Size = new System.Drawing.Size(160, 26);
+            this.tsmiFileExportExcel.Size = new System.Drawing.Size(224, 26);
             this.tsmiFileExportExcel.Text = "Xuất Excel";
             // 
             // tsmiFileExit
             // 
             this.tsmiFileExit.Name = "tsmiFileExit";
-            this.tsmiFileExit.Size = new System.Drawing.Size(160, 26);
+            this.tsmiFileExit.Size = new System.Drawing.Size(224, 26);
             this.tsmiFileExit.Text = "Thoát";
+            this.tsmiFileExit.Click += new System.EventHandler(this.tsmiFileExit_Click);
             // 
             // tsmiAccount
             // 
@@ -925,92 +1018,6 @@
             this.msMain.TabIndex = 1;
             this.msMain.Text = "menuStrip1";
             // 
-            // dgvHistory
-            // 
-            this.dgvHistory.AllowUserToAddRows = false;
-            this.dgvHistory.AllowUserToDeleteRows = false;
-            this.dgvHistory.AllowUserToResizeRows = false;
-            this.dgvHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Aquamarine;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Aquamarine;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistory.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHistory.Location = new System.Drawing.Point(3, 30);
-            this.dgvHistory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvHistory.MultiSelect = false;
-            this.dgvHistory.Name = "dgvHistory";
-            this.dgvHistory.ReadOnly = true;
-            this.dgvHistory.RowHeadersVisible = false;
-            this.dgvHistory.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Aquamarine;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistory.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvHistory.RowTemplate.Height = 24;
-            this.dgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistory.Size = new System.Drawing.Size(557, 448);
-            this.dgvHistory.TabIndex = 5;
-            // 
-            // dgvInfoBillDetails
-            // 
-            this.dgvInfoBillDetails.AllowUserToAddRows = false;
-            this.dgvInfoBillDetails.AllowUserToDeleteRows = false;
-            this.dgvInfoBillDetails.AllowUserToResizeRows = false;
-            this.dgvInfoBillDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvInfoBillDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Aquamarine;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInfoBillDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvInfoBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Aquamarine;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInfoBillDetails.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvInfoBillDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvInfoBillDetails.Location = new System.Drawing.Point(0, 23);
-            this.dgvInfoBillDetails.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvInfoBillDetails.MultiSelect = false;
-            this.dgvInfoBillDetails.Name = "dgvInfoBillDetails";
-            this.dgvInfoBillDetails.ReadOnly = true;
-            this.dgvInfoBillDetails.RowHeadersVisible = false;
-            this.dgvInfoBillDetails.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Aquamarine;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInfoBillDetails.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvInfoBillDetails.RowTemplate.Height = 24;
-            this.dgvInfoBillDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInfoBillDetails.Size = new System.Drawing.Size(261, 315);
-            this.dgvInfoBillDetails.TabIndex = 6;
-            // 
             // fCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -1026,6 +1033,7 @@
             this.Name = "fCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhà thuốc số 8";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fCustomer_FormClosing);
             this.tcMain.ResumeLayout(false);
             this.tabHome.ResumeLayout(false);
             this.pHomeCaption.ResumeLayout(false);
@@ -1047,6 +1055,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.scHistory)).EndInit();
             this.scHistory.ResumeLayout(false);
             this.gbHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
             this.pBillSearchBar.ResumeLayout(false);
             this.pCustomerIDSearch.ResumeLayout(false);
             this.pCustomerIDSearch.PerformLayout();
@@ -1059,13 +1068,12 @@
             this.pInfoBillEmployeeName.PerformLayout();
             this.pInfoBillDate.ResumeLayout(false);
             this.pInfoBillDetails.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoBillDetails)).EndInit();
             this.pInfoBillTotalContainer.ResumeLayout(false);
             this.pInfoBillTotalPrice.ResumeLayout(false);
             this.pInfoBillTotalPrice.PerformLayout();
             this.msMain.ResumeLayout(false);
             this.msMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoBillDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1125,7 +1133,7 @@
         private System.Windows.Forms.TextBox txtInfoBillID;
         private System.Windows.Forms.Label lInfoBillID;
         private System.Windows.Forms.Panel pInfoBillEmployeeName;
-        private System.Windows.Forms.TextBox txtBillEmployeeName;
+        private System.Windows.Forms.TextBox txtInfoBillEmployeeName;
         private System.Windows.Forms.Label lInfoBillEmployeeName;
         private System.Windows.Forms.Panel pInfoBillDate;
         private System.Windows.Forms.DateTimePicker dtpInfoBillDate;
