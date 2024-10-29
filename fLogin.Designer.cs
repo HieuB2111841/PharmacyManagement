@@ -82,7 +82,7 @@
             this.btnLogin.Location = new System.Drawing.Point(91, 365);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(159, 51);
-            this.btnLogin.TabIndex = 3;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -93,7 +93,7 @@
             this.txtAccount.Location = new System.Drawing.Point(204, 260);
             this.txtAccount.Name = "txtAccount";
             this.txtAccount.Size = new System.Drawing.Size(288, 39);
-            this.txtAccount.TabIndex = 4;
+            this.txtAccount.TabIndex = 0;
             // 
             // txtPassword
             // 
@@ -102,7 +102,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(288, 39);
-            this.txtPassword.TabIndex = 5;
+            this.txtPassword.TabIndex = 1;
             // 
             // btnClose
             // 
@@ -112,9 +112,10 @@
             this.btnClose.Location = new System.Drawing.Point(339, 365);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(153, 51);
-            this.btnClose.TabIndex = 6;
+            this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Đóng";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel1
             // 
@@ -139,9 +140,10 @@
             this.linkSignUp.Location = new System.Drawing.Point(346, 433);
             this.linkSignUp.Name = "linkSignUp";
             this.linkSignUp.Size = new System.Drawing.Size(174, 28);
-            this.linkSignUp.TabIndex = 9;
+            this.linkSignUp.TabIndex = 4;
             this.linkSignUp.TabStop = true;
             this.linkSignUp.Text = "đăng ký tài khoản!";
+            this.linkSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSignUp_LinkClicked);
             // 
             // label4
             // 
@@ -164,6 +166,7 @@
             // 
             // fLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
