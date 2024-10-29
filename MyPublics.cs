@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QLNhaThuoc
@@ -26,7 +27,7 @@ namespace QLNhaThuoc
         private string _server = "localhost";
         private string _database = "quanlynhathuoc";
         private string _uid = "root";
-        private string _password = "Hieub2111841";
+        private string _password = "rootpassword";
 
         /// <summary>
         ///     Tránh khởi tạo đối tượng MyPublics ở nơi khác
@@ -175,6 +176,31 @@ namespace QLNhaThuoc
             {
                 _sqlConnection.Open();
             }
+        }
+
+        public T CallFunction<T>(string functionName, params (string, string)[] parameters)
+        {
+            try
+            {
+                T result;
+                this.OpenConnection();
+                string sqlQuery = $"SELECT {functionName}({string.Join(", ", parameters.Select(p => p.Item1))})";
+
+                using (MySqlCommand cmd = new MySqlCommand(sqlQuery, _sqlConnection))
+                {
+                    // Thêm tham số
+                    foreach ((string, string) parameter in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(parameter.Item1, parameter.Item2);
+                    }
+                    result = (T)cmd.ExecuteScalar();
+                }
+                _sqlConnection.Close();
+                return result;
+            }
+            catch (Exception) { }
+
+            return default;
         }
     }
 }
