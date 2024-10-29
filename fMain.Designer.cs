@@ -57,18 +57,19 @@
             this.dgvMedicines = new System.Windows.Forms.DataGridView();
             this.pMedicineSearch = new System.Windows.Forms.Panel();
             this.pMedicineSearchBar = new System.Windows.Forms.Panel();
+            this.btnMedicineResetSearch = new System.Windows.Forms.Button();
             this.btnMedicineSearch = new System.Windows.Forms.Button();
-            this.pMedicineIDSearch = new System.Windows.Forms.Panel();
-            this.txtMedicineIDSearch = new System.Windows.Forms.TextBox();
-            this.lMedicineIDSearch = new System.Windows.Forms.Label();
+            this.pMedicineNameSearch = new System.Windows.Forms.Panel();
+            this.txtMedicineNameSearch = new System.Windows.Forms.TextBox();
+            this.lMedicineNameSearch = new System.Windows.Forms.Label();
             this.pMedicineManufacturerSearch = new System.Windows.Forms.Panel();
             this.txtMedicineManufacturerSearch = new System.Windows.Forms.TextBox();
             this.lMedicineManufacturerSearch = new System.Windows.Forms.Label();
-            this.pMedicineSuppierSearch = new System.Windows.Forms.Panel();
-            this.txtMedicineSuppierSearch = new System.Windows.Forms.TextBox();
-            this.lMedicineSupplier = new System.Windows.Forms.Label();
+            this.pMedicineSupplierSearch = new System.Windows.Forms.Panel();
+            this.txtMedicineSupplierSearch = new System.Windows.Forms.TextBox();
+            this.lMedicineSupplierSearch = new System.Windows.Forms.Label();
             this.pMedicineTypeSearch = new System.Windows.Forms.Panel();
-            this.cbMedicineTypeSearch = new System.Windows.Forms.ComboBox();
+            this.txtMedicineTypeSearch = new System.Windows.Forms.TextBox();
             this.lMedicineTypeSearch = new System.Windows.Forms.Label();
             this.flpMedicineActionButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.btnMedicineAdd = new System.Windows.Forms.Button();
@@ -102,15 +103,16 @@
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.pCustomerSearch = new System.Windows.Forms.Panel();
             this.pCustomerSearchBar = new System.Windows.Forms.Panel();
+            this.btnCustomerResetSearch = new System.Windows.Forms.Button();
             this.btnCustomerSearch = new System.Windows.Forms.Button();
             this.pCustomerPurchaseDate = new System.Windows.Forms.Panel();
+            this.dtpCustomerPurchaseToSearch = new System.Windows.Forms.DateTimePicker();
             this.lCustomerPurchaseTo = new System.Windows.Forms.Label();
-            this.dtpCustomerPurchaseTo = new System.Windows.Forms.DateTimePicker();
-            this.dtpCustomerPurchaseFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtpCustomerPurchaseFromSearch = new System.Windows.Forms.DateTimePicker();
             this.lCustomerPurchaseForm = new System.Windows.Forms.Label();
-            this.pCustomerIDSearch = new System.Windows.Forms.Panel();
-            this.txtCustomerIDSearch = new System.Windows.Forms.TextBox();
-            this.lCustomerID = new System.Windows.Forms.Label();
+            this.pCustomerNameOrPhoneSearch = new System.Windows.Forms.Panel();
+            this.txtCustomerNameOrPhoneSearch = new System.Windows.Forms.TextBox();
+            this.lCustomerNameOrPhone = new System.Windows.Forms.Label();
             this.flpCustomerActionButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCustomerAdd = new System.Windows.Forms.Button();
             this.btnCustomerEdit = new System.Windows.Forms.Button();
@@ -143,18 +145,21 @@
             this.dvgImports = new System.Windows.Forms.DataGridView();
             this.pImportSearch = new System.Windows.Forms.Panel();
             this.pImportSearchBar = new System.Windows.Forms.Panel();
+            this.btnImportResetSearch = new System.Windows.Forms.Button();
             this.pImportDateSearch = new System.Windows.Forms.Panel();
-            this.dtpImportDateSearch = new System.Windows.Forms.DateTimePicker();
+            this.dtpImportDateToSearch = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpImportDateFromSearch = new System.Windows.Forms.DateTimePicker();
             this.lImportDateSearch = new System.Windows.Forms.Label();
-            this.pImportSupplierIDSearch = new System.Windows.Forms.Panel();
-            this.txtSupplierIDSearch = new System.Windows.Forms.TextBox();
-            this.lImportSupplierIDSearch = new System.Windows.Forms.Label();
+            this.pImportSupplierSearch = new System.Windows.Forms.Panel();
+            this.txtImportSupplierSearch = new System.Windows.Forms.TextBox();
+            this.lImportSupplierSearch = new System.Windows.Forms.Label();
             this.pImportIDSearch = new System.Windows.Forms.Panel();
             this.txtImportIDSearch = new System.Windows.Forms.TextBox();
             this.lImportIDSearch = new System.Windows.Forms.Label();
-            this.pImportEmployeeIDSearch = new System.Windows.Forms.Panel();
-            this.txtImportEmployeeIDSearch = new System.Windows.Forms.TextBox();
-            this.lImportEmployeeIDSearch = new System.Windows.Forms.Label();
+            this.pImportEmployeeSearch = new System.Windows.Forms.Panel();
+            this.txtImportEmployeeSearch = new System.Windows.Forms.TextBox();
+            this.lImportEmployeeSearch = new System.Windows.Forms.Label();
             this.btnImportSearch = new System.Windows.Forms.Button();
             this.gbImportDetails = new System.Windows.Forms.GroupBox();
             this.dgvImportDetails = new System.Windows.Forms.DataGridView();
@@ -197,8 +202,11 @@
             this.dgvBills = new System.Windows.Forms.DataGridView();
             this.pBillSearchContent = new System.Windows.Forms.Panel();
             this.pBillSearchBar = new System.Windows.Forms.Panel();
+            this.btnBillResetSearch = new System.Windows.Forms.Button();
             this.pBillDateSearch = new System.Windows.Forms.Panel();
-            this.dtpBillDateSearch = new System.Windows.Forms.DateTimePicker();
+            this.dtpBillDateToSearch = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpBillDateFromSearch = new System.Windows.Forms.DateTimePicker();
             this.lBillDateSearch = new System.Windows.Forms.Label();
             this.pBillCustomerIDSearch = new System.Windows.Forms.Panel();
             this.txtBillCustomerIDSearch = new System.Windows.Forms.TextBox();
@@ -261,9 +269,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicines)).BeginInit();
             this.pMedicineSearch.SuspendLayout();
             this.pMedicineSearchBar.SuspendLayout();
-            this.pMedicineIDSearch.SuspendLayout();
+            this.pMedicineNameSearch.SuspendLayout();
             this.pMedicineManufacturerSearch.SuspendLayout();
-            this.pMedicineSuppierSearch.SuspendLayout();
+            this.pMedicineSupplierSearch.SuspendLayout();
             this.pMedicineTypeSearch.SuspendLayout();
             this.flpMedicineActionButtons.SuspendLayout();
             this.gbDetails.SuspendLayout();
@@ -284,7 +292,7 @@
             this.pCustomerSearch.SuspendLayout();
             this.pCustomerSearchBar.SuspendLayout();
             this.pCustomerPurchaseDate.SuspendLayout();
-            this.pCustomerIDSearch.SuspendLayout();
+            this.pCustomerNameOrPhoneSearch.SuspendLayout();
             this.flpCustomerActionButtons.SuspendLayout();
             this.gbCustomerInfo.SuspendLayout();
             this.flpInfoCustomer.SuspendLayout();
@@ -309,9 +317,9 @@
             this.pImportSearch.SuspendLayout();
             this.pImportSearchBar.SuspendLayout();
             this.pImportDateSearch.SuspendLayout();
-            this.pImportSupplierIDSearch.SuspendLayout();
+            this.pImportSupplierSearch.SuspendLayout();
             this.pImportIDSearch.SuspendLayout();
-            this.pImportEmployeeIDSearch.SuspendLayout();
+            this.pImportEmployeeSearch.SuspendLayout();
             this.gbImportDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportDetails)).BeginInit();
             this.flpImportTotal.SuspendLayout();
@@ -486,10 +494,11 @@
             // 
             // pMedicineSearchBar
             // 
+            this.pMedicineSearchBar.Controls.Add(this.btnMedicineResetSearch);
             this.pMedicineSearchBar.Controls.Add(this.btnMedicineSearch);
-            this.pMedicineSearchBar.Controls.Add(this.pMedicineIDSearch);
+            this.pMedicineSearchBar.Controls.Add(this.pMedicineNameSearch);
             this.pMedicineSearchBar.Controls.Add(this.pMedicineManufacturerSearch);
-            this.pMedicineSearchBar.Controls.Add(this.pMedicineSuppierSearch);
+            this.pMedicineSearchBar.Controls.Add(this.pMedicineSupplierSearch);
             this.pMedicineSearchBar.Controls.Add(this.pMedicineTypeSearch);
             this.pMedicineSearchBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pMedicineSearchBar.Location = new System.Drawing.Point(10, 10);
@@ -497,60 +506,74 @@
             this.pMedicineSearchBar.Size = new System.Drawing.Size(543, 108);
             this.pMedicineSearchBar.TabIndex = 5;
             // 
+            // btnMedicineResetSearch
+            // 
+            this.btnMedicineResetSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMedicineResetSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMedicineResetSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnMedicineResetSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnMedicineResetSearch.Location = new System.Drawing.Point(465, 72);
+            this.btnMedicineResetSearch.Name = "btnMedicineResetSearch";
+            this.btnMedicineResetSearch.Size = new System.Drawing.Size(75, 30);
+            this.btnMedicineResetSearch.TabIndex = 5;
+            this.btnMedicineResetSearch.Text = "Đặt lại";
+            this.btnMedicineResetSearch.UseVisualStyleBackColor = false;
+            this.btnMedicineResetSearch.Click += new System.EventHandler(this.btnMedicineResetSearch_Click);
+            // 
             // btnMedicineSearch
             // 
             this.btnMedicineSearch.BackColor = System.Drawing.Color.Aquamarine;
             this.btnMedicineSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMedicineSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnMedicineSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnMedicineSearch.Location = new System.Drawing.Point(356, 75);
+            this.btnMedicineSearch.Location = new System.Drawing.Point(277, 72);
             this.btnMedicineSearch.Name = "btnMedicineSearch";
-            this.btnMedicineSearch.Size = new System.Drawing.Size(184, 30);
+            this.btnMedicineSearch.Size = new System.Drawing.Size(182, 30);
             this.btnMedicineSearch.TabIndex = 4;
             this.btnMedicineSearch.Text = "Tìm kiếm";
             this.btnMedicineSearch.UseVisualStyleBackColor = false;
             this.btnMedicineSearch.Click += new System.EventHandler(this.btnMedicineSearch_Click);
             // 
-            // pMedicineIDSearch
+            // pMedicineNameSearch
             // 
-            this.pMedicineIDSearch.Controls.Add(this.txtMedicineIDSearch);
-            this.pMedicineIDSearch.Controls.Add(this.lMedicineIDSearch);
-            this.pMedicineIDSearch.Location = new System.Drawing.Point(3, 3);
-            this.pMedicineIDSearch.Name = "pMedicineIDSearch";
-            this.pMedicineIDSearch.Size = new System.Drawing.Size(244, 30);
-            this.pMedicineIDSearch.TabIndex = 0;
+            this.pMedicineNameSearch.Controls.Add(this.txtMedicineNameSearch);
+            this.pMedicineNameSearch.Controls.Add(this.lMedicineNameSearch);
+            this.pMedicineNameSearch.Location = new System.Drawing.Point(3, 3);
+            this.pMedicineNameSearch.Name = "pMedicineNameSearch";
+            this.pMedicineNameSearch.Size = new System.Drawing.Size(268, 30);
+            this.pMedicineNameSearch.TabIndex = 0;
             // 
-            // txtMedicineIDSearch
+            // txtMedicineNameSearch
             // 
-            this.txtMedicineIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMedicineIDSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMedicineIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMedicineIDSearch.Location = new System.Drawing.Point(76, 0);
-            this.txtMedicineIDSearch.Name = "txtMedicineIDSearch";
-            this.txtMedicineIDSearch.Size = new System.Drawing.Size(168, 30);
-            this.txtMedicineIDSearch.TabIndex = 6;
+            this.txtMedicineNameSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMedicineNameSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMedicineNameSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMedicineNameSearch.Location = new System.Drawing.Point(117, 0);
+            this.txtMedicineNameSearch.Name = "txtMedicineNameSearch";
+            this.txtMedicineNameSearch.Size = new System.Drawing.Size(151, 30);
+            this.txtMedicineNameSearch.TabIndex = 0;
             // 
-            // lMedicineIDSearch
+            // lMedicineNameSearch
             // 
-            this.lMedicineIDSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lMedicineIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lMedicineIDSearch.ForeColor = System.Drawing.Color.Black;
-            this.lMedicineIDSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lMedicineIDSearch.Location = new System.Drawing.Point(0, 0);
-            this.lMedicineIDSearch.Margin = new System.Windows.Forms.Padding(3);
-            this.lMedicineIDSearch.Name = "lMedicineIDSearch";
-            this.lMedicineIDSearch.Size = new System.Drawing.Size(76, 30);
-            this.lMedicineIDSearch.TabIndex = 5;
-            this.lMedicineIDSearch.Text = "Mã thuốc";
-            this.lMedicineIDSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lMedicineNameSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lMedicineNameSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lMedicineNameSearch.ForeColor = System.Drawing.Color.Black;
+            this.lMedicineNameSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lMedicineNameSearch.Location = new System.Drawing.Point(0, 0);
+            this.lMedicineNameSearch.Margin = new System.Windows.Forms.Padding(3);
+            this.lMedicineNameSearch.Name = "lMedicineNameSearch";
+            this.lMedicineNameSearch.Size = new System.Drawing.Size(117, 30);
+            this.lMedicineNameSearch.TabIndex = 5;
+            this.lMedicineNameSearch.Text = "Tên thuốc";
+            this.lMedicineNameSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pMedicineManufacturerSearch
             // 
             this.pMedicineManufacturerSearch.Controls.Add(this.txtMedicineManufacturerSearch);
             this.pMedicineManufacturerSearch.Controls.Add(this.lMedicineManufacturerSearch);
-            this.pMedicineManufacturerSearch.Location = new System.Drawing.Point(274, 39);
+            this.pMedicineManufacturerSearch.Location = new System.Drawing.Point(277, 36);
             this.pMedicineManufacturerSearch.Name = "pMedicineManufacturerSearch";
-            this.pMedicineManufacturerSearch.Size = new System.Drawing.Size(266, 30);
+            this.pMedicineManufacturerSearch.Size = new System.Drawing.Size(263, 30);
             this.pMedicineManufacturerSearch.TabIndex = 3;
             // 
             // txtMedicineManufacturerSearch
@@ -558,10 +581,10 @@
             this.txtMedicineManufacturerSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMedicineManufacturerSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMedicineManufacturerSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMedicineManufacturerSearch.Location = new System.Drawing.Point(82, 0);
+            this.txtMedicineManufacturerSearch.Location = new System.Drawing.Point(88, 0);
             this.txtMedicineManufacturerSearch.Name = "txtMedicineManufacturerSearch";
-            this.txtMedicineManufacturerSearch.Size = new System.Drawing.Size(184, 30);
-            this.txtMedicineManufacturerSearch.TabIndex = 6;
+            this.txtMedicineManufacturerSearch.Size = new System.Drawing.Size(175, 30);
+            this.txtMedicineManufacturerSearch.TabIndex = 0;
             // 
             // lMedicineManufacturerSearch
             // 
@@ -571,62 +594,61 @@
             this.lMedicineManufacturerSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lMedicineManufacturerSearch.Location = new System.Drawing.Point(0, 0);
             this.lMedicineManufacturerSearch.Name = "lMedicineManufacturerSearch";
-            this.lMedicineManufacturerSearch.Size = new System.Drawing.Size(82, 30);
+            this.lMedicineManufacturerSearch.Size = new System.Drawing.Size(88, 30);
             this.lMedicineManufacturerSearch.TabIndex = 5;
-            this.lMedicineManufacturerSearch.Text = "Nhà SX";
+            this.lMedicineManufacturerSearch.Text = "Hãng SX";
             this.lMedicineManufacturerSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pMedicineSuppierSearch
+            // pMedicineSupplierSearch
             // 
-            this.pMedicineSuppierSearch.Controls.Add(this.txtMedicineSuppierSearch);
-            this.pMedicineSuppierSearch.Controls.Add(this.lMedicineSupplier);
-            this.pMedicineSuppierSearch.Location = new System.Drawing.Point(3, 39);
-            this.pMedicineSuppierSearch.Name = "pMedicineSuppierSearch";
-            this.pMedicineSuppierSearch.Size = new System.Drawing.Size(244, 30);
-            this.pMedicineSuppierSearch.TabIndex = 2;
+            this.pMedicineSupplierSearch.Controls.Add(this.txtMedicineSupplierSearch);
+            this.pMedicineSupplierSearch.Controls.Add(this.lMedicineSupplierSearch);
+            this.pMedicineSupplierSearch.Location = new System.Drawing.Point(3, 36);
+            this.pMedicineSupplierSearch.Name = "pMedicineSupplierSearch";
+            this.pMedicineSupplierSearch.Size = new System.Drawing.Size(268, 30);
+            this.pMedicineSupplierSearch.TabIndex = 2;
             // 
-            // txtMedicineSuppierSearch
+            // txtMedicineSupplierSearch
             // 
-            this.txtMedicineSuppierSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMedicineSuppierSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMedicineSuppierSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMedicineSuppierSearch.Location = new System.Drawing.Point(76, 0);
-            this.txtMedicineSuppierSearch.Name = "txtMedicineSuppierSearch";
-            this.txtMedicineSuppierSearch.Size = new System.Drawing.Size(168, 30);
-            this.txtMedicineSuppierSearch.TabIndex = 6;
+            this.txtMedicineSupplierSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMedicineSupplierSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMedicineSupplierSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMedicineSupplierSearch.Location = new System.Drawing.Point(117, 0);
+            this.txtMedicineSupplierSearch.Name = "txtMedicineSupplierSearch";
+            this.txtMedicineSupplierSearch.Size = new System.Drawing.Size(151, 30);
+            this.txtMedicineSupplierSearch.TabIndex = 0;
             // 
-            // lMedicineSupplier
+            // lMedicineSupplierSearch
             // 
-            this.lMedicineSupplier.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lMedicineSupplier.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lMedicineSupplier.ForeColor = System.Drawing.Color.Black;
-            this.lMedicineSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lMedicineSupplier.Location = new System.Drawing.Point(0, 0);
-            this.lMedicineSupplier.Name = "lMedicineSupplier";
-            this.lMedicineSupplier.Size = new System.Drawing.Size(76, 30);
-            this.lMedicineSupplier.TabIndex = 5;
-            this.lMedicineSupplier.Text = "Nhà CC";
-            this.lMedicineSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lMedicineSupplierSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lMedicineSupplierSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lMedicineSupplierSearch.ForeColor = System.Drawing.Color.Black;
+            this.lMedicineSupplierSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lMedicineSupplierSearch.Location = new System.Drawing.Point(0, 0);
+            this.lMedicineSupplierSearch.Name = "lMedicineSupplierSearch";
+            this.lMedicineSupplierSearch.Size = new System.Drawing.Size(117, 30);
+            this.lMedicineSupplierSearch.TabIndex = 5;
+            this.lMedicineSupplierSearch.Text = "Nhà CC";
+            this.lMedicineSupplierSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pMedicineTypeSearch
             // 
-            this.pMedicineTypeSearch.Controls.Add(this.cbMedicineTypeSearch);
+            this.pMedicineTypeSearch.Controls.Add(this.txtMedicineTypeSearch);
             this.pMedicineTypeSearch.Controls.Add(this.lMedicineTypeSearch);
-            this.pMedicineTypeSearch.Location = new System.Drawing.Point(270, 3);
+            this.pMedicineTypeSearch.Location = new System.Drawing.Point(277, 3);
             this.pMedicineTypeSearch.Name = "pMedicineTypeSearch";
-            this.pMedicineTypeSearch.Size = new System.Drawing.Size(270, 30);
+            this.pMedicineTypeSearch.Size = new System.Drawing.Size(263, 30);
             this.pMedicineTypeSearch.TabIndex = 1;
             // 
-            // cbMedicineTypeSearch
+            // txtMedicineTypeSearch
             // 
-            this.cbMedicineTypeSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbMedicineTypeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbMedicineTypeSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbMedicineTypeSearch.FormattingEnabled = true;
-            this.cbMedicineTypeSearch.Location = new System.Drawing.Point(86, 0);
-            this.cbMedicineTypeSearch.Name = "cbMedicineTypeSearch";
-            this.cbMedicineTypeSearch.Size = new System.Drawing.Size(184, 31);
-            this.cbMedicineTypeSearch.TabIndex = 6;
+            this.txtMedicineTypeSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMedicineTypeSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMedicineTypeSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMedicineTypeSearch.Location = new System.Drawing.Point(88, 0);
+            this.txtMedicineTypeSearch.Name = "txtMedicineTypeSearch";
+            this.txtMedicineTypeSearch.Size = new System.Drawing.Size(175, 30);
+            this.txtMedicineTypeSearch.TabIndex = 0;
             // 
             // lMedicineTypeSearch
             // 
@@ -636,7 +658,7 @@
             this.lMedicineTypeSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lMedicineTypeSearch.Location = new System.Drawing.Point(0, 0);
             this.lMedicineTypeSearch.Name = "lMedicineTypeSearch";
-            this.lMedicineTypeSearch.Size = new System.Drawing.Size(86, 30);
+            this.lMedicineTypeSearch.Size = new System.Drawing.Size(88, 30);
             this.lMedicineTypeSearch.TabIndex = 5;
             this.lMedicineTypeSearch.Text = "Loại thuốc";
             this.lMedicineTypeSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -762,12 +784,12 @@
             this.txtMedicineID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMedicineID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMedicineID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedicineID.Location = new System.Drawing.Point(88, 0);
+            this.txtMedicineID.Location = new System.Drawing.Point(96, 0);
             this.txtMedicineID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMedicineID.MaxLength = 10;
             this.txtMedicineID.Name = "txtMedicineID";
             this.txtMedicineID.ReadOnly = true;
-            this.txtMedicineID.Size = new System.Drawing.Size(173, 30);
+            this.txtMedicineID.Size = new System.Drawing.Size(165, 30);
             this.txtMedicineID.TabIndex = 0;
             // 
             // lInfoMedicineID
@@ -777,7 +799,7 @@
             this.lInfoMedicineID.ForeColor = System.Drawing.Color.Black;
             this.lInfoMedicineID.Location = new System.Drawing.Point(0, 0);
             this.lInfoMedicineID.Name = "lInfoMedicineID";
-            this.lInfoMedicineID.Size = new System.Drawing.Size(88, 30);
+            this.lInfoMedicineID.Size = new System.Drawing.Size(96, 30);
             this.lInfoMedicineID.TabIndex = 0;
             this.lInfoMedicineID.Text = "Mã thuốc:";
             this.lInfoMedicineID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -798,12 +820,12 @@
             this.txtMedicineName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMedicineName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMedicineName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedicineName.Location = new System.Drawing.Point(88, 0);
+            this.txtMedicineName.Location = new System.Drawing.Point(96, 0);
             this.txtMedicineName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMedicineName.MaxLength = 100;
             this.txtMedicineName.Name = "txtMedicineName";
             this.txtMedicineName.ReadOnly = true;
-            this.txtMedicineName.Size = new System.Drawing.Size(173, 30);
+            this.txtMedicineName.Size = new System.Drawing.Size(165, 30);
             this.txtMedicineName.TabIndex = 0;
             // 
             // lInfoMedicineName
@@ -813,7 +835,7 @@
             this.lInfoMedicineName.ForeColor = System.Drawing.Color.Black;
             this.lInfoMedicineName.Location = new System.Drawing.Point(0, 0);
             this.lInfoMedicineName.Name = "lInfoMedicineName";
-            this.lInfoMedicineName.Size = new System.Drawing.Size(88, 30);
+            this.lInfoMedicineName.Size = new System.Drawing.Size(96, 30);
             this.lInfoMedicineName.TabIndex = 0;
             this.lInfoMedicineName.Text = "Tên thuốc:";
             this.lInfoMedicineName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -834,12 +856,12 @@
             this.txtMedicineType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMedicineType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMedicineType.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedicineType.Location = new System.Drawing.Point(88, 0);
+            this.txtMedicineType.Location = new System.Drawing.Point(96, 0);
             this.txtMedicineType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMedicineType.MaxLength = 50;
             this.txtMedicineType.Name = "txtMedicineType";
             this.txtMedicineType.ReadOnly = true;
-            this.txtMedicineType.Size = new System.Drawing.Size(173, 30);
+            this.txtMedicineType.Size = new System.Drawing.Size(165, 30);
             this.txtMedicineType.TabIndex = 0;
             // 
             // lInfoMedicineType
@@ -849,7 +871,7 @@
             this.lInfoMedicineType.ForeColor = System.Drawing.Color.Black;
             this.lInfoMedicineType.Location = new System.Drawing.Point(0, 0);
             this.lInfoMedicineType.Name = "lInfoMedicineType";
-            this.lInfoMedicineType.Size = new System.Drawing.Size(88, 30);
+            this.lInfoMedicineType.Size = new System.Drawing.Size(96, 30);
             this.lInfoMedicineType.TabIndex = 0;
             this.lInfoMedicineType.Text = "Loại thuốc:";
             this.lInfoMedicineType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -870,12 +892,12 @@
             this.txtMedicineManufacturer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMedicineManufacturer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMedicineManufacturer.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedicineManufacturer.Location = new System.Drawing.Point(88, 0);
+            this.txtMedicineManufacturer.Location = new System.Drawing.Point(96, 0);
             this.txtMedicineManufacturer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMedicineManufacturer.MaxLength = 50;
             this.txtMedicineManufacturer.Name = "txtMedicineManufacturer";
             this.txtMedicineManufacturer.ReadOnly = true;
-            this.txtMedicineManufacturer.Size = new System.Drawing.Size(173, 30);
+            this.txtMedicineManufacturer.Size = new System.Drawing.Size(165, 30);
             this.txtMedicineManufacturer.TabIndex = 0;
             // 
             // lInfoMedicineManufactuer
@@ -885,7 +907,7 @@
             this.lInfoMedicineManufactuer.ForeColor = System.Drawing.Color.Black;
             this.lInfoMedicineManufactuer.Location = new System.Drawing.Point(0, 0);
             this.lInfoMedicineManufactuer.Name = "lInfoMedicineManufactuer";
-            this.lInfoMedicineManufactuer.Size = new System.Drawing.Size(88, 30);
+            this.lInfoMedicineManufactuer.Size = new System.Drawing.Size(96, 30);
             this.lInfoMedicineManufactuer.TabIndex = 0;
             this.lInfoMedicineManufactuer.Text = "Hãng SX:";
             this.lInfoMedicineManufactuer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -905,12 +927,12 @@
             this.txtMedicineSupplier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMedicineSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMedicineSupplier.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedicineSupplier.Location = new System.Drawing.Point(88, 0);
+            this.txtMedicineSupplier.Location = new System.Drawing.Point(96, 0);
             this.txtMedicineSupplier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMedicineSupplier.MaxLength = 50;
             this.txtMedicineSupplier.Name = "txtMedicineSupplier";
             this.txtMedicineSupplier.ReadOnly = true;
-            this.txtMedicineSupplier.Size = new System.Drawing.Size(173, 30);
+            this.txtMedicineSupplier.Size = new System.Drawing.Size(165, 30);
             this.txtMedicineSupplier.TabIndex = 0;
             // 
             // lInfoMedicineSupplier
@@ -920,7 +942,7 @@
             this.lInfoMedicineSupplier.ForeColor = System.Drawing.Color.Black;
             this.lInfoMedicineSupplier.Location = new System.Drawing.Point(0, 0);
             this.lInfoMedicineSupplier.Name = "lInfoMedicineSupplier";
-            this.lInfoMedicineSupplier.Size = new System.Drawing.Size(88, 30);
+            this.lInfoMedicineSupplier.Size = new System.Drawing.Size(96, 30);
             this.lInfoMedicineSupplier.TabIndex = 0;
             this.lInfoMedicineSupplier.Text = "Nhà cung cấp:";
             this.lInfoMedicineSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -981,7 +1003,7 @@
             this.tabCustomers.Location = new System.Drawing.Point(154, 4);
             this.tabCustomers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabCustomers.Name = "tabCustomers";
-            this.tabCustomers.Size = new System.Drawing.Size(842, 612);
+            this.tabCustomers.Size = new System.Drawing.Size(842, 614);
             this.tabCustomers.TabIndex = 3;
             this.tabCustomers.Text = "Khách hàng";
             this.tabCustomers.UseVisualStyleBackColor = true;
@@ -1005,7 +1027,7 @@
             this.scCustomer.Panel2.BackColor = System.Drawing.Color.Aquamarine;
             this.scCustomer.Panel2.Controls.Add(this.flpCustomerActionButtons);
             this.scCustomer.Panel2.Controls.Add(this.gbCustomerInfo);
-            this.scCustomer.Size = new System.Drawing.Size(842, 612);
+            this.scCustomer.Size = new System.Drawing.Size(842, 614);
             this.scCustomer.SplitterDistance = 563;
             this.scCustomer.TabIndex = 3;
             // 
@@ -1016,7 +1038,7 @@
             this.gbCustomers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbCustomers.Location = new System.Drawing.Point(0, 128);
             this.gbCustomers.Name = "gbCustomers";
-            this.gbCustomers.Size = new System.Drawing.Size(563, 484);
+            this.gbCustomers.Size = new System.Drawing.Size(563, 486);
             this.gbCustomers.TabIndex = 2;
             this.gbCustomers.TabStop = false;
             this.gbCustomers.Text = "Danh sách khách hàng";
@@ -1061,7 +1083,7 @@
             this.dgvCustomers.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCustomers.RowTemplate.Height = 24;
             this.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomers.Size = new System.Drawing.Size(557, 451);
+            this.dgvCustomers.Size = new System.Drawing.Size(557, 453);
             this.dgvCustomers.TabIndex = 4;
             this.dgvCustomers.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCustomers_CellFormatting);
             this.dgvCustomers.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_RowEnter);
@@ -1080,14 +1102,29 @@
             // 
             // pCustomerSearchBar
             // 
+            this.pCustomerSearchBar.Controls.Add(this.btnCustomerResetSearch);
             this.pCustomerSearchBar.Controls.Add(this.btnCustomerSearch);
             this.pCustomerSearchBar.Controls.Add(this.pCustomerPurchaseDate);
-            this.pCustomerSearchBar.Controls.Add(this.pCustomerIDSearch);
+            this.pCustomerSearchBar.Controls.Add(this.pCustomerNameOrPhoneSearch);
             this.pCustomerSearchBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pCustomerSearchBar.Location = new System.Drawing.Point(10, 10);
             this.pCustomerSearchBar.Name = "pCustomerSearchBar";
             this.pCustomerSearchBar.Size = new System.Drawing.Size(543, 108);
             this.pCustomerSearchBar.TabIndex = 3;
+            // 
+            // btnCustomerResetSearch
+            // 
+            this.btnCustomerResetSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCustomerResetSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomerResetSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCustomerResetSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnCustomerResetSearch.Location = new System.Drawing.Point(465, 72);
+            this.btnCustomerResetSearch.Name = "btnCustomerResetSearch";
+            this.btnCustomerResetSearch.Size = new System.Drawing.Size(75, 30);
+            this.btnCustomerResetSearch.TabIndex = 3;
+            this.btnCustomerResetSearch.Text = "Đặt lại";
+            this.btnCustomerResetSearch.UseVisualStyleBackColor = false;
+            this.btnCustomerResetSearch.Click += new System.EventHandler(this.btnCustomerResetSearch_Click);
             // 
             // btnCustomerSearch
             // 
@@ -1095,71 +1132,72 @@
             this.btnCustomerSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnCustomerSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnCustomerSearch.Location = new System.Drawing.Point(360, 75);
+            this.btnCustomerSearch.Location = new System.Drawing.Point(277, 72);
             this.btnCustomerSearch.Name = "btnCustomerSearch";
-            this.btnCustomerSearch.Size = new System.Drawing.Size(180, 30);
+            this.btnCustomerSearch.Size = new System.Drawing.Size(182, 30);
             this.btnCustomerSearch.TabIndex = 2;
             this.btnCustomerSearch.Text = "Tìm kiếm";
             this.btnCustomerSearch.UseVisualStyleBackColor = false;
+            this.btnCustomerSearch.Click += new System.EventHandler(this.btnCustomerSearch_Click);
             // 
             // pCustomerPurchaseDate
             // 
+            this.pCustomerPurchaseDate.Controls.Add(this.dtpCustomerPurchaseToSearch);
             this.pCustomerPurchaseDate.Controls.Add(this.lCustomerPurchaseTo);
-            this.pCustomerPurchaseDate.Controls.Add(this.dtpCustomerPurchaseTo);
-            this.pCustomerPurchaseDate.Controls.Add(this.dtpCustomerPurchaseFrom);
+            this.pCustomerPurchaseDate.Controls.Add(this.dtpCustomerPurchaseFromSearch);
             this.pCustomerPurchaseDate.Controls.Add(this.lCustomerPurchaseForm);
-            this.pCustomerPurchaseDate.Location = new System.Drawing.Point(3, 39);
+            this.pCustomerPurchaseDate.Location = new System.Drawing.Point(3, 36);
             this.pCustomerPurchaseDate.Name = "pCustomerPurchaseDate";
             this.pCustomerPurchaseDate.Size = new System.Drawing.Size(537, 30);
             this.pCustomerPurchaseDate.TabIndex = 1;
             // 
+            // dtpCustomerPurchaseToSearch
+            // 
+            this.dtpCustomerPurchaseToSearch.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpCustomerPurchaseToSearch.CalendarForeColor = System.Drawing.Color.Black;
+            this.dtpCustomerPurchaseToSearch.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
+            this.dtpCustomerPurchaseToSearch.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
+            this.dtpCustomerPurchaseToSearch.CustomFormat = "dd/MM/yyyy";
+            this.dtpCustomerPurchaseToSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpCustomerPurchaseToSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpCustomerPurchaseToSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpCustomerPurchaseToSearch.Location = new System.Drawing.Point(362, 0);
+            this.dtpCustomerPurchaseToSearch.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
+            this.dtpCustomerPurchaseToSearch.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtpCustomerPurchaseToSearch.Name = "dtpCustomerPurchaseToSearch";
+            this.dtpCustomerPurchaseToSearch.Size = new System.Drawing.Size(175, 30);
+            this.dtpCustomerPurchaseToSearch.TabIndex = 9;
+            this.dtpCustomerPurchaseToSearch.Value = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
+            // 
             // lCustomerPurchaseTo
             // 
-            this.lCustomerPurchaseTo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lCustomerPurchaseTo.Dock = System.Windows.Forms.DockStyle.Left;
             this.lCustomerPurchaseTo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lCustomerPurchaseTo.ForeColor = System.Drawing.Color.Black;
-            this.lCustomerPurchaseTo.Location = new System.Drawing.Point(299, 0);
+            this.lCustomerPurchaseTo.Location = new System.Drawing.Point(268, 0);
             this.lCustomerPurchaseTo.Name = "lCustomerPurchaseTo";
-            this.lCustomerPurchaseTo.Size = new System.Drawing.Size(58, 30);
+            this.lCustomerPurchaseTo.Size = new System.Drawing.Size(94, 30);
             this.lCustomerPurchaseTo.TabIndex = 8;
             this.lCustomerPurchaseTo.Text = "đến";
             this.lCustomerPurchaseTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dtpCustomerPurchaseTo
+            // dtpCustomerPurchaseFromSearch
             // 
-            this.dtpCustomerPurchaseTo.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpCustomerPurchaseTo.CalendarForeColor = System.Drawing.Color.Black;
-            this.dtpCustomerPurchaseTo.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
-            this.dtpCustomerPurchaseTo.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
-            this.dtpCustomerPurchaseTo.CustomFormat = "dd/MM/yyyy";
-            this.dtpCustomerPurchaseTo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dtpCustomerPurchaseTo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpCustomerPurchaseTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCustomerPurchaseTo.Location = new System.Drawing.Point(357, 0);
-            this.dtpCustomerPurchaseTo.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
-            this.dtpCustomerPurchaseTo.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dtpCustomerPurchaseTo.Name = "dtpCustomerPurchaseTo";
-            this.dtpCustomerPurchaseTo.Size = new System.Drawing.Size(180, 30);
-            this.dtpCustomerPurchaseTo.TabIndex = 1;
-            this.dtpCustomerPurchaseTo.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
-            // 
-            // dtpCustomerPurchaseFrom
-            // 
-            this.dtpCustomerPurchaseFrom.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpCustomerPurchaseFrom.CalendarForeColor = System.Drawing.Color.Black;
-            this.dtpCustomerPurchaseFrom.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
-            this.dtpCustomerPurchaseFrom.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
-            this.dtpCustomerPurchaseFrom.CustomFormat = "dd/MM/yyyy";
-            this.dtpCustomerPurchaseFrom.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dtpCustomerPurchaseFrom.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpCustomerPurchaseFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCustomerPurchaseFrom.Location = new System.Drawing.Point(136, 0);
-            this.dtpCustomerPurchaseFrom.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
-            this.dtpCustomerPurchaseFrom.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dtpCustomerPurchaseFrom.Name = "dtpCustomerPurchaseFrom";
-            this.dtpCustomerPurchaseFrom.Size = new System.Drawing.Size(163, 30);
-            this.dtpCustomerPurchaseFrom.TabIndex = 0;
-            this.dtpCustomerPurchaseFrom.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            this.dtpCustomerPurchaseFromSearch.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpCustomerPurchaseFromSearch.CalendarForeColor = System.Drawing.Color.Black;
+            this.dtpCustomerPurchaseFromSearch.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
+            this.dtpCustomerPurchaseFromSearch.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
+            this.dtpCustomerPurchaseFromSearch.CustomFormat = "dd/MM/yyyy";
+            this.dtpCustomerPurchaseFromSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dtpCustomerPurchaseFromSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpCustomerPurchaseFromSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpCustomerPurchaseFromSearch.Location = new System.Drawing.Point(117, 0);
+            this.dtpCustomerPurchaseFromSearch.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
+            this.dtpCustomerPurchaseFromSearch.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtpCustomerPurchaseFromSearch.Name = "dtpCustomerPurchaseFromSearch";
+            this.dtpCustomerPurchaseFromSearch.Size = new System.Drawing.Size(151, 30);
+            this.dtpCustomerPurchaseFromSearch.TabIndex = 0;
+            this.dtpCustomerPurchaseFromSearch.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // lCustomerPurchaseForm
             // 
@@ -1168,41 +1206,41 @@
             this.lCustomerPurchaseForm.ForeColor = System.Drawing.Color.Black;
             this.lCustomerPurchaseForm.Location = new System.Drawing.Point(0, 0);
             this.lCustomerPurchaseForm.Name = "lCustomerPurchaseForm";
-            this.lCustomerPurchaseForm.Size = new System.Drawing.Size(136, 30);
+            this.lCustomerPurchaseForm.Size = new System.Drawing.Size(117, 30);
             this.lCustomerPurchaseForm.TabIndex = 5;
-            this.lCustomerPurchaseForm.Text = "Mua hàng từ ngày";
+            this.lCustomerPurchaseForm.Text = "Mua hàng từ";
             this.lCustomerPurchaseForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pCustomerIDSearch
+            // pCustomerNameOrPhoneSearch
             // 
-            this.pCustomerIDSearch.Controls.Add(this.txtCustomerIDSearch);
-            this.pCustomerIDSearch.Controls.Add(this.lCustomerID);
-            this.pCustomerIDSearch.Location = new System.Drawing.Point(3, 3);
-            this.pCustomerIDSearch.Name = "pCustomerIDSearch";
-            this.pCustomerIDSearch.Size = new System.Drawing.Size(537, 30);
-            this.pCustomerIDSearch.TabIndex = 0;
+            this.pCustomerNameOrPhoneSearch.Controls.Add(this.txtCustomerNameOrPhoneSearch);
+            this.pCustomerNameOrPhoneSearch.Controls.Add(this.lCustomerNameOrPhone);
+            this.pCustomerNameOrPhoneSearch.Location = new System.Drawing.Point(3, 3);
+            this.pCustomerNameOrPhoneSearch.Name = "pCustomerNameOrPhoneSearch";
+            this.pCustomerNameOrPhoneSearch.Size = new System.Drawing.Size(537, 30);
+            this.pCustomerNameOrPhoneSearch.TabIndex = 0;
             // 
-            // txtCustomerIDSearch
+            // txtCustomerNameOrPhoneSearch
             // 
-            this.txtCustomerIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCustomerIDSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCustomerIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtCustomerIDSearch.Location = new System.Drawing.Point(136, 0);
-            this.txtCustomerIDSearch.Name = "txtCustomerIDSearch";
-            this.txtCustomerIDSearch.Size = new System.Drawing.Size(401, 30);
-            this.txtCustomerIDSearch.TabIndex = 5;
+            this.txtCustomerNameOrPhoneSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCustomerNameOrPhoneSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCustomerNameOrPhoneSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtCustomerNameOrPhoneSearch.Location = new System.Drawing.Point(117, 0);
+            this.txtCustomerNameOrPhoneSearch.Name = "txtCustomerNameOrPhoneSearch";
+            this.txtCustomerNameOrPhoneSearch.Size = new System.Drawing.Size(420, 30);
+            this.txtCustomerNameOrPhoneSearch.TabIndex = 0;
             // 
-            // lCustomerID
+            // lCustomerNameOrPhone
             // 
-            this.lCustomerID.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lCustomerID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lCustomerID.ForeColor = System.Drawing.Color.Black;
-            this.lCustomerID.Location = new System.Drawing.Point(0, 0);
-            this.lCustomerID.Name = "lCustomerID";
-            this.lCustomerID.Size = new System.Drawing.Size(136, 30);
-            this.lCustomerID.TabIndex = 4;
-            this.lCustomerID.Text = "Mã khách hàng";
-            this.lCustomerID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lCustomerNameOrPhone.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lCustomerNameOrPhone.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lCustomerNameOrPhone.ForeColor = System.Drawing.Color.Black;
+            this.lCustomerNameOrPhone.Location = new System.Drawing.Point(0, 0);
+            this.lCustomerNameOrPhone.Name = "lCustomerNameOrPhone";
+            this.lCustomerNameOrPhone.Size = new System.Drawing.Size(117, 30);
+            this.lCustomerNameOrPhone.TabIndex = 4;
+            this.lCustomerNameOrPhone.Text = "Tên (hoặc SĐT)";
+            this.lCustomerNameOrPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flpCustomerActionButtons
             // 
@@ -1212,7 +1250,7 @@
             this.flpCustomerActionButtons.Controls.Add(this.btnCustomerDelete);
             this.flpCustomerActionButtons.Controls.Add(this.btnCustomerSave);
             this.flpCustomerActionButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpCustomerActionButtons.Location = new System.Drawing.Point(0, 530);
+            this.flpCustomerActionButtons.Location = new System.Drawing.Point(0, 532);
             this.flpCustomerActionButtons.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpCustomerActionButtons.Name = "flpCustomerActionButtons";
             this.flpCustomerActionButtons.Size = new System.Drawing.Size(275, 82);
@@ -1288,7 +1326,7 @@
             this.gbCustomerInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbCustomerInfo.Name = "gbCustomerInfo";
             this.gbCustomerInfo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbCustomerInfo.Size = new System.Drawing.Size(275, 612);
+            this.gbCustomerInfo.Size = new System.Drawing.Size(275, 614);
             this.gbCustomerInfo.TabIndex = 3;
             this.gbCustomerInfo.TabStop = false;
             this.gbCustomerInfo.Text = "Chi tiết";
@@ -1305,7 +1343,7 @@
             this.flpInfoCustomer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpInfoCustomer.Location = new System.Drawing.Point(3, 31);
             this.flpInfoCustomer.Name = "flpInfoCustomer";
-            this.flpInfoCustomer.Size = new System.Drawing.Size(269, 577);
+            this.flpInfoCustomer.Size = new System.Drawing.Size(269, 579);
             this.flpInfoCustomer.TabIndex = 6;
             this.flpInfoCustomer.WrapContents = false;
             // 
@@ -1325,12 +1363,12 @@
             this.txtCustomerID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCustomerID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCustomerID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerID.Location = new System.Drawing.Point(95, 0);
+            this.txtCustomerID.Location = new System.Drawing.Point(96, 0);
             this.txtCustomerID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCustomerID.MaxLength = 10;
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.ReadOnly = true;
-            this.txtCustomerID.Size = new System.Drawing.Size(166, 30);
+            this.txtCustomerID.Size = new System.Drawing.Size(165, 30);
             this.txtCustomerID.TabIndex = 0;
             // 
             // lInfoCustomerID
@@ -1340,7 +1378,7 @@
             this.lInfoCustomerID.ForeColor = System.Drawing.Color.Black;
             this.lInfoCustomerID.Location = new System.Drawing.Point(0, 0);
             this.lInfoCustomerID.Name = "lInfoCustomerID";
-            this.lInfoCustomerID.Size = new System.Drawing.Size(95, 30);
+            this.lInfoCustomerID.Size = new System.Drawing.Size(96, 30);
             this.lInfoCustomerID.TabIndex = 0;
             this.lInfoCustomerID.Text = "Mã khách hàng:";
             this.lInfoCustomerID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1361,12 +1399,12 @@
             this.txtCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCustomerName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCustomerName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerName.Location = new System.Drawing.Point(95, 0);
+            this.txtCustomerName.Location = new System.Drawing.Point(96, 0);
             this.txtCustomerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCustomerName.MaxLength = 100;
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.ReadOnly = true;
-            this.txtCustomerName.Size = new System.Drawing.Size(166, 30);
+            this.txtCustomerName.Size = new System.Drawing.Size(165, 30);
             this.txtCustomerName.TabIndex = 0;
             // 
             // lInfoCustomerName
@@ -1376,7 +1414,7 @@
             this.lInfoCustomerName.ForeColor = System.Drawing.Color.Black;
             this.lInfoCustomerName.Location = new System.Drawing.Point(0, 0);
             this.lInfoCustomerName.Name = "lInfoCustomerName";
-            this.lInfoCustomerName.Size = new System.Drawing.Size(95, 30);
+            this.lInfoCustomerName.Size = new System.Drawing.Size(96, 30);
             this.lInfoCustomerName.TabIndex = 0;
             this.lInfoCustomerName.Text = "Tên khách hàng:";
             this.lInfoCustomerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1397,12 +1435,12 @@
             this.txtCustomerPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCustomerPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCustomerPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerPhoneNumber.Location = new System.Drawing.Point(95, 0);
+            this.txtCustomerPhoneNumber.Location = new System.Drawing.Point(96, 0);
             this.txtCustomerPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCustomerPhoneNumber.MaxLength = 50;
             this.txtCustomerPhoneNumber.Name = "txtCustomerPhoneNumber";
             this.txtCustomerPhoneNumber.ReadOnly = true;
-            this.txtCustomerPhoneNumber.Size = new System.Drawing.Size(166, 30);
+            this.txtCustomerPhoneNumber.Size = new System.Drawing.Size(165, 30);
             this.txtCustomerPhoneNumber.TabIndex = 0;
             // 
             // lInfoCustomerPhoneNumber
@@ -1412,7 +1450,7 @@
             this.lInfoCustomerPhoneNumber.ForeColor = System.Drawing.Color.Black;
             this.lInfoCustomerPhoneNumber.Location = new System.Drawing.Point(0, 0);
             this.lInfoCustomerPhoneNumber.Name = "lInfoCustomerPhoneNumber";
-            this.lInfoCustomerPhoneNumber.Size = new System.Drawing.Size(95, 30);
+            this.lInfoCustomerPhoneNumber.Size = new System.Drawing.Size(96, 30);
             this.lInfoCustomerPhoneNumber.TabIndex = 0;
             this.lInfoCustomerPhoneNumber.Text = "SDT:";
             this.lInfoCustomerPhoneNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1438,11 +1476,11 @@
             this.dtpCustomerBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpCustomerBirthday.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpCustomerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCustomerBirthday.Location = new System.Drawing.Point(95, 0);
+            this.dtpCustomerBirthday.Location = new System.Drawing.Point(96, 0);
             this.dtpCustomerBirthday.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
             this.dtpCustomerBirthday.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpCustomerBirthday.Name = "dtpCustomerBirthday";
-            this.dtpCustomerBirthday.Size = new System.Drawing.Size(166, 30);
+            this.dtpCustomerBirthday.Size = new System.Drawing.Size(165, 30);
             this.dtpCustomerBirthday.TabIndex = 0;
             this.dtpCustomerBirthday.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
@@ -1453,7 +1491,7 @@
             this.lInfoCustomerBirthday.ForeColor = System.Drawing.Color.Black;
             this.lInfoCustomerBirthday.Location = new System.Drawing.Point(0, 0);
             this.lInfoCustomerBirthday.Name = "lInfoCustomerBirthday";
-            this.lInfoCustomerBirthday.Size = new System.Drawing.Size(95, 30);
+            this.lInfoCustomerBirthday.Size = new System.Drawing.Size(96, 30);
             this.lInfoCustomerBirthday.TabIndex = 0;
             this.lInfoCustomerBirthday.Text = "Ngày sinh:";
             this.lInfoCustomerBirthday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1615,7 +1653,7 @@
             this.scImportContents.Panel2.BackColor = System.Drawing.Color.Transparent;
             this.scImportContents.Panel2.Controls.Add(this.gbImportDetails);
             this.scImportContents.Size = new System.Drawing.Size(563, 614);
-            this.scImportContents.SplitterDistance = 418;
+            this.scImportContents.SplitterDistance = 417;
             this.scImportContents.TabIndex = 0;
             // 
             // gbImportList
@@ -1625,7 +1663,7 @@
             this.gbImportList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbImportList.Location = new System.Drawing.Point(0, 128);
             this.gbImportList.Name = "gbImportList";
-            this.gbImportList.Size = new System.Drawing.Size(563, 290);
+            this.gbImportList.Size = new System.Drawing.Size(563, 289);
             this.gbImportList.TabIndex = 2;
             this.gbImportList.TabStop = false;
             this.gbImportList.Text = "Danh sách phiếu nhập";
@@ -1670,7 +1708,7 @@
             this.dvgImports.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dvgImports.RowTemplate.Height = 24;
             this.dvgImports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgImports.Size = new System.Drawing.Size(557, 257);
+            this.dvgImports.Size = new System.Drawing.Size(557, 256);
             this.dvgImports.TabIndex = 5;
             this.dvgImports.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dvgImports_CellFormatting);
             this.dvgImports.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgImports_RowEnter);
@@ -1689,10 +1727,11 @@
             // 
             // pImportSearchBar
             // 
+            this.pImportSearchBar.Controls.Add(this.btnImportResetSearch);
             this.pImportSearchBar.Controls.Add(this.pImportDateSearch);
-            this.pImportSearchBar.Controls.Add(this.pImportSupplierIDSearch);
+            this.pImportSearchBar.Controls.Add(this.pImportSupplierSearch);
             this.pImportSearchBar.Controls.Add(this.pImportIDSearch);
-            this.pImportSearchBar.Controls.Add(this.pImportEmployeeIDSearch);
+            this.pImportSearchBar.Controls.Add(this.pImportEmployeeSearch);
             this.pImportSearchBar.Controls.Add(this.btnImportSearch);
             this.pImportSearchBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pImportSearchBar.Location = new System.Drawing.Point(10, 10);
@@ -1700,33 +1739,79 @@
             this.pImportSearchBar.Size = new System.Drawing.Size(543, 108);
             this.pImportSearchBar.TabIndex = 0;
             // 
+            // btnImportResetSearch
+            // 
+            this.btnImportResetSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnImportResetSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImportResetSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnImportResetSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnImportResetSearch.Location = new System.Drawing.Point(465, 72);
+            this.btnImportResetSearch.Name = "btnImportResetSearch";
+            this.btnImportResetSearch.Size = new System.Drawing.Size(75, 30);
+            this.btnImportResetSearch.TabIndex = 5;
+            this.btnImportResetSearch.Text = "Đặt lại";
+            this.btnImportResetSearch.UseVisualStyleBackColor = false;
+            this.btnImportResetSearch.Click += new System.EventHandler(this.btnImportResetSearch_Click);
+            // 
             // pImportDateSearch
             // 
             this.pImportDateSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pImportDateSearch.Controls.Add(this.dtpImportDateSearch);
+            this.pImportDateSearch.Controls.Add(this.dtpImportDateToSearch);
+            this.pImportDateSearch.Controls.Add(this.label2);
+            this.pImportDateSearch.Controls.Add(this.dtpImportDateFromSearch);
             this.pImportDateSearch.Controls.Add(this.lImportDateSearch);
-            this.pImportDateSearch.Location = new System.Drawing.Point(267, 36);
+            this.pImportDateSearch.Location = new System.Drawing.Point(3, 36);
             this.pImportDateSearch.Name = "pImportDateSearch";
-            this.pImportDateSearch.Size = new System.Drawing.Size(273, 30);
-            this.pImportDateSearch.TabIndex = 3;
+            this.pImportDateSearch.Size = new System.Drawing.Size(537, 30);
+            this.pImportDateSearch.TabIndex = 2;
             // 
-            // dtpImportDateSearch
+            // dtpImportDateToSearch
             // 
-            this.dtpImportDateSearch.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpImportDateSearch.CalendarForeColor = System.Drawing.Color.Black;
-            this.dtpImportDateSearch.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
-            this.dtpImportDateSearch.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
-            this.dtpImportDateSearch.CustomFormat = "dd/MM/yyyy";
-            this.dtpImportDateSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpImportDateSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpImportDateSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpImportDateSearch.Location = new System.Drawing.Point(98, 0);
-            this.dtpImportDateSearch.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
-            this.dtpImportDateSearch.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dtpImportDateSearch.Name = "dtpImportDateSearch";
-            this.dtpImportDateSearch.Size = new System.Drawing.Size(175, 30);
-            this.dtpImportDateSearch.TabIndex = 0;
-            this.dtpImportDateSearch.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            this.dtpImportDateToSearch.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpImportDateToSearch.CalendarForeColor = System.Drawing.Color.Black;
+            this.dtpImportDateToSearch.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
+            this.dtpImportDateToSearch.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
+            this.dtpImportDateToSearch.CustomFormat = "dd/MM/yyyy";
+            this.dtpImportDateToSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpImportDateToSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpImportDateToSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpImportDateToSearch.Location = new System.Drawing.Point(362, 0);
+            this.dtpImportDateToSearch.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
+            this.dtpImportDateToSearch.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtpImportDateToSearch.Name = "dtpImportDateToSearch";
+            this.dtpImportDateToSearch.Size = new System.Drawing.Size(175, 30);
+            this.dtpImportDateToSearch.TabIndex = 1;
+            this.dtpImportDateToSearch.Value = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(268, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 30);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "đến";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dtpImportDateFromSearch
+            // 
+            this.dtpImportDateFromSearch.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpImportDateFromSearch.CalendarForeColor = System.Drawing.Color.Black;
+            this.dtpImportDateFromSearch.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
+            this.dtpImportDateFromSearch.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
+            this.dtpImportDateFromSearch.CustomFormat = "dd/MM/yyyy";
+            this.dtpImportDateFromSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dtpImportDateFromSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpImportDateFromSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpImportDateFromSearch.Location = new System.Drawing.Point(117, 0);
+            this.dtpImportDateFromSearch.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
+            this.dtpImportDateFromSearch.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtpImportDateFromSearch.Name = "dtpImportDateFromSearch";
+            this.dtpImportDateFromSearch.Size = new System.Drawing.Size(151, 30);
+            this.dtpImportDateFromSearch.TabIndex = 0;
+            this.dtpImportDateFromSearch.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // lImportDateSearch
             // 
@@ -1735,59 +1820,59 @@
             this.lImportDateSearch.ForeColor = System.Drawing.Color.Black;
             this.lImportDateSearch.Location = new System.Drawing.Point(0, 0);
             this.lImportDateSearch.Name = "lImportDateSearch";
-            this.lImportDateSearch.Size = new System.Drawing.Size(98, 30);
+            this.lImportDateSearch.Size = new System.Drawing.Size(117, 30);
             this.lImportDateSearch.TabIndex = 0;
-            this.lImportDateSearch.Text = "Ngày nhập";
+            this.lImportDateSearch.Text = "Ngày nhập từ";
             this.lImportDateSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pImportSupplierIDSearch
+            // pImportSupplierSearch
             // 
-            this.pImportSupplierIDSearch.Controls.Add(this.txtSupplierIDSearch);
-            this.pImportSupplierIDSearch.Controls.Add(this.lImportSupplierIDSearch);
-            this.pImportSupplierIDSearch.Location = new System.Drawing.Point(3, 39);
-            this.pImportSupplierIDSearch.Name = "pImportSupplierIDSearch";
-            this.pImportSupplierIDSearch.Size = new System.Drawing.Size(254, 30);
-            this.pImportSupplierIDSearch.TabIndex = 2;
+            this.pImportSupplierSearch.Controls.Add(this.txtImportSupplierSearch);
+            this.pImportSupplierSearch.Controls.Add(this.lImportSupplierSearch);
+            this.pImportSupplierSearch.Location = new System.Drawing.Point(3, 3);
+            this.pImportSupplierSearch.Name = "pImportSupplierSearch";
+            this.pImportSupplierSearch.Size = new System.Drawing.Size(268, 30);
+            this.pImportSupplierSearch.TabIndex = 0;
             // 
-            // txtSupplierIDSearch
+            // txtImportSupplierSearch
             // 
-            this.txtSupplierIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSupplierIDSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSupplierIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSupplierIDSearch.Location = new System.Drawing.Point(85, 0);
-            this.txtSupplierIDSearch.Name = "txtSupplierIDSearch";
-            this.txtSupplierIDSearch.Size = new System.Drawing.Size(169, 30);
-            this.txtSupplierIDSearch.TabIndex = 0;
+            this.txtImportSupplierSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtImportSupplierSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtImportSupplierSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtImportSupplierSearch.Location = new System.Drawing.Point(117, 0);
+            this.txtImportSupplierSearch.Name = "txtImportSupplierSearch";
+            this.txtImportSupplierSearch.Size = new System.Drawing.Size(151, 30);
+            this.txtImportSupplierSearch.TabIndex = 0;
             // 
-            // lImportSupplierIDSearch
+            // lImportSupplierSearch
             // 
-            this.lImportSupplierIDSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lImportSupplierIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lImportSupplierIDSearch.ForeColor = System.Drawing.Color.Black;
-            this.lImportSupplierIDSearch.Location = new System.Drawing.Point(0, 0);
-            this.lImportSupplierIDSearch.Name = "lImportSupplierIDSearch";
-            this.lImportSupplierIDSearch.Size = new System.Drawing.Size(85, 30);
-            this.lImportSupplierIDSearch.TabIndex = 0;
-            this.lImportSupplierIDSearch.Text = "Mã nhà CC";
-            this.lImportSupplierIDSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lImportSupplierSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lImportSupplierSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lImportSupplierSearch.ForeColor = System.Drawing.Color.Black;
+            this.lImportSupplierSearch.Location = new System.Drawing.Point(0, 0);
+            this.lImportSupplierSearch.Name = "lImportSupplierSearch";
+            this.lImportSupplierSearch.Size = new System.Drawing.Size(117, 30);
+            this.lImportSupplierSearch.TabIndex = 0;
+            this.lImportSupplierSearch.Text = "Nhà CC";
+            this.lImportSupplierSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pImportIDSearch
             // 
             this.pImportIDSearch.Controls.Add(this.txtImportIDSearch);
             this.pImportIDSearch.Controls.Add(this.lImportIDSearch);
-            this.pImportIDSearch.Location = new System.Drawing.Point(3, 3);
+            this.pImportIDSearch.Location = new System.Drawing.Point(3, 72);
             this.pImportIDSearch.Name = "pImportIDSearch";
-            this.pImportIDSearch.Size = new System.Drawing.Size(254, 30);
-            this.pImportIDSearch.TabIndex = 0;
+            this.pImportIDSearch.Size = new System.Drawing.Size(268, 30);
+            this.pImportIDSearch.TabIndex = 3;
             // 
             // txtImportIDSearch
             // 
             this.txtImportIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtImportIDSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtImportIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtImportIDSearch.Location = new System.Drawing.Point(85, 0);
+            this.txtImportIDSearch.Location = new System.Drawing.Point(117, 0);
             this.txtImportIDSearch.Name = "txtImportIDSearch";
-            this.txtImportIDSearch.Size = new System.Drawing.Size(169, 30);
+            this.txtImportIDSearch.Size = new System.Drawing.Size(151, 30);
             this.txtImportIDSearch.TabIndex = 1;
             // 
             // lImportIDSearch
@@ -1798,43 +1883,43 @@
             this.lImportIDSearch.Location = new System.Drawing.Point(0, 0);
             this.lImportIDSearch.Margin = new System.Windows.Forms.Padding(3);
             this.lImportIDSearch.Name = "lImportIDSearch";
-            this.lImportIDSearch.Size = new System.Drawing.Size(85, 30);
+            this.lImportIDSearch.Size = new System.Drawing.Size(117, 30);
             this.lImportIDSearch.TabIndex = 0;
             this.lImportIDSearch.Text = "Mã phiếu";
             this.lImportIDSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pImportEmployeeIDSearch
+            // pImportEmployeeSearch
             // 
-            this.pImportEmployeeIDSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pImportEmployeeIDSearch.BackColor = System.Drawing.Color.Transparent;
-            this.pImportEmployeeIDSearch.Controls.Add(this.txtImportEmployeeIDSearch);
-            this.pImportEmployeeIDSearch.Controls.Add(this.lImportEmployeeIDSearch);
-            this.pImportEmployeeIDSearch.Location = new System.Drawing.Point(263, 3);
-            this.pImportEmployeeIDSearch.Name = "pImportEmployeeIDSearch";
-            this.pImportEmployeeIDSearch.Size = new System.Drawing.Size(277, 30);
-            this.pImportEmployeeIDSearch.TabIndex = 1;
+            this.pImportEmployeeSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pImportEmployeeSearch.BackColor = System.Drawing.Color.Transparent;
+            this.pImportEmployeeSearch.Controls.Add(this.txtImportEmployeeSearch);
+            this.pImportEmployeeSearch.Controls.Add(this.lImportEmployeeSearch);
+            this.pImportEmployeeSearch.Location = new System.Drawing.Point(277, 3);
+            this.pImportEmployeeSearch.Name = "pImportEmployeeSearch";
+            this.pImportEmployeeSearch.Size = new System.Drawing.Size(263, 30);
+            this.pImportEmployeeSearch.TabIndex = 1;
             // 
-            // txtImportEmployeeIDSearch
+            // txtImportEmployeeSearch
             // 
-            this.txtImportEmployeeIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtImportEmployeeIDSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtImportEmployeeIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtImportEmployeeIDSearch.Location = new System.Drawing.Point(102, 0);
-            this.txtImportEmployeeIDSearch.Name = "txtImportEmployeeIDSearch";
-            this.txtImportEmployeeIDSearch.Size = new System.Drawing.Size(175, 30);
-            this.txtImportEmployeeIDSearch.TabIndex = 1;
+            this.txtImportEmployeeSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtImportEmployeeSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtImportEmployeeSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtImportEmployeeSearch.Location = new System.Drawing.Point(88, 0);
+            this.txtImportEmployeeSearch.Name = "txtImportEmployeeSearch";
+            this.txtImportEmployeeSearch.Size = new System.Drawing.Size(175, 30);
+            this.txtImportEmployeeSearch.TabIndex = 1;
             // 
-            // lImportEmployeeIDSearch
+            // lImportEmployeeSearch
             // 
-            this.lImportEmployeeIDSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lImportEmployeeIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lImportEmployeeIDSearch.ForeColor = System.Drawing.Color.Black;
-            this.lImportEmployeeIDSearch.Location = new System.Drawing.Point(0, 0);
-            this.lImportEmployeeIDSearch.Name = "lImportEmployeeIDSearch";
-            this.lImportEmployeeIDSearch.Size = new System.Drawing.Size(102, 30);
-            this.lImportEmployeeIDSearch.TabIndex = 0;
-            this.lImportEmployeeIDSearch.Text = "Mã nhân viên";
-            this.lImportEmployeeIDSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lImportEmployeeSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lImportEmployeeSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lImportEmployeeSearch.ForeColor = System.Drawing.Color.Black;
+            this.lImportEmployeeSearch.Location = new System.Drawing.Point(0, 0);
+            this.lImportEmployeeSearch.Name = "lImportEmployeeSearch";
+            this.lImportEmployeeSearch.Size = new System.Drawing.Size(88, 30);
+            this.lImportEmployeeSearch.TabIndex = 0;
+            this.lImportEmployeeSearch.Text = "Nhân viên";
+            this.lImportEmployeeSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnImportSearch
             // 
@@ -1842,12 +1927,13 @@
             this.btnImportSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImportSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnImportSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnImportSearch.Location = new System.Drawing.Point(365, 72);
+            this.btnImportSearch.Location = new System.Drawing.Point(277, 72);
             this.btnImportSearch.Name = "btnImportSearch";
-            this.btnImportSearch.Size = new System.Drawing.Size(175, 30);
+            this.btnImportSearch.Size = new System.Drawing.Size(182, 30);
             this.btnImportSearch.TabIndex = 4;
             this.btnImportSearch.Text = "Tìm kiếm";
             this.btnImportSearch.UseVisualStyleBackColor = false;
+            this.btnImportSearch.Click += new System.EventHandler(this.btnImportSearch_Click);
             // 
             // gbImportDetails
             // 
@@ -1856,7 +1942,7 @@
             this.gbImportDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbImportDetails.Location = new System.Drawing.Point(0, 0);
             this.gbImportDetails.Name = "gbImportDetails";
-            this.gbImportDetails.Size = new System.Drawing.Size(563, 192);
+            this.gbImportDetails.Size = new System.Drawing.Size(563, 193);
             this.gbImportDetails.TabIndex = 2;
             this.gbImportDetails.TabStop = false;
             this.gbImportDetails.Text = "Chi tiết phiếu nhập";
@@ -1901,7 +1987,7 @@
             this.dgvImportDetails.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvImportDetails.RowTemplate.Height = 24;
             this.dgvImportDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImportDetails.Size = new System.Drawing.Size(557, 159);
+            this.dgvImportDetails.Size = new System.Drawing.Size(557, 160);
             this.dgvImportDetails.TabIndex = 6;
             this.dgvImportDetails.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvImportDetails_CellFormatting);
             this.dgvImportDetails.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportDetails_RowEnter);
@@ -2067,12 +2153,12 @@
             this.txtImportID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtImportID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtImportID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImportID.Location = new System.Drawing.Point(93, 0);
+            this.txtImportID.Location = new System.Drawing.Point(96, 0);
             this.txtImportID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtImportID.MaxLength = 10;
             this.txtImportID.Name = "txtImportID";
             this.txtImportID.ReadOnly = true;
-            this.txtImportID.Size = new System.Drawing.Size(168, 30);
+            this.txtImportID.Size = new System.Drawing.Size(165, 30);
             this.txtImportID.TabIndex = 0;
             // 
             // lInfoImportID
@@ -2082,7 +2168,7 @@
             this.lInfoImportID.ForeColor = System.Drawing.Color.Black;
             this.lInfoImportID.Location = new System.Drawing.Point(0, 0);
             this.lInfoImportID.Name = "lInfoImportID";
-            this.lInfoImportID.Size = new System.Drawing.Size(93, 30);
+            this.lInfoImportID.Size = new System.Drawing.Size(96, 30);
             this.lInfoImportID.TabIndex = 0;
             this.lInfoImportID.Text = "Mã phiếu:";
             this.lInfoImportID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2103,12 +2189,12 @@
             this.txtImportEmployeeID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtImportEmployeeID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtImportEmployeeID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImportEmployeeID.Location = new System.Drawing.Point(93, 0);
+            this.txtImportEmployeeID.Location = new System.Drawing.Point(96, 0);
             this.txtImportEmployeeID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtImportEmployeeID.MaxLength = 50;
             this.txtImportEmployeeID.Name = "txtImportEmployeeID";
             this.txtImportEmployeeID.ReadOnly = true;
-            this.txtImportEmployeeID.Size = new System.Drawing.Size(168, 30);
+            this.txtImportEmployeeID.Size = new System.Drawing.Size(165, 30);
             this.txtImportEmployeeID.TabIndex = 3;
             // 
             // lInfoImportEmployeeID
@@ -2118,7 +2204,7 @@
             this.lInfoImportEmployeeID.ForeColor = System.Drawing.Color.Black;
             this.lInfoImportEmployeeID.Location = new System.Drawing.Point(0, 0);
             this.lInfoImportEmployeeID.Name = "lInfoImportEmployeeID";
-            this.lInfoImportEmployeeID.Size = new System.Drawing.Size(93, 30);
+            this.lInfoImportEmployeeID.Size = new System.Drawing.Size(96, 30);
             this.lInfoImportEmployeeID.TabIndex = 0;
             this.lInfoImportEmployeeID.Text = "Mã nhân viên:";
             this.lInfoImportEmployeeID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2139,12 +2225,12 @@
             this.txtImportSupplierID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtImportSupplierID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtImportSupplierID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImportSupplierID.Location = new System.Drawing.Point(93, 0);
+            this.txtImportSupplierID.Location = new System.Drawing.Point(96, 0);
             this.txtImportSupplierID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtImportSupplierID.MaxLength = 50;
             this.txtImportSupplierID.Name = "txtImportSupplierID";
             this.txtImportSupplierID.ReadOnly = true;
-            this.txtImportSupplierID.Size = new System.Drawing.Size(168, 30);
+            this.txtImportSupplierID.Size = new System.Drawing.Size(165, 30);
             this.txtImportSupplierID.TabIndex = 3;
             // 
             // lInfoImportSupplier
@@ -2154,7 +2240,7 @@
             this.lInfoImportSupplier.ForeColor = System.Drawing.Color.Black;
             this.lInfoImportSupplier.Location = new System.Drawing.Point(0, 0);
             this.lInfoImportSupplier.Name = "lInfoImportSupplier";
-            this.lInfoImportSupplier.Size = new System.Drawing.Size(93, 30);
+            this.lInfoImportSupplier.Size = new System.Drawing.Size(96, 30);
             this.lInfoImportSupplier.TabIndex = 0;
             this.lInfoImportSupplier.Text = "Nhà cung cấp:";
             this.lInfoImportSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2180,11 +2266,11 @@
             this.dtpImportDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpImportDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpImportDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpImportDate.Location = new System.Drawing.Point(93, 0);
+            this.dtpImportDate.Location = new System.Drawing.Point(96, 0);
             this.dtpImportDate.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
             this.dtpImportDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpImportDate.Name = "dtpImportDate";
-            this.dtpImportDate.Size = new System.Drawing.Size(168, 30);
+            this.dtpImportDate.Size = new System.Drawing.Size(165, 30);
             this.dtpImportDate.TabIndex = 4;
             this.dtpImportDate.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
@@ -2195,7 +2281,7 @@
             this.lInfoImportDate.ForeColor = System.Drawing.Color.Black;
             this.lInfoImportDate.Location = new System.Drawing.Point(0, 0);
             this.lInfoImportDate.Name = "lInfoImportDate";
-            this.lInfoImportDate.Size = new System.Drawing.Size(93, 30);
+            this.lInfoImportDate.Size = new System.Drawing.Size(96, 30);
             this.lInfoImportDate.TabIndex = 0;
             this.lInfoImportDate.Text = "Ngày nhập:";
             this.lInfoImportDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2224,12 +2310,12 @@
             this.txtImportDetailsMedicineName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtImportDetailsMedicineName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtImportDetailsMedicineName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImportDetailsMedicineName.Location = new System.Drawing.Point(93, 0);
+            this.txtImportDetailsMedicineName.Location = new System.Drawing.Point(96, 0);
             this.txtImportDetailsMedicineName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtImportDetailsMedicineName.MaxLength = 100;
             this.txtImportDetailsMedicineName.Name = "txtImportDetailsMedicineName";
             this.txtImportDetailsMedicineName.ReadOnly = true;
-            this.txtImportDetailsMedicineName.Size = new System.Drawing.Size(168, 30);
+            this.txtImportDetailsMedicineName.Size = new System.Drawing.Size(165, 30);
             this.txtImportDetailsMedicineName.TabIndex = 1;
             // 
             // lInfoImportDetailsMedicineName
@@ -2239,7 +2325,7 @@
             this.lInfoImportDetailsMedicineName.ForeColor = System.Drawing.Color.Black;
             this.lInfoImportDetailsMedicineName.Location = new System.Drawing.Point(0, 0);
             this.lInfoImportDetailsMedicineName.Name = "lInfoImportDetailsMedicineName";
-            this.lInfoImportDetailsMedicineName.Size = new System.Drawing.Size(93, 30);
+            this.lInfoImportDetailsMedicineName.Size = new System.Drawing.Size(96, 30);
             this.lInfoImportDetailsMedicineName.TabIndex = 0;
             this.lInfoImportDetailsMedicineName.Text = "Tên thuốc:";
             this.lInfoImportDetailsMedicineName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2260,12 +2346,12 @@
             this.txtImportDetailsMedicineQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtImportDetailsMedicineQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtImportDetailsMedicineQuantity.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImportDetailsMedicineQuantity.Location = new System.Drawing.Point(93, 0);
+            this.txtImportDetailsMedicineQuantity.Location = new System.Drawing.Point(96, 0);
             this.txtImportDetailsMedicineQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtImportDetailsMedicineQuantity.MaxLength = 50;
             this.txtImportDetailsMedicineQuantity.Name = "txtImportDetailsMedicineQuantity";
             this.txtImportDetailsMedicineQuantity.ReadOnly = true;
-            this.txtImportDetailsMedicineQuantity.Size = new System.Drawing.Size(168, 30);
+            this.txtImportDetailsMedicineQuantity.Size = new System.Drawing.Size(165, 30);
             this.txtImportDetailsMedicineQuantity.TabIndex = 2;
             // 
             // lInfoImportDetailsMedicineQuantity
@@ -2275,7 +2361,7 @@
             this.lInfoImportDetailsMedicineQuantity.ForeColor = System.Drawing.Color.Black;
             this.lInfoImportDetailsMedicineQuantity.Location = new System.Drawing.Point(0, 0);
             this.lInfoImportDetailsMedicineQuantity.Name = "lInfoImportDetailsMedicineQuantity";
-            this.lInfoImportDetailsMedicineQuantity.Size = new System.Drawing.Size(93, 30);
+            this.lInfoImportDetailsMedicineQuantity.Size = new System.Drawing.Size(96, 30);
             this.lInfoImportDetailsMedicineQuantity.TabIndex = 0;
             this.lInfoImportDetailsMedicineQuantity.Text = "Số lượng:";
             this.lInfoImportDetailsMedicineQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2296,12 +2382,12 @@
             this.txtImportDetailsMedicinePrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtImportDetailsMedicinePrice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtImportDetailsMedicinePrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImportDetailsMedicinePrice.Location = new System.Drawing.Point(93, 0);
+            this.txtImportDetailsMedicinePrice.Location = new System.Drawing.Point(96, 0);
             this.txtImportDetailsMedicinePrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtImportDetailsMedicinePrice.MaxLength = 50;
             this.txtImportDetailsMedicinePrice.Name = "txtImportDetailsMedicinePrice";
             this.txtImportDetailsMedicinePrice.ReadOnly = true;
-            this.txtImportDetailsMedicinePrice.Size = new System.Drawing.Size(168, 30);
+            this.txtImportDetailsMedicinePrice.Size = new System.Drawing.Size(165, 30);
             this.txtImportDetailsMedicinePrice.TabIndex = 3;
             // 
             // lInfoImportDetailsMedicinePrice
@@ -2311,7 +2397,7 @@
             this.lInfoImportDetailsMedicinePrice.ForeColor = System.Drawing.Color.Black;
             this.lInfoImportDetailsMedicinePrice.Location = new System.Drawing.Point(0, 0);
             this.lInfoImportDetailsMedicinePrice.Name = "lInfoImportDetailsMedicinePrice";
-            this.lInfoImportDetailsMedicinePrice.Size = new System.Drawing.Size(93, 30);
+            this.lInfoImportDetailsMedicinePrice.Size = new System.Drawing.Size(96, 30);
             this.lInfoImportDetailsMedicinePrice.TabIndex = 0;
             this.lInfoImportDetailsMedicinePrice.Text = "Đơn giá (VND):";
             this.lInfoImportDetailsMedicinePrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2370,7 +2456,7 @@
             this.scBillContent.Panel2.BackColor = System.Drawing.Color.Transparent;
             this.scBillContent.Panel2.Controls.Add(this.gbBillDetails);
             this.scBillContent.Size = new System.Drawing.Size(563, 614);
-            this.scBillContent.SplitterDistance = 418;
+            this.scBillContent.SplitterDistance = 417;
             this.scBillContent.TabIndex = 0;
             // 
             // gbBillList
@@ -2380,7 +2466,7 @@
             this.gbBillList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbBillList.Location = new System.Drawing.Point(0, 128);
             this.gbBillList.Name = "gbBillList";
-            this.gbBillList.Size = new System.Drawing.Size(563, 290);
+            this.gbBillList.Size = new System.Drawing.Size(563, 289);
             this.gbBillList.TabIndex = 3;
             this.gbBillList.TabStop = false;
             this.gbBillList.Text = "Danh sách hóa đơn";
@@ -2425,7 +2511,7 @@
             this.dgvBills.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvBills.RowTemplate.Height = 24;
             this.dgvBills.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBills.Size = new System.Drawing.Size(557, 257);
+            this.dgvBills.Size = new System.Drawing.Size(557, 256);
             this.dgvBills.TabIndex = 6;
             this.dgvBills.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBills_RowEnter);
             // 
@@ -2443,6 +2529,7 @@
             // 
             // pBillSearchBar
             // 
+            this.pBillSearchBar.Controls.Add(this.btnBillResetSearch);
             this.pBillSearchBar.Controls.Add(this.pBillDateSearch);
             this.pBillSearchBar.Controls.Add(this.pBillCustomerIDSearch);
             this.pBillSearchBar.Controls.Add(this.pBillIDSearch);
@@ -2454,33 +2541,79 @@
             this.pBillSearchBar.Size = new System.Drawing.Size(543, 108);
             this.pBillSearchBar.TabIndex = 0;
             // 
+            // btnBillResetSearch
+            // 
+            this.btnBillResetSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnBillResetSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBillResetSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnBillResetSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnBillResetSearch.Location = new System.Drawing.Point(465, 72);
+            this.btnBillResetSearch.Name = "btnBillResetSearch";
+            this.btnBillResetSearch.Size = new System.Drawing.Size(75, 30);
+            this.btnBillResetSearch.TabIndex = 5;
+            this.btnBillResetSearch.Text = "Đặt lại";
+            this.btnBillResetSearch.UseVisualStyleBackColor = false;
+            this.btnBillResetSearch.Click += new System.EventHandler(this.btnBillResetSearch_Click);
+            // 
             // pBillDateSearch
             // 
             this.pBillDateSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pBillDateSearch.Controls.Add(this.dtpBillDateSearch);
+            this.pBillDateSearch.Controls.Add(this.dtpBillDateToSearch);
+            this.pBillDateSearch.Controls.Add(this.label1);
+            this.pBillDateSearch.Controls.Add(this.dtpBillDateFromSearch);
             this.pBillDateSearch.Controls.Add(this.lBillDateSearch);
-            this.pBillDateSearch.Location = new System.Drawing.Point(267, 36);
+            this.pBillDateSearch.Location = new System.Drawing.Point(3, 36);
             this.pBillDateSearch.Name = "pBillDateSearch";
-            this.pBillDateSearch.Size = new System.Drawing.Size(274, 30);
-            this.pBillDateSearch.TabIndex = 3;
+            this.pBillDateSearch.Size = new System.Drawing.Size(537, 30);
+            this.pBillDateSearch.TabIndex = 2;
             // 
-            // dtpBillDateSearch
+            // dtpBillDateToSearch
             // 
-            this.dtpBillDateSearch.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpBillDateSearch.CalendarForeColor = System.Drawing.Color.Black;
-            this.dtpBillDateSearch.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
-            this.dtpBillDateSearch.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
-            this.dtpBillDateSearch.CustomFormat = "dd/MM/yyyy";
-            this.dtpBillDateSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpBillDateSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpBillDateSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBillDateSearch.Location = new System.Drawing.Point(96, 0);
-            this.dtpBillDateSearch.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
-            this.dtpBillDateSearch.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dtpBillDateSearch.Name = "dtpBillDateSearch";
-            this.dtpBillDateSearch.Size = new System.Drawing.Size(178, 30);
-            this.dtpBillDateSearch.TabIndex = 0;
-            this.dtpBillDateSearch.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            this.dtpBillDateToSearch.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpBillDateToSearch.CalendarForeColor = System.Drawing.Color.Black;
+            this.dtpBillDateToSearch.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
+            this.dtpBillDateToSearch.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
+            this.dtpBillDateToSearch.CustomFormat = "dd/MM/yyyy";
+            this.dtpBillDateToSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpBillDateToSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpBillDateToSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBillDateToSearch.Location = new System.Drawing.Point(362, 0);
+            this.dtpBillDateToSearch.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
+            this.dtpBillDateToSearch.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtpBillDateToSearch.Name = "dtpBillDateToSearch";
+            this.dtpBillDateToSearch.Size = new System.Drawing.Size(175, 30);
+            this.dtpBillDateToSearch.TabIndex = 1;
+            this.dtpBillDateToSearch.Value = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(268, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 30);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "đến";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dtpBillDateFromSearch
+            // 
+            this.dtpBillDateFromSearch.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpBillDateFromSearch.CalendarForeColor = System.Drawing.Color.Black;
+            this.dtpBillDateFromSearch.CalendarMonthBackground = System.Drawing.Color.Aquamarine;
+            this.dtpBillDateFromSearch.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
+            this.dtpBillDateFromSearch.CustomFormat = "dd/MM/yyyy";
+            this.dtpBillDateFromSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dtpBillDateFromSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpBillDateFromSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBillDateFromSearch.Location = new System.Drawing.Point(117, 0);
+            this.dtpBillDateFromSearch.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
+            this.dtpBillDateFromSearch.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtpBillDateFromSearch.Name = "dtpBillDateFromSearch";
+            this.dtpBillDateFromSearch.Size = new System.Drawing.Size(151, 30);
+            this.dtpBillDateFromSearch.TabIndex = 0;
+            this.dtpBillDateFromSearch.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // lBillDateSearch
             // 
@@ -2489,28 +2622,28 @@
             this.lBillDateSearch.ForeColor = System.Drawing.Color.Black;
             this.lBillDateSearch.Location = new System.Drawing.Point(0, 0);
             this.lBillDateSearch.Name = "lBillDateSearch";
-            this.lBillDateSearch.Size = new System.Drawing.Size(96, 30);
+            this.lBillDateSearch.Size = new System.Drawing.Size(117, 30);
             this.lBillDateSearch.TabIndex = 7;
-            this.lBillDateSearch.Text = "Ngày lập";
+            this.lBillDateSearch.Text = "Ngày lập từ";
             this.lBillDateSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pBillCustomerIDSearch
             // 
             this.pBillCustomerIDSearch.Controls.Add(this.txtBillCustomerIDSearch);
             this.pBillCustomerIDSearch.Controls.Add(this.lBillCustomerIDSearch);
-            this.pBillCustomerIDSearch.Location = new System.Drawing.Point(3, 39);
+            this.pBillCustomerIDSearch.Location = new System.Drawing.Point(3, 3);
             this.pBillCustomerIDSearch.Name = "pBillCustomerIDSearch";
-            this.pBillCustomerIDSearch.Size = new System.Drawing.Size(254, 30);
-            this.pBillCustomerIDSearch.TabIndex = 2;
+            this.pBillCustomerIDSearch.Size = new System.Drawing.Size(268, 30);
+            this.pBillCustomerIDSearch.TabIndex = 0;
             // 
             // txtBillCustomerIDSearch
             // 
             this.txtBillCustomerIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBillCustomerIDSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBillCustomerIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBillCustomerIDSearch.Location = new System.Drawing.Point(115, 0);
+            this.txtBillCustomerIDSearch.Location = new System.Drawing.Point(117, 0);
             this.txtBillCustomerIDSearch.Name = "txtBillCustomerIDSearch";
-            this.txtBillCustomerIDSearch.Size = new System.Drawing.Size(139, 30);
+            this.txtBillCustomerIDSearch.Size = new System.Drawing.Size(151, 30);
             this.txtBillCustomerIDSearch.TabIndex = 0;
             // 
             // lBillCustomerIDSearch
@@ -2520,27 +2653,28 @@
             this.lBillCustomerIDSearch.ForeColor = System.Drawing.Color.Black;
             this.lBillCustomerIDSearch.Location = new System.Drawing.Point(0, 0);
             this.lBillCustomerIDSearch.Name = "lBillCustomerIDSearch";
-            this.lBillCustomerIDSearch.Size = new System.Drawing.Size(115, 30);
+            this.lBillCustomerIDSearch.Size = new System.Drawing.Size(117, 30);
             this.lBillCustomerIDSearch.TabIndex = 7;
-            this.lBillCustomerIDSearch.Text = "Mã khách hàng";
+            this.lBillCustomerIDSearch.Text = "Khách hàng";
+            this.lBillCustomerIDSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pBillIDSearch
             // 
             this.pBillIDSearch.Controls.Add(this.txtBillIDSearch);
             this.pBillIDSearch.Controls.Add(this.lBillIDSearch);
-            this.pBillIDSearch.Location = new System.Drawing.Point(3, 3);
+            this.pBillIDSearch.Location = new System.Drawing.Point(3, 72);
             this.pBillIDSearch.Name = "pBillIDSearch";
-            this.pBillIDSearch.Size = new System.Drawing.Size(254, 30);
-            this.pBillIDSearch.TabIndex = 0;
+            this.pBillIDSearch.Size = new System.Drawing.Size(268, 30);
+            this.pBillIDSearch.TabIndex = 3;
             // 
             // txtBillIDSearch
             // 
             this.txtBillIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBillIDSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBillIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBillIDSearch.Location = new System.Drawing.Point(115, 0);
+            this.txtBillIDSearch.Location = new System.Drawing.Point(117, 0);
             this.txtBillIDSearch.Name = "txtBillIDSearch";
-            this.txtBillIDSearch.Size = new System.Drawing.Size(139, 30);
+            this.txtBillIDSearch.Size = new System.Drawing.Size(151, 30);
             this.txtBillIDSearch.TabIndex = 8;
             // 
             // lBillIDSearch
@@ -2550,18 +2684,19 @@
             this.lBillIDSearch.ForeColor = System.Drawing.Color.Black;
             this.lBillIDSearch.Location = new System.Drawing.Point(0, 0);
             this.lBillIDSearch.Name = "lBillIDSearch";
-            this.lBillIDSearch.Size = new System.Drawing.Size(115, 30);
+            this.lBillIDSearch.Size = new System.Drawing.Size(117, 30);
             this.lBillIDSearch.TabIndex = 7;
             this.lBillIDSearch.Text = "Mã hóa đơn";
+            this.lBillIDSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pBillEmployeeIDSearch
             // 
             this.pBillEmployeeIDSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pBillEmployeeIDSearch.Controls.Add(this.txtBillEmployeeIDSearch);
             this.pBillEmployeeIDSearch.Controls.Add(this.lBillEmployeeIDSearch);
-            this.pBillEmployeeIDSearch.Location = new System.Drawing.Point(263, 3);
+            this.pBillEmployeeIDSearch.Location = new System.Drawing.Point(277, 3);
             this.pBillEmployeeIDSearch.Name = "pBillEmployeeIDSearch";
-            this.pBillEmployeeIDSearch.Size = new System.Drawing.Size(277, 30);
+            this.pBillEmployeeIDSearch.Size = new System.Drawing.Size(263, 30);
             this.pBillEmployeeIDSearch.TabIndex = 1;
             // 
             // txtBillEmployeeIDSearch
@@ -2569,9 +2704,9 @@
             this.txtBillEmployeeIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBillEmployeeIDSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBillEmployeeIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBillEmployeeIDSearch.Location = new System.Drawing.Point(100, 0);
+            this.txtBillEmployeeIDSearch.Location = new System.Drawing.Point(88, 0);
             this.txtBillEmployeeIDSearch.Name = "txtBillEmployeeIDSearch";
-            this.txtBillEmployeeIDSearch.Size = new System.Drawing.Size(177, 30);
+            this.txtBillEmployeeIDSearch.Size = new System.Drawing.Size(175, 30);
             this.txtBillEmployeeIDSearch.TabIndex = 8;
             // 
             // lBillEmployeeIDSearch
@@ -2581,9 +2716,10 @@
             this.lBillEmployeeIDSearch.ForeColor = System.Drawing.Color.Black;
             this.lBillEmployeeIDSearch.Location = new System.Drawing.Point(0, 0);
             this.lBillEmployeeIDSearch.Name = "lBillEmployeeIDSearch";
-            this.lBillEmployeeIDSearch.Size = new System.Drawing.Size(100, 30);
+            this.lBillEmployeeIDSearch.Size = new System.Drawing.Size(88, 30);
             this.lBillEmployeeIDSearch.TabIndex = 7;
-            this.lBillEmployeeIDSearch.Text = "Mã nhân viên";
+            this.lBillEmployeeIDSearch.Text = "Nhân viên";
+            this.lBillEmployeeIDSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnBillSearch
             // 
@@ -2591,12 +2727,13 @@
             this.btnBillSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBillSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnBillSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnBillSearch.Location = new System.Drawing.Point(363, 72);
+            this.btnBillSearch.Location = new System.Drawing.Point(277, 72);
             this.btnBillSearch.Name = "btnBillSearch";
-            this.btnBillSearch.Size = new System.Drawing.Size(177, 30);
+            this.btnBillSearch.Size = new System.Drawing.Size(182, 30);
             this.btnBillSearch.TabIndex = 4;
             this.btnBillSearch.Text = "Tìm kiếm";
             this.btnBillSearch.UseVisualStyleBackColor = false;
+            this.btnBillSearch.Click += new System.EventHandler(this.btnBillSearch_Click);
             // 
             // gbBillDetails
             // 
@@ -2605,7 +2742,7 @@
             this.gbBillDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbBillDetails.Location = new System.Drawing.Point(0, 0);
             this.gbBillDetails.Name = "gbBillDetails";
-            this.gbBillDetails.Size = new System.Drawing.Size(563, 192);
+            this.gbBillDetails.Size = new System.Drawing.Size(563, 193);
             this.gbBillDetails.TabIndex = 2;
             this.gbBillDetails.TabStop = false;
             this.gbBillDetails.Text = "Chi tiết hóa đơn";
@@ -2650,7 +2787,7 @@
             this.dgvBillDetails.RowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvBillDetails.RowTemplate.Height = 24;
             this.dgvBillDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBillDetails.Size = new System.Drawing.Size(557, 159);
+            this.dgvBillDetails.Size = new System.Drawing.Size(557, 160);
             this.dgvBillDetails.TabIndex = 7;
             this.dgvBillDetails.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvBillDetails_CellFormatting);
             this.dgvBillDetails.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBillDetails_RowEnter);
@@ -3085,6 +3222,7 @@
             this.tsmiFileExit.Name = "tsmiFileExit";
             this.tsmiFileExit.Size = new System.Drawing.Size(160, 26);
             this.tsmiFileExit.Text = "Thoát";
+            this.tsmiFileExit.Click += new System.EventHandler(this.tsmiFileExit_Click);
             // 
             // tsmiAccount
             // 
@@ -3135,6 +3273,8 @@
             this.Name = "fMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhà thuốc";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fMain_FormClosing);
+            this.Load += new System.EventHandler(this.fMain_Load);
             this.tcMain.ResumeLayout(false);
             this.tabMedicines.ResumeLayout(false);
             this.tabMedicines.PerformLayout();
@@ -3147,13 +3287,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicines)).EndInit();
             this.pMedicineSearch.ResumeLayout(false);
             this.pMedicineSearchBar.ResumeLayout(false);
-            this.pMedicineIDSearch.ResumeLayout(false);
-            this.pMedicineIDSearch.PerformLayout();
+            this.pMedicineNameSearch.ResumeLayout(false);
+            this.pMedicineNameSearch.PerformLayout();
             this.pMedicineManufacturerSearch.ResumeLayout(false);
             this.pMedicineManufacturerSearch.PerformLayout();
-            this.pMedicineSuppierSearch.ResumeLayout(false);
-            this.pMedicineSuppierSearch.PerformLayout();
+            this.pMedicineSupplierSearch.ResumeLayout(false);
+            this.pMedicineSupplierSearch.PerformLayout();
             this.pMedicineTypeSearch.ResumeLayout(false);
+            this.pMedicineTypeSearch.PerformLayout();
             this.flpMedicineActionButtons.ResumeLayout(false);
             this.gbDetails.ResumeLayout(false);
             this.flpMedicineInfo.ResumeLayout(false);
@@ -3179,8 +3320,8 @@
             this.pCustomerSearch.ResumeLayout(false);
             this.pCustomerSearchBar.ResumeLayout(false);
             this.pCustomerPurchaseDate.ResumeLayout(false);
-            this.pCustomerIDSearch.ResumeLayout(false);
-            this.pCustomerIDSearch.PerformLayout();
+            this.pCustomerNameOrPhoneSearch.ResumeLayout(false);
+            this.pCustomerNameOrPhoneSearch.PerformLayout();
             this.flpCustomerActionButtons.ResumeLayout(false);
             this.gbCustomerInfo.ResumeLayout(false);
             this.flpInfoCustomer.ResumeLayout(false);
@@ -3209,12 +3350,12 @@
             this.pImportSearch.ResumeLayout(false);
             this.pImportSearchBar.ResumeLayout(false);
             this.pImportDateSearch.ResumeLayout(false);
-            this.pImportSupplierIDSearch.ResumeLayout(false);
-            this.pImportSupplierIDSearch.PerformLayout();
+            this.pImportSupplierSearch.ResumeLayout(false);
+            this.pImportSupplierSearch.PerformLayout();
             this.pImportIDSearch.ResumeLayout(false);
             this.pImportIDSearch.PerformLayout();
-            this.pImportEmployeeIDSearch.ResumeLayout(false);
-            this.pImportEmployeeIDSearch.PerformLayout();
+            this.pImportEmployeeSearch.ResumeLayout(false);
+            this.pImportEmployeeSearch.PerformLayout();
             this.gbImportDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportDetails)).EndInit();
             this.flpImportTotal.ResumeLayout(false);
@@ -3332,20 +3473,20 @@
         private System.Windows.Forms.Panel pImportSearch;
         private System.Windows.Forms.Panel pImportSearchBar;
         private System.Windows.Forms.Button btnImportSearch;
-        private System.Windows.Forms.Panel pImportEmployeeIDSearch;
-        private System.Windows.Forms.Label lImportEmployeeIDSearch;
+        private System.Windows.Forms.Panel pImportEmployeeSearch;
+        private System.Windows.Forms.Label lImportEmployeeSearch;
         private System.Windows.Forms.Panel pImportIDSearch;
         private System.Windows.Forms.Label lImportIDSearch;
         private System.Windows.Forms.Panel pImportDateSearch;
         private System.Windows.Forms.Label lImportDateSearch;
-        private System.Windows.Forms.Panel pImportSupplierIDSearch;
-        private System.Windows.Forms.Label lImportSupplierIDSearch;
+        private System.Windows.Forms.Panel pImportSupplierSearch;
+        private System.Windows.Forms.Label lImportSupplierSearch;
         private System.Windows.Forms.GroupBox gbImportDetails;
         private System.Windows.Forms.GroupBox gbImportList;
         private System.Windows.Forms.GroupBox gbMedicines;
         private System.Windows.Forms.DataGridView dgvMedicines;
-        private System.Windows.Forms.DateTimePicker dtpImportDateSearch;
-        private System.Windows.Forms.TextBox txtSupplierIDSearch;
+        private System.Windows.Forms.DateTimePicker dtpImportDateFromSearch;
+        private System.Windows.Forms.TextBox txtImportSupplierSearch;
         private System.Windows.Forms.GroupBox gImportInfo;
         private System.Windows.Forms.FlowLayoutPanel flpInfoImport;
         private System.Windows.Forms.Panel pInfoImportID;
@@ -3438,18 +3579,17 @@
         private System.Windows.Forms.RichTextBox rtxtCustomerAddress;
         private System.Windows.Forms.Label lInfoCustomerAddress;
         private System.Windows.Forms.Label lMedicineTypeSearch;
-        private System.Windows.Forms.Panel pMedicineIDSearch;
-        private System.Windows.Forms.Label lMedicineIDSearch;
-        private System.Windows.Forms.Panel pMedicineSuppierSearch;
-        private System.Windows.Forms.Label lMedicineSupplier;
+        private System.Windows.Forms.Panel pMedicineNameSearch;
+        private System.Windows.Forms.Label lMedicineNameSearch;
+        private System.Windows.Forms.Panel pMedicineSupplierSearch;
+        private System.Windows.Forms.Label lMedicineSupplierSearch;
         private System.Windows.Forms.Panel pMedicineManufacturerSearch;
         private System.Windows.Forms.Label lMedicineManufacturerSearch;
-        private System.Windows.Forms.Panel pCustomerIDSearch;
-        private System.Windows.Forms.Label lCustomerID;
+        private System.Windows.Forms.Panel pCustomerNameOrPhoneSearch;
+        private System.Windows.Forms.Label lCustomerNameOrPhone;
         private System.Windows.Forms.Label lCustomerPurchaseForm;
         private System.Windows.Forms.Label lCustomerPurchaseTo;
-        private System.Windows.Forms.DateTimePicker dtpCustomerPurchaseTo;
-        private System.Windows.Forms.DateTimePicker dtpCustomerPurchaseFrom;
+        private System.Windows.Forms.DateTimePicker dtpCustomerPurchaseFromSearch;
         private System.Windows.Forms.DateTimePicker dtpCustomerBirthday;
         private System.Windows.Forms.Panel pInfoCustomerHistoryPurchase;
         private System.Windows.Forms.Label lInfoCustomerHistoryPurchases;
@@ -3473,19 +3613,28 @@
         private System.Windows.Forms.DataGridView dgvImportDetails;
         private System.Windows.Forms.DataGridView dgvBills;
         private System.Windows.Forms.DataGridView dgvBillDetails;
-        private System.Windows.Forms.DateTimePicker dtpBillDateSearch;
+        private System.Windows.Forms.DateTimePicker dtpBillDateFromSearch;
         private System.Windows.Forms.TextBox txtBillCustomerIDSearch;
         private System.Windows.Forms.TextBox txtBillIDSearch;
         private System.Windows.Forms.TextBox txtBillEmployeeIDSearch;
         private System.Windows.Forms.TextBox txtImportIDSearch;
-        private System.Windows.Forms.TextBox txtImportEmployeeIDSearch;
+        private System.Windows.Forms.TextBox txtImportEmployeeSearch;
         private System.Windows.Forms.Panel pMedicineSearchBar;
-        private System.Windows.Forms.TextBox txtMedicineIDSearch;
+        private System.Windows.Forms.TextBox txtMedicineNameSearch;
         private System.Windows.Forms.TextBox txtMedicineManufacturerSearch;
-        private System.Windows.Forms.TextBox txtMedicineSuppierSearch;
-        private System.Windows.Forms.ComboBox cbMedicineTypeSearch;
+        private System.Windows.Forms.TextBox txtMedicineSupplierSearch;
         private System.Windows.Forms.Panel pCustomerSearchBar;
-        private System.Windows.Forms.TextBox txtCustomerIDSearch;
+        private System.Windows.Forms.TextBox txtCustomerNameOrPhoneSearch;
+        private System.Windows.Forms.TextBox txtMedicineTypeSearch;
+        private System.Windows.Forms.Button btnImportResetSearch;
+        private System.Windows.Forms.DateTimePicker dtpBillDateToSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpImportDateToSearch;
+        private System.Windows.Forms.Button btnCustomerResetSearch;
+        private System.Windows.Forms.Button btnMedicineResetSearch;
+        private System.Windows.Forms.Button btnBillResetSearch;
+        private System.Windows.Forms.DateTimePicker dtpCustomerPurchaseToSearch;
     }
 }
 

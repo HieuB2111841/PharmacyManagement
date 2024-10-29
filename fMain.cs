@@ -19,6 +19,32 @@ namespace QLNhaThuoc
             InitializeComponent();
         }
 
+        #region From
+        private void fMain_Load(object sender, EventArgs e)
+        {
+            dtpCustomerPurchaseToSearch.Value = DateTime.Today;
+            dtpImportDateToSearch.Value = DateTime.Today;
+            dtpBillDateToSearch.Value = DateTime.Today;
+        }
+
+        private void fMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Thoát ứng dụng", MessageBoxButtons.OKCancel);
+            if (result != DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        #endregion
+
+        #region Menu Strip
+        private void tsmiFileExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
         #region Tab Page
         private void tcMain_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -53,8 +79,12 @@ namespace QLNhaThuoc
         #region Medicines Tab
         private void tabMedicines_Enter(object sender, EventArgs e)
         {
-            if(dgvMedicines.DataSource != null) return;
+            if (dgvMedicines.DataSource == null)
+                this.dgvMedicines_LoadData();
+        }
 
+        private void dgvMedicines_LoadData()
+        {
             DataTable medicinesTable = MyPublics.Instance.CallProcedure("usp_hienThiDanhSachThuoc",
                 ("@in_count", "20"),
                 ("@in_offset", "0"));
@@ -90,25 +120,61 @@ namespace QLNhaThuoc
 
         private void btnMedicineSearch_Click(object sender, EventArgs e)
         {
+            string name = txtMedicineNameSearch.Text;
+            string type = txtMedicineTypeSearch.Text;
+            string supplier = txtMedicineSupplierSearch.Text;
+            string manufaturer = txtMedicineManufacturerSearch.Text;
 
+
+            DataTable medicinesTable = MyPublics.Instance.CallProcedure("Tim_Thuoc",
+                ("@ma_thuoc", ""),
+                ("@ten_thuoc", name),
+                ("@ten_loai", type),
+                ("@ten_ncc", supplier),
+                ("@ten_hangsx", manufaturer));
+
+            if (medicinesTable.Rows.Count > 0)
+            {
+                dgvMedicines.DataSource = medicinesTable;
+                dgvMedicines.Columns[5].Visible = false; // Ẩn cột công dụng
+            }
+            
         }
+        private void btnMedicineResetSearch_Click(object sender, EventArgs e)
+        {
+            txtMedicineNameSearch.Text = string.Empty;
+            txtMedicineTypeSearch.Text = string.Empty;
+            txtMedicineSupplierSearch.Text = string.Empty;
+            txtMedicineManufacturerSearch.Text = string.Empty;
 
+            this.dgvMedicines_LoadData();
+        }
         #endregion
 
         #region Customers Tab
         private void tabCustomers_Enter(object sender, EventArgs e)
         {
-            if (dgvCustomers.DataSource != null) return;
+            if (dgvCustomers.DataSource == null)
+                this.dgvCustomer_LoadData();
+            dtpCustomerPurchaseToSearch.Value = DateTime.Today;
+        }
 
-            DataTable customerTable = 
-                MyPublics.Instance.CallProcedure("usp_hienThiDanhSachKhachHang", 
+        private void dgvCustomer_LoadData()
+        {
+            DataTable customerTable =
+                MyPublics.Instance.CallProcedure("usp_hienThiDanhSachKhachHang",
                     ("@in_count", "20"),
                     ("@in_offset", "0"));
 
-            if (customerTable.Rows.Count > 0)
+            if(customerTable.Rows.Count > 0)
             {
                 dgvCustomers.DataSource = customerTable;
+
+                // Cột Họ Tên
                 dgvCustomers.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                // Cột địa chỉ
+                dgvCustomers.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
             else
             {
@@ -166,21 +232,62 @@ namespace QLNhaThuoc
             }
         }
 
+        private void btnCustomerSearch_Click(object sender, EventArgs e)
+        {
+            string name = txtCustomerNameOrPhoneSearch.Text;
+            string dateFrom = dtpCustomerPurchaseFromSearch.Value.ToString("yyyy-MM-dd");
+            string dateTo = dtpCustomerPurchaseToSearch.Value.ToString("yyyy-MM-dd");
+
+            DataTable customerTable =
+                MyPublics.Instance.CallProcedure("Tim_Khach_Hang",
+                    ("@searchValue", name),
+                    ("@fromDate", dateFrom),
+                    ("@toDate", dateTo));
+
+            if (customerTable.Rows.Count > 0)
+            {
+                dgvCustomers.DataSource = customerTable;
+
+                // Cột Họ Tên
+                dgvCustomers.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                // Cột địa chỉ
+                dgvCustomers.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            else
+            {
+                MessageBox.Show("no data");
+            }
+        }
+
+        private void btnCustomerResetSearch_Click(object sender, EventArgs e)
+        {
+            txtCustomerNameOrPhoneSearch.Text = string.Empty;
+            dtpCustomerPurchaseFromSearch.Value = new DateTime(2000, 1, 1);
+            dtpCustomerPurchaseToSearch.Value = DateTime.Today;
+
+            this.dgvCustomer_LoadData();
+        }
+
         #endregion
 
         #region Imports Tab
         private void tabImports_Enter(object sender, EventArgs e)
         {
-            if (dvgImports.DataSource != null) return;
+            if (dvgImports.DataSource == null)
+                this.tabImports_LoadData();
+            
+        }
 
-            DataTable medicinesTable = MyPublics.Instance.CallProcedure("usp_hienThiDanhSachPhieuNhap",
+        private void tabImports_LoadData()
+        {
+            DataTable importTable = MyPublics.Instance.CallProcedure("usp_hienThiDanhSachPhieuNhap",
                 ("@in_count", "20"),
                 ("@in_offset", "0"));
 
-            if (medicinesTable.Rows.Count > 0)
+            if (importTable.Rows.Count > 0)
             {
-                dvgImports.DataSource = medicinesTable;
-                dvgImports.Columns[4].Visible = false;
+                dvgImports.DataSource = importTable;
             }
             else
             {
@@ -220,7 +327,9 @@ namespace QLNhaThuoc
                     txtImportDetailsMedicinePrice.Text = string.Empty;
                 }
 
-                txtImportTotalPrice.Text = StringUtils.FormatNumber(row.Cells[4].Value.ToString());
+                decimal totalPrice = MyPublics.Instance.CallFunction<decimal>("tinhTongSoTienPhieuNhap",
+                    ("@in_MaPN", txtImportID.Text));
+                txtImportTotalPrice.Text = StringUtils.FormatNumber(totalPrice);
             }
         }
 
@@ -241,13 +350,55 @@ namespace QLNhaThuoc
             }
         }
 
+        private void btnImportSearch_Click(object sender, EventArgs e)
+        {
+            //string id = txtImportID.Text;
+            //string employee = txtImportEmployeeSearch.Text;
+            //string supplier = txtImportSupplierSearch.Text;
+            //string date = dtpImportDateFromSearch.Value.ToString("yyyy-MM-dd");
+
+            //DataTable importTable =
+            //    MyPublics.Instance.CallProcedure("Tim_Phieu_Nhap",
+            //        ("@ma_phieu_nhap", id),
+            //        ("@nhan_vien", employee),
+            //        ("@ncc", supplier),
+            //        ("@ngay_nhap_tu", "null"),
+            //        ("@ngay_nhap_den", "null"));
+
+            //if (importTable.Rows.Count > 0)
+            //{
+            //    dvgImports.DataSource = importTable;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("no data");
+            //}
+        }
+
+        private void btnImportResetSearch_Click(object sender, EventArgs e)
+        {
+            txtImportID.Text = string.Empty;
+            txtImportEmployeeSearch.Text = string.Empty; 
+            txtImportSupplierSearch.Text = string.Empty;
+
+            dtpImportDateFromSearch.Value = new DateTime(2000, 1, 1);
+            dtpImportDateToSearch.Value = DateTime.Today;
+
+            tabImports_LoadData();
+        }
+
         #endregion
 
         #region Bills Tab
         private void tabBills_Enter(object sender, EventArgs e)
         {
-            if (dgvBills.DataSource != null) return;
+            if (dgvBills.DataSource == null)
+                this.dgvBills_LoadData();
 
+        }
+
+        private void dgvBills_LoadData()
+        {
             DataTable billsTable = MyPublics.Instance.CallProcedure("usp_hienThiDanhSachPhieuXuat",
                 ("@in_count", "20"),
                 ("@in_offset", "0"));
@@ -263,7 +414,7 @@ namespace QLNhaThuoc
                 txtBillEmployeeID.Text = string.Empty;
                 txtBillCustomerID.Text = string.Empty;
                 dtpBillDate.Text = string.Empty;
-                
+
                 MessageBox.Show("no data");
             }
         }
@@ -323,7 +474,25 @@ namespace QLNhaThuoc
                 txtBillDetailsMedicinePrice.Text = StringUtils.FormatNumber(row.Cells[3].Value.ToString());
             }
         }
+        private void btnBillSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBillResetSearch_Click(object sender, EventArgs e)
+        {
+            txtBillIDSearch.Text = string.Empty;
+            txtBillCustomerIDSearch.Text = string.Empty;
+            txtBillEmployeeIDSearch.Text = string.Empty;
+
+            dtpBillDateFromSearch.Value = new DateTime(2000, 1, 1);
+            dtpBillDateToSearch.Value = DateTime.Today;
+
+            this.dgvBills_LoadData();
+        }
+
 
         #endregion
+
     }
 }
