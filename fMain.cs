@@ -1,13 +1,7 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using QLNhaThuoc.Utils;
+﻿using QLNhaThuoc.Utils;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLNhaThuoc
@@ -288,6 +282,15 @@ namespace QLNhaThuoc
             if (importTable.Rows.Count > 0)
             {
                 dvgImports.DataSource = importTable;
+
+                // Cột Mã
+                dvgImports.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+                
+                // Cột Tên nhân viên
+                dvgImports.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                // Cột Tên nhà cung cấp
+                dvgImports.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
             else
             {
@@ -297,7 +300,10 @@ namespace QLNhaThuoc
 
         private void dvgImports_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            
+            if(e.ColumnIndex == 4)
+            {
+                e.Value = StringUtils.FormatNumber(e.Value.ToString());
+            }
         }
 
         private void dvgImports_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -352,27 +358,27 @@ namespace QLNhaThuoc
 
         private void btnImportSearch_Click(object sender, EventArgs e)
         {
-            //string id = txtImportID.Text;
-            //string employee = txtImportEmployeeSearch.Text;
-            //string supplier = txtImportSupplierSearch.Text;
-            //string date = dtpImportDateFromSearch.Value.ToString("yyyy-MM-dd");
+            string id = txtImportID.Text;
+            string employee = txtImportEmployeeSearch.Text;
+            string supplier = txtImportSupplierSearch.Text;
+            string date = dtpImportDateFromSearch.Value.ToString("yyyy-MM-dd");
 
-            //DataTable importTable =
-            //    MyPublics.Instance.CallProcedure("Tim_Phieu_Nhap",
-            //        ("@ma_phieu_nhap", id),
-            //        ("@nhan_vien", employee),
-            //        ("@ncc", supplier),
-            //        ("@ngay_nhap_tu", "null"),
-            //        ("@ngay_nhap_den", "null"));
+            DataTable importTable =
+                MyPublics.Instance.CallProcedure("Tim_Phieu_Nhap",
+                    ("@ma_phieu_nhap", id),
+                    ("@nhan_vien", employee),
+                    ("@ncc", supplier),
+                    ("@fromDate", "null"),
+                    ("@toDate", "null"));
 
-            //if (importTable.Rows.Count > 0)
-            //{
-            //    dvgImports.DataSource = importTable;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("no data");
-            //}
+            if (importTable.Rows.Count > 0)
+            {
+                dvgImports.DataSource = importTable;
+            }
+            else
+            {
+                MessageBox.Show("no data");
+            }
         }
 
         private void btnImportResetSearch_Click(object sender, EventArgs e)
@@ -446,8 +452,9 @@ namespace QLNhaThuoc
                     txtBillDetailsMedicinePrice.Text = string.Empty;
                 }
 
-
-                txtBillTotalPrice.Text = StringUtils.FormatNumber(row.Cells[4].Value.ToString());
+                decimal totalPrice = MyPublics.Instance.CallFunction<decimal>("tinhTongSoTienPhieuXuat",
+                    ("@in_MaPX", txtBillID.Text));
+                txtBillTotalPrice.Text = StringUtils.FormatNumber(totalPrice);
             }
             
         }
@@ -476,14 +483,36 @@ namespace QLNhaThuoc
         }
         private void btnBillSearch_Click(object sender, EventArgs e)
         {
+            string id = txtBillIDSearch.Text;
+            string customer = txtBillCustomerNameOrIDSearch.Text;
+            string employee = txtBillEmployeeNameOrIDSearch.Text;
+            string fromDate = dtpBillDateFromSearch.Value.ToString("yyyy-MM-dd");
+            string toDate = dtpBillDateToSearch.Value.ToString("yyyy-MM-dd");
+
+            DataTable billTable =
+                MyPublics.Instance.CallProcedure("Tim_Hoa_Don",
+                    ("@ma_phieu_xuat", id),
+                    ("@nhan_vien", employee),
+                    ("@khach_hang", customer),
+                    ("@fromDate", fromDate),
+                    ("@toDate", toDate));
+
+            if (billTable.Rows.Count > 0)
+            {
+                dgvBills.DataSource = billTable;
+            }
+            else
+            {
+                MessageBox.Show("no data");
+            }
 
         }
 
         private void btnBillResetSearch_Click(object sender, EventArgs e)
         {
             txtBillIDSearch.Text = string.Empty;
-            txtBillCustomerIDSearch.Text = string.Empty;
-            txtBillEmployeeIDSearch.Text = string.Empty;
+            txtBillCustomerNameOrIDSearch.Text = string.Empty;
+            txtBillEmployeeNameOrIDSearch.Text = string.Empty;
 
             dtpBillDateFromSearch.Value = new DateTime(2000, 1, 1);
             dtpBillDateToSearch.Value = DateTime.Today;
@@ -493,6 +522,7 @@ namespace QLNhaThuoc
 
 
         #endregion
+
 
     }
 }

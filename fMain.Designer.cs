@@ -208,15 +208,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpBillDateFromSearch = new System.Windows.Forms.DateTimePicker();
             this.lBillDateSearch = new System.Windows.Forms.Label();
-            this.pBillCustomerIDSearch = new System.Windows.Forms.Panel();
-            this.txtBillCustomerIDSearch = new System.Windows.Forms.TextBox();
-            this.lBillCustomerIDSearch = new System.Windows.Forms.Label();
+            this.pBillCustomerNameOrIDSearch = new System.Windows.Forms.Panel();
+            this.txtBillCustomerNameOrIDSearch = new System.Windows.Forms.TextBox();
+            this.lBillCustomerNameOrIDSearch = new System.Windows.Forms.Label();
             this.pBillIDSearch = new System.Windows.Forms.Panel();
             this.txtBillIDSearch = new System.Windows.Forms.TextBox();
             this.lBillIDSearch = new System.Windows.Forms.Label();
-            this.pBillEmployeeIDSearch = new System.Windows.Forms.Panel();
-            this.txtBillEmployeeIDSearch = new System.Windows.Forms.TextBox();
-            this.lBillEmployeeIDSearch = new System.Windows.Forms.Label();
+            this.pBillEmployeeNameOrIDSearch = new System.Windows.Forms.Panel();
+            this.txtBillEmployeeNameOrIDSearch = new System.Windows.Forms.TextBox();
+            this.lBillEmployeeNameOrIDSearch = new System.Windows.Forms.Label();
             this.btnBillSearch = new System.Windows.Forms.Button();
             this.gbBillDetails = new System.Windows.Forms.GroupBox();
             this.dgvBillDetails = new System.Windows.Forms.DataGridView();
@@ -347,9 +347,9 @@
             this.pBillSearchContent.SuspendLayout();
             this.pBillSearchBar.SuspendLayout();
             this.pBillDateSearch.SuspendLayout();
-            this.pBillCustomerIDSearch.SuspendLayout();
+            this.pBillCustomerNameOrIDSearch.SuspendLayout();
             this.pBillIDSearch.SuspendLayout();
-            this.pBillEmployeeIDSearch.SuspendLayout();
+            this.pBillEmployeeNameOrIDSearch.SuspendLayout();
             this.gbBillDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).BeginInit();
             this.flpInfoBillTotal.SuspendLayout();
@@ -445,7 +445,7 @@
             this.dgvMedicines.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aquamarine;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
@@ -454,8 +454,8 @@
             this.dgvMedicines.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -1052,7 +1052,7 @@
             this.dgvCustomers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
@@ -1061,8 +1061,8 @@
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -1553,7 +1553,7 @@
             this.dgvCustomerHistoryPurchases.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
@@ -1562,7 +1562,7 @@
             this.dgvCustomerHistoryPurchases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
@@ -1673,11 +1673,11 @@
             this.dvgImports.AllowUserToAddRows = false;
             this.dvgImports.AllowUserToDeleteRows = false;
             this.dvgImports.AllowUserToResizeRows = false;
-            this.dvgImports.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dvgImports.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dvgImports.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
@@ -1956,7 +1956,7 @@
             this.dgvImportDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
@@ -2480,7 +2480,7 @@
             this.dgvBills.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle16.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
@@ -2489,8 +2489,8 @@
             this.dgvBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle17.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -2531,9 +2531,9 @@
             // 
             this.pBillSearchBar.Controls.Add(this.btnBillResetSearch);
             this.pBillSearchBar.Controls.Add(this.pBillDateSearch);
-            this.pBillSearchBar.Controls.Add(this.pBillCustomerIDSearch);
+            this.pBillSearchBar.Controls.Add(this.pBillCustomerNameOrIDSearch);
             this.pBillSearchBar.Controls.Add(this.pBillIDSearch);
-            this.pBillSearchBar.Controls.Add(this.pBillEmployeeIDSearch);
+            this.pBillSearchBar.Controls.Add(this.pBillEmployeeNameOrIDSearch);
             this.pBillSearchBar.Controls.Add(this.btnBillSearch);
             this.pBillSearchBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pBillSearchBar.Location = new System.Drawing.Point(10, 10);
@@ -2627,36 +2627,36 @@
             this.lBillDateSearch.Text = "Ngày lập từ";
             this.lBillDateSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pBillCustomerIDSearch
+            // pBillCustomerNameOrIDSearch
             // 
-            this.pBillCustomerIDSearch.Controls.Add(this.txtBillCustomerIDSearch);
-            this.pBillCustomerIDSearch.Controls.Add(this.lBillCustomerIDSearch);
-            this.pBillCustomerIDSearch.Location = new System.Drawing.Point(3, 3);
-            this.pBillCustomerIDSearch.Name = "pBillCustomerIDSearch";
-            this.pBillCustomerIDSearch.Size = new System.Drawing.Size(268, 30);
-            this.pBillCustomerIDSearch.TabIndex = 0;
+            this.pBillCustomerNameOrIDSearch.Controls.Add(this.txtBillCustomerNameOrIDSearch);
+            this.pBillCustomerNameOrIDSearch.Controls.Add(this.lBillCustomerNameOrIDSearch);
+            this.pBillCustomerNameOrIDSearch.Location = new System.Drawing.Point(3, 3);
+            this.pBillCustomerNameOrIDSearch.Name = "pBillCustomerNameOrIDSearch";
+            this.pBillCustomerNameOrIDSearch.Size = new System.Drawing.Size(268, 30);
+            this.pBillCustomerNameOrIDSearch.TabIndex = 0;
             // 
-            // txtBillCustomerIDSearch
+            // txtBillCustomerNameOrIDSearch
             // 
-            this.txtBillCustomerIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBillCustomerIDSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBillCustomerIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBillCustomerIDSearch.Location = new System.Drawing.Point(117, 0);
-            this.txtBillCustomerIDSearch.Name = "txtBillCustomerIDSearch";
-            this.txtBillCustomerIDSearch.Size = new System.Drawing.Size(151, 30);
-            this.txtBillCustomerIDSearch.TabIndex = 0;
+            this.txtBillCustomerNameOrIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBillCustomerNameOrIDSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBillCustomerNameOrIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBillCustomerNameOrIDSearch.Location = new System.Drawing.Point(117, 0);
+            this.txtBillCustomerNameOrIDSearch.Name = "txtBillCustomerNameOrIDSearch";
+            this.txtBillCustomerNameOrIDSearch.Size = new System.Drawing.Size(151, 30);
+            this.txtBillCustomerNameOrIDSearch.TabIndex = 0;
             // 
-            // lBillCustomerIDSearch
+            // lBillCustomerNameOrIDSearch
             // 
-            this.lBillCustomerIDSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lBillCustomerIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lBillCustomerIDSearch.ForeColor = System.Drawing.Color.Black;
-            this.lBillCustomerIDSearch.Location = new System.Drawing.Point(0, 0);
-            this.lBillCustomerIDSearch.Name = "lBillCustomerIDSearch";
-            this.lBillCustomerIDSearch.Size = new System.Drawing.Size(117, 30);
-            this.lBillCustomerIDSearch.TabIndex = 7;
-            this.lBillCustomerIDSearch.Text = "Khách hàng";
-            this.lBillCustomerIDSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lBillCustomerNameOrIDSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lBillCustomerNameOrIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lBillCustomerNameOrIDSearch.ForeColor = System.Drawing.Color.Black;
+            this.lBillCustomerNameOrIDSearch.Location = new System.Drawing.Point(0, 0);
+            this.lBillCustomerNameOrIDSearch.Name = "lBillCustomerNameOrIDSearch";
+            this.lBillCustomerNameOrIDSearch.Size = new System.Drawing.Size(117, 30);
+            this.lBillCustomerNameOrIDSearch.TabIndex = 7;
+            this.lBillCustomerNameOrIDSearch.Text = "Khách hàng";
+            this.lBillCustomerNameOrIDSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pBillIDSearch
             // 
@@ -2689,37 +2689,37 @@
             this.lBillIDSearch.Text = "Mã hóa đơn";
             this.lBillIDSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pBillEmployeeIDSearch
+            // pBillEmployeeNameOrIDSearch
             // 
-            this.pBillEmployeeIDSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pBillEmployeeIDSearch.Controls.Add(this.txtBillEmployeeIDSearch);
-            this.pBillEmployeeIDSearch.Controls.Add(this.lBillEmployeeIDSearch);
-            this.pBillEmployeeIDSearch.Location = new System.Drawing.Point(277, 3);
-            this.pBillEmployeeIDSearch.Name = "pBillEmployeeIDSearch";
-            this.pBillEmployeeIDSearch.Size = new System.Drawing.Size(263, 30);
-            this.pBillEmployeeIDSearch.TabIndex = 1;
+            this.pBillEmployeeNameOrIDSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBillEmployeeNameOrIDSearch.Controls.Add(this.txtBillEmployeeNameOrIDSearch);
+            this.pBillEmployeeNameOrIDSearch.Controls.Add(this.lBillEmployeeNameOrIDSearch);
+            this.pBillEmployeeNameOrIDSearch.Location = new System.Drawing.Point(277, 3);
+            this.pBillEmployeeNameOrIDSearch.Name = "pBillEmployeeNameOrIDSearch";
+            this.pBillEmployeeNameOrIDSearch.Size = new System.Drawing.Size(263, 30);
+            this.pBillEmployeeNameOrIDSearch.TabIndex = 1;
             // 
-            // txtBillEmployeeIDSearch
+            // txtBillEmployeeNameOrIDSearch
             // 
-            this.txtBillEmployeeIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBillEmployeeIDSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBillEmployeeIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBillEmployeeIDSearch.Location = new System.Drawing.Point(88, 0);
-            this.txtBillEmployeeIDSearch.Name = "txtBillEmployeeIDSearch";
-            this.txtBillEmployeeIDSearch.Size = new System.Drawing.Size(175, 30);
-            this.txtBillEmployeeIDSearch.TabIndex = 8;
+            this.txtBillEmployeeNameOrIDSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBillEmployeeNameOrIDSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBillEmployeeNameOrIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBillEmployeeNameOrIDSearch.Location = new System.Drawing.Point(88, 0);
+            this.txtBillEmployeeNameOrIDSearch.Name = "txtBillEmployeeNameOrIDSearch";
+            this.txtBillEmployeeNameOrIDSearch.Size = new System.Drawing.Size(175, 30);
+            this.txtBillEmployeeNameOrIDSearch.TabIndex = 8;
             // 
-            // lBillEmployeeIDSearch
+            // lBillEmployeeNameOrIDSearch
             // 
-            this.lBillEmployeeIDSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lBillEmployeeIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lBillEmployeeIDSearch.ForeColor = System.Drawing.Color.Black;
-            this.lBillEmployeeIDSearch.Location = new System.Drawing.Point(0, 0);
-            this.lBillEmployeeIDSearch.Name = "lBillEmployeeIDSearch";
-            this.lBillEmployeeIDSearch.Size = new System.Drawing.Size(88, 30);
-            this.lBillEmployeeIDSearch.TabIndex = 7;
-            this.lBillEmployeeIDSearch.Text = "Nhân viên";
-            this.lBillEmployeeIDSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lBillEmployeeNameOrIDSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lBillEmployeeNameOrIDSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lBillEmployeeNameOrIDSearch.ForeColor = System.Drawing.Color.Black;
+            this.lBillEmployeeNameOrIDSearch.Location = new System.Drawing.Point(0, 0);
+            this.lBillEmployeeNameOrIDSearch.Name = "lBillEmployeeNameOrIDSearch";
+            this.lBillEmployeeNameOrIDSearch.Size = new System.Drawing.Size(88, 30);
+            this.lBillEmployeeNameOrIDSearch.TabIndex = 7;
+            this.lBillEmployeeNameOrIDSearch.Text = "Nhân viên";
+            this.lBillEmployeeNameOrIDSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnBillSearch
             // 
@@ -2756,7 +2756,7 @@
             this.dgvBillDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle19.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
@@ -2765,8 +2765,8 @@
             this.dgvBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle20.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -3236,13 +3236,13 @@
             // tsmiAccountInfo
             // 
             this.tsmiAccountInfo.Name = "tsmiAccountInfo";
-            this.tsmiAccountInfo.Size = new System.Drawing.Size(160, 26);
+            this.tsmiAccountInfo.Size = new System.Drawing.Size(224, 26);
             this.tsmiAccountInfo.Text = "Thông tin";
             // 
             // tsmiAccountLogout
             // 
             this.tsmiAccountLogout.Name = "tsmiAccountLogout";
-            this.tsmiAccountLogout.Size = new System.Drawing.Size(160, 26);
+            this.tsmiAccountLogout.Size = new System.Drawing.Size(224, 26);
             this.tsmiAccountLogout.Text = "Đăng xuất";
             // 
             // msMain
@@ -3391,12 +3391,12 @@
             this.pBillSearchContent.ResumeLayout(false);
             this.pBillSearchBar.ResumeLayout(false);
             this.pBillDateSearch.ResumeLayout(false);
-            this.pBillCustomerIDSearch.ResumeLayout(false);
-            this.pBillCustomerIDSearch.PerformLayout();
+            this.pBillCustomerNameOrIDSearch.ResumeLayout(false);
+            this.pBillCustomerNameOrIDSearch.PerformLayout();
             this.pBillIDSearch.ResumeLayout(false);
             this.pBillIDSearch.PerformLayout();
-            this.pBillEmployeeIDSearch.ResumeLayout(false);
-            this.pBillEmployeeIDSearch.PerformLayout();
+            this.pBillEmployeeNameOrIDSearch.ResumeLayout(false);
+            this.pBillEmployeeNameOrIDSearch.PerformLayout();
             this.gbBillDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).EndInit();
             this.flpInfoBillTotal.ResumeLayout(false);
@@ -3599,12 +3599,12 @@
         private System.Windows.Forms.Panel pBillSearchBar;
         private System.Windows.Forms.Panel pBillDateSearch;
         private System.Windows.Forms.Label lBillDateSearch;
-        private System.Windows.Forms.Panel pBillCustomerIDSearch;
-        private System.Windows.Forms.Label lBillCustomerIDSearch;
+        private System.Windows.Forms.Panel pBillCustomerNameOrIDSearch;
+        private System.Windows.Forms.Label lBillCustomerNameOrIDSearch;
         private System.Windows.Forms.Panel pBillIDSearch;
         private System.Windows.Forms.Label lBillIDSearch;
-        private System.Windows.Forms.Panel pBillEmployeeIDSearch;
-        private System.Windows.Forms.Label lBillEmployeeIDSearch;
+        private System.Windows.Forms.Panel pBillEmployeeNameOrIDSearch;
+        private System.Windows.Forms.Label lBillEmployeeNameOrIDSearch;
         private System.Windows.Forms.Button btnBillSearch;
         private System.Windows.Forms.GroupBox gbBillDetails;
         private System.Windows.Forms.DataGridView dgvCustomers;
@@ -3614,9 +3614,9 @@
         private System.Windows.Forms.DataGridView dgvBills;
         private System.Windows.Forms.DataGridView dgvBillDetails;
         private System.Windows.Forms.DateTimePicker dtpBillDateFromSearch;
-        private System.Windows.Forms.TextBox txtBillCustomerIDSearch;
+        private System.Windows.Forms.TextBox txtBillCustomerNameOrIDSearch;
         private System.Windows.Forms.TextBox txtBillIDSearch;
-        private System.Windows.Forms.TextBox txtBillEmployeeIDSearch;
+        private System.Windows.Forms.TextBox txtBillEmployeeNameOrIDSearch;
         private System.Windows.Forms.TextBox txtImportIDSearch;
         private System.Windows.Forms.TextBox txtImportEmployeeSearch;
         private System.Windows.Forms.Panel pMedicineSearchBar;
