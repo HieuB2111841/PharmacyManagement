@@ -75,6 +75,8 @@ namespace QLNhaThuoc
                                                                   ("@p_Pwd", password));
             if (isValid)
             {
+                MyUser.Instance.SetUserByPhoneNumber(account);
+
                 // Đăng nhập thành công, chuyển đến form chính
                 fMain fMain = new fMain();
                 this.Hide();

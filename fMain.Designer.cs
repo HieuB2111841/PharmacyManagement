@@ -3238,6 +3238,7 @@
             this.tsmiAccountInfo.Name = "tsmiAccountInfo";
             this.tsmiAccountInfo.Size = new System.Drawing.Size(224, 26);
             this.tsmiAccountInfo.Text = "Thông tin";
+            this.tsmiAccountInfo.Click += new System.EventHandler(this.tsmiAccountInfo_Click);
             // 
             // tsmiAccountLogout
             // 

@@ -37,6 +37,11 @@ namespace QLNhaThuoc
         {
             this.Close();
         }
+        private void tsmiAccountInfo_Click(object sender, EventArgs e)
+        {
+            fEmployeeInfo employeeInfoForm = new fEmployeeInfo();
+            employeeInfoForm.ShowDialog();
+        }
         #endregion
 
         #region Tab Page
