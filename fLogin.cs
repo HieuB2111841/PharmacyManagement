@@ -77,12 +77,23 @@ namespace QLNhaThuoc
             {
                 MyUser.Instance.SetUserByPhoneNumber(account);
 
-                // Đăng nhập thành công, chuyển đến form chính
-                fMain fMain = new fMain();
-                this.Hide();
-                fMain.ShowDialog();
-                this.ResetForm();
-                this.Show();
+                if(MyUser.Instance.IsEmployee)
+                {
+                    fMain fMain = new fMain();
+                    this.Hide();
+                    fMain.ShowDialog();
+                    this.ResetForm();
+                    this.Show();
+                }
+                else
+                {
+                    fCustomer fCustomer = new fCustomer();
+                    this.Hide();
+                    fCustomer.ShowDialog();
+                    this.ResetForm();
+                    this.Show();
+                }
+                
             }
             else
             {

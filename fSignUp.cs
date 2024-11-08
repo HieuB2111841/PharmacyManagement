@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +23,7 @@ namespace QLNhaThuoc
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = true; // vẫn giữ nút thu nhỏ nếu cần
-
+            ResetForm();
             txtName.Focus();
         }
 
@@ -34,6 +35,16 @@ namespace QLNhaThuoc
         private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
+        }
+
+        private void ResetForm()
+        {
+            txtName.Text = string.Empty;
+            dtpBirthday.Value = new DateTime(2000,1,1);
+            txtAddress.Text = string.Empty;
+            txtAccount.Text = string.Empty;
+            txtPassword.Text = string.Empty;
+            txtConfirmPassword.Text = string.Empty;
         }
 
         private bool ValidateSignUp()
@@ -76,7 +87,35 @@ namespace QLNhaThuoc
         {
             if (!ValidateSignUp()) return;
 
+            // Lấy dữ liệu từ các ô nhập liệu
+            string phone = txtAccount.Text.Trim();
+            string password = txtPassword.Text.Trim();
+            string name = txtName.Text.Trim();
+            string address = txtAddress.Text.Trim();
+            DateTime birthDate = dtpBirthday.Value;
 
+            // Gọi Stored Procedure `sign_up_customer`
+            bool result = MyPublics.Instance.CallFunction<bool>("sign_up_customer",
+                                                                out string message,
+                                                                ("@p_SoDienThoai", phone),
+                                                                ("@p_Pwd", password),
+                                                                ("@p_TenUser", name),
+                                                                ("@p_DiaChi", address),
+                                                                ("@p_NgaySinh", birthDate.ToString("yyyy-MM-dd")));
+
+            // Kiểm tra xem đăng ký có thành công không
+            if(message == "Success")
+            {
+                if (result)
+                {
+                    MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ResetForm();
+                }
+            }
+            else
+            {
+                MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

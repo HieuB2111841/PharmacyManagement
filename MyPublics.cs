@@ -24,7 +24,7 @@ namespace QLNhaThuoc
         private string _server = "localhost";
         private string _database = "quanlynhathuoc";
         private string _uid = "root";
-        private string _password = "Hieub2111841";
+        private string _password = "rootpassword";
 
         /// <summary>
         ///     Tránh khởi tạo đối tượng MyPublics ở nơi khác
@@ -176,6 +176,8 @@ namespace QLNhaThuoc
         }
 
         public T CallFunction<T>(string functionName, params (string, string)[] parameters)
+            => CallFunction<T>(functionName, out string _, parameters);
+        public T CallFunction<T>(string functionName, out string message, params (string, string)[] parameters)
         {
             try
             {
@@ -193,9 +195,13 @@ namespace QLNhaThuoc
                     result = (T)cmd.ExecuteScalar();
                 }
                 _sqlConnection.Close();
+                message = "Success";
                 return result;
             }
-            catch (Exception) { }
+            catch (Exception e)
+            {
+                message = e.Message;
+            }
 
             return default;
         }
