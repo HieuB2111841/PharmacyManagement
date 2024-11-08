@@ -70,7 +70,7 @@ namespace QLNhaThuoc
             if (!ValidateLogin()) return;
 
             // Gọi hàm checking_login từ MySQL
-            bool isValid = MyPublics.Instance.CallFunction<bool>("checking_login",
+            bool isValid = MyPublics.Instance.CallFunction<bool>("checking_login", out string mess,
                                                                   ("@p_SoDienThoai", account),
                                                                   ("@p_Pwd", password));
             if (isValid)

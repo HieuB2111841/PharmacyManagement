@@ -445,7 +445,7 @@
             this.dgvMedicines.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aquamarine;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
@@ -454,8 +454,8 @@
             this.dgvMedicines.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -691,6 +691,7 @@
             this.btnMedicineAdd.TabIndex = 0;
             this.btnMedicineAdd.Text = "Thêm";
             this.btnMedicineAdd.UseVisualStyleBackColor = false;
+            this.btnMedicineAdd.Click += new System.EventHandler(this.btnMedicineAdd_Click);
             // 
             // btnMedicineEdit
             // 
@@ -706,6 +707,7 @@
             this.btnMedicineEdit.TabIndex = 1;
             this.btnMedicineEdit.Text = "Sửa";
             this.btnMedicineEdit.UseVisualStyleBackColor = false;
+            this.btnMedicineEdit.Click += new System.EventHandler(this.btnMedicineEdit_Click);
             // 
             // btnMedicineDelete
             // 
@@ -1052,7 +1054,7 @@
             this.dgvCustomers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
@@ -1061,8 +1063,8 @@
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -1553,7 +1555,7 @@
             this.dgvCustomerHistoryPurchases.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
@@ -1562,7 +1564,7 @@
             this.dgvCustomerHistoryPurchases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
@@ -1677,7 +1679,7 @@
             this.dvgImports.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
@@ -1956,7 +1958,7 @@
             this.dgvImportDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
@@ -2480,7 +2482,7 @@
             this.dgvBills.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle16.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
@@ -2489,8 +2491,8 @@
             this.dgvBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle17.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -2756,7 +2758,7 @@
             this.dgvBillDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle19.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
@@ -2765,8 +2767,8 @@
             this.dgvBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle20.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -3236,14 +3238,14 @@
             // tsmiAccountInfo
             // 
             this.tsmiAccountInfo.Name = "tsmiAccountInfo";
-            this.tsmiAccountInfo.Size = new System.Drawing.Size(224, 26);
+            this.tsmiAccountInfo.Size = new System.Drawing.Size(160, 26);
             this.tsmiAccountInfo.Text = "Thông tin";
             this.tsmiAccountInfo.Click += new System.EventHandler(this.tsmiAccountInfo_Click);
             // 
             // tsmiAccountLogout
             // 
             this.tsmiAccountLogout.Name = "tsmiAccountLogout";
-            this.tsmiAccountLogout.Size = new System.Drawing.Size(224, 26);
+            this.tsmiAccountLogout.Size = new System.Drawing.Size(160, 26);
             this.tsmiAccountLogout.Text = "Đăng xuất";
             // 
             // msMain

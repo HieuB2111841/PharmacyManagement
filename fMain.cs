@@ -148,6 +148,20 @@ namespace QLNhaThuoc
 
             this.dgvMedicines_LoadData();
         }
+
+        private void btnMedicineAdd_Click(object sender, EventArgs e)
+        {
+            fMedicine medicineForm = new fMedicine();
+            medicineForm.ToAddFrom();
+            medicineForm.ShowDialog();
+        }
+        private void btnMedicineEdit_Click(object sender, EventArgs e)
+        {
+            fMedicine medicineForm = new fMedicine();
+            medicineForm.ToEditFrom(txtMedicineID.Text);
+            medicineForm.ShowDialog();
+        }
+
         #endregion
 
         #region Customers Tab
@@ -526,8 +540,8 @@ namespace QLNhaThuoc
         }
 
 
-        #endregion
 
+        #endregion
 
     }
 }
