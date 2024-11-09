@@ -71,12 +71,11 @@
             this.pMedicineTypeSearch = new System.Windows.Forms.Panel();
             this.txtMedicineTypeSearch = new System.Windows.Forms.TextBox();
             this.lMedicineTypeSearch = new System.Windows.Forms.Label();
-            this.flpMedicineActionButtons = new System.Windows.Forms.FlowLayoutPanel();
+            this.gbDetails = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnMedicineAdd = new System.Windows.Forms.Button();
             this.btnMedicineEdit = new System.Windows.Forms.Button();
             this.btnMedicineDelete = new System.Windows.Forms.Button();
-            this.btnMedicineSave = new System.Windows.Forms.Button();
-            this.gbDetails = new System.Windows.Forms.GroupBox();
             this.flpMedicineInfo = new System.Windows.Forms.FlowLayoutPanel();
             this.pInfoMedicineID = new System.Windows.Forms.Panel();
             this.txtMedicineID = new System.Windows.Forms.TextBox();
@@ -259,6 +258,9 @@
             this.tsmiAccountInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAccountLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.msMain = new System.Windows.Forms.MenuStrip();
+            this.pMedicineStoredQuantity = new System.Windows.Forms.Panel();
+            this.txtMedicineStoredQuantity = new System.Windows.Forms.TextBox();
+            this.lMedicineStoredQuantity = new System.Windows.Forms.Label();
             this.tcMain.SuspendLayout();
             this.tabMedicines.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMedicines)).BeginInit();
@@ -273,8 +275,8 @@
             this.pMedicineManufacturerSearch.SuspendLayout();
             this.pMedicineSupplierSearch.SuspendLayout();
             this.pMedicineTypeSearch.SuspendLayout();
-            this.flpMedicineActionButtons.SuspendLayout();
             this.gbDetails.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.flpMedicineInfo.SuspendLayout();
             this.pInfoMedicineID.SuspendLayout();
             this.pInfoMedicineName.SuspendLayout();
@@ -364,6 +366,7 @@
             this.pInfoBillDetailsMedicineQuantity.SuspendLayout();
             this.pInfoBillDetailsMedicinePrice.SuspendLayout();
             this.msMain.SuspendLayout();
+            this.pMedicineStoredQuantity.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcMain
@@ -377,12 +380,12 @@
             this.tcMain.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tcMain.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tcMain.ItemSize = new System.Drawing.Size(50, 150);
-            this.tcMain.Location = new System.Drawing.Point(0, 28);
+            this.tcMain.Location = new System.Drawing.Point(0, 30);
             this.tcMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tcMain.Multiline = true;
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(1000, 622);
+            this.tcMain.Size = new System.Drawing.Size(1000, 620);
             this.tcMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcMain.TabIndex = 0;
             this.tcMain.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tcMain_DrawItem);
@@ -397,7 +400,7 @@
             this.tabMedicines.Location = new System.Drawing.Point(154, 4);
             this.tabMedicines.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabMedicines.Name = "tabMedicines";
-            this.tabMedicines.Size = new System.Drawing.Size(842, 614);
+            this.tabMedicines.Size = new System.Drawing.Size(842, 612);
             this.tabMedicines.TabIndex = 0;
             this.tabMedicines.Text = "Thuốc";
             this.tabMedicines.Enter += new System.EventHandler(this.tabMedicines_Enter);
@@ -418,9 +421,8 @@
             // scMedicines.Panel2
             // 
             this.scMedicines.Panel2.BackColor = System.Drawing.Color.Aquamarine;
-            this.scMedicines.Panel2.Controls.Add(this.flpMedicineActionButtons);
             this.scMedicines.Panel2.Controls.Add(this.gbDetails);
-            this.scMedicines.Size = new System.Drawing.Size(842, 614);
+            this.scMedicines.Size = new System.Drawing.Size(842, 612);
             this.scMedicines.SplitterDistance = 563;
             this.scMedicines.TabIndex = 2;
             // 
@@ -431,7 +433,7 @@
             this.gbMedicines.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbMedicines.Location = new System.Drawing.Point(0, 128);
             this.gbMedicines.Name = "gbMedicines";
-            this.gbMedicines.Size = new System.Drawing.Size(563, 486);
+            this.gbMedicines.Size = new System.Drawing.Size(563, 484);
             this.gbMedicines.TabIndex = 2;
             this.gbMedicines.TabStop = false;
             this.gbMedicines.Text = "Danh sách thuốc";
@@ -476,9 +478,10 @@
             this.dgvMedicines.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMedicines.RowTemplate.Height = 24;
             this.dgvMedicines.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicines.Size = new System.Drawing.Size(557, 453);
+            this.dgvMedicines.Size = new System.Drawing.Size(557, 451);
             this.dgvMedicines.TabIndex = 3;
             this.dgvMedicines.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicines_RowEnter);
+            this.dgvMedicines.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvMedicines_Scroll);
             // 
             // pMedicineSearch
             // 
@@ -663,84 +666,9 @@
             this.lMedicineTypeSearch.Text = "Loại thuốc";
             this.lMedicineTypeSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // flpMedicineActionButtons
-            // 
-            this.flpMedicineActionButtons.AutoSize = true;
-            this.flpMedicineActionButtons.Controls.Add(this.btnMedicineAdd);
-            this.flpMedicineActionButtons.Controls.Add(this.btnMedicineEdit);
-            this.flpMedicineActionButtons.Controls.Add(this.btnMedicineDelete);
-            this.flpMedicineActionButtons.Controls.Add(this.btnMedicineSave);
-            this.flpMedicineActionButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpMedicineActionButtons.Location = new System.Drawing.Point(0, 532);
-            this.flpMedicineActionButtons.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.flpMedicineActionButtons.Name = "flpMedicineActionButtons";
-            this.flpMedicineActionButtons.Size = new System.Drawing.Size(275, 82);
-            this.flpMedicineActionButtons.TabIndex = 5;
-            // 
-            // btnMedicineAdd
-            // 
-            this.btnMedicineAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnMedicineAdd.BackColor = System.Drawing.SystemColors.Control;
-            this.btnMedicineAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMedicineAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnMedicineAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnMedicineAdd.Location = new System.Drawing.Point(3, 4);
-            this.btnMedicineAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMedicineAdd.Name = "btnMedicineAdd";
-            this.btnMedicineAdd.Size = new System.Drawing.Size(130, 33);
-            this.btnMedicineAdd.TabIndex = 0;
-            this.btnMedicineAdd.Text = "Thêm";
-            this.btnMedicineAdd.UseVisualStyleBackColor = false;
-            this.btnMedicineAdd.Click += new System.EventHandler(this.btnMedicineAdd_Click);
-            // 
-            // btnMedicineEdit
-            // 
-            this.btnMedicineEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnMedicineEdit.BackColor = System.Drawing.SystemColors.Control;
-            this.btnMedicineEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMedicineEdit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnMedicineEdit.ForeColor = System.Drawing.Color.Black;
-            this.btnMedicineEdit.Location = new System.Drawing.Point(139, 4);
-            this.btnMedicineEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMedicineEdit.Name = "btnMedicineEdit";
-            this.btnMedicineEdit.Size = new System.Drawing.Size(130, 33);
-            this.btnMedicineEdit.TabIndex = 1;
-            this.btnMedicineEdit.Text = "Sửa";
-            this.btnMedicineEdit.UseVisualStyleBackColor = false;
-            this.btnMedicineEdit.Click += new System.EventHandler(this.btnMedicineEdit_Click);
-            // 
-            // btnMedicineDelete
-            // 
-            this.btnMedicineDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnMedicineDelete.BackColor = System.Drawing.SystemColors.Control;
-            this.btnMedicineDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMedicineDelete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnMedicineDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnMedicineDelete.Location = new System.Drawing.Point(3, 45);
-            this.btnMedicineDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMedicineDelete.Name = "btnMedicineDelete";
-            this.btnMedicineDelete.Size = new System.Drawing.Size(130, 33);
-            this.btnMedicineDelete.TabIndex = 2;
-            this.btnMedicineDelete.Text = "Xóa";
-            this.btnMedicineDelete.UseVisualStyleBackColor = false;
-            // 
-            // btnMedicineSave
-            // 
-            this.btnMedicineSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnMedicineSave.BackColor = System.Drawing.SystemColors.Control;
-            this.btnMedicineSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMedicineSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnMedicineSave.ForeColor = System.Drawing.Color.Black;
-            this.btnMedicineSave.Location = new System.Drawing.Point(139, 45);
-            this.btnMedicineSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMedicineSave.Name = "btnMedicineSave";
-            this.btnMedicineSave.Size = new System.Drawing.Size(130, 33);
-            this.btnMedicineSave.TabIndex = 3;
-            this.btnMedicineSave.Text = "Lưu";
-            this.btnMedicineSave.UseVisualStyleBackColor = false;
-            // 
             // gbDetails
             // 
+            this.gbDetails.Controls.Add(this.tableLayoutPanel1);
             this.gbDetails.Controls.Add(this.flpMedicineInfo);
             this.gbDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -749,10 +677,78 @@
             this.gbDetails.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbDetails.Name = "gbDetails";
             this.gbDetails.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbDetails.Size = new System.Drawing.Size(275, 614);
+            this.gbDetails.Size = new System.Drawing.Size(275, 612);
             this.gbDetails.TabIndex = 3;
             this.gbDetails.TabStop = false;
             this.gbDetails.Text = "Chi tiết";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.btnMedicineAdd, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnMedicineEdit, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnMedicineDelete, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 530);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(269, 78);
+            this.tableLayoutPanel1.TabIndex = 8;
+            // 
+            // btnMedicineAdd
+            // 
+            this.btnMedicineAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnMedicineAdd.BackColor = System.Drawing.SystemColors.Control;
+            this.btnMedicineAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMedicineAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMedicineAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnMedicineAdd.ForeColor = System.Drawing.Color.Black;
+            this.btnMedicineAdd.Location = new System.Drawing.Point(3, 4);
+            this.btnMedicineAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMedicineAdd.Name = "btnMedicineAdd";
+            this.btnMedicineAdd.Size = new System.Drawing.Size(128, 31);
+            this.btnMedicineAdd.TabIndex = 1;
+            this.btnMedicineAdd.Text = "Thêm";
+            this.btnMedicineAdd.UseVisualStyleBackColor = false;
+            this.btnMedicineAdd.Click += new System.EventHandler(this.btnMedicineAdd_Click);
+            // 
+            // btnMedicineEdit
+            // 
+            this.btnMedicineEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnMedicineEdit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnMedicineEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMedicineEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMedicineEdit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnMedicineEdit.ForeColor = System.Drawing.Color.Black;
+            this.btnMedicineEdit.Location = new System.Drawing.Point(137, 4);
+            this.btnMedicineEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMedicineEdit.Name = "btnMedicineEdit";
+            this.btnMedicineEdit.Size = new System.Drawing.Size(129, 31);
+            this.btnMedicineEdit.TabIndex = 2;
+            this.btnMedicineEdit.Text = "Sửa";
+            this.btnMedicineEdit.UseVisualStyleBackColor = false;
+            this.btnMedicineEdit.Click += new System.EventHandler(this.btnMedicineEdit_Click);
+            // 
+            // btnMedicineDelete
+            // 
+            this.btnMedicineDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnMedicineDelete.BackColor = System.Drawing.Color.LightCoral;
+            this.btnMedicineDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMedicineDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMedicineDelete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnMedicineDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnMedicineDelete.Location = new System.Drawing.Point(137, 43);
+            this.btnMedicineDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMedicineDelete.Name = "btnMedicineDelete";
+            this.btnMedicineDelete.Size = new System.Drawing.Size(129, 31);
+            this.btnMedicineDelete.TabIndex = 3;
+            this.btnMedicineDelete.Text = "Xóa";
+            this.btnMedicineDelete.UseVisualStyleBackColor = false;
+            this.btnMedicineDelete.Click += new System.EventHandler(this.btnMedicineDelete_Click);
             // 
             // flpMedicineInfo
             // 
@@ -762,12 +758,13 @@
             this.flpMedicineInfo.Controls.Add(this.pInfoMedicineManufacturer);
             this.flpMedicineInfo.Controls.Add(this.pInfoMedicineSupplier);
             this.flpMedicineInfo.Controls.Add(this.pMedicineEffect);
+            this.flpMedicineInfo.Controls.Add(this.pMedicineStoredQuantity);
             this.flpMedicineInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpMedicineInfo.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpMedicineInfo.Location = new System.Drawing.Point(3, 31);
             this.flpMedicineInfo.Name = "flpMedicineInfo";
-            this.flpMedicineInfo.Size = new System.Drawing.Size(269, 579);
-            this.flpMedicineInfo.TabIndex = 6;
+            this.flpMedicineInfo.Size = new System.Drawing.Size(269, 577);
+            this.flpMedicineInfo.TabIndex = 7;
             this.flpMedicineInfo.WrapContents = false;
             // 
             // pInfoMedicineID
@@ -994,7 +991,7 @@
             this.pControl.Location = new System.Drawing.Point(842, 0);
             this.pControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pControl.Name = "pControl";
-            this.pControl.Size = new System.Drawing.Size(0, 614);
+            this.pControl.Size = new System.Drawing.Size(0, 612);
             this.pControl.TabIndex = 1;
             // 
             // tabCustomers
@@ -3210,7 +3207,7 @@
             this.tsmiFileExportExcel,
             this.tsmiFileExit});
             this.tsmiFile.Name = "tsmiFile";
-            this.tsmiFile.Size = new System.Drawing.Size(46, 24);
+            this.tsmiFile.Size = new System.Drawing.Size(46, 26);
             this.tsmiFile.Text = "File";
             // 
             // tsmiFileExportExcel
@@ -3232,7 +3229,7 @@
             this.tsmiAccountInfo,
             this.tsmiAccountLogout});
             this.tsmiAccount.Name = "tsmiAccount";
-            this.tsmiAccount.Size = new System.Drawing.Size(85, 24);
+            this.tsmiAccount.Size = new System.Drawing.Size(85, 26);
             this.tsmiAccount.Text = "Tài khoản";
             // 
             // tsmiAccountInfo
@@ -3256,9 +3253,44 @@
             this.tsmiAccount});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
-            this.msMain.Size = new System.Drawing.Size(1000, 28);
+            this.msMain.Size = new System.Drawing.Size(1000, 30);
             this.msMain.TabIndex = 1;
             this.msMain.Text = "menuStrip1";
+            // 
+            // pMedicineStoredQuantity
+            // 
+            this.pMedicineStoredQuantity.BackColor = System.Drawing.Color.Transparent;
+            this.pMedicineStoredQuantity.Controls.Add(this.txtMedicineStoredQuantity);
+            this.pMedicineStoredQuantity.Controls.Add(this.lMedicineStoredQuantity);
+            this.pMedicineStoredQuantity.Location = new System.Drawing.Point(3, 296);
+            this.pMedicineStoredQuantity.Name = "pMedicineStoredQuantity";
+            this.pMedicineStoredQuantity.Size = new System.Drawing.Size(261, 30);
+            this.pMedicineStoredQuantity.TabIndex = 6;
+            // 
+            // txtMedicineStoredQuantity
+            // 
+            this.txtMedicineStoredQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMedicineStoredQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMedicineStoredQuantity.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMedicineStoredQuantity.Location = new System.Drawing.Point(96, 0);
+            this.txtMedicineStoredQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMedicineStoredQuantity.MaxLength = 50;
+            this.txtMedicineStoredQuantity.Name = "txtMedicineStoredQuantity";
+            this.txtMedicineStoredQuantity.ReadOnly = true;
+            this.txtMedicineStoredQuantity.Size = new System.Drawing.Size(165, 30);
+            this.txtMedicineStoredQuantity.TabIndex = 0;
+            // 
+            // lMedicineStoredQuantity
+            // 
+            this.lMedicineStoredQuantity.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lMedicineStoredQuantity.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lMedicineStoredQuantity.ForeColor = System.Drawing.Color.Black;
+            this.lMedicineStoredQuantity.Location = new System.Drawing.Point(0, 0);
+            this.lMedicineStoredQuantity.Name = "lMedicineStoredQuantity";
+            this.lMedicineStoredQuantity.Size = new System.Drawing.Size(96, 30);
+            this.lMedicineStoredQuantity.TabIndex = 0;
+            this.lMedicineStoredQuantity.Text = "Số lượng:";
+            this.lMedicineStoredQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // fMain
             // 
@@ -3283,7 +3315,6 @@
             this.tabMedicines.PerformLayout();
             this.scMedicines.Panel1.ResumeLayout(false);
             this.scMedicines.Panel2.ResumeLayout(false);
-            this.scMedicines.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMedicines)).EndInit();
             this.scMedicines.ResumeLayout(false);
             this.gbMedicines.ResumeLayout(false);
@@ -3298,8 +3329,8 @@
             this.pMedicineSupplierSearch.PerformLayout();
             this.pMedicineTypeSearch.ResumeLayout(false);
             this.pMedicineTypeSearch.PerformLayout();
-            this.flpMedicineActionButtons.ResumeLayout(false);
             this.gbDetails.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.flpMedicineInfo.ResumeLayout(false);
             this.pInfoMedicineID.ResumeLayout(false);
             this.pInfoMedicineID.PerformLayout();
@@ -3422,6 +3453,8 @@
             this.pInfoBillDetailsMedicinePrice.PerformLayout();
             this.msMain.ResumeLayout(false);
             this.msMain.PerformLayout();
+            this.pMedicineStoredQuantity.ResumeLayout(false);
+            this.pMedicineStoredQuantity.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3444,31 +3477,7 @@
         private System.Windows.Forms.Panel pControl;
         private System.Windows.Forms.SplitContainer scMedicines;
         private System.Windows.Forms.SplitContainer scImports;
-        private System.Windows.Forms.FlowLayoutPanel flpMedicineActionButtons;
-        private System.Windows.Forms.Button btnMedicineAdd;
-        private System.Windows.Forms.Button btnMedicineEdit;
-        private System.Windows.Forms.Button btnMedicineDelete;
-        private System.Windows.Forms.Button btnMedicineSave;
         private System.Windows.Forms.GroupBox gbDetails;
-        private System.Windows.Forms.FlowLayoutPanel flpMedicineInfo;
-        private System.Windows.Forms.Panel pInfoMedicineID;
-        private System.Windows.Forms.TextBox txtMedicineID;
-        private System.Windows.Forms.Label lInfoMedicineID;
-        private System.Windows.Forms.Panel pInfoMedicineName;
-        private System.Windows.Forms.TextBox txtMedicineName;
-        private System.Windows.Forms.Label lInfoMedicineName;
-        private System.Windows.Forms.Panel pInfoMedicineType;
-        private System.Windows.Forms.TextBox txtMedicineType;
-        private System.Windows.Forms.Label lInfoMedicineType;
-        private System.Windows.Forms.Panel pMedicineEffect;
-        private System.Windows.Forms.RichTextBox rtxtMedicineEffect;
-        private System.Windows.Forms.Label lInfoMedicineEffect;
-        private System.Windows.Forms.Panel pInfoMedicineManufacturer;
-        private System.Windows.Forms.TextBox txtMedicineManufacturer;
-        private System.Windows.Forms.Label lInfoMedicineManufactuer;
-        private System.Windows.Forms.Panel pInfoMedicineSupplier;
-        private System.Windows.Forms.TextBox txtMedicineSupplier;
-        private System.Windows.Forms.Label lInfoMedicineSupplier;
         private System.Windows.Forms.SplitContainer scImportContents;
         private System.Windows.Forms.Panel pMedicineSearch;
         private System.Windows.Forms.Panel pMedicineTypeSearch;
@@ -3638,6 +3647,32 @@
         private System.Windows.Forms.Button btnMedicineResetSearch;
         private System.Windows.Forms.Button btnBillResetSearch;
         private System.Windows.Forms.DateTimePicker dtpCustomerPurchaseToSearch;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button btnMedicineDelete;
+        private System.Windows.Forms.Button btnMedicineAdd;
+        private System.Windows.Forms.Button btnMedicineEdit;
+        private System.Windows.Forms.FlowLayoutPanel flpMedicineInfo;
+        private System.Windows.Forms.Panel pInfoMedicineID;
+        private System.Windows.Forms.TextBox txtMedicineID;
+        private System.Windows.Forms.Label lInfoMedicineID;
+        private System.Windows.Forms.Panel pInfoMedicineName;
+        private System.Windows.Forms.TextBox txtMedicineName;
+        private System.Windows.Forms.Label lInfoMedicineName;
+        private System.Windows.Forms.Panel pInfoMedicineType;
+        private System.Windows.Forms.TextBox txtMedicineType;
+        private System.Windows.Forms.Label lInfoMedicineType;
+        private System.Windows.Forms.Panel pInfoMedicineManufacturer;
+        private System.Windows.Forms.TextBox txtMedicineManufacturer;
+        private System.Windows.Forms.Label lInfoMedicineManufactuer;
+        private System.Windows.Forms.Panel pInfoMedicineSupplier;
+        private System.Windows.Forms.TextBox txtMedicineSupplier;
+        private System.Windows.Forms.Label lInfoMedicineSupplier;
+        private System.Windows.Forms.Panel pMedicineEffect;
+        private System.Windows.Forms.RichTextBox rtxtMedicineEffect;
+        private System.Windows.Forms.Label lInfoMedicineEffect;
+        private System.Windows.Forms.Panel pMedicineStoredQuantity;
+        private System.Windows.Forms.TextBox txtMedicineStoredQuantity;
+        private System.Windows.Forms.Label lMedicineStoredQuantity;
     }
 }
 

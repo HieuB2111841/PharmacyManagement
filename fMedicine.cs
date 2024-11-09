@@ -44,10 +44,14 @@ namespace QLNhaThuoc
             if (IsEdited())
             {
                 if(MessageBox.Show("Bạn có muốn hủy thay đổi không?", "Hủy thay đổi", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    this.DialogResult = DialogResult.Cancel;
                     this.Close();
+                }
             }
             else
             {
+                this.DialogResult = DialogResult.Cancel;
                 this.Close();
             }
         }
@@ -84,6 +88,7 @@ namespace QLNhaThuoc
             if (message.Equals("Success"))
             {
                 MessageBox.Show("Sửa thông tin thuốc thành công", "Thông báo", MessageBoxButtons.OK);
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
@@ -105,6 +110,7 @@ namespace QLNhaThuoc
             if (message.Equals("Success"))
             {
                 MessageBox.Show("Thêm thuốc thành công", "Thông báo", MessageBoxButtons.OK);
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else

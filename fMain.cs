@@ -85,18 +85,32 @@ namespace QLNhaThuoc
         private void dgvMedicines_LoadData()
         {
             DataTable medicinesTable = MyPublics.Instance.CallProcedure("usp_hienThiDanhSachThuoc",
-                ("@in_count", "20"),
+                ("@in_count", "200"),
                 ("@in_offset", "0"));
 
             if (medicinesTable.Rows.Count > 0)
             {
                 dgvMedicines.DataSource = medicinesTable;
-                dgvMedicines.Columns[5].Visible = false; // Ẩn cột công dụng
+                this.dgvMedicines_FormatColumn();
             }
             else
             {
                 MessageBox.Show("no data");
             }
+        }
+
+        private void dgvMedicines_FormatColumn()
+        {
+            // Cột tên
+            dgvMedicines.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvMedicines.Columns[3].Visible = false; // Ẩn cột nhà cung cấp
+            dgvMedicines.Columns[4].Visible = false; // Ẩn cột hãng sản xuất
+            dgvMedicines.Columns[5].Visible = false; // Ẩn cột công dụng
+        }
+
+        private void dgvMedicines_Scroll(object sender, ScrollEventArgs e)
+        {
+
         }
 
         private void dgvMedicines_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -113,7 +127,7 @@ namespace QLNhaThuoc
                 txtMedicineManufacturer.Text = row.Cells[3].Value.ToString();
                 txtMedicineSupplier.Text = row.Cells[4].Value.ToString();
                 rtxtMedicineEffect.Text = row.Cells[5].Value.ToString();
-
+                txtMedicineStoredQuantity.Text = row.Cells[6].Value.ToString();
             }
         }
 
@@ -132,12 +146,9 @@ namespace QLNhaThuoc
                 ("@ten_ncc", supplier),
                 ("@ten_hangsx", manufaturer));
 
-            if (medicinesTable.Rows.Count > 0)
-            {
-                dgvMedicines.DataSource = medicinesTable;
-                dgvMedicines.Columns[5].Visible = false; // Ẩn cột công dụng
-            }
-            
+
+            dgvMedicines.DataSource = medicinesTable;
+            this.dgvMedicines_FormatColumn();
         }
         private void btnMedicineResetSearch_Click(object sender, EventArgs e)
         {
@@ -153,13 +164,49 @@ namespace QLNhaThuoc
         {
             fMedicine medicineForm = new fMedicine();
             medicineForm.ToAddFrom();
-            medicineForm.ShowDialog();
+            DialogResult res = medicineForm.ShowDialog();
+            if(res == DialogResult.OK)
+            {
+                this.dgvMedicines_LoadData();
+            }
+
         }
         private void btnMedicineEdit_Click(object sender, EventArgs e)
         {
             fMedicine medicineForm = new fMedicine();
             medicineForm.ToEditFrom(txtMedicineID.Text);
-            medicineForm.ShowDialog();
+            DialogResult res = medicineForm.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                this.dgvMedicines_LoadData();
+            }
+        }
+
+        private void btnMedicineDelete_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show($"Bạn có muốn xóa thuốc {txtMedicineID.Text} không?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DataTable data = MyPublics.Instance.CallProcedure("DeleteThuoc",
+                    out string message,
+                    ("@p_MaThuoc", txtMedicineID.Text));
+
+                if(message == "Success")
+                {
+                    MessageBox.Show($"Xóa thuốc '{txtMedicineID.Text}' thành công", "Thông báo", MessageBoxButtons.OK);
+                    this.dgvMedicines_LoadData();
+                }
+                else
+                {
+                    if(message.Contains("foreign key constraint fails"))
+                    {
+                        MessageBox.Show($"Không thể xóa thuốc", "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Lỗi khi xóa thuốc: {message}", "Lỗi", MessageBoxButtons.OK);
+                    }
+                }
+            }
         }
 
         #endregion
@@ -545,6 +592,8 @@ namespace QLNhaThuoc
 
             this.dgvBills_LoadData();
         }
+
+
 
 
 
