@@ -319,6 +319,13 @@ namespace QLNhaThuoc
 
         private void dvgImports_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            // Cột ngày nhập
+            if(e.ColumnIndex == 3)
+            {
+                e.Value = ((DateTime)e.Value).ToString("dd/MM/yyyy");
+            }
+
+            // Cột tổng tiền
             if(e.ColumnIndex == 4)
             {
                 e.Value = StringUtils.FormatNumber(e.Value.ToString());

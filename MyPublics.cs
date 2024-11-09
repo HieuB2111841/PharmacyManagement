@@ -138,6 +138,8 @@ namespace QLNhaThuoc
 
 
         public DataTable CallProcedure(string procedureName, params (string, string)[] parameters)
+            => CallProcedure(procedureName, out string _, parameters);
+        public DataTable CallProcedure(string procedureName, out string message, params (string, string)[] parameters)
         {
             DataTable dtTable = new DataTable();
             try
@@ -160,9 +162,13 @@ namespace QLNhaThuoc
                     }
                 }
 
+                message = "Success";
                 _sqlConnection.Close();
             }
-            catch (Exception) { }
+            catch (Exception e) 
+            {
+                message = e.Message;
+            }
 
             return dtTable;
         }

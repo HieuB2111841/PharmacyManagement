@@ -37,9 +37,9 @@
             this.pMedicineName = new System.Windows.Forms.Panel();
             this.lMedicineName = new System.Windows.Forms.Label();
             this.txtMedicineName = new System.Windows.Forms.TextBox();
-            this.ptlMedicineType = new System.Windows.Forms.Panel();
-            this.lMedicineType = new System.Windows.Forms.Label();
-            this.txtlMedicineType = new System.Windows.Forms.TextBox();
+            this.ptlMedicineTypeID = new System.Windows.Forms.Panel();
+            this.lMedicineTypeID = new System.Windows.Forms.Label();
+            this.txtlMedicineTypeID = new System.Windows.Forms.TextBox();
             this.pSupplierID = new System.Windows.Forms.Panel();
             this.lSupplierID = new System.Windows.Forms.Label();
             this.txtSupplierID = new System.Windows.Forms.TextBox();
@@ -50,13 +50,13 @@
             this.lMedicineEffect = new System.Windows.Forms.Label();
             this.rtxtMedicineEffect = new System.Windows.Forms.RichTextBox();
             this.tlpButtons = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.gbMedicineInfo.SuspendLayout();
             this.flpMedicineInfo.SuspendLayout();
             this.pMedicineID.SuspendLayout();
             this.pMedicineName.SuspendLayout();
-            this.ptlMedicineType.SuspendLayout();
+            this.ptlMedicineTypeID.SuspendLayout();
             this.pSupplierID.SuspendLayout();
             this.pManufacturerID.SuspendLayout();
             this.pMedicineEffect.SuspendLayout();
@@ -82,7 +82,7 @@
             this.flpMedicineInfo.BackColor = System.Drawing.Color.White;
             this.flpMedicineInfo.Controls.Add(this.pMedicineID);
             this.flpMedicineInfo.Controls.Add(this.pMedicineName);
-            this.flpMedicineInfo.Controls.Add(this.ptlMedicineType);
+            this.flpMedicineInfo.Controls.Add(this.ptlMedicineTypeID);
             this.flpMedicineInfo.Controls.Add(this.pSupplierID);
             this.flpMedicineInfo.Controls.Add(this.pManufacturerID);
             this.flpMedicineInfo.Controls.Add(this.pMedicineEffect);
@@ -160,36 +160,36 @@
             this.txtMedicineName.Size = new System.Drawing.Size(300, 30);
             this.txtMedicineName.TabIndex = 1;
             // 
-            // ptlMedicineType
+            // ptlMedicineTypeID
             // 
-            this.ptlMedicineType.Controls.Add(this.lMedicineType);
-            this.ptlMedicineType.Controls.Add(this.txtlMedicineType);
-            this.ptlMedicineType.Location = new System.Drawing.Point(18, 150);
-            this.ptlMedicineType.Name = "ptlMedicineType";
-            this.ptlMedicineType.Size = new System.Drawing.Size(300, 60);
-            this.ptlMedicineType.TabIndex = 2;
+            this.ptlMedicineTypeID.Controls.Add(this.lMedicineTypeID);
+            this.ptlMedicineTypeID.Controls.Add(this.txtlMedicineTypeID);
+            this.ptlMedicineTypeID.Location = new System.Drawing.Point(18, 150);
+            this.ptlMedicineTypeID.Name = "ptlMedicineTypeID";
+            this.ptlMedicineTypeID.Size = new System.Drawing.Size(300, 60);
+            this.ptlMedicineTypeID.TabIndex = 2;
             // 
-            // lMedicineType
+            // lMedicineTypeID
             // 
-            this.lMedicineType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lMedicineType.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lMedicineType.Location = new System.Drawing.Point(0, 0);
-            this.lMedicineType.Name = "lMedicineType";
-            this.lMedicineType.Size = new System.Drawing.Size(300, 30);
-            this.lMedicineType.TabIndex = 2;
-            this.lMedicineType.Text = "Loại thuốc";
-            this.lMedicineType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lMedicineTypeID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lMedicineTypeID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lMedicineTypeID.Location = new System.Drawing.Point(0, 0);
+            this.lMedicineTypeID.Name = "lMedicineTypeID";
+            this.lMedicineTypeID.Size = new System.Drawing.Size(300, 30);
+            this.lMedicineTypeID.TabIndex = 2;
+            this.lMedicineTypeID.Text = "Mã loại thuốc";
+            this.lMedicineTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtlMedicineType
+            // txtlMedicineTypeID
             // 
-            this.txtlMedicineType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtlMedicineType.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtlMedicineType.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtlMedicineType.Location = new System.Drawing.Point(0, 30);
-            this.txtlMedicineType.MaxLength = 10;
-            this.txtlMedicineType.Name = "txtlMedicineType";
-            this.txtlMedicineType.Size = new System.Drawing.Size(300, 30);
-            this.txtlMedicineType.TabIndex = 2;
+            this.txtlMedicineTypeID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtlMedicineTypeID.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtlMedicineTypeID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtlMedicineTypeID.Location = new System.Drawing.Point(0, 30);
+            this.txtlMedicineTypeID.MaxLength = 10;
+            this.txtlMedicineTypeID.Name = "txtlMedicineTypeID";
+            this.txtlMedicineTypeID.Size = new System.Drawing.Size(300, 30);
+            this.txtlMedicineTypeID.TabIndex = 2;
             // 
             // pSupplierID
             // 
@@ -299,23 +299,6 @@
             this.tlpButtons.Size = new System.Drawing.Size(300, 41);
             this.tlpButtons.TabIndex = 9;
             // 
-            // btnSave
-            // 
-            this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSave.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(153, 4);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(144, 33);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // btnCancel
             // 
             this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -332,6 +315,23 @@
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSave.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.Location = new System.Drawing.Point(153, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(144, 33);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // fMedicine
             // 
@@ -352,8 +352,8 @@
             this.pMedicineID.PerformLayout();
             this.pMedicineName.ResumeLayout(false);
             this.pMedicineName.PerformLayout();
-            this.ptlMedicineType.ResumeLayout(false);
-            this.ptlMedicineType.PerformLayout();
+            this.ptlMedicineTypeID.ResumeLayout(false);
+            this.ptlMedicineTypeID.PerformLayout();
             this.pSupplierID.ResumeLayout(false);
             this.pSupplierID.PerformLayout();
             this.pManufacturerID.ResumeLayout(false);
@@ -374,9 +374,9 @@
         private System.Windows.Forms.Panel pMedicineName;
         private System.Windows.Forms.Label lMedicineName;
         private System.Windows.Forms.TextBox txtMedicineName;
-        private System.Windows.Forms.Panel ptlMedicineType;
-        private System.Windows.Forms.Label lMedicineType;
-        private System.Windows.Forms.TextBox txtlMedicineType;
+        private System.Windows.Forms.Panel ptlMedicineTypeID;
+        private System.Windows.Forms.Label lMedicineTypeID;
+        private System.Windows.Forms.TextBox txtlMedicineTypeID;
         private System.Windows.Forms.Panel pSupplierID;
         private System.Windows.Forms.Label lSupplierID;
         private System.Windows.Forms.TextBox txtSupplierID;

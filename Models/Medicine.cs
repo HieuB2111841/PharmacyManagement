@@ -38,8 +38,8 @@ namespace QLNhaThuoc.Models
             _id = items[0].ToString();
             _name = items[1].ToString();
             _type = items[2].ToString();
-            _supplierID = items[3].ToString();
-            _manufacturerID = items[4].ToString();
+            _manufacturerID = items[3].ToString();
+            _supplierID = items[4].ToString();
             _effect = items[5].ToString();
             _storedQuantity = (int)items[6];
         }
