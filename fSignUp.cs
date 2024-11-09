@@ -95,7 +95,7 @@ namespace QLNhaThuoc
             DateTime birthDate = dtpBirthday.Value;
 
             // Gọi Stored Procedure `sign_up_customer`
-            bool result = MyPublics.Instance.CallFunction<bool>("sign_up_customer",
+            bool result = MyPublics.Instance.CallFunction<bool>("sign_up",
                                                                 out string message,
                                                                 ("@p_SoDienThoai", phone),
                                                                 ("@p_Pwd", password),
@@ -114,7 +114,15 @@ namespace QLNhaThuoc
             }
             else
             {
-                MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (message.Contains("Duplicate"))
+                {
+                    MessageBox.Show("Số điện thoại đã được sử dụng. Xin vui lòng dùng số điện thoại khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }
