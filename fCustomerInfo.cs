@@ -13,7 +13,7 @@ namespace QLNhaThuoc
 {
     public partial class fCustomerInfo : Form
     {
-        private Customer _customer;
+        private User _customer;
         private bool _isEditMode = false;
 
         public fCustomerInfo()
@@ -32,7 +32,7 @@ namespace QLNhaThuoc
 
         public void ToEditFrom(string customerID)
         {
-            _customer = new Customer(customerID);
+            _customer = new User(customerID);
 
             txtCustomerID.Text = _customer.ID;
             txtCustomerName.Text = _customer.Name;
@@ -127,21 +127,21 @@ namespace QLNhaThuoc
 
         private bool IsValidate()
         {
-            // Customer name
+            // User name
             if (string.IsNullOrEmpty(txtCustomerName.Text))
             {
                 MessageBox.Show("Tên khách hàng không được trống", "Lỗi", MessageBoxButtons.OK);
                 return false;
             }
 
-            // Customer Phone Number
+            // User Phone Number
             if (txtCustomerPhoneNumber.Text.Length != 10)
             {
                 MessageBox.Show("Số điện thoại chứa 10 ký tự", "Lỗi", MessageBoxButtons.OK);
                 return false;
             }
 
-            // Customer Address
+            // User Address
             if (rtxtCustomerAddress.Text.Length < 10)
             {
                 MessageBox.Show("Địa chỉ chứa ít nhất 10 ký tự", "Lỗi", MessageBoxButtons.OK);

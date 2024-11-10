@@ -42,6 +42,12 @@ namespace QLNhaThuoc
             fEmployeeInfo employeeInfoForm = new fEmployeeInfo();
             employeeInfoForm.ShowDialog();
         }
+
+        private void tsmiAccountLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         #endregion
 
         #region Tab Page

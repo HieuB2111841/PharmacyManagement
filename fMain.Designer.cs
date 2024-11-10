@@ -407,6 +407,7 @@
             this.tsmiAccountLogout.Name = "tsmiAccountLogout";
             this.tsmiAccountLogout.Size = new System.Drawing.Size(224, 26);
             this.tsmiAccountLogout.Text = "Đăng xuất";
+            this.tsmiAccountLogout.Click += new System.EventHandler(this.tsmiAccountLogout_Click);
             // 
             // msMain
             // 

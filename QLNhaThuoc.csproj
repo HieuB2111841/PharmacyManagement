@@ -140,7 +140,7 @@
     <Compile Include="fSignUp.Designer.cs">
       <DependentUpon>fSignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\Medicine.cs" />
     <Compile Include="MyPublics.cs" />
     <Compile Include="MyUser.cs" />
