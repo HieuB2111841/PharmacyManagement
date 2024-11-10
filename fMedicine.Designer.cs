@@ -37,7 +37,7 @@
             this.pMedicineName = new System.Windows.Forms.Panel();
             this.lMedicineName = new System.Windows.Forms.Label();
             this.txtMedicineName = new System.Windows.Forms.TextBox();
-            this.ptlMedicineTypeID = new System.Windows.Forms.Panel();
+            this.pMedicineTypeID = new System.Windows.Forms.Panel();
             this.lMedicineTypeID = new System.Windows.Forms.Label();
             this.txtlMedicineTypeID = new System.Windows.Forms.TextBox();
             this.pSupplierID = new System.Windows.Forms.Panel();
@@ -56,7 +56,7 @@
             this.flpMedicineInfo.SuspendLayout();
             this.pMedicineID.SuspendLayout();
             this.pMedicineName.SuspendLayout();
-            this.ptlMedicineTypeID.SuspendLayout();
+            this.pMedicineTypeID.SuspendLayout();
             this.pSupplierID.SuspendLayout();
             this.pManufacturerID.SuspendLayout();
             this.pMedicineEffect.SuspendLayout();
@@ -82,7 +82,7 @@
             this.flpMedicineInfo.BackColor = System.Drawing.Color.White;
             this.flpMedicineInfo.Controls.Add(this.pMedicineID);
             this.flpMedicineInfo.Controls.Add(this.pMedicineName);
-            this.flpMedicineInfo.Controls.Add(this.ptlMedicineTypeID);
+            this.flpMedicineInfo.Controls.Add(this.pMedicineTypeID);
             this.flpMedicineInfo.Controls.Add(this.pSupplierID);
             this.flpMedicineInfo.Controls.Add(this.pManufacturerID);
             this.flpMedicineInfo.Controls.Add(this.pMedicineEffect);
@@ -160,14 +160,14 @@
             this.txtMedicineName.Size = new System.Drawing.Size(300, 30);
             this.txtMedicineName.TabIndex = 1;
             // 
-            // ptlMedicineTypeID
+            // pMedicineTypeID
             // 
-            this.ptlMedicineTypeID.Controls.Add(this.lMedicineTypeID);
-            this.ptlMedicineTypeID.Controls.Add(this.txtlMedicineTypeID);
-            this.ptlMedicineTypeID.Location = new System.Drawing.Point(18, 150);
-            this.ptlMedicineTypeID.Name = "ptlMedicineTypeID";
-            this.ptlMedicineTypeID.Size = new System.Drawing.Size(300, 60);
-            this.ptlMedicineTypeID.TabIndex = 2;
+            this.pMedicineTypeID.Controls.Add(this.lMedicineTypeID);
+            this.pMedicineTypeID.Controls.Add(this.txtlMedicineTypeID);
+            this.pMedicineTypeID.Location = new System.Drawing.Point(18, 150);
+            this.pMedicineTypeID.Name = "pMedicineTypeID";
+            this.pMedicineTypeID.Size = new System.Drawing.Size(300, 60);
+            this.pMedicineTypeID.TabIndex = 2;
             // 
             // lMedicineTypeID
             // 
@@ -352,8 +352,8 @@
             this.pMedicineID.PerformLayout();
             this.pMedicineName.ResumeLayout(false);
             this.pMedicineName.PerformLayout();
-            this.ptlMedicineTypeID.ResumeLayout(false);
-            this.ptlMedicineTypeID.PerformLayout();
+            this.pMedicineTypeID.ResumeLayout(false);
+            this.pMedicineTypeID.PerformLayout();
             this.pSupplierID.ResumeLayout(false);
             this.pSupplierID.PerformLayout();
             this.pManufacturerID.ResumeLayout(false);
@@ -374,7 +374,7 @@
         private System.Windows.Forms.Panel pMedicineName;
         private System.Windows.Forms.Label lMedicineName;
         private System.Windows.Forms.TextBox txtMedicineName;
-        private System.Windows.Forms.Panel ptlMedicineTypeID;
+        private System.Windows.Forms.Panel pMedicineTypeID;
         private System.Windows.Forms.Label lMedicineTypeID;
         private System.Windows.Forms.TextBox txtlMedicineTypeID;
         private System.Windows.Forms.Panel pSupplierID;

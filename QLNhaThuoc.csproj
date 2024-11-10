@@ -98,6 +98,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fCustomerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCustomerInfo.Designer.cs">
+      <DependentUpon>fCustomerInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="fEmployeeInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,12 +140,16 @@
     <Compile Include="fSignUp.Designer.cs">
       <DependentUpon>fSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Medicine.cs" />
     <Compile Include="MyPublics.cs" />
     <Compile Include="MyUser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\StringUtils.cs" />
+    <EmbeddedResource Include="fCustomerInfo.resx">
+      <DependentUpon>fCustomerInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fEmployeeInfo.resx">
       <DependentUpon>fEmployeeInfo.cs</DependentUpon>
     </EmbeddedResource>

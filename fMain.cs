@@ -223,7 +223,7 @@ namespace QLNhaThuoc
         {
             DataTable customerTable =
                 MyPublics.Instance.CallProcedure("usp_hienThiDanhSachKhachHang",
-                    ("@in_count", "20"),
+                    ("@in_count", "200"),
                     ("@in_offset", "0"));
 
             if(customerTable.Rows.Count > 0)
@@ -251,6 +251,10 @@ namespace QLNhaThuoc
                 {
                     e.Value = "Chưa có ngày";
                     e.FormattingApplied = true;
+                }
+                else
+                {
+                    e.Value = ((DateTime)e.Value).ToString("dd/MM/yyyy");
                 }
             }
         }
@@ -327,6 +331,51 @@ namespace QLNhaThuoc
             dtpCustomerPurchaseToSearch.Value = DateTime.Today;
 
             this.dgvCustomer_LoadData();
+        }
+
+        private void btnCustomerAdd_Click(object sender, EventArgs e)
+        {
+            fCustomerInfo customerInfoForm = new fCustomerInfo();
+            customerInfoForm.ToAddFrom();
+            DialogResult res = customerInfoForm.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                this.dgvCustomer_LoadData();
+            }
+        }
+
+        private void btnCustomerEdit_Click(object sender, EventArgs e)
+        {
+            fCustomerInfo customerInfoForm = new fCustomerInfo();
+            customerInfoForm.ToEditFrom(txtCustomerID.Text);
+            DialogResult res = customerInfoForm.ShowDialog();
+            if(res == DialogResult.OK)
+            {
+                this.dgvCustomer_LoadData();
+            }
+        }
+        private void btnCustomerDelete_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show($"Bạn có muốn xóa người dùng {txtCustomerID.Text} không?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DataTable data = MyPublics.Instance.CallProcedure("DeleteUser",
+                    out string message,
+                    ("@p_MaUser", txtCustomerID.Text));
+
+                if(message == "Success")
+                {
+                    MessageBox.Show($"Xóa người dùng {txtCustomerID.Text} thành công", "Thông báo", MessageBoxButtons.OK);
+                    this.dgvCustomer_LoadData();
+                }
+                else
+                {
+                    if (message.Contains("foreign key constraint fails"))
+                    {
+                        MessageBox.Show($"Không thể người dùng", "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else MessageBox.Show($"Lỗi khi xóa người dùng {message}", "Lỗi", MessageBoxButtons.OK);
+                }
+            }
         }
 
         #endregion
@@ -592,6 +641,7 @@ namespace QLNhaThuoc
 
             this.dgvBills_LoadData();
         }
+
 
 
 
