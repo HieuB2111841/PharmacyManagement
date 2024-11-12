@@ -376,13 +376,13 @@
             // tsmiFileExportExcel
             // 
             this.tsmiFileExportExcel.Name = "tsmiFileExportExcel";
-            this.tsmiFileExportExcel.Size = new System.Drawing.Size(160, 26);
+            this.tsmiFileExportExcel.Size = new System.Drawing.Size(224, 26);
             this.tsmiFileExportExcel.Text = "Xuất Excel";
             // 
             // tsmiFileExit
             // 
             this.tsmiFileExit.Name = "tsmiFileExit";
-            this.tsmiFileExit.Size = new System.Drawing.Size(160, 26);
+            this.tsmiFileExit.Size = new System.Drawing.Size(224, 26);
             this.tsmiFileExit.Text = "Thoát";
             this.tsmiFileExit.Click += new System.EventHandler(this.tsmiFileExit_Click);
             // 
@@ -1944,6 +1944,7 @@
             this.btnImportAdd.TabIndex = 0;
             this.btnImportAdd.Text = "Thêm";
             this.btnImportAdd.UseVisualStyleBackColor = false;
+            this.btnImportAdd.Click += new System.EventHandler(this.btnImportAdd_Click);
             // 
             // btnImportDelete
             // 

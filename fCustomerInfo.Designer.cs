@@ -38,20 +38,20 @@
             this.lCustomerName = new System.Windows.Forms.Label();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.pCustomerBirthday = new System.Windows.Forms.Panel();
+            this.lCustomerBirthday = new System.Windows.Forms.Label();
+            this.dtpCustomerBirthday = new System.Windows.Forms.DateTimePicker();
             this.pCustomerPhoneNumber = new System.Windows.Forms.Panel();
             this.lCustomerPhoneNumber = new System.Windows.Forms.Label();
             this.txtCustomerPhoneNumber = new System.Windows.Forms.TextBox();
             this.pCustomerAddress = new System.Windows.Forms.Panel();
             this.lCustomerAddress = new System.Windows.Forms.Label();
             this.rtxtCustomerAddress = new System.Windows.Forms.RichTextBox();
-            this.tlpButtons = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.dtpCustomerBirthday = new System.Windows.Forms.DateTimePicker();
-            this.lCustomerBirthday = new System.Windows.Forms.Label();
             this.pCustomerPassword = new System.Windows.Forms.Panel();
             this.lCustomerPassword = new System.Windows.Forms.Label();
             this.txtCustomerPassword = new System.Windows.Forms.TextBox();
+            this.tlpButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.gbCustomerInfo.SuspendLayout();
             this.flpCustomerInfo.SuspendLayout();
             this.pCustomerID.SuspendLayout();
@@ -59,8 +59,8 @@
             this.pCustomerBirthday.SuspendLayout();
             this.pCustomerPhoneNumber.SuspendLayout();
             this.pCustomerAddress.SuspendLayout();
-            this.tlpButtons.SuspendLayout();
             this.pCustomerPassword.SuspendLayout();
+            this.tlpButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbCustomerInfo
@@ -71,8 +71,8 @@
             this.gbCustomerInfo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbCustomerInfo.Location = new System.Drawing.Point(0, 0);
             this.gbCustomerInfo.Name = "gbCustomerInfo";
-            this.gbCustomerInfo.Padding = new System.Windows.Forms.Padding(15);
-            this.gbCustomerInfo.Size = new System.Drawing.Size(366, 571);
+            this.gbCustomerInfo.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.gbCustomerInfo.Size = new System.Drawing.Size(366, 574);
             this.gbCustomerInfo.TabIndex = 2;
             this.gbCustomerInfo.TabStop = false;
             this.gbCustomerInfo.Text = "Thông tin khách hàng";
@@ -91,8 +91,8 @@
             this.flpCustomerInfo.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpCustomerInfo.Location = new System.Drawing.Point(15, 46);
             this.flpCustomerInfo.Name = "flpCustomerInfo";
-            this.flpCustomerInfo.Padding = new System.Windows.Forms.Padding(15);
-            this.flpCustomerInfo.Size = new System.Drawing.Size(336, 510);
+            this.flpCustomerInfo.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.flpCustomerInfo.Size = new System.Drawing.Size(336, 513);
             this.flpCustomerInfo.TabIndex = 0;
             this.flpCustomerInfo.WrapContents = false;
             // 
@@ -169,6 +169,32 @@
             this.pCustomerBirthday.Size = new System.Drawing.Size(300, 60);
             this.pCustomerBirthday.TabIndex = 2;
             // 
+            // lCustomerBirthday
+            // 
+            this.lCustomerBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lCustomerBirthday.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lCustomerBirthday.Location = new System.Drawing.Point(0, 0);
+            this.lCustomerBirthday.Name = "lCustomerBirthday";
+            this.lCustomerBirthday.Size = new System.Drawing.Size(300, 30);
+            this.lCustomerBirthday.TabIndex = 1;
+            this.lCustomerBirthday.Text = "Ngày sinh";
+            this.lCustomerBirthday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dtpCustomerBirthday
+            // 
+            this.dtpCustomerBirthday.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpCustomerBirthday.CustomFormat = "dd/MM/yyyy";
+            this.dtpCustomerBirthday.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtpCustomerBirthday.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpCustomerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpCustomerBirthday.Location = new System.Drawing.Point(0, 30);
+            this.dtpCustomerBirthday.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
+            this.dtpCustomerBirthday.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpCustomerBirthday.Name = "dtpCustomerBirthday";
+            this.dtpCustomerBirthday.Size = new System.Drawing.Size(300, 30);
+            this.dtpCustomerBirthday.TabIndex = 0;
+            this.dtpCustomerBirthday.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
             // pCustomerPhoneNumber
             // 
             this.pCustomerPhoneNumber.Controls.Add(this.lCustomerPhoneNumber);
@@ -232,6 +258,37 @@
             this.rtxtCustomerAddress.TabIndex = 5;
             this.rtxtCustomerAddress.Text = "";
             // 
+            // pCustomerPassword
+            // 
+            this.pCustomerPassword.Controls.Add(this.lCustomerPassword);
+            this.pCustomerPassword.Controls.Add(this.txtCustomerPassword);
+            this.pCustomerPassword.Location = new System.Drawing.Point(18, 388);
+            this.pCustomerPassword.Name = "pCustomerPassword";
+            this.pCustomerPassword.Size = new System.Drawing.Size(300, 60);
+            this.pCustomerPassword.TabIndex = 10;
+            // 
+            // lCustomerPassword
+            // 
+            this.lCustomerPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lCustomerPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lCustomerPassword.Location = new System.Drawing.Point(0, 0);
+            this.lCustomerPassword.Name = "lCustomerPassword";
+            this.lCustomerPassword.Size = new System.Drawing.Size(300, 30);
+            this.lCustomerPassword.TabIndex = 2;
+            this.lCustomerPassword.Text = "Mật khẩu";
+            this.lCustomerPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtCustomerPassword
+            // 
+            this.txtCustomerPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCustomerPassword.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtCustomerPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtCustomerPassword.Location = new System.Drawing.Point(0, 30);
+            this.txtCustomerPassword.MaxLength = 10;
+            this.txtCustomerPassword.Name = "txtCustomerPassword";
+            this.txtCustomerPassword.Size = new System.Drawing.Size(300, 30);
+            this.txtCustomerPassword.TabIndex = 3;
+            // 
             // tlpButtons
             // 
             this.tlpButtons.ColumnCount = 2;
@@ -280,69 +337,12 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // dtpCustomerBirthday
-            // 
-            this.dtpCustomerBirthday.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpCustomerBirthday.CustomFormat = "dd/MM/yyyy";
-            this.dtpCustomerBirthday.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtpCustomerBirthday.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpCustomerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCustomerBirthday.Location = new System.Drawing.Point(0, 30);
-            this.dtpCustomerBirthday.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
-            this.dtpCustomerBirthday.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dtpCustomerBirthday.Name = "dtpCustomerBirthday";
-            this.dtpCustomerBirthday.Size = new System.Drawing.Size(300, 30);
-            this.dtpCustomerBirthday.TabIndex = 0;
-            this.dtpCustomerBirthday.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            // 
-            // lCustomerBirthday
-            // 
-            this.lCustomerBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lCustomerBirthday.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lCustomerBirthday.Location = new System.Drawing.Point(0, 0);
-            this.lCustomerBirthday.Name = "lCustomerBirthday";
-            this.lCustomerBirthday.Size = new System.Drawing.Size(300, 30);
-            this.lCustomerBirthday.TabIndex = 1;
-            this.lCustomerBirthday.Text = "Ngày sinh";
-            this.lCustomerBirthday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pCustomerPassword
-            // 
-            this.pCustomerPassword.Controls.Add(this.lCustomerPassword);
-            this.pCustomerPassword.Controls.Add(this.txtCustomerPassword);
-            this.pCustomerPassword.Location = new System.Drawing.Point(18, 388);
-            this.pCustomerPassword.Name = "pCustomerPassword";
-            this.pCustomerPassword.Size = new System.Drawing.Size(300, 60);
-            this.pCustomerPassword.TabIndex = 10;
-            // 
-            // lCustomerPassword
-            // 
-            this.lCustomerPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lCustomerPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lCustomerPassword.Location = new System.Drawing.Point(0, 0);
-            this.lCustomerPassword.Name = "lCustomerPassword";
-            this.lCustomerPassword.Size = new System.Drawing.Size(300, 30);
-            this.lCustomerPassword.TabIndex = 2;
-            this.lCustomerPassword.Text = "Mật khẩu";
-            this.lCustomerPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtCustomerPassword
-            // 
-            this.txtCustomerPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCustomerPassword.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtCustomerPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtCustomerPassword.Location = new System.Drawing.Point(0, 30);
-            this.txtCustomerPassword.MaxLength = 10;
-            this.txtCustomerPassword.Name = "txtCustomerPassword";
-            this.txtCustomerPassword.Size = new System.Drawing.Size(300, 30);
-            this.txtCustomerPassword.TabIndex = 3;
-            // 
             // fCustomerInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 571);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(366, 574);
             this.Controls.Add(this.gbCustomerInfo);
+            this.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fCustomerInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -357,9 +357,9 @@
             this.pCustomerPhoneNumber.ResumeLayout(false);
             this.pCustomerPhoneNumber.PerformLayout();
             this.pCustomerAddress.ResumeLayout(false);
-            this.tlpButtons.ResumeLayout(false);
             this.pCustomerPassword.ResumeLayout(false);
             this.pCustomerPassword.PerformLayout();
+            this.tlpButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

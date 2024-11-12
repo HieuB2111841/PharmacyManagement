@@ -397,7 +397,7 @@ namespace QLNhaThuoc
         private void tabImports_LoadData()
         {
             DataTable importTable = MyPublics.Instance.CallProcedure("usp_hienThiDanhSachPhieuNhap",
-                ("@in_count", "20"),
+                ("@in_count", "200"),
                 ("@in_offset", "0"));
 
             if (importTable.Rows.Count > 0)
@@ -519,6 +519,12 @@ namespace QLNhaThuoc
             dtpImportDateToSearch.Value = DateTime.Today;
 
             tabImports_LoadData();
+        }
+
+        private void btnImportAdd_Click(object sender, EventArgs e)
+        {
+            fImportInfo importInfoForm = new fImportInfo();
+            importInfoForm.ShowDialog();
         }
 
         #endregion
