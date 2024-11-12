@@ -540,7 +540,7 @@ namespace QLNhaThuoc
         private void dgvBills_LoadData()
         {
             DataTable billsTable = MyPublics.Instance.CallProcedure("usp_hienThiDanhSachPhieuXuat",
-                ("@in_count", "20"),
+                ("@in_count", "200"),
                 ("@in_offset", "0"));
 
             if (billsTable.Rows.Count > 0)
@@ -655,9 +655,20 @@ namespace QLNhaThuoc
         }
 
 
+        private void btnBillAdd_Click(object sender, EventArgs e)
+        {
+            fBillInfo billInfoForm = new fBillInfo();
+            DialogResult res = billInfoForm.ShowDialog();
+            if(res == DialogResult.OK)
+            {
+                this.dgvBills_LoadData();
+            }
+        }
 
+        private void btnBillDelete_Click(object sender, EventArgs e)
+        {
 
-
+        }
 
         #endregion
 

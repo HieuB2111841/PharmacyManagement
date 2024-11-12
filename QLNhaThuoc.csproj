@@ -113,6 +113,12 @@
     <Compile Include="fEmployeeInfo.Designer.cs">
       <DependentUpon>fEmployeeInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="fBillInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBillInfo.Designer.cs">
+      <DependentUpon>fBillInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="fImportInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fEmployeeInfo.resx">
       <DependentUpon>fEmployeeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBillInfo.resx">
+      <DependentUpon>fBillInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fImportInfo.resx">
       <DependentUpon>fImportInfo.cs</DependentUpon>

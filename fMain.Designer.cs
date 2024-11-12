@@ -376,13 +376,13 @@
             // tsmiFileExportExcel
             // 
             this.tsmiFileExportExcel.Name = "tsmiFileExportExcel";
-            this.tsmiFileExportExcel.Size = new System.Drawing.Size(224, 26);
+            this.tsmiFileExportExcel.Size = new System.Drawing.Size(160, 26);
             this.tsmiFileExportExcel.Text = "Xuất Excel";
             // 
             // tsmiFileExit
             // 
             this.tsmiFileExit.Name = "tsmiFileExit";
-            this.tsmiFileExit.Size = new System.Drawing.Size(224, 26);
+            this.tsmiFileExit.Size = new System.Drawing.Size(160, 26);
             this.tsmiFileExit.Text = "Thoát";
             this.tsmiFileExit.Click += new System.EventHandler(this.tsmiFileExit_Click);
             // 
@@ -398,14 +398,14 @@
             // tsmiAccountInfo
             // 
             this.tsmiAccountInfo.Name = "tsmiAccountInfo";
-            this.tsmiAccountInfo.Size = new System.Drawing.Size(224, 26);
+            this.tsmiAccountInfo.Size = new System.Drawing.Size(160, 26);
             this.tsmiAccountInfo.Text = "Thông tin";
             this.tsmiAccountInfo.Click += new System.EventHandler(this.tsmiAccountInfo_Click);
             // 
             // tsmiAccountLogout
             // 
             this.tsmiAccountLogout.Name = "tsmiAccountLogout";
-            this.tsmiAccountLogout.Size = new System.Drawing.Size(224, 26);
+            this.tsmiAccountLogout.Size = new System.Drawing.Size(160, 26);
             this.tsmiAccountLogout.Text = "Đăng xuất";
             this.tsmiAccountLogout.Click += new System.EventHandler(this.tsmiAccountLogout_Click);
             // 
@@ -875,6 +875,7 @@
             this.btnBillAdd.TabIndex = 0;
             this.btnBillAdd.Text = "Thêm";
             this.btnBillAdd.UseVisualStyleBackColor = false;
+            this.btnBillAdd.Click += new System.EventHandler(this.btnBillAdd_Click);
             // 
             // btnBillDelete
             // 
@@ -890,6 +891,7 @@
             this.btnBillDelete.TabIndex = 2;
             this.btnBillDelete.Text = "Xóa";
             this.btnBillDelete.UseVisualStyleBackColor = false;
+            this.btnBillDelete.Click += new System.EventHandler(this.btnBillDelete_Click);
             // 
             // gbBillInfo
             // 
