@@ -25,6 +25,14 @@ namespace QLNhaThuoc
             this.MinimizeBox = true; // vẫn giữ nút thu nhỏ nếu cần
             ResetForm();
             txtName.Focus();
+            if (MyPublics.Instance.ConnectDatabase(out string error))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show(error, "Error");
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)

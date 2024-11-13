@@ -102,10 +102,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="fCustomerInfo.cs">
+    <Compile Include="fChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fCustomerInfo.Designer.cs">
       <DependentUpon>fCustomerInfo.cs</DependentUpon>
+    <Compile Include="fChangePassword.Designer.cs">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="fEmployeeInfo.cs">
       <SubType>Form</SubType>
@@ -167,6 +170,8 @@
     <Compile Include="Utils\WinformUtils.cs" />
     <EmbeddedResource Include="fCustomerInfo.resx">
       <DependentUpon>fCustomerInfo.cs</DependentUpon>
+    <EmbeddedResource Include="fChangePassword.resx">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fEmployeeInfo.resx">
       <DependentUpon>fEmployeeInfo.cs</DependentUpon>

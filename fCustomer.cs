@@ -145,5 +145,126 @@ namespace QLNhaThuoc
 
         #endregion
 
+        private void tsmiChangePassword_Click(object sender, EventArgs e)
+        {
+            fChangePassword fChangePassword = new fChangePassword();
+            fChangePassword.ShowDialog();
+        }
+
+        private void tsmiLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnProfileEdit_Click(object sender, EventArgs e)
+        {
+            txtProfileName.ReadOnly = false;
+            dtpProfileBirthday.Enabled = true;
+            rtxtProfileAddress.ReadOnly = false;
+            txtProfilePhoneNumber.Enabled = true;
+            btnProfileEdit.Visible = false;
+            btnProfileSave.Visible = true;
+            btnCancel.Visible = true;
+        }
+
+        private bool ValidateUserProfile()
+        {
+            if (string.IsNullOrWhiteSpace(txtProfileName.Text))
+            {
+                MessageBox.Show("Tên người dùng không được để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtProfileName.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtProfilePhoneNumber.Text) || txtProfilePhoneNumber.Text.Length != 10)
+            {
+                MessageBox.Show("Số điện thoại phải có 10 chữ số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtProfilePhoneNumber.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(rtxtProfileAddress.Text))
+            {
+                MessageBox.Show("Địa chỉ không được để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                rtxtProfileAddress.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+
+        private void btnProfileSave_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra tính hợp lệ của dữ liệu nhập vào
+            if (!ValidateUserProfile()) return;
+
+            string userId = MyUser.Instance.ID;
+            string phoneNumber = txtProfilePhoneNumber.Text;
+            string userName = txtProfileName.Text;
+            string address = rtxtProfileAddress.Text;
+            string birthday = dtpProfileBirthday.Value.ToString("yyyy-MM-dd");
+
+            // Gọi stored procedure để cập nhật thông tin người dùng
+            string message;
+            DataTable dataTable = MyPublics.Instance.CallProcedure("EditUser",
+                out message,
+                ("@p_MaUser", userId),
+                ("@p_SoDienThoai", phoneNumber),
+                ("@p_TenUser", userName),
+                ("@p_DiaChi", address),
+                ("@p_NgaySinh", birthday)
+            );
+
+            // Kiểm tra kết quả trả về và hiển thị thông báo
+            if (message == "SUCCESS_MESSAGE")
+            {
+                MessageBox.Show("Cập nhật thông tin thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Cập nhật thông tin trên form sau khi lưu
+                //MyUser.Instance.Name = userName;
+                //MyUser.Instance.Birthday = dtpProfileBirthday.Value;
+                //MyUser.Instance.Address = address;
+                //MyUser.Instance.PhoneNumber = phoneNumber;
+
+                // Đặt lại các controls thành chế độ chỉ đọc
+                txtProfileName.ReadOnly = true;
+                dtpProfileBirthday.Enabled = false;
+                rtxtProfileAddress.ReadOnly = true;
+                txtProfilePhoneNumber.Enabled = false;
+
+                // Ẩn nút Lưu và Hủy, hiển thị nút Chỉnh sửa
+                btnProfileSave.Visible = false;
+                btnCancel.Visible = false;
+                btnProfileEdit.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật không thành công: " + message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtProfileName.ReadOnly = true;
+            txtProfileName.Text = MyUser.Instance.Name;
+            dtpProfileBirthday.Enabled = false;
+
+            // Kiểm tra nếu Birthday là kiểu DateTime trước khi gán giá trị
+            if (MyUser.Instance.Birthday != DateTime.MinValue)
+                dtpProfileBirthday.Value = MyUser.Instance.Birthday;
+            else
+                dtpProfileBirthday.Value = new DateTime(2000, 1, 1);
+
+            rtxtProfileAddress.ReadOnly = true;
+            rtxtProfileAddress.Text = MyUser.Instance.Address;
+            txtProfilePhoneNumber.Enabled = false;
+            txtProfilePhoneNumber.Text = MyUser.Instance.PhoneNumber;
+
+            btnProfileEdit.Visible = true;
+            btnProfileSave.Visible = false;
+            btnCancel.Visible = false;
+        }
     }
 }
