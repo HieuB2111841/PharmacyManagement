@@ -71,7 +71,7 @@
             this.pCustomerInfo.Location = new System.Drawing.Point(0, 0);
             this.pCustomerInfo.Name = "pCustomerInfo";
             this.pCustomerInfo.Padding = new System.Windows.Forms.Padding(15);
-            this.pCustomerInfo.Size = new System.Drawing.Size(366, 484);
+            this.pCustomerInfo.Size = new System.Drawing.Size(366, 542);
             this.pCustomerInfo.TabIndex = 0;
             // 
             // flpCustomerInfo
@@ -89,7 +89,7 @@
             this.flpCustomerInfo.Location = new System.Drawing.Point(15, 15);
             this.flpCustomerInfo.Name = "flpCustomerInfo";
             this.flpCustomerInfo.Padding = new System.Windows.Forms.Padding(15);
-            this.flpCustomerInfo.Size = new System.Drawing.Size(336, 454);
+            this.flpCustomerInfo.Size = new System.Drawing.Size(336, 512);
             this.flpCustomerInfo.TabIndex = 1;
             this.flpCustomerInfo.WrapContents = false;
             // 
@@ -281,8 +281,9 @@
             this.txtCustomerPassword.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtCustomerPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtCustomerPassword.Location = new System.Drawing.Point(0, 30);
-            this.txtCustomerPassword.MaxLength = 10;
+            this.txtCustomerPassword.MaxLength = 50;
             this.txtCustomerPassword.Name = "txtCustomerPassword";
+            this.txtCustomerPassword.PasswordChar = '*';
             this.txtCustomerPassword.Size = new System.Drawing.Size(300, 30);
             this.txtCustomerPassword.TabIndex = 3;
             // 
@@ -315,6 +316,7 @@
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -331,11 +333,12 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // fCustomerInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(366, 484);
+            this.ClientSize = new System.Drawing.Size(366, 542);
             this.Controls.Add(this.pCustomerInfo);
             this.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

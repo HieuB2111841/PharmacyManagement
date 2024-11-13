@@ -1301,8 +1301,8 @@
             this.dgvImports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvImports.Size = new System.Drawing.Size(557, 256);
             this.dgvImports.TabIndex = 5;
-            this.dgvImports.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dvgImports_CellFormatting);
-            this.dgvImports.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgImports_RowEnter);
+            this.dgvImports.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvImports_CellFormatting);
+            this.dgvImports.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImports_RowEnter);
             // 
             // pImportSearch
             // 
@@ -1960,6 +1960,7 @@
             this.btnImportDelete.TabIndex = 2;
             this.btnImportDelete.Text = "Xóa";
             this.btnImportDelete.UseVisualStyleBackColor = false;
+            this.btnImportDelete.Click += new System.EventHandler(this.btnImportDelete_Click);
             // 
             // tabCustomers
             // 

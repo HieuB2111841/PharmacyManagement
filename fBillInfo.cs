@@ -62,8 +62,8 @@ namespace QLNhaThuoc
 
                 DataTable data = MyPublics.Instance.CallProcedure("InsertPhieuXuatWithDetails", 
                     out string message,
-                    ("@MaNhanVien", txtEmployeeID.Text),
-                    ("@MaKhachHang", txtCustomerID.Text),
+                    ("@MaNhanVien", txtEmployeeID.Text.Trim()),
+                    ("@MaKhachHang", txtCustomerID.Text.Trim()),
                     ("@NgayXuat", DateTime.Now.ToString("yyyy-MM-dd")),
                     ("@ChiTietPhieuXuat", detailsJson));
 

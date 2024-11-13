@@ -79,24 +79,27 @@ namespace QLNhaThuoc
 
         private void EditMedicine()
         {
-            DataTable data = MyPublics.Instance.CallProcedure("EditThuoc",
-                    out string message,
-                    ("@p_MaThuoc", txtMedicineID.Text),
-                    ("@p_TenThuoc", txtMedicineName.Text),
-                    ("@p_MaHangSX", txtManufacturerID.Text),
-                    ("@p_MaNhaCungCap", txtSupplierID.Text),
-                    ("@p_CongDung", rtxtMedicineEffect.Text),
-                    ("@p_MaLoai", txtlMedicineTypeID.Text));
+            if (IsEdited())
+            {
+                DataTable data = MyPublics.Instance.CallProcedure("EditThuoc",
+                        out string message,
+                        ("@p_MaThuoc", txtMedicineID.Text.Trim()),
+                        ("@p_TenThuoc", txtMedicineName.Text.Trim()),
+                        ("@p_MaHangSX", txtManufacturerID.Text.Trim()),
+                        ("@p_MaNhaCungCap", txtSupplierID.Text.Trim()),
+                        ("@p_CongDung", rtxtMedicineEffect.Text.Trim()),
+                        ("@p_MaLoai", txtlMedicineTypeID.Text.Trim()));
 
-            if (message.Equals(MyPublics.SUCCESS_MESSAGE))
-            {
-                MessageBox.Show("Sửa thông tin thuốc thành công", "Thông báo", MessageBoxButtons.OK);
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show(message, "Lỗi trong quá trình sửa thông tin thuốc", MessageBoxButtons.OK);
+                if (message.Equals(MyPublics.SUCCESS_MESSAGE))
+                {
+                    MessageBox.Show("Sửa thông tin thuốc thành công", "Thông báo", MessageBoxButtons.OK);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(message, "Lỗi trong quá trình sửa thông tin thuốc", MessageBoxButtons.OK);
+                }
             }
         }
 
@@ -104,11 +107,11 @@ namespace QLNhaThuoc
         {
             DataTable data = MyPublics.Instance.CallProcedure("AddThuoc",
                     out string message,
-                    ("@p_TenThuoc", txtMedicineName.Text),
-                    ("@p_MaHangSX", txtManufacturerID.Text),
-                    ("@p_MaNhaCungCap", txtSupplierID.Text),
-                    ("@p_CongDung", rtxtMedicineEffect.Text),
-                    ("@p_MaLoai", txtlMedicineTypeID.Text));
+                    ("@p_TenThuoc", txtMedicineName.Text.Trim()),
+                    ("@p_MaHangSX", txtManufacturerID.Text.Trim()),
+                    ("@p_MaNhaCungCap", txtSupplierID.Text.Trim()),
+                    ("@p_CongDung", rtxtMedicineEffect.Text.Trim()),
+                    ("@p_MaLoai", txtlMedicineTypeID.Text.Trim()));
 
             if (message.Equals(MyPublics.SUCCESS_MESSAGE))
             {

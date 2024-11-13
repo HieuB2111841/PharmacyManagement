@@ -27,6 +27,8 @@ namespace QLNhaThuoc
             pCustomerID.Visible = false;
             pCustomerPassword.Visible = true;
 
+            this.Size = new Size(this.Size.Width, this.Size.Height - pCustomerID.Height);
+
             _isEditMode = false;
         }
 
@@ -41,6 +43,8 @@ namespace QLNhaThuoc
             rtxtCustomerAddress.Text = _customer.Address;
             pCustomerID.Visible = true;
             pCustomerPassword.Visible = false;
+
+            this.Size = new Size(this.Size.Width, this.Size.Height - pCustomerPassword.Height);
 
             _isEditMode = true;
         }
@@ -82,23 +86,26 @@ namespace QLNhaThuoc
 
         private void EditCustomer()
         {
-            DataTable data = MyPublics.Instance.CallProcedure("EditUser",
-                    out string message,
-                    ("@p_MaUser", txtCustomerID.Text),
-                    ("@p_SoDienThoai", txtCustomerPhoneNumber.Text),
-                    ("@p_TenUser", txtCustomerName.Text),
-                    ("@p_DiaChi", rtxtCustomerAddress.Text),
-                    ("@p_NgaySinh", dtpCustomerBirthday.Value.ToString("yyyy-MM-dd")));
+            if (IsEdited())
+            {
+                DataTable data = MyPublics.Instance.CallProcedure("EditUser",
+                        out string message,
+                        ("@p_MaUser", txtCustomerID.Text.Trim()),
+                        ("@p_SoDienThoai", txtCustomerPhoneNumber.Text.Trim()),
+                        ("@p_TenUser", txtCustomerName.Text.Trim()),
+                        ("@p_DiaChi", rtxtCustomerAddress.Text.Trim()),
+                        ("@p_NgaySinh", dtpCustomerBirthday.Value.ToString("yyyy-MM-dd")));
 
-            if (message.Equals(MyPublics.SUCCESS_MESSAGE))
-            {
-                MessageBox.Show("Sửa thông tin người dùng thành công", "Thông báo", MessageBoxButtons.OK);
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show(message, "Lỗi trong quá trình sửa thông tin người dùng", MessageBoxButtons.OK);
+                if (message.Equals(MyPublics.SUCCESS_MESSAGE))
+                {
+                    MessageBox.Show("Sửa thông tin người dùng thành công", "Thông báo", MessageBoxButtons.OK);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(message, "Lỗi trong quá trình sửa thông tin người dùng", MessageBoxButtons.OK);
+                }
             }
         }
 
@@ -106,10 +113,10 @@ namespace QLNhaThuoc
         {
             DataTable data = MyPublics.Instance.CallProcedure("AddUser",
                     out string message,
-                    ("@p_SoDienThoai", txtCustomerPhoneNumber.Text),
-                    ("@p_Pwd", txtCustomerPassword.Text),
-                    ("@p_TenUser", txtCustomerName.Text),
-                    ("@p_DiaChi", rtxtCustomerAddress.Text),
+                    ("@p_SoDienThoai", txtCustomerPhoneNumber.Text.Trim()),
+                    ("@p_Pwd", txtCustomerPassword.Text.Trim()),
+                    ("@p_TenUser", txtCustomerName.Text.Trim()),
+                    ("@p_DiaChi", rtxtCustomerAddress.Text.Trim()),
                     ("@p_NgaySinh", dtpCustomerBirthday.Value.ToString("yyyy-MM-dd")));
 
             if (message.Equals(MyPublics.SUCCESS_MESSAGE))
@@ -128,7 +135,7 @@ namespace QLNhaThuoc
         private bool IsValidate()
         {
             // User name
-            if (string.IsNullOrEmpty(txtCustomerName.Text))
+            if (string.IsNullOrEmpty(txtCustomerName.Text.Trim()))
             {
                 MessageBox.Show("Tên khách hàng không được trống", "Lỗi", MessageBoxButtons.OK);
                 return false;
