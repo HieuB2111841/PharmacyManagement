@@ -143,11 +143,11 @@
     <Compile Include="fMain.Designer.cs">
       <DependentUpon>fMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="fMedicine.cs">
+    <Compile Include="fMedicineInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fMedicine.Designer.cs">
-      <DependentUpon>fMedicine.cs</DependentUpon>
+    <Compile Include="fMedicineInfo.Designer.cs">
+      <DependentUpon>fMedicineInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="fSignUp.cs">
       <SubType>Form</SubType>
@@ -186,8 +186,8 @@
     <EmbeddedResource Include="fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fMedicine.resx">
-      <DependentUpon>fMedicine.cs</DependentUpon>
+    <EmbeddedResource Include="fMedicineInfo.resx">
+      <DependentUpon>fMedicineInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSignUp.resx">
       <DependentUpon>fSignUp.cs</DependentUpon>

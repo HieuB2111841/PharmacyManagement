@@ -116,7 +116,7 @@
             this.scImports = new System.Windows.Forms.SplitContainer();
             this.scImportContents = new System.Windows.Forms.SplitContainer();
             this.gbImportList = new System.Windows.Forms.GroupBox();
-            this.dvgImports = new System.Windows.Forms.DataGridView();
+            this.dgvImports = new System.Windows.Forms.DataGridView();
             this.pImportSearch = new System.Windows.Forms.Panel();
             this.pImportSearchBar = new System.Windows.Forms.Panel();
             this.btnImportResetSearch = new System.Windows.Forms.Button();
@@ -180,6 +180,7 @@
             this.lCustomerPurchaseTo = new System.Windows.Forms.Label();
             this.dtpCustomerPurchaseFromSearch = new System.Windows.Forms.DateTimePicker();
             this.lCustomerPurchaseForm = new System.Windows.Forms.Label();
+            this.chkCustomerIsPurchaseSearch = new System.Windows.Forms.CheckBox();
             this.pCustomerNameOrPhoneSearch = new System.Windows.Forms.Panel();
             this.txtCustomerNameOrPhoneSearch = new System.Windows.Forms.TextBox();
             this.lCustomerNameOrPhone = new System.Windows.Forms.Label();
@@ -297,7 +298,7 @@
             this.scImportContents.Panel2.SuspendLayout();
             this.scImportContents.SuspendLayout();
             this.gbImportList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgImports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImports)).BeginInit();
             this.pImportSearch.SuspendLayout();
             this.pImportSearchBar.SuspendLayout();
             this.pImportDateSearch.SuspendLayout();
@@ -495,8 +496,7 @@
             this.dgvBills.AllowUserToAddRows = false;
             this.dgvBills.AllowUserToDeleteRows = false;
             this.dgvBills.AllowUserToResizeRows = false;
-            this.dgvBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvBills.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -532,6 +532,7 @@
             this.dgvBills.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBills.Size = new System.Drawing.Size(557, 256);
             this.dgvBills.TabIndex = 6;
+            this.dgvBills.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvBills_CellFormatting);
             this.dgvBills.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBills_RowEnter);
             // 
             // pBillSearchContent
@@ -772,7 +773,6 @@
             this.dgvBillDetails.AllowUserToDeleteRows = false;
             this.dgvBillDetails.AllowUserToResizeRows = false;
             this.dgvBillDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvBillDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -1250,7 +1250,7 @@
             // 
             // gbImportList
             // 
-            this.gbImportList.Controls.Add(this.dvgImports);
+            this.gbImportList.Controls.Add(this.dgvImports);
             this.gbImportList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbImportList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbImportList.Location = new System.Drawing.Point(0, 128);
@@ -1260,13 +1260,12 @@
             this.gbImportList.TabStop = false;
             this.gbImportList.Text = "Danh sách phiếu nhập";
             // 
-            // dvgImports
+            // dgvImports
             // 
-            this.dvgImports.AllowUserToAddRows = false;
-            this.dvgImports.AllowUserToDeleteRows = false;
-            this.dvgImports.AllowUserToResizeRows = false;
-            this.dvgImports.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dvgImports.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvImports.AllowUserToAddRows = false;
+            this.dgvImports.AllowUserToDeleteRows = false;
+            this.dgvImports.AllowUserToResizeRows = false;
+            this.dgvImports.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -1274,8 +1273,8 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgImports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dvgImports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvImports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvImports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -1283,27 +1282,27 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgImports.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dvgImports.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dvgImports.Location = new System.Drawing.Point(3, 30);
-            this.dvgImports.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dvgImports.MultiSelect = false;
-            this.dvgImports.Name = "dvgImports";
-            this.dvgImports.ReadOnly = true;
-            this.dvgImports.RowHeadersVisible = false;
-            this.dvgImports.RowHeadersWidth = 51;
+            this.dgvImports.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvImports.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvImports.Location = new System.Drawing.Point(3, 30);
+            this.dgvImports.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvImports.MultiSelect = false;
+            this.dgvImports.Name = "dgvImports";
+            this.dgvImports.ReadOnly = true;
+            this.dgvImports.RowHeadersVisible = false;
+            this.dgvImports.RowHeadersWidth = 51;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgImports.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dvgImports.RowTemplate.Height = 24;
-            this.dvgImports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgImports.Size = new System.Drawing.Size(557, 256);
-            this.dvgImports.TabIndex = 5;
-            this.dvgImports.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dvgImports_CellFormatting);
-            this.dvgImports.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgImports_RowEnter);
+            this.dgvImports.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvImports.RowTemplate.Height = 24;
+            this.dgvImports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvImports.Size = new System.Drawing.Size(557, 256);
+            this.dgvImports.TabIndex = 5;
+            this.dgvImports.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dvgImports_CellFormatting);
+            this.dgvImports.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgImports_RowEnter);
             // 
             // pImportSearch
             // 
@@ -1545,7 +1544,6 @@
             this.dgvImportDetails.AllowUserToDeleteRows = false;
             this.dgvImportDetails.AllowUserToResizeRows = false;
             this.dgvImportDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvImportDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -2017,7 +2015,6 @@
             this.dgvCustomers.AllowUserToDeleteRows = false;
             this.dgvCustomers.AllowUserToResizeRows = false;
             this.dgvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvCustomers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -2114,6 +2111,7 @@
             this.pCustomerPurchaseDate.Controls.Add(this.lCustomerPurchaseTo);
             this.pCustomerPurchaseDate.Controls.Add(this.dtpCustomerPurchaseFromSearch);
             this.pCustomerPurchaseDate.Controls.Add(this.lCustomerPurchaseForm);
+            this.pCustomerPurchaseDate.Controls.Add(this.chkCustomerIsPurchaseSearch);
             this.pCustomerPurchaseDate.Location = new System.Drawing.Point(3, 36);
             this.pCustomerPurchaseDate.Name = "pCustomerPurchaseDate";
             this.pCustomerPurchaseDate.Size = new System.Drawing.Size(537, 30);
@@ -2127,14 +2125,15 @@
             this.dtpCustomerPurchaseToSearch.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
             this.dtpCustomerPurchaseToSearch.CustomFormat = "dd/MM/yyyy";
             this.dtpCustomerPurchaseToSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpCustomerPurchaseToSearch.Enabled = false;
             this.dtpCustomerPurchaseToSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpCustomerPurchaseToSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCustomerPurchaseToSearch.Location = new System.Drawing.Point(362, 0);
+            this.dtpCustomerPurchaseToSearch.Location = new System.Drawing.Point(392, 0);
             this.dtpCustomerPurchaseToSearch.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
             this.dtpCustomerPurchaseToSearch.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpCustomerPurchaseToSearch.Name = "dtpCustomerPurchaseToSearch";
-            this.dtpCustomerPurchaseToSearch.Size = new System.Drawing.Size(175, 30);
-            this.dtpCustomerPurchaseToSearch.TabIndex = 9;
+            this.dtpCustomerPurchaseToSearch.Size = new System.Drawing.Size(145, 30);
+            this.dtpCustomerPurchaseToSearch.TabIndex = 14;
             this.dtpCustomerPurchaseToSearch.Value = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             // 
             // lCustomerPurchaseTo
@@ -2142,10 +2141,10 @@
             this.lCustomerPurchaseTo.Dock = System.Windows.Forms.DockStyle.Left;
             this.lCustomerPurchaseTo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lCustomerPurchaseTo.ForeColor = System.Drawing.Color.Black;
-            this.lCustomerPurchaseTo.Location = new System.Drawing.Point(268, 0);
+            this.lCustomerPurchaseTo.Location = new System.Drawing.Point(292, 0);
             this.lCustomerPurchaseTo.Name = "lCustomerPurchaseTo";
-            this.lCustomerPurchaseTo.Size = new System.Drawing.Size(94, 30);
-            this.lCustomerPurchaseTo.TabIndex = 8;
+            this.lCustomerPurchaseTo.Size = new System.Drawing.Size(100, 30);
+            this.lCustomerPurchaseTo.TabIndex = 13;
             this.lCustomerPurchaseTo.Text = "đến";
             this.lCustomerPurchaseTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2157,14 +2156,15 @@
             this.dtpCustomerPurchaseFromSearch.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
             this.dtpCustomerPurchaseFromSearch.CustomFormat = "dd/MM/yyyy";
             this.dtpCustomerPurchaseFromSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dtpCustomerPurchaseFromSearch.Enabled = false;
             this.dtpCustomerPurchaseFromSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpCustomerPurchaseFromSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCustomerPurchaseFromSearch.Location = new System.Drawing.Point(117, 0);
+            this.dtpCustomerPurchaseFromSearch.Location = new System.Drawing.Point(147, 0);
             this.dtpCustomerPurchaseFromSearch.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
             this.dtpCustomerPurchaseFromSearch.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpCustomerPurchaseFromSearch.Name = "dtpCustomerPurchaseFromSearch";
-            this.dtpCustomerPurchaseFromSearch.Size = new System.Drawing.Size(151, 30);
-            this.dtpCustomerPurchaseFromSearch.TabIndex = 0;
+            this.dtpCustomerPurchaseFromSearch.Size = new System.Drawing.Size(145, 30);
+            this.dtpCustomerPurchaseFromSearch.TabIndex = 11;
             this.dtpCustomerPurchaseFromSearch.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // lCustomerPurchaseForm
@@ -2172,12 +2172,26 @@
             this.lCustomerPurchaseForm.Dock = System.Windows.Forms.DockStyle.Left;
             this.lCustomerPurchaseForm.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lCustomerPurchaseForm.ForeColor = System.Drawing.Color.Black;
-            this.lCustomerPurchaseForm.Location = new System.Drawing.Point(0, 0);
+            this.lCustomerPurchaseForm.Location = new System.Drawing.Point(30, 0);
             this.lCustomerPurchaseForm.Name = "lCustomerPurchaseForm";
             this.lCustomerPurchaseForm.Size = new System.Drawing.Size(117, 30);
-            this.lCustomerPurchaseForm.TabIndex = 5;
+            this.lCustomerPurchaseForm.TabIndex = 12;
             this.lCustomerPurchaseForm.Text = "Mua hàng từ";
             this.lCustomerPurchaseForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // chkCustomerIsPurchaseSearch
+            // 
+            this.chkCustomerIsPurchaseSearch.BackColor = System.Drawing.Color.Transparent;
+            this.chkCustomerIsPurchaseSearch.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkCustomerIsPurchaseSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.chkCustomerIsPurchaseSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkCustomerIsPurchaseSearch.ForeColor = System.Drawing.Color.Black;
+            this.chkCustomerIsPurchaseSearch.Location = new System.Drawing.Point(0, 0);
+            this.chkCustomerIsPurchaseSearch.Name = "chkCustomerIsPurchaseSearch";
+            this.chkCustomerIsPurchaseSearch.Size = new System.Drawing.Size(30, 30);
+            this.chkCustomerIsPurchaseSearch.TabIndex = 10;
+            this.chkCustomerIsPurchaseSearch.UseVisualStyleBackColor = false;
+            this.chkCustomerIsPurchaseSearch.CheckedChanged += new System.EventHandler(this.chkCustomerIsPurchaseSearch_CheckedChanged);
             // 
             // pCustomerNameOrPhoneSearch
             // 
@@ -2512,7 +2526,6 @@
             this.dgvCustomerHistoryPurchases.AllowUserToDeleteRows = false;
             this.dgvCustomerHistoryPurchases.AllowUserToResizeRows = false;
             this.dgvCustomerHistoryPurchases.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCustomerHistoryPurchases.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle16.BackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle16.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -2615,7 +2628,6 @@
             this.dgvMedicines.AllowUserToDeleteRows = false;
             this.dgvMedicines.AllowUserToResizeRows = false;
             this.dgvMedicines.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvMedicines.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle19.BackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -3293,7 +3305,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.scImportContents)).EndInit();
             this.scImportContents.ResumeLayout(false);
             this.gbImportList.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dvgImports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImports)).EndInit();
             this.pImportSearch.ResumeLayout(false);
             this.pImportSearchBar.ResumeLayout(false);
             this.pImportDateSearch.ResumeLayout(false);
@@ -3455,7 +3467,7 @@
         private System.Windows.Forms.SplitContainer scImports;
         private System.Windows.Forms.SplitContainer scImportContents;
         private System.Windows.Forms.GroupBox gbImportList;
-        private System.Windows.Forms.DataGridView dvgImports;
+        private System.Windows.Forms.DataGridView dgvImports;
         private System.Windows.Forms.Panel pImportSearch;
         private System.Windows.Forms.Panel pImportSearchBar;
         private System.Windows.Forms.Button btnImportResetSearch;
@@ -3515,10 +3527,6 @@
         private System.Windows.Forms.Button btnCustomerResetSearch;
         private System.Windows.Forms.Button btnCustomerSearch;
         private System.Windows.Forms.Panel pCustomerPurchaseDate;
-        private System.Windows.Forms.DateTimePicker dtpCustomerPurchaseToSearch;
-        private System.Windows.Forms.Label lCustomerPurchaseTo;
-        private System.Windows.Forms.DateTimePicker dtpCustomerPurchaseFromSearch;
-        private System.Windows.Forms.Label lCustomerPurchaseForm;
         private System.Windows.Forms.Panel pCustomerNameOrPhoneSearch;
         private System.Windows.Forms.TextBox txtCustomerNameOrPhoneSearch;
         private System.Windows.Forms.Label lCustomerNameOrPhone;
@@ -3595,6 +3603,11 @@
         private System.Windows.Forms.Label lMedicineStoredQuantity;
         private System.Windows.Forms.Panel pControl;
         private System.Windows.Forms.TabControl tcMain;
+        private System.Windows.Forms.DateTimePicker dtpCustomerPurchaseToSearch;
+        private System.Windows.Forms.Label lCustomerPurchaseTo;
+        private System.Windows.Forms.DateTimePicker dtpCustomerPurchaseFromSearch;
+        private System.Windows.Forms.Label lCustomerPurchaseForm;
+        private System.Windows.Forms.CheckBox chkCustomerIsPurchaseSearch;
     }
 }
 

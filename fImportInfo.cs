@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace QLNhaThuoc
@@ -11,8 +12,16 @@ namespace QLNhaThuoc
         public fImportInfo()
         {
             InitializeComponent();
+            this.SetComponents();
         }
+        private void SetComponents()
+        {
+            Font headerFont = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(163)));
+            this.dgvImportDetails.ColumnHeadersDefaultCellStyle.Font = headerFont;
 
+            Font cellFont = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(163)));
+            this.dgvImportDetails.DefaultCellStyle.Font = cellFont;
+        }
 
         private void fImportInfo_Load(object sender, EventArgs e)
         {
@@ -24,7 +33,26 @@ namespace QLNhaThuoc
 
             txtEmployeeID.Text = MyUser.Instance.ID;
             txtEmployeeName.Text = MyUser.Instance.Name;
-            lSupplierID.Text = "Mã nhà cung cấp (VD: F0001)";
+            lSupplier.Text = "Mã nhà cung cấp (VD: F0001)";
+        }
+
+        private void txtSupplierID_Leave(object sender, EventArgs e)
+        {
+            if(IsSupplierValidate())
+            {
+                string query = "select MaNhaCungCap, TenNhaCungCap from NhaCungCap where MaNhaCungCap = @id";
+                DataTable data = MyPublics.Instance.GetData(query, out string message, ("@id", txtSupplierID.Text));
+
+                if(data.Rows.Count > 0)
+                {
+                    object[] items = data.Rows[0].ItemArray;
+                    txtSupplierName.Text = items[1].ToString();
+                }
+            }
+            else
+            {
+                txtSupplierName.Text = string.Empty;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -57,7 +85,7 @@ namespace QLNhaThuoc
                     ("@NgayNhap", DateTime.Now.ToString("yyyy-MM-dd")),
                     ("@ChiTietPhieuNhap", detailsJson));
 
-                if(message == "Success")
+                if(message == MyPublics.SUCCESS_MESSAGE)
                 {
                     MessageBox.Show("Thêm phiếu nhập thành công", "Thông báo", MessageBoxButtons.OK);
                     this.DialogResult = DialogResult.OK;
@@ -84,15 +112,8 @@ namespace QLNhaThuoc
 
         private bool IsValidate()
         {
-            if(txtSupplierID.Text.Length != 5)
+            if(!IsSupplierValidate())
             {
-                MessageBox.Show("Mã nhà cung cấp chứa 5 ký tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            if (txtSupplierID.Text[0] != 'F')
-            {
-                MessageBox.Show("Mã nhà cung cấp bắt đầu bằng ký tự 'F'", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -200,5 +221,22 @@ namespace QLNhaThuoc
             if (dgvImportDetails.Rows.Count > 1) return true;
             return false;
         }
+
+        private bool IsSupplierValidate()
+        {
+            if (txtSupplierID.Text.Length != 5)
+            {
+                MessageBox.Show("Mã nhà cung cấp chứa 5 ký tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (txtSupplierID.Text[0] != 'F')
+            {
+                MessageBox.Show("Mã nhà cung cấp bắt đầu bằng ký tự 'F'", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
     }
 }

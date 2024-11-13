@@ -23,8 +23,8 @@ namespace QLNhaThuoc
 
         public void ToAddFrom()
         {
-            gbCustomerInfo.Text = "Nhập thông tin khách hàng";
-            lCustomerID.Text = "Mã khách hàng (Được tạo tự động)";
+            this.Text = "Nhập thông tin khách hàng";
+            pCustomerID.Visible = false;
             pCustomerPassword.Visible = true;
 
             _isEditMode = false;
@@ -39,8 +39,8 @@ namespace QLNhaThuoc
             dtpCustomerBirthday.Value = _customer.Birthday;
             txtCustomerPhoneNumber.Text = _customer.PhoneNumber;
             rtxtCustomerAddress.Text = _customer.Address;
+            pCustomerID.Visible = true;
             pCustomerPassword.Visible = false;
-            this.Size = new Size(this.Size.Width, 443);
 
             _isEditMode = true;
         }
@@ -90,7 +90,7 @@ namespace QLNhaThuoc
                     ("@p_DiaChi", rtxtCustomerAddress.Text),
                     ("@p_NgaySinh", dtpCustomerBirthday.Value.ToString("yyyy-MM-dd")));
 
-            if (message.Equals("Success"))
+            if (message.Equals(MyPublics.SUCCESS_MESSAGE))
             {
                 MessageBox.Show("Sửa thông tin người dùng thành công", "Thông báo", MessageBoxButtons.OK);
                 this.DialogResult = DialogResult.OK;
@@ -112,7 +112,7 @@ namespace QLNhaThuoc
                     ("@p_DiaChi", rtxtCustomerAddress.Text),
                     ("@p_NgaySinh", dtpCustomerBirthday.Value.ToString("yyyy-MM-dd")));
 
-            if (message.Equals("Success"))
+            if (message.Equals(MyPublics.SUCCESS_MESSAGE))
             {
                 MessageBox.Show("Tạo tài khoản người dùng thành công", "Thông báo", MessageBoxButtons.OK);
                 this.DialogResult = DialogResult.OK;
@@ -131,6 +131,12 @@ namespace QLNhaThuoc
             if (string.IsNullOrEmpty(txtCustomerName.Text))
             {
                 MessageBox.Show("Tên khách hàng không được trống", "Lỗi", MessageBoxButtons.OK);
+                return false;
+            }
+
+            if (dtpCustomerBirthday.Value > DateTime.Now)
+            {
+                MessageBox.Show("TNgày sinh lớn hơn ngày hiện tại", "Lỗi", MessageBoxButtons.OK);
                 return false;
             }
 

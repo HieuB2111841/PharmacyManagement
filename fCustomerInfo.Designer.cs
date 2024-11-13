@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCustomerInfo));
-            this.gbCustomerInfo = new System.Windows.Forms.GroupBox();
+            this.pCustomerInfo = new System.Windows.Forms.Panel();
             this.flpCustomerInfo = new System.Windows.Forms.FlowLayoutPanel();
             this.pCustomerID = new System.Windows.Forms.Panel();
             this.lCustomerID = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.tlpButtons = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.gbCustomerInfo.SuspendLayout();
+            this.pCustomerInfo.SuspendLayout();
             this.flpCustomerInfo.SuspendLayout();
             this.pCustomerID.SuspendLayout();
             this.pCustomerName.SuspendLayout();
@@ -63,19 +63,16 @@
             this.tlpButtons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gbCustomerInfo
+            // pCustomerInfo
             // 
-            this.gbCustomerInfo.BackColor = System.Drawing.Color.Aquamarine;
-            this.gbCustomerInfo.Controls.Add(this.flpCustomerInfo);
-            this.gbCustomerInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbCustomerInfo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.gbCustomerInfo.Location = new System.Drawing.Point(0, 0);
-            this.gbCustomerInfo.Name = "gbCustomerInfo";
-            this.gbCustomerInfo.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
-            this.gbCustomerInfo.Size = new System.Drawing.Size(366, 574);
-            this.gbCustomerInfo.TabIndex = 2;
-            this.gbCustomerInfo.TabStop = false;
-            this.gbCustomerInfo.Text = "Thông tin khách hàng";
+            this.pCustomerInfo.BackColor = System.Drawing.Color.Aquamarine;
+            this.pCustomerInfo.Controls.Add(this.flpCustomerInfo);
+            this.pCustomerInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pCustomerInfo.Location = new System.Drawing.Point(0, 0);
+            this.pCustomerInfo.Name = "pCustomerInfo";
+            this.pCustomerInfo.Padding = new System.Windows.Forms.Padding(15);
+            this.pCustomerInfo.Size = new System.Drawing.Size(366, 484);
+            this.pCustomerInfo.TabIndex = 0;
             // 
             // flpCustomerInfo
             // 
@@ -89,11 +86,11 @@
             this.flpCustomerInfo.Controls.Add(this.tlpButtons);
             this.flpCustomerInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpCustomerInfo.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpCustomerInfo.Location = new System.Drawing.Point(15, 46);
+            this.flpCustomerInfo.Location = new System.Drawing.Point(15, 15);
             this.flpCustomerInfo.Name = "flpCustomerInfo";
-            this.flpCustomerInfo.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
-            this.flpCustomerInfo.Size = new System.Drawing.Size(336, 513);
-            this.flpCustomerInfo.TabIndex = 0;
+            this.flpCustomerInfo.Padding = new System.Windows.Forms.Padding(15);
+            this.flpCustomerInfo.Size = new System.Drawing.Size(336, 454);
+            this.flpCustomerInfo.TabIndex = 1;
             this.flpCustomerInfo.WrapContents = false;
             // 
             // pCustomerID
@@ -318,7 +315,6 @@
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -335,19 +331,18 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // fCustomerInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(366, 574);
-            this.Controls.Add(this.gbCustomerInfo);
+            this.ClientSize = new System.Drawing.Size(366, 484);
+            this.Controls.Add(this.pCustomerInfo);
             this.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fCustomerInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "fCustomerInfo";
-            this.gbCustomerInfo.ResumeLayout(false);
+            this.Text = "Thông tin khách hàng";
+            this.pCustomerInfo.ResumeLayout(false);
             this.flpCustomerInfo.ResumeLayout(false);
             this.pCustomerID.ResumeLayout(false);
             this.pCustomerID.PerformLayout();
@@ -366,7 +361,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gbCustomerInfo;
+        private System.Windows.Forms.Panel pCustomerInfo;
         private System.Windows.Forms.FlowLayoutPanel flpCustomerInfo;
         private System.Windows.Forms.Panel pCustomerID;
         private System.Windows.Forms.Label lCustomerID;
@@ -375,19 +370,19 @@
         private System.Windows.Forms.Label lCustomerName;
         private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.Panel pCustomerBirthday;
+        private System.Windows.Forms.Label lCustomerBirthday;
+        private System.Windows.Forms.DateTimePicker dtpCustomerBirthday;
         private System.Windows.Forms.Panel pCustomerPhoneNumber;
         private System.Windows.Forms.Label lCustomerPhoneNumber;
         private System.Windows.Forms.TextBox txtCustomerPhoneNumber;
         private System.Windows.Forms.Panel pCustomerAddress;
         private System.Windows.Forms.Label lCustomerAddress;
         private System.Windows.Forms.RichTextBox rtxtCustomerAddress;
-        private System.Windows.Forms.TableLayoutPanel tlpButtons;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DateTimePicker dtpCustomerBirthday;
-        private System.Windows.Forms.Label lCustomerBirthday;
         private System.Windows.Forms.Panel pCustomerPassword;
         private System.Windows.Forms.Label lCustomerPassword;
         private System.Windows.Forms.TextBox txtCustomerPassword;
+        private System.Windows.Forms.TableLayoutPanel tlpButtons;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
     }
 }

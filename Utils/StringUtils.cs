@@ -17,7 +17,7 @@ namespace QLNhaThuoc.Utils
         ///     <item> "abc1234" => "abc1234" </item>
         /// </list>
         /// </summary>
-        public static string FormatNumber(string number)
+        public static string FormatMoneyNumber(string number)
         {
             if (decimal.TryParse(number, out decimal res))
             {

@@ -107,7 +107,7 @@ namespace QLNhaThuoc
             // cột tổng tiền
             if(e.ColumnIndex == 3)
             {
-                e.Value = StringUtils.FormatNumber(e.Value.ToString());
+                e.Value = StringUtils.FormatMoneyNumber(e.Value.ToString());
             }
         }
         private void dgvHistory_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -131,7 +131,7 @@ namespace QLNhaThuoc
                 }
 
                 string totalPrice = row.Cells[3].Value.ToString();
-                txtInfoBillTotalPrice.Text = StringUtils.FormatNumber(totalPrice);
+                txtInfoBillTotalPrice.Text = StringUtils.FormatMoneyNumber(totalPrice);
             }
         }
         private void dgvInfoBillDetails_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -139,7 +139,7 @@ namespace QLNhaThuoc
             // cột đơn giá
             if(e.ColumnIndex == 2)
             {
-                e.Value = StringUtils.FormatNumber(e.Value.ToString());
+                e.Value = StringUtils.FormatMoneyNumber(e.Value.ToString());
             }
         }
 

@@ -1,26 +1,29 @@
 ﻿using QLNhaThuoc.Models;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace QLNhaThuoc
 {
-    public partial class fMedicine : Form
+    public partial class fMedicineInfo : Form
     {
         private Medicine _medicine;
         private bool _isEditMode = false;
 
-        public fMedicine()
+        public fMedicineInfo()
         {
             InitializeComponent();
         }
 
         public void ToAddFrom()
         {
-            gbMedicineInfo.Text = "Nhập thông tin thuốc";
-            lMedicineID.Text = "Mã thuốc (Được tạo tự động)";
+            this.Text = "Nhập thông tin thuốc";
             lSupplierID.Text = "Mã Nhà cung cấp (VD: F0001)";
             lManufacturerID.Text = "Mã hãng sản xuất (VD: B0001)";
+            pMedicineID.Visible = false;
+
+            this.Size = new Size(this.Size.Width, this.Size.Height - pMedicineID.Height);
 
             _isEditMode = false;
         }
@@ -85,7 +88,7 @@ namespace QLNhaThuoc
                     ("@p_CongDung", rtxtMedicineEffect.Text),
                     ("@p_MaLoai", txtlMedicineTypeID.Text));
 
-            if (message.Equals("Success"))
+            if (message.Equals(MyPublics.SUCCESS_MESSAGE))
             {
                 MessageBox.Show("Sửa thông tin thuốc thành công", "Thông báo", MessageBoxButtons.OK);
                 this.DialogResult = DialogResult.OK;
@@ -107,7 +110,7 @@ namespace QLNhaThuoc
                     ("@p_CongDung", rtxtMedicineEffect.Text),
                     ("@p_MaLoai", txtlMedicineTypeID.Text));
 
-            if (message.Equals("Success"))
+            if (message.Equals(MyPublics.SUCCESS_MESSAGE))
             {
                 MessageBox.Show("Thêm thuốc thành công", "Thông báo", MessageBoxButtons.OK);
                 this.DialogResult = DialogResult.OK;

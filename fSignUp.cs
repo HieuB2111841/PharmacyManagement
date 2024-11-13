@@ -104,7 +104,7 @@ namespace QLNhaThuoc
                                                                 ("@p_NgaySinh", birthDate.ToString("yyyy-MM-dd")));
 
             // Kiểm tra xem đăng ký có thành công không
-            if(message == "Success")
+            if(message == MyPublics.SUCCESS_MESSAGE)
             {
                 if (result)
                 {

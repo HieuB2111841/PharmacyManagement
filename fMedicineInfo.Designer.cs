@@ -1,6 +1,6 @@
 ﻿namespace QLNhaThuoc
 {
-    partial class fMedicine
+    partial class fMedicineInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMedicine));
-            this.gbMedicineInfo = new System.Windows.Forms.GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMedicineInfo));
+            this.pMedicineInfo = new System.Windows.Forms.Panel();
             this.flpMedicineInfo = new System.Windows.Forms.FlowLayoutPanel();
             this.pMedicineID = new System.Windows.Forms.Panel();
             this.lMedicineID = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.tlpButtons = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.gbMedicineInfo.SuspendLayout();
+            this.pMedicineInfo.SuspendLayout();
             this.flpMedicineInfo.SuspendLayout();
             this.pMedicineID.SuspendLayout();
             this.pMedicineName.SuspendLayout();
@@ -63,19 +63,16 @@
             this.tlpButtons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gbMedicineInfo
+            // pMedicineInfo
             // 
-            this.gbMedicineInfo.BackColor = System.Drawing.Color.Aquamarine;
-            this.gbMedicineInfo.Controls.Add(this.flpMedicineInfo);
-            this.gbMedicineInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbMedicineInfo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.gbMedicineInfo.Location = new System.Drawing.Point(0, 0);
-            this.gbMedicineInfo.Name = "gbMedicineInfo";
-            this.gbMedicineInfo.Padding = new System.Windows.Forms.Padding(14, 15, 14, 15);
-            this.gbMedicineInfo.Size = new System.Drawing.Size(365, 570);
-            this.gbMedicineInfo.TabIndex = 1;
-            this.gbMedicineInfo.TabStop = false;
-            this.gbMedicineInfo.Text = "Thông tin thuốc";
+            this.pMedicineInfo.BackColor = System.Drawing.Color.Aquamarine;
+            this.pMedicineInfo.Controls.Add(this.flpMedicineInfo);
+            this.pMedicineInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pMedicineInfo.Location = new System.Drawing.Point(0, 0);
+            this.pMedicineInfo.Name = "pMedicineInfo";
+            this.pMedicineInfo.Padding = new System.Windows.Forms.Padding(15);
+            this.pMedicineInfo.Size = new System.Drawing.Size(365, 540);
+            this.pMedicineInfo.TabIndex = 0;
             // 
             // flpMedicineInfo
             // 
@@ -89,11 +86,11 @@
             this.flpMedicineInfo.Controls.Add(this.tlpButtons);
             this.flpMedicineInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpMedicineInfo.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpMedicineInfo.Location = new System.Drawing.Point(14, 46);
+            this.flpMedicineInfo.Location = new System.Drawing.Point(15, 15);
             this.flpMedicineInfo.Name = "flpMedicineInfo";
             this.flpMedicineInfo.Padding = new System.Windows.Forms.Padding(14, 15, 14, 15);
-            this.flpMedicineInfo.Size = new System.Drawing.Size(337, 509);
-            this.flpMedicineInfo.TabIndex = 0;
+            this.flpMedicineInfo.Size = new System.Drawing.Size(335, 510);
+            this.flpMedicineInfo.TabIndex = 1;
             this.flpMedicineInfo.WrapContents = false;
             // 
             // pMedicineID
@@ -314,7 +311,6 @@
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -331,22 +327,21 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // fMedicine
+            // fMedicineInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 570);
-            this.Controls.Add(this.gbMedicineInfo);
+            this.ClientSize = new System.Drawing.Size(365, 540);
+            this.Controls.Add(this.pMedicineInfo);
             this.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.Name = "fMedicine";
+            this.Name = "fMedicineInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "fMedicine";
-            this.gbMedicineInfo.ResumeLayout(false);
+            this.Text = "Thông tin thuốc";
+            this.pMedicineInfo.ResumeLayout(false);
             this.flpMedicineInfo.ResumeLayout(false);
             this.pMedicineID.ResumeLayout(false);
             this.pMedicineID.PerformLayout();
@@ -366,7 +361,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gbMedicineInfo;
+        private System.Windows.Forms.Panel pMedicineInfo;
         private System.Windows.Forms.FlowLayoutPanel flpMedicineInfo;
         private System.Windows.Forms.Panel pMedicineID;
         private System.Windows.Forms.Label lMedicineID;

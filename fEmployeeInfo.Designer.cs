@@ -29,45 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fEmployeeInfo));
-            this.gbEmployeeInfo = new System.Windows.Forms.GroupBox();
+            this.pEmployeeInfo = new System.Windows.Forms.Panel();
             this.flpEmployeeInfo = new System.Windows.Forms.FlowLayoutPanel();
-            this.pEmployeeName = new System.Windows.Forms.Panel();
-            this.lEmployeeName = new System.Windows.Forms.Label();
-            this.txtEmployeeName = new System.Windows.Forms.TextBox();
             this.pEmployeeID = new System.Windows.Forms.Panel();
             this.lEmployeeID = new System.Windows.Forms.Label();
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
+            this.pEmployeeName = new System.Windows.Forms.Panel();
+            this.lEmployeeName = new System.Windows.Forms.Label();
+            this.txtEmployeeName = new System.Windows.Forms.TextBox();
             this.pEmployeePhoneNumber = new System.Windows.Forms.Panel();
             this.lEmployeePhoneNumber = new System.Windows.Forms.Label();
             this.txtEmployeePhoneNumber = new System.Windows.Forms.TextBox();
             this.pEmployeeBirthday = new System.Windows.Forms.Panel();
-            this.dtpEmployeeBirthday = new System.Windows.Forms.DateTimePicker();
             this.lEmployeeBirthday = new System.Windows.Forms.Label();
+            this.dtpEmployeeBirthday = new System.Windows.Forms.DateTimePicker();
             this.pEmployeeAddress = new System.Windows.Forms.Panel();
-            this.rtxtEmployeeAddress = new System.Windows.Forms.RichTextBox();
             this.lEmployeeAddress = new System.Windows.Forms.Label();
-            this.gbEmployeeInfo.SuspendLayout();
+            this.rtxtEmployeeAddress = new System.Windows.Forms.RichTextBox();
+            this.pEmployeeInfo.SuspendLayout();
             this.flpEmployeeInfo.SuspendLayout();
-            this.pEmployeeName.SuspendLayout();
             this.pEmployeeID.SuspendLayout();
+            this.pEmployeeName.SuspendLayout();
             this.pEmployeePhoneNumber.SuspendLayout();
             this.pEmployeeBirthday.SuspendLayout();
             this.pEmployeeAddress.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gbEmployeeInfo
+            // pEmployeeInfo
             // 
-            this.gbEmployeeInfo.BackColor = System.Drawing.Color.Aquamarine;
-            this.gbEmployeeInfo.Controls.Add(this.flpEmployeeInfo);
-            this.gbEmployeeInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbEmployeeInfo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.gbEmployeeInfo.Location = new System.Drawing.Point(0, 0);
-            this.gbEmployeeInfo.Name = "gbEmployeeInfo";
-            this.gbEmployeeInfo.Padding = new System.Windows.Forms.Padding(15);
-            this.gbEmployeeInfo.Size = new System.Drawing.Size(366, 469);
-            this.gbEmployeeInfo.TabIndex = 0;
-            this.gbEmployeeInfo.TabStop = false;
-            this.gbEmployeeInfo.Text = "Thông tin nhân viên";
+            this.pEmployeeInfo.BackColor = System.Drawing.Color.Aquamarine;
+            this.pEmployeeInfo.Controls.Add(this.flpEmployeeInfo);
+            this.pEmployeeInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pEmployeeInfo.Location = new System.Drawing.Point(0, 0);
+            this.pEmployeeInfo.Name = "pEmployeeInfo";
+            this.pEmployeeInfo.Padding = new System.Windows.Forms.Padding(15);
+            this.pEmployeeInfo.Size = new System.Drawing.Size(366, 425);
+            this.pEmployeeInfo.TabIndex = 0;
             // 
             // flpEmployeeInfo
             // 
@@ -79,44 +76,12 @@
             this.flpEmployeeInfo.Controls.Add(this.pEmployeeAddress);
             this.flpEmployeeInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpEmployeeInfo.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpEmployeeInfo.Location = new System.Drawing.Point(15, 46);
+            this.flpEmployeeInfo.Location = new System.Drawing.Point(15, 15);
             this.flpEmployeeInfo.Name = "flpEmployeeInfo";
             this.flpEmployeeInfo.Padding = new System.Windows.Forms.Padding(15);
-            this.flpEmployeeInfo.Size = new System.Drawing.Size(336, 408);
-            this.flpEmployeeInfo.TabIndex = 0;
+            this.flpEmployeeInfo.Size = new System.Drawing.Size(336, 395);
+            this.flpEmployeeInfo.TabIndex = 1;
             this.flpEmployeeInfo.WrapContents = false;
-            // 
-            // pEmployeeName
-            // 
-            this.pEmployeeName.Controls.Add(this.lEmployeeName);
-            this.pEmployeeName.Controls.Add(this.txtEmployeeName);
-            this.pEmployeeName.Location = new System.Drawing.Point(18, 84);
-            this.pEmployeeName.Name = "pEmployeeName";
-            this.pEmployeeName.Size = new System.Drawing.Size(300, 60);
-            this.pEmployeeName.TabIndex = 1;
-            // 
-            // lEmployeeName
-            // 
-            this.lEmployeeName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lEmployeeName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lEmployeeName.Location = new System.Drawing.Point(0, 0);
-            this.lEmployeeName.Name = "lEmployeeName";
-            this.lEmployeeName.Size = new System.Drawing.Size(300, 30);
-            this.lEmployeeName.TabIndex = 2;
-            this.lEmployeeName.Text = "Tên nhân viên";
-            this.lEmployeeName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtEmployeeName
-            // 
-            this.txtEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmployeeName.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtEmployeeName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtEmployeeName.Location = new System.Drawing.Point(0, 30);
-            this.txtEmployeeName.MaxLength = 128;
-            this.txtEmployeeName.Name = "txtEmployeeName";
-            this.txtEmployeeName.ReadOnly = true;
-            this.txtEmployeeName.Size = new System.Drawing.Size(300, 30);
-            this.txtEmployeeName.TabIndex = 0;
             // 
             // pEmployeeID
             // 
@@ -149,6 +114,38 @@
             this.txtEmployeeID.ReadOnly = true;
             this.txtEmployeeID.Size = new System.Drawing.Size(300, 30);
             this.txtEmployeeID.TabIndex = 0;
+            // 
+            // pEmployeeName
+            // 
+            this.pEmployeeName.Controls.Add(this.lEmployeeName);
+            this.pEmployeeName.Controls.Add(this.txtEmployeeName);
+            this.pEmployeeName.Location = new System.Drawing.Point(18, 84);
+            this.pEmployeeName.Name = "pEmployeeName";
+            this.pEmployeeName.Size = new System.Drawing.Size(300, 60);
+            this.pEmployeeName.TabIndex = 1;
+            // 
+            // lEmployeeName
+            // 
+            this.lEmployeeName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lEmployeeName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lEmployeeName.Location = new System.Drawing.Point(0, 0);
+            this.lEmployeeName.Name = "lEmployeeName";
+            this.lEmployeeName.Size = new System.Drawing.Size(300, 30);
+            this.lEmployeeName.TabIndex = 2;
+            this.lEmployeeName.Text = "Tên nhân viên";
+            this.lEmployeeName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtEmployeeName
+            // 
+            this.txtEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmployeeName.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtEmployeeName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtEmployeeName.Location = new System.Drawing.Point(0, 30);
+            this.txtEmployeeName.MaxLength = 128;
+            this.txtEmployeeName.Name = "txtEmployeeName";
+            this.txtEmployeeName.ReadOnly = true;
+            this.txtEmployeeName.Size = new System.Drawing.Size(300, 30);
+            this.txtEmployeeName.TabIndex = 0;
             // 
             // pEmployeePhoneNumber
             // 
@@ -191,6 +188,17 @@
             this.pEmployeeBirthday.Size = new System.Drawing.Size(300, 60);
             this.pEmployeeBirthday.TabIndex = 3;
             // 
+            // lEmployeeBirthday
+            // 
+            this.lEmployeeBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lEmployeeBirthday.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lEmployeeBirthday.Location = new System.Drawing.Point(0, 0);
+            this.lEmployeeBirthday.Name = "lEmployeeBirthday";
+            this.lEmployeeBirthday.Size = new System.Drawing.Size(300, 30);
+            this.lEmployeeBirthday.TabIndex = 4;
+            this.lEmployeeBirthday.Text = "Ngày sinh";
+            this.lEmployeeBirthday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // dtpEmployeeBirthday
             // 
             this.dtpEmployeeBirthday.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -207,17 +215,6 @@
             this.dtpEmployeeBirthday.TabIndex = 0;
             this.dtpEmployeeBirthday.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
-            // lEmployeeBirthday
-            // 
-            this.lEmployeeBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lEmployeeBirthday.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lEmployeeBirthday.Location = new System.Drawing.Point(0, 0);
-            this.lEmployeeBirthday.Name = "lEmployeeBirthday";
-            this.lEmployeeBirthday.Size = new System.Drawing.Size(300, 30);
-            this.lEmployeeBirthday.TabIndex = 4;
-            this.lEmployeeBirthday.Text = "Ngày sinh";
-            this.lEmployeeBirthday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // pEmployeeAddress
             // 
             this.pEmployeeAddress.Controls.Add(this.lEmployeeAddress);
@@ -226,6 +223,17 @@
             this.pEmployeeAddress.Name = "pEmployeeAddress";
             this.pEmployeeAddress.Size = new System.Drawing.Size(300, 100);
             this.pEmployeeAddress.TabIndex = 4;
+            // 
+            // lEmployeeAddress
+            // 
+            this.lEmployeeAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lEmployeeAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lEmployeeAddress.Location = new System.Drawing.Point(0, 0);
+            this.lEmployeeAddress.Name = "lEmployeeAddress";
+            this.lEmployeeAddress.Size = new System.Drawing.Size(300, 30);
+            this.lEmployeeAddress.TabIndex = 6;
+            this.lEmployeeAddress.Text = "Địa chỉ";
+            this.lEmployeeAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // rtxtEmployeeAddress
             // 
@@ -240,37 +248,26 @@
             this.rtxtEmployeeAddress.TabIndex = 0;
             this.rtxtEmployeeAddress.Text = "";
             // 
-            // lEmployeeAddress
-            // 
-            this.lEmployeeAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lEmployeeAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lEmployeeAddress.Location = new System.Drawing.Point(0, 0);
-            this.lEmployeeAddress.Name = "lEmployeeAddress";
-            this.lEmployeeAddress.Size = new System.Drawing.Size(300, 30);
-            this.lEmployeeAddress.TabIndex = 6;
-            this.lEmployeeAddress.Text = "Địa chỉ";
-            this.lEmployeeAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // fEmployeeInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 469);
-            this.Controls.Add(this.gbEmployeeInfo);
+            this.ClientSize = new System.Drawing.Size(366, 425);
+            this.Controls.Add(this.pEmployeeInfo);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fEmployeeInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "fEmployeeInfo";
+            this.Text = "Thông tin nhân viên";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.fEmployeeInfo_Load);
-            this.gbEmployeeInfo.ResumeLayout(false);
+            this.pEmployeeInfo.ResumeLayout(false);
             this.flpEmployeeInfo.ResumeLayout(false);
-            this.pEmployeeName.ResumeLayout(false);
-            this.pEmployeeName.PerformLayout();
             this.pEmployeeID.ResumeLayout(false);
             this.pEmployeeID.PerformLayout();
+            this.pEmployeeName.ResumeLayout(false);
+            this.pEmployeeName.PerformLayout();
             this.pEmployeePhoneNumber.ResumeLayout(false);
             this.pEmployeePhoneNumber.PerformLayout();
             this.pEmployeeBirthday.ResumeLayout(false);
@@ -281,14 +278,14 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gbEmployeeInfo;
+        private System.Windows.Forms.Panel pEmployeeInfo;
         private System.Windows.Forms.FlowLayoutPanel flpEmployeeInfo;
+        private System.Windows.Forms.Panel pEmployeeID;
+        private System.Windows.Forms.Label lEmployeeID;
+        private System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.Panel pEmployeeName;
         private System.Windows.Forms.Label lEmployeeName;
         private System.Windows.Forms.TextBox txtEmployeeName;
-        private System.Windows.Forms.Label lEmployeeID;
-        private System.Windows.Forms.TextBox txtEmployeeID;
-        private System.Windows.Forms.Panel pEmployeeID;
         private System.Windows.Forms.Panel pEmployeePhoneNumber;
         private System.Windows.Forms.Label lEmployeePhoneNumber;
         private System.Windows.Forms.TextBox txtEmployeePhoneNumber;
