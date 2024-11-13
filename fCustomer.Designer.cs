@@ -58,8 +58,6 @@
             this.rtxtProfileAddress = new System.Windows.Forms.RichTextBox();
             this.pProfileDivider = new System.Windows.Forms.Panel();
             this.tlpActionButtons = new System.Windows.Forms.TableLayoutPanel();
-            this.btnProfileChangePassword = new System.Windows.Forms.Button();
-            this.btnProfileSave = new System.Windows.Forms.Button();
             this.btnProfileEdit = new System.Windows.Forms.Button();
             this.pControl = new System.Windows.Forms.Panel();
             this.tabHistory = new System.Windows.Forms.TabPage();
@@ -81,12 +79,12 @@
             this.pInfoBillID = new System.Windows.Forms.Panel();
             this.txtInfoBillID = new System.Windows.Forms.TextBox();
             this.lInfoBillID = new System.Windows.Forms.Label();
-            this.pInfoBillEmployeeName = new System.Windows.Forms.Panel();
-            this.txtInfoBillEmployeeName = new System.Windows.Forms.TextBox();
-            this.lInfoBillEmployeeName = new System.Windows.Forms.Label();
             this.pInfoBillDate = new System.Windows.Forms.Panel();
             this.dtpInfoBillDate = new System.Windows.Forms.DateTimePicker();
             this.lInfoBillDate = new System.Windows.Forms.Label();
+            this.pInfoBillEmployeeName = new System.Windows.Forms.Panel();
+            this.txtInfoBillEmployeeName = new System.Windows.Forms.TextBox();
+            this.lInfoBillEmployeeName = new System.Windows.Forms.Label();
             this.pInfoBillDetails = new System.Windows.Forms.Panel();
             this.dgvInfoBillDetails = new System.Windows.Forms.DataGridView();
             this.lInfoBillDetails = new System.Windows.Forms.Label();
@@ -98,8 +96,11 @@
             this.tsmiFileExportExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAccount = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAccountLogout = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiChangePassword = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.msMain = new System.Windows.Forms.MenuStrip();
+            this.btnProfileSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.tcMain.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.pHomeCaption.SuspendLayout();
@@ -125,8 +126,8 @@
             this.gbBillInfo.SuspendLayout();
             this.flpInfoBill.SuspendLayout();
             this.pInfoBillID.SuspendLayout();
-            this.pInfoBillEmployeeName.SuspendLayout();
             this.pInfoBillDate.SuspendLayout();
+            this.pInfoBillEmployeeName.SuspendLayout();
             this.pInfoBillDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoBillDetails)).BeginInit();
             this.pInfoBillTotalContainer.SuspendLayout();
@@ -336,7 +337,7 @@
             this.dtpProfileBirthday.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpProfileBirthday.Name = "dtpProfileBirthday";
             this.dtpProfileBirthday.Size = new System.Drawing.Size(364, 30);
-            this.dtpProfileBirthday.TabIndex = 1;
+            this.dtpProfileBirthday.TabIndex = 2;
             this.dtpProfileBirthday.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // pProfilePhoneNumber
@@ -371,7 +372,7 @@
             this.txtProfilePhoneNumber.Name = "txtProfilePhoneNumber";
             this.txtProfilePhoneNumber.ReadOnly = true;
             this.txtProfilePhoneNumber.Size = new System.Drawing.Size(364, 30);
-            this.txtProfilePhoneNumber.TabIndex = 1;
+            this.txtProfilePhoneNumber.TabIndex = 3;
             this.txtProfilePhoneNumber.Text = "0123456789";
             // 
             // pProfileAddress
@@ -406,7 +407,7 @@
             this.rtxtProfileAddress.Name = "rtxtProfileAddress";
             this.rtxtProfileAddress.ReadOnly = true;
             this.rtxtProfileAddress.Size = new System.Drawing.Size(364, 69);
-            this.rtxtProfileAddress.TabIndex = 1;
+            this.rtxtProfileAddress.TabIndex = 3;
             this.rtxtProfileAddress.Text = "123/abc, đường xyz, quận Ninh Kiều, TP Cần Thơ";
             // 
             // pProfileDivider
@@ -424,8 +425,8 @@
             this.tlpActionButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpActionButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpActionButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpActionButtons.Controls.Add(this.btnProfileChangePassword, 1, 0);
-            this.tlpActionButtons.Controls.Add(this.btnProfileSave, 3, 0);
+            this.tlpActionButtons.Controls.Add(this.btnCancel, 3, 0);
+            this.tlpActionButtons.Controls.Add(this.btnProfileSave, 2, 0);
             this.tlpActionButtons.Controls.Add(this.btnProfileEdit, 0, 0);
             this.tlpActionButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tlpActionButtons.Location = new System.Drawing.Point(15, 559);
@@ -434,38 +435,6 @@
             this.tlpActionButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpActionButtons.Size = new System.Drawing.Size(812, 40);
             this.tlpActionButtons.TabIndex = 1;
-            // 
-            // btnProfileChangePassword
-            // 
-            this.btnProfileChangePassword.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnProfileChangePassword.BackColor = System.Drawing.SystemColors.Control;
-            this.btnProfileChangePassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnProfileChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfileChangePassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnProfileChangePassword.ForeColor = System.Drawing.Color.Black;
-            this.btnProfileChangePassword.Location = new System.Drawing.Point(206, 4);
-            this.btnProfileChangePassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnProfileChangePassword.Name = "btnProfileChangePassword";
-            this.btnProfileChangePassword.Size = new System.Drawing.Size(197, 32);
-            this.btnProfileChangePassword.TabIndex = 1;
-            this.btnProfileChangePassword.Text = "Đổi mật khẩu";
-            this.btnProfileChangePassword.UseVisualStyleBackColor = false;
-            // 
-            // btnProfileSave
-            // 
-            this.btnProfileSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnProfileSave.BackColor = System.Drawing.SystemColors.Control;
-            this.btnProfileSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnProfileSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfileSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnProfileSave.ForeColor = System.Drawing.Color.Black;
-            this.btnProfileSave.Location = new System.Drawing.Point(612, 4);
-            this.btnProfileSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnProfileSave.Name = "btnProfileSave";
-            this.btnProfileSave.Size = new System.Drawing.Size(197, 32);
-            this.btnProfileSave.TabIndex = 2;
-            this.btnProfileSave.Text = "Lưu";
-            this.btnProfileSave.UseVisualStyleBackColor = false;
             // 
             // btnProfileEdit
             // 
@@ -479,9 +448,10 @@
             this.btnProfileEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnProfileEdit.Name = "btnProfileEdit";
             this.btnProfileEdit.Size = new System.Drawing.Size(197, 32);
-            this.btnProfileEdit.TabIndex = 0;
+            this.btnProfileEdit.TabIndex = 4;
             this.btnProfileEdit.Text = "Sửa thông tin";
             this.btnProfileEdit.UseVisualStyleBackColor = false;
+            this.btnProfileEdit.Click += new System.EventHandler(this.btnProfileEdit_Click);
             // 
             // pControl
             // 
@@ -778,42 +748,6 @@
             this.lInfoBillID.Text = "Mã đơn:";
             this.lInfoBillID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pInfoBillEmployeeName
-            // 
-            this.pInfoBillEmployeeName.Controls.Add(this.txtInfoBillEmployeeName);
-            this.pInfoBillEmployeeName.Controls.Add(this.lInfoBillEmployeeName);
-            this.pInfoBillEmployeeName.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.pInfoBillEmployeeName.Location = new System.Drawing.Point(3, 84);
-            this.pInfoBillEmployeeName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 6);
-            this.pInfoBillEmployeeName.Name = "pInfoBillEmployeeName";
-            this.pInfoBillEmployeeName.Size = new System.Drawing.Size(261, 30);
-            this.pInfoBillEmployeeName.TabIndex = 1;
-            // 
-            // txtInfoBillEmployeeName
-            // 
-            this.txtInfoBillEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtInfoBillEmployeeName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInfoBillEmployeeName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInfoBillEmployeeName.Location = new System.Drawing.Point(127, 0);
-            this.txtInfoBillEmployeeName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtInfoBillEmployeeName.MaxLength = 100;
-            this.txtInfoBillEmployeeName.Name = "txtInfoBillEmployeeName";
-            this.txtInfoBillEmployeeName.ReadOnly = true;
-            this.txtInfoBillEmployeeName.Size = new System.Drawing.Size(134, 30);
-            this.txtInfoBillEmployeeName.TabIndex = 0;
-            // 
-            // lInfoBillEmployeeName
-            // 
-            this.lInfoBillEmployeeName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lInfoBillEmployeeName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lInfoBillEmployeeName.ForeColor = System.Drawing.Color.Black;
-            this.lInfoBillEmployeeName.Location = new System.Drawing.Point(0, 0);
-            this.lInfoBillEmployeeName.Name = "lInfoBillEmployeeName";
-            this.lInfoBillEmployeeName.Size = new System.Drawing.Size(127, 30);
-            this.lInfoBillEmployeeName.TabIndex = 0;
-            this.lInfoBillEmployeeName.Text = "Tên nhân viên:";
-            this.lInfoBillEmployeeName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // pInfoBillDate
             // 
             this.pInfoBillDate.Controls.Add(this.dtpInfoBillDate);
@@ -854,6 +788,42 @@
             this.lInfoBillDate.TabIndex = 0;
             this.lInfoBillDate.Text = "Ngày mua:";
             this.lInfoBillDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pInfoBillEmployeeName
+            // 
+            this.pInfoBillEmployeeName.Controls.Add(this.txtInfoBillEmployeeName);
+            this.pInfoBillEmployeeName.Controls.Add(this.lInfoBillEmployeeName);
+            this.pInfoBillEmployeeName.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.pInfoBillEmployeeName.Location = new System.Drawing.Point(3, 84);
+            this.pInfoBillEmployeeName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 6);
+            this.pInfoBillEmployeeName.Name = "pInfoBillEmployeeName";
+            this.pInfoBillEmployeeName.Size = new System.Drawing.Size(261, 30);
+            this.pInfoBillEmployeeName.TabIndex = 1;
+            // 
+            // txtInfoBillEmployeeName
+            // 
+            this.txtInfoBillEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtInfoBillEmployeeName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInfoBillEmployeeName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInfoBillEmployeeName.Location = new System.Drawing.Point(127, 0);
+            this.txtInfoBillEmployeeName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtInfoBillEmployeeName.MaxLength = 100;
+            this.txtInfoBillEmployeeName.Name = "txtInfoBillEmployeeName";
+            this.txtInfoBillEmployeeName.ReadOnly = true;
+            this.txtInfoBillEmployeeName.Size = new System.Drawing.Size(134, 30);
+            this.txtInfoBillEmployeeName.TabIndex = 0;
+            // 
+            // lInfoBillEmployeeName
+            // 
+            this.lInfoBillEmployeeName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lInfoBillEmployeeName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lInfoBillEmployeeName.ForeColor = System.Drawing.Color.Black;
+            this.lInfoBillEmployeeName.Location = new System.Drawing.Point(0, 0);
+            this.lInfoBillEmployeeName.Name = "lInfoBillEmployeeName";
+            this.lInfoBillEmployeeName.Size = new System.Drawing.Size(127, 30);
+            this.lInfoBillEmployeeName.TabIndex = 0;
+            this.lInfoBillEmployeeName.Text = "Tên nhân viên:";
+            this.lInfoBillEmployeeName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pInfoBillDetails
             // 
@@ -982,29 +952,38 @@
             // tsmiFileExportExcel
             // 
             this.tsmiFileExportExcel.Name = "tsmiFileExportExcel";
-            this.tsmiFileExportExcel.Size = new System.Drawing.Size(224, 26);
+            this.tsmiFileExportExcel.Size = new System.Drawing.Size(160, 26);
             this.tsmiFileExportExcel.Text = "Xuất Excel";
             // 
             // tsmiFileExit
             // 
             this.tsmiFileExit.Name = "tsmiFileExit";
-            this.tsmiFileExit.Size = new System.Drawing.Size(224, 26);
+            this.tsmiFileExit.Size = new System.Drawing.Size(160, 26);
             this.tsmiFileExit.Text = "Thoát";
             this.tsmiFileExit.Click += new System.EventHandler(this.tsmiFileExit_Click);
             // 
             // tsmiAccount
             // 
             this.tsmiAccount.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiAccountLogout});
+            this.tsmiChangePassword,
+            this.tsmiLogout});
             this.tsmiAccount.Name = "tsmiAccount";
             this.tsmiAccount.Size = new System.Drawing.Size(85, 24);
             this.tsmiAccount.Text = "Tài khoản";
             // 
-            // tsmiAccountLogout
+            // tsmiChangePassword
             // 
-            this.tsmiAccountLogout.Name = "tsmiAccountLogout";
-            this.tsmiAccountLogout.Size = new System.Drawing.Size(160, 26);
-            this.tsmiAccountLogout.Text = "Đăng xuất";
+            this.tsmiChangePassword.Name = "tsmiChangePassword";
+            this.tsmiChangePassword.Size = new System.Drawing.Size(181, 26);
+            this.tsmiChangePassword.Text = "Đổi mật khẩu";
+            this.tsmiChangePassword.Click += new System.EventHandler(this.tsmiChangePassword_Click);
+            // 
+            // tsmiLogout
+            // 
+            this.tsmiLogout.Name = "tsmiLogout";
+            this.tsmiLogout.Size = new System.Drawing.Size(181, 26);
+            this.tsmiLogout.Text = "Đăng xuất";
+            this.tsmiLogout.Click += new System.EventHandler(this.tsmiLogout_Click);
             // 
             // msMain
             // 
@@ -1017,6 +996,42 @@
             this.msMain.Size = new System.Drawing.Size(1000, 28);
             this.msMain.TabIndex = 1;
             this.msMain.Text = "menuStrip1";
+            // 
+            // btnProfileSave
+            // 
+            this.btnProfileSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnProfileSave.BackColor = System.Drawing.SystemColors.Control;
+            this.btnProfileSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnProfileSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfileSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnProfileSave.ForeColor = System.Drawing.Color.Black;
+            this.btnProfileSave.Location = new System.Drawing.Point(409, 4);
+            this.btnProfileSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnProfileSave.Name = "btnProfileSave";
+            this.btnProfileSave.Size = new System.Drawing.Size(197, 32);
+            this.btnProfileSave.TabIndex = 5;
+            this.btnProfileSave.Text = "Lưu";
+            this.btnProfileSave.UseVisualStyleBackColor = false;
+            this.btnProfileSave.Visible = false;
+            this.btnProfileSave.Click += new System.EventHandler(this.btnProfileSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(612, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(197, 32);
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // fCustomer
             // 
@@ -1064,9 +1079,9 @@
             this.flpInfoBill.ResumeLayout(false);
             this.pInfoBillID.ResumeLayout(false);
             this.pInfoBillID.PerformLayout();
+            this.pInfoBillDate.ResumeLayout(false);
             this.pInfoBillEmployeeName.ResumeLayout(false);
             this.pInfoBillEmployeeName.PerformLayout();
-            this.pInfoBillDate.ResumeLayout(false);
             this.pInfoBillDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoBillDetails)).EndInit();
             this.pInfoBillTotalContainer.ResumeLayout(false);
@@ -1088,7 +1103,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiFileExportExcel;
         private System.Windows.Forms.ToolStripMenuItem tsmiFileExit;
         private System.Windows.Forms.ToolStripMenuItem tsmiAccount;
-        private System.Windows.Forms.ToolStripMenuItem tsmiAccountLogout;
+        private System.Windows.Forms.ToolStripMenuItem tsmiChangePassword;
         private System.Windows.Forms.MenuStrip msMain;
         private System.Windows.Forms.TabPage tabProfiles;
         private System.Windows.Forms.Panel pControl;
@@ -1109,9 +1124,7 @@
         private System.Windows.Forms.Panel pHomeCaption;
         private System.Windows.Forms.GroupBox gbProfile;
         private System.Windows.Forms.Button btnProfileEdit;
-        private System.Windows.Forms.Button btnProfileSave;
         private System.Windows.Forms.TableLayoutPanel tlpActionButtons;
-        private System.Windows.Forms.Button btnProfileChangePassword;
         private System.Windows.Forms.FlowLayoutPanel flpProfile;
         private System.Windows.Forms.Panel pProfileName;
         private System.Windows.Forms.Label lProfileName;
@@ -1146,6 +1159,9 @@
         private System.Windows.Forms.Label lInfoBillTotalPrice;
         private System.Windows.Forms.DataGridView dgvHistory;
         private System.Windows.Forms.DataGridView dgvInfoBillDetails;
+        private System.Windows.Forms.ToolStripMenuItem tsmiLogout;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnProfileSave;
     }
 }
 
