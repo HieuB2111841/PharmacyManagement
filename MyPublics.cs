@@ -19,12 +19,14 @@ namespace QLNhaThuoc
         /// </summary>
         public static MyPublics Instance => _instance;
 
+        public const string SUCCESS_MESSAGE = "Success";
+
         private MySqlConnection _sqlConnection;
 
         private string _server = "localhost";
         private string _database = "quanlynhathuoc";
         private string _uid = "root";
-        private string _password = "rootpassword";
+        private string _password = "Hieub2111841";
 
         /// <summary>
         ///     Tránh khởi tạo đối tượng MyPublics ở nơi khác
@@ -42,7 +44,7 @@ namespace QLNhaThuoc
             try
             {
                 _sqlConnection.Open();
-                message = "Success";
+                message = SUCCESS_MESSAGE;
                 return true;
             }
             catch (Exception e)
@@ -53,8 +55,9 @@ namespace QLNhaThuoc
             return false;
         }
 
-
         public DataTable GetData(string strSelect, params (string, string)[] parameters)
+            => GetData(strSelect, out string _, parameters);
+        public DataTable GetData(string strSelect, out string message, params (string, string)[] parameters)
         {
             DataTable dtTable = new DataTable();
             try
@@ -73,9 +76,13 @@ namespace QLNhaThuoc
                     }
                 }
 
+                message = SUCCESS_MESSAGE;
                 _sqlConnection.Close();
             }
-            catch (Exception){ }
+            catch (Exception e)
+            {
+                message = e.Message;
+            }
 
             return dtTable;
         }
@@ -98,7 +105,7 @@ namespace QLNhaThuoc
                     }
                 }
 
-                message = "Success";
+                message = SUCCESS_MESSAGE;
                 _sqlConnection.Close();
             }
             catch (Exception e)
@@ -162,7 +169,7 @@ namespace QLNhaThuoc
                     }
                 }
 
-                message = "Success";
+                message = SUCCESS_MESSAGE;
                 _sqlConnection.Close();
             }
             catch (Exception e) 
@@ -201,7 +208,7 @@ namespace QLNhaThuoc
                     result = (T)cmd.ExecuteScalar();
                 }
                 _sqlConnection.Close();
-                message = "Success";
+                message = SUCCESS_MESSAGE;
                 return result;
             }
             catch (Exception e)

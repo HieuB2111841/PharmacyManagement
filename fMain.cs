@@ -11,6 +11,28 @@ namespace QLNhaThuoc
         public fMain()
         {
             InitializeComponent();
+            this.SetComponents();
+        }
+
+        private void SetComponents()
+        {
+            Font headerFont = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(163)));
+            this.dgvMedicines.ColumnHeadersDefaultCellStyle.Font = headerFont;
+            this.dgvCustomers.ColumnHeadersDefaultCellStyle.Font = headerFont;
+            this.dgvCustomerHistoryPurchases.ColumnHeadersDefaultCellStyle.Font = headerFont;
+            this.dgvImports.ColumnHeadersDefaultCellStyle.Font = headerFont;
+            this.dgvImportDetails.ColumnHeadersDefaultCellStyle.Font = headerFont;
+            this.dgvBills.ColumnHeadersDefaultCellStyle.Font = headerFont;
+            this.dgvBillDetails.ColumnHeadersDefaultCellStyle.Font = headerFont;
+
+            Font cellFont = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(163)));
+            this.dgvMedicines.DefaultCellStyle.Font = cellFont;
+            this.dgvCustomers.DefaultCellStyle.Font = cellFont;
+            this.dgvCustomerHistoryPurchases.DefaultCellStyle.Font = cellFont;
+            this.dgvImports.DefaultCellStyle.Font = cellFont;
+            this.dgvImportDetails.DefaultCellStyle.Font = cellFont;
+            this.dgvBills.DefaultCellStyle.Font = cellFont;
+            this.dgvBillDetails.DefaultCellStyle.Font = cellFont;
         }
 
         #region From
@@ -42,6 +64,12 @@ namespace QLNhaThuoc
             fEmployeeInfo employeeInfoForm = new fEmployeeInfo();
             employeeInfoForm.ShowDialog();
         }
+
+        private void tsmiAccountLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         #endregion
 
         #region Tab Page
@@ -85,18 +113,32 @@ namespace QLNhaThuoc
         private void dgvMedicines_LoadData()
         {
             DataTable medicinesTable = MyPublics.Instance.CallProcedure("usp_hienThiDanhSachThuoc",
-                ("@in_count", "20"),
+                ("@in_count", "200"),
                 ("@in_offset", "0"));
 
             if (medicinesTable.Rows.Count > 0)
             {
                 dgvMedicines.DataSource = medicinesTable;
-                dgvMedicines.Columns[5].Visible = false; // Ẩn cột công dụng
+                this.dgvMedicines_FormatColumn();
             }
             else
             {
                 MessageBox.Show("no data");
             }
+        }
+
+        private void dgvMedicines_FormatColumn()
+        {
+            // Cột tên
+            dgvMedicines.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvMedicines.Columns[3].Visible = false; // Ẩn cột nhà cung cấp
+            dgvMedicines.Columns[4].Visible = false; // Ẩn cột hãng sản xuất
+            dgvMedicines.Columns[5].Visible = false; // Ẩn cột công dụng
+        }
+
+        private void dgvMedicines_Scroll(object sender, ScrollEventArgs e)
+        {
+
         }
 
         private void dgvMedicines_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -113,7 +155,7 @@ namespace QLNhaThuoc
                 txtMedicineManufacturer.Text = row.Cells[3].Value.ToString();
                 txtMedicineSupplier.Text = row.Cells[4].Value.ToString();
                 rtxtMedicineEffect.Text = row.Cells[5].Value.ToString();
-
+                txtMedicineStoredQuantity.Text = row.Cells[6].Value.ToString();
             }
         }
 
@@ -132,12 +174,9 @@ namespace QLNhaThuoc
                 ("@ten_ncc", supplier),
                 ("@ten_hangsx", manufaturer));
 
-            if (medicinesTable.Rows.Count > 0)
-            {
-                dgvMedicines.DataSource = medicinesTable;
-                dgvMedicines.Columns[5].Visible = false; // Ẩn cột công dụng
-            }
-            
+
+            dgvMedicines.DataSource = medicinesTable;
+            this.dgvMedicines_FormatColumn();
         }
         private void btnMedicineResetSearch_Click(object sender, EventArgs e)
         {
@@ -151,15 +190,51 @@ namespace QLNhaThuoc
 
         private void btnMedicineAdd_Click(object sender, EventArgs e)
         {
-            fMedicine medicineForm = new fMedicine();
+            fMedicineInfo medicineForm = new fMedicineInfo();
             medicineForm.ToAddFrom();
-            medicineForm.ShowDialog();
+            DialogResult res = medicineForm.ShowDialog();
+            if(res == DialogResult.OK)
+            {
+                this.dgvMedicines_LoadData();
+            }
+
         }
         private void btnMedicineEdit_Click(object sender, EventArgs e)
         {
-            fMedicine medicineForm = new fMedicine();
+            fMedicineInfo medicineForm = new fMedicineInfo();
             medicineForm.ToEditFrom(txtMedicineID.Text);
-            medicineForm.ShowDialog();
+            DialogResult res = medicineForm.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                this.dgvMedicines_LoadData();
+            }
+        }
+
+        private void btnMedicineDelete_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show($"Bạn có muốn xóa thuốc {txtMedicineID.Text} không?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DataTable data = MyPublics.Instance.CallProcedure("DeleteThuoc",
+                    out string message,
+                    ("@p_MaThuoc", txtMedicineID.Text));
+
+                if(message == MyPublics.SUCCESS_MESSAGE)
+                {
+                    MessageBox.Show($"Xóa thuốc '{txtMedicineID.Text}' thành công", "Thông báo", MessageBoxButtons.OK);
+                    this.dgvMedicines_LoadData();
+                }
+                else
+                {
+                    if(message.Contains("foreign key constraint fails"))
+                    {
+                        MessageBox.Show($"Không thể xóa thuốc", "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Lỗi khi xóa thuốc: {message}", "Lỗi", MessageBoxButtons.OK);
+                    }
+                }
+            }
         }
 
         #endregion
@@ -176,7 +251,7 @@ namespace QLNhaThuoc
         {
             DataTable customerTable =
                 MyPublics.Instance.CallProcedure("usp_hienThiDanhSachKhachHang",
-                    ("@in_count", "20"),
+                    ("@in_count", "200"),
                     ("@in_offset", "0"));
 
             if(customerTable.Rows.Count > 0)
@@ -202,8 +277,12 @@ namespace QLNhaThuoc
             {
                 if (e.Value == DBNull.Value || e.Value == null)
                 {
-                    e.Value = "Chưa có ngày";
+                    e.Value = "undefine";
                     e.FormattingApplied = true;
+                }
+                else
+                {
+                    e.Value = ((DateTime)e.Value).ToString("dd/MM/yyyy");
                 }
             }
         }
@@ -238,24 +317,53 @@ namespace QLNhaThuoc
 
         private void dgvCustomerHistoryPurchases_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            // Format cột ngày mua
+            if (e.ColumnIndex == 1)
+            {
+                e.Value = ((DateTime)e.Value).ToString("dd/MM/yyyy");
+            }
+
             // Format cột tổng tiền
             if (e.ColumnIndex == 2)
             {
-                e.Value = StringUtils.FormatNumber(e.Value.ToString());
+                e.Value = StringUtils.FormatMoneyNumber(e.Value.ToString());
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
+        }
+
+        private void chkCustomerIsPurchaseSearch_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkCustomerIsPurchaseSearch.Checked)
+            {
+                dtpCustomerPurchaseFromSearch.Enabled = true;
+                dtpCustomerPurchaseToSearch.Enabled = true;
+            }
+            else
+            {
+                dtpCustomerPurchaseFromSearch.Enabled = false;
+                dtpCustomerPurchaseToSearch.Enabled = false;
             }
         }
 
         private void btnCustomerSearch_Click(object sender, EventArgs e)
         {
-            string name = txtCustomerNameOrPhoneSearch.Text;
+            string customerInfo = txtCustomerNameOrPhoneSearch.Text;
             string dateFrom = dtpCustomerPurchaseFromSearch.Value.ToString("yyyy-MM-dd");
             string dateTo = dtpCustomerPurchaseToSearch.Value.ToString("yyyy-MM-dd");
 
-            DataTable customerTable =
-                MyPublics.Instance.CallProcedure("Tim_Khach_Hang",
-                    ("@searchValue", name),
+            DataTable customerTable;
+
+            if (chkCustomerIsPurchaseSearch.Checked)
+                customerTable = MyPublics.Instance.CallProcedure("Tim_Khach_Hang_Co_Ngay_Mua",
+                    ("@searchValue", customerInfo),
                     ("@fromDate", dateFrom),
                     ("@toDate", dateTo));
+            else
+            {
+                customerTable = MyPublics.Instance.CallProcedure("Tim_Khach_Hang",
+                    out string message,
+                    ("@searchValue", customerInfo));
+            }
 
             if (customerTable.Rows.Count > 0)
             {
@@ -282,12 +390,57 @@ namespace QLNhaThuoc
             this.dgvCustomer_LoadData();
         }
 
+        private void btnCustomerAdd_Click(object sender, EventArgs e)
+        {
+            fCustomerInfo customerInfoForm = new fCustomerInfo();
+            customerInfoForm.ToAddFrom();
+            DialogResult res = customerInfoForm.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                this.dgvCustomer_LoadData();
+            }
+        }
+
+        private void btnCustomerEdit_Click(object sender, EventArgs e)
+        {
+            fCustomerInfo customerInfoForm = new fCustomerInfo();
+            customerInfoForm.ToEditFrom(txtCustomerID.Text);
+            DialogResult res = customerInfoForm.ShowDialog();
+            if(res == DialogResult.OK)
+            {
+                this.dgvCustomer_LoadData();
+            }
+        }
+        private void btnCustomerDelete_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show($"Bạn có muốn xóa người dùng {txtCustomerID.Text} không?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DataTable data = MyPublics.Instance.CallProcedure("DeleteUser",
+                    out string message,
+                    ("@p_MaUser", txtCustomerID.Text));
+
+                if(message == MyPublics.SUCCESS_MESSAGE)
+                {
+                    MessageBox.Show($"Xóa người dùng {txtCustomerID.Text} thành công", "Thông báo", MessageBoxButtons.OK);
+                    this.dgvCustomer_LoadData();
+                }
+                else
+                {
+                    if (message.Contains("foreign key constraint fails"))
+                    {
+                        MessageBox.Show($"Không thể người dùng", "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else MessageBox.Show($"Lỗi khi xóa người dùng {message}", "Lỗi", MessageBoxButtons.OK);
+                }
+            }
+        }
+
         #endregion
 
         #region Imports Tab
         private void tabImports_Enter(object sender, EventArgs e)
         {
-            if (dvgImports.DataSource == null)
+            if (dgvImports.DataSource == null)
                 this.tabImports_LoadData();
             
         }
@@ -295,26 +448,31 @@ namespace QLNhaThuoc
         private void tabImports_LoadData()
         {
             DataTable importTable = MyPublics.Instance.CallProcedure("usp_hienThiDanhSachPhieuNhap",
-                ("@in_count", "20"),
+                out string message,
+                ("@in_count", "200"),
                 ("@in_offset", "0"));
 
             if (importTable.Rows.Count > 0)
             {
-                dvgImports.DataSource = importTable;
-
-                // Cột Mã
-                dvgImports.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-                
-                // Cột Tên nhân viên
-                dvgImports.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-                // Cột Tên nhà cung cấp
-                dvgImports.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvImports.DataSource = importTable;
+                this.tabImports_Format();
             }
             else
             {
-                MessageBox.Show("no data");
+                MessageBox.Show($"no data: {message}");
             }
+        }
+
+        private void tabImports_Format()
+        {
+            // Cột Mã
+            dgvImports.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+
+            // Cột Tên nhân viên
+            dgvImports.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            // Cột Tên nhà cung cấp
+            dgvImports.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void dvgImports_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -328,7 +486,8 @@ namespace QLNhaThuoc
             // Cột tổng tiền
             if(e.ColumnIndex == 4)
             {
-                e.Value = StringUtils.FormatNumber(e.Value.ToString());
+                e.Value = StringUtils.FormatMoneyNumber(e.Value.ToString());
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
         }
 
@@ -338,7 +497,7 @@ namespace QLNhaThuoc
             if (e.RowIndex >= 0)
             {
                 // Lấy DataGridViewRow của hàng được chọn
-                DataGridViewRow row = dvgImports.Rows[e.RowIndex];
+                DataGridViewRow row = dgvImports.Rows[e.RowIndex];
 
                 txtImportID.Text = row.Cells[0].Value.ToString();
                 txtImportEmployeeID.Text = row.Cells[1].Value.ToString();
@@ -371,45 +530,47 @@ namespace QLNhaThuoc
 
             txtImportDetailsMedicineName.Text = row.Cells[1].Value.ToString();
             txtImportDetailsMedicineQuantity.Text = row.Cells[2].Value.ToString();
-            txtImportDetailsMedicinePrice.Text = StringUtils.FormatNumber(row.Cells[3].Value.ToString());
+            txtImportDetailsMedicinePrice.Text = StringUtils.FormatMoneyNumber(row.Cells[3].Value.ToString());
         }
         private void dgvImportDetails_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Format cột tổng tiền
             if (e.ColumnIndex == 3)
             {
-                e.Value = StringUtils.FormatNumber(e.Value.ToString());
+                e.Value = StringUtils.FormatMoneyNumber(e.Value.ToString());
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
         }
 
         private void btnImportSearch_Click(object sender, EventArgs e)
         {
-            string id = txtImportID.Text;
+            string id = txtImportIDSearch.Text;
             string employee = txtImportEmployeeSearch.Text;
             string supplier = txtImportSupplierSearch.Text;
-            string date = dtpImportDateFromSearch.Value.ToString("yyyy-MM-dd");
+            string dateFrom = dtpImportDateFromSearch.Value.ToString("yyyy-MM-dd");
+            string dateTo = dtpImportDateToSearch.Value.ToString("yyyy-MM-dd");
 
             DataTable importTable =
                 MyPublics.Instance.CallProcedure("Tim_Phieu_Nhap",
+                    out string message,
                     ("@ma_phieu_nhap", id),
                     ("@nhan_vien", employee),
                     ("@ncc", supplier),
-                    ("@fromDate", "null"),
-                    ("@toDate", "null"));
+                    ("@fromDate", dateFrom),
+                    ("@toDate", dateTo));
 
-            if (importTable.Rows.Count > 0)
+            dgvImports.DataSource = importTable;
+            this.tabImports_Format();
+
+            if (importTable.Rows.Count <= 0)
             {
-                dvgImports.DataSource = importTable;
-            }
-            else
-            {
-                MessageBox.Show("no data");
+                MessageBox.Show($"no data: {message}");
             }
         }
 
         private void btnImportResetSearch_Click(object sender, EventArgs e)
         {
-            txtImportID.Text = string.Empty;
+            txtImportIDSearch.Text = string.Empty;
             txtImportEmployeeSearch.Text = string.Empty; 
             txtImportSupplierSearch.Text = string.Empty;
 
@@ -417,6 +578,12 @@ namespace QLNhaThuoc
             dtpImportDateToSearch.Value = DateTime.Today;
 
             tabImports_LoadData();
+        }
+
+        private void btnImportAdd_Click(object sender, EventArgs e)
+        {
+            fImportInfo importInfoForm = new fImportInfo();
+            importInfoForm.ShowDialog();
         }
 
         #endregion
@@ -432,13 +599,14 @@ namespace QLNhaThuoc
         private void dgvBills_LoadData()
         {
             DataTable billsTable = MyPublics.Instance.CallProcedure("usp_hienThiDanhSachPhieuXuat",
-                ("@in_count", "20"),
+                out string message,
+                ("@in_count", "200"),
                 ("@in_offset", "0"));
 
+            dgvBills.DataSource = billsTable;
             if (billsTable.Rows.Count > 0)
             {
-                dgvBills.DataSource = billsTable;
-                dgvBills.Columns[4].Visible = false;
+                this.dgvBills_Formating();
             }
             else
             {
@@ -447,7 +615,33 @@ namespace QLNhaThuoc
                 txtBillCustomerID.Text = string.Empty;
                 dtpBillDate.Text = string.Empty;
 
-                MessageBox.Show("no data");
+                MessageBox.Show($"no data {message}");
+            }
+        }
+        private void dgvBills_Formating()
+        {
+            // Cột mã phiếu 
+            dgvBills.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+
+            // Cột tên nhân viên
+            dgvBills.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            // Cột tên khách hàng
+            dgvBills.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void dgvBills_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Cột ngày tháng 
+            if(e.ColumnIndex == 3)
+            {
+                e.Value = ((DateTime)e.Value).ToString("dd/MM/yyyy");
+            }
+
+            if(e.ColumnIndex == 4)
+            {
+                e.Value = StringUtils.FormatMoneyNumber(e.Value.ToString());
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
         }
 
@@ -490,7 +684,8 @@ namespace QLNhaThuoc
             // Format cột đơn giá
             if (e.ColumnIndex == 3)
             {
-                e.Value = StringUtils.FormatNumber(e.Value.ToString());
+                e.Value = StringUtils.FormatMoneyNumber(e.Value.ToString());
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
         }
 
@@ -504,7 +699,7 @@ namespace QLNhaThuoc
 
                 txtBillDetailsMedicineName.Text = row.Cells[1].Value.ToString();
                 txtBillDetailsMedicineQuantity.Text = row.Cells[2].Value.ToString();
-                txtBillDetailsMedicinePrice.Text = StringUtils.FormatNumber(row.Cells[3].Value.ToString());
+                txtBillDetailsMedicinePrice.Text = StringUtils.FormatMoneyNumber(row.Cells[3].Value.ToString());
             }
         }
         private void btnBillSearch_Click(object sender, EventArgs e)
@@ -517,21 +712,18 @@ namespace QLNhaThuoc
 
             DataTable billTable =
                 MyPublics.Instance.CallProcedure("Tim_Hoa_Don",
+                    out string message,
                     ("@ma_phieu_xuat", id),
                     ("@nhan_vien", employee),
                     ("@khach_hang", customer),
                     ("@fromDate", fromDate),
                     ("@toDate", toDate));
 
-            if (billTable.Rows.Count > 0)
+            dgvBills.DataSource = billTable;
+            if (billTable.Rows.Count <= 0)
             {
-                dgvBills.DataSource = billTable;
+                MessageBox.Show($"no data {message}");
             }
-            else
-            {
-                MessageBox.Show("no data");
-            }
-
         }
 
         private void btnBillResetSearch_Click(object sender, EventArgs e)
@@ -547,6 +739,20 @@ namespace QLNhaThuoc
         }
 
 
+        private void btnBillAdd_Click(object sender, EventArgs e)
+        {
+            fBillInfo billInfoForm = new fBillInfo();
+            DialogResult res = billInfoForm.ShowDialog();
+            if(res == DialogResult.OK)
+            {
+                this.dgvBills_LoadData();
+            }
+        }
+
+        private void btnBillDelete_Click(object sender, EventArgs e)
+        {
+
+        }
 
         #endregion
 

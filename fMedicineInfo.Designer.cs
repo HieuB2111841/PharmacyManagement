@@ -1,6 +1,6 @@
 ﻿namespace QLNhaThuoc
 {
-    partial class fMedicine
+    partial class fMedicineInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMedicine));
-            this.gbMedicineInfo = new System.Windows.Forms.GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMedicineInfo));
+            this.pMedicineInfo = new System.Windows.Forms.Panel();
             this.flpMedicineInfo = new System.Windows.Forms.FlowLayoutPanel();
             this.pMedicineID = new System.Windows.Forms.Panel();
             this.lMedicineID = new System.Windows.Forms.Label();
@@ -37,7 +37,7 @@
             this.pMedicineName = new System.Windows.Forms.Panel();
             this.lMedicineName = new System.Windows.Forms.Label();
             this.txtMedicineName = new System.Windows.Forms.TextBox();
-            this.ptlMedicineTypeID = new System.Windows.Forms.Panel();
+            this.pMedicineTypeID = new System.Windows.Forms.Panel();
             this.lMedicineTypeID = new System.Windows.Forms.Label();
             this.txtlMedicineTypeID = new System.Windows.Forms.TextBox();
             this.pSupplierID = new System.Windows.Forms.Panel();
@@ -52,57 +52,54 @@
             this.tlpButtons = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.gbMedicineInfo.SuspendLayout();
+            this.pMedicineInfo.SuspendLayout();
             this.flpMedicineInfo.SuspendLayout();
             this.pMedicineID.SuspendLayout();
             this.pMedicineName.SuspendLayout();
-            this.ptlMedicineTypeID.SuspendLayout();
+            this.pMedicineTypeID.SuspendLayout();
             this.pSupplierID.SuspendLayout();
             this.pManufacturerID.SuspendLayout();
             this.pMedicineEffect.SuspendLayout();
             this.tlpButtons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gbMedicineInfo
+            // pMedicineInfo
             // 
-            this.gbMedicineInfo.BackColor = System.Drawing.Color.Aquamarine;
-            this.gbMedicineInfo.Controls.Add(this.flpMedicineInfo);
-            this.gbMedicineInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbMedicineInfo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.gbMedicineInfo.Location = new System.Drawing.Point(0, 0);
-            this.gbMedicineInfo.Name = "gbMedicineInfo";
-            this.gbMedicineInfo.Padding = new System.Windows.Forms.Padding(15);
-            this.gbMedicineInfo.Size = new System.Drawing.Size(366, 570);
-            this.gbMedicineInfo.TabIndex = 1;
-            this.gbMedicineInfo.TabStop = false;
-            this.gbMedicineInfo.Text = "Thông tin thuốc";
+            this.pMedicineInfo.BackColor = System.Drawing.Color.Aquamarine;
+            this.pMedicineInfo.Controls.Add(this.flpMedicineInfo);
+            this.pMedicineInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pMedicineInfo.Location = new System.Drawing.Point(0, 0);
+            this.pMedicineInfo.Name = "pMedicineInfo";
+            this.pMedicineInfo.Padding = new System.Windows.Forms.Padding(15);
+            this.pMedicineInfo.Size = new System.Drawing.Size(365, 540);
+            this.pMedicineInfo.TabIndex = 0;
             // 
             // flpMedicineInfo
             // 
             this.flpMedicineInfo.BackColor = System.Drawing.Color.White;
             this.flpMedicineInfo.Controls.Add(this.pMedicineID);
             this.flpMedicineInfo.Controls.Add(this.pMedicineName);
-            this.flpMedicineInfo.Controls.Add(this.ptlMedicineTypeID);
+            this.flpMedicineInfo.Controls.Add(this.pMedicineTypeID);
             this.flpMedicineInfo.Controls.Add(this.pSupplierID);
             this.flpMedicineInfo.Controls.Add(this.pManufacturerID);
             this.flpMedicineInfo.Controls.Add(this.pMedicineEffect);
             this.flpMedicineInfo.Controls.Add(this.tlpButtons);
             this.flpMedicineInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpMedicineInfo.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpMedicineInfo.Location = new System.Drawing.Point(15, 46);
+            this.flpMedicineInfo.Location = new System.Drawing.Point(15, 15);
             this.flpMedicineInfo.Name = "flpMedicineInfo";
-            this.flpMedicineInfo.Padding = new System.Windows.Forms.Padding(15);
-            this.flpMedicineInfo.Size = new System.Drawing.Size(336, 509);
-            this.flpMedicineInfo.TabIndex = 0;
+            this.flpMedicineInfo.Padding = new System.Windows.Forms.Padding(14, 15, 14, 15);
+            this.flpMedicineInfo.Size = new System.Drawing.Size(335, 510);
+            this.flpMedicineInfo.TabIndex = 1;
             this.flpMedicineInfo.WrapContents = false;
             // 
             // pMedicineID
             // 
             this.pMedicineID.Controls.Add(this.lMedicineID);
             this.pMedicineID.Controls.Add(this.txtMedicineID);
-            this.pMedicineID.Location = new System.Drawing.Point(18, 18);
+            this.pMedicineID.Location = new System.Drawing.Point(17, 18);
             this.pMedicineID.Name = "pMedicineID";
-            this.pMedicineID.Size = new System.Drawing.Size(300, 60);
+            this.pMedicineID.Size = new System.Drawing.Size(300, 61);
             this.pMedicineID.TabIndex = 0;
             // 
             // lMedicineID
@@ -111,7 +108,7 @@
             this.lMedicineID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lMedicineID.Location = new System.Drawing.Point(0, 0);
             this.lMedicineID.Name = "lMedicineID";
-            this.lMedicineID.Size = new System.Drawing.Size(300, 30);
+            this.lMedicineID.Size = new System.Drawing.Size(300, 31);
             this.lMedicineID.TabIndex = 2;
             this.lMedicineID.Text = "Mã thuốc";
             this.lMedicineID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -121,7 +118,7 @@
             this.txtMedicineID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMedicineID.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtMedicineID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMedicineID.Location = new System.Drawing.Point(0, 30);
+            this.txtMedicineID.Location = new System.Drawing.Point(0, 31);
             this.txtMedicineID.MaxLength = 10;
             this.txtMedicineID.Name = "txtMedicineID";
             this.txtMedicineID.ReadOnly = true;
@@ -133,9 +130,9 @@
             // 
             this.pMedicineName.Controls.Add(this.lMedicineName);
             this.pMedicineName.Controls.Add(this.txtMedicineName);
-            this.pMedicineName.Location = new System.Drawing.Point(18, 84);
+            this.pMedicineName.Location = new System.Drawing.Point(17, 85);
             this.pMedicineName.Name = "pMedicineName";
-            this.pMedicineName.Size = new System.Drawing.Size(300, 60);
+            this.pMedicineName.Size = new System.Drawing.Size(300, 61);
             this.pMedicineName.TabIndex = 1;
             // 
             // lMedicineName
@@ -144,7 +141,7 @@
             this.lMedicineName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lMedicineName.Location = new System.Drawing.Point(0, 0);
             this.lMedicineName.Name = "lMedicineName";
-            this.lMedicineName.Size = new System.Drawing.Size(300, 30);
+            this.lMedicineName.Size = new System.Drawing.Size(300, 31);
             this.lMedicineName.TabIndex = 2;
             this.lMedicineName.Text = "Tên thuốc";
             this.lMedicineName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -154,20 +151,20 @@
             this.txtMedicineName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMedicineName.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtMedicineName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMedicineName.Location = new System.Drawing.Point(0, 30);
+            this.txtMedicineName.Location = new System.Drawing.Point(0, 31);
             this.txtMedicineName.MaxLength = 128;
             this.txtMedicineName.Name = "txtMedicineName";
             this.txtMedicineName.Size = new System.Drawing.Size(300, 30);
             this.txtMedicineName.TabIndex = 1;
             // 
-            // ptlMedicineTypeID
+            // pMedicineTypeID
             // 
-            this.ptlMedicineTypeID.Controls.Add(this.lMedicineTypeID);
-            this.ptlMedicineTypeID.Controls.Add(this.txtlMedicineTypeID);
-            this.ptlMedicineTypeID.Location = new System.Drawing.Point(18, 150);
-            this.ptlMedicineTypeID.Name = "ptlMedicineTypeID";
-            this.ptlMedicineTypeID.Size = new System.Drawing.Size(300, 60);
-            this.ptlMedicineTypeID.TabIndex = 2;
+            this.pMedicineTypeID.Controls.Add(this.lMedicineTypeID);
+            this.pMedicineTypeID.Controls.Add(this.txtlMedicineTypeID);
+            this.pMedicineTypeID.Location = new System.Drawing.Point(17, 152);
+            this.pMedicineTypeID.Name = "pMedicineTypeID";
+            this.pMedicineTypeID.Size = new System.Drawing.Size(300, 61);
+            this.pMedicineTypeID.TabIndex = 2;
             // 
             // lMedicineTypeID
             // 
@@ -175,7 +172,7 @@
             this.lMedicineTypeID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lMedicineTypeID.Location = new System.Drawing.Point(0, 0);
             this.lMedicineTypeID.Name = "lMedicineTypeID";
-            this.lMedicineTypeID.Size = new System.Drawing.Size(300, 30);
+            this.lMedicineTypeID.Size = new System.Drawing.Size(300, 31);
             this.lMedicineTypeID.TabIndex = 2;
             this.lMedicineTypeID.Text = "Mã loại thuốc";
             this.lMedicineTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,7 +182,7 @@
             this.txtlMedicineTypeID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtlMedicineTypeID.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtlMedicineTypeID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtlMedicineTypeID.Location = new System.Drawing.Point(0, 30);
+            this.txtlMedicineTypeID.Location = new System.Drawing.Point(0, 31);
             this.txtlMedicineTypeID.MaxLength = 10;
             this.txtlMedicineTypeID.Name = "txtlMedicineTypeID";
             this.txtlMedicineTypeID.Size = new System.Drawing.Size(300, 30);
@@ -195,9 +192,9 @@
             // 
             this.pSupplierID.Controls.Add(this.lSupplierID);
             this.pSupplierID.Controls.Add(this.txtSupplierID);
-            this.pSupplierID.Location = new System.Drawing.Point(18, 216);
+            this.pSupplierID.Location = new System.Drawing.Point(17, 219);
             this.pSupplierID.Name = "pSupplierID";
-            this.pSupplierID.Size = new System.Drawing.Size(300, 60);
+            this.pSupplierID.Size = new System.Drawing.Size(300, 61);
             this.pSupplierID.TabIndex = 6;
             // 
             // lSupplierID
@@ -206,7 +203,7 @@
             this.lSupplierID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lSupplierID.Location = new System.Drawing.Point(0, 0);
             this.lSupplierID.Name = "lSupplierID";
-            this.lSupplierID.Size = new System.Drawing.Size(300, 30);
+            this.lSupplierID.Size = new System.Drawing.Size(300, 31);
             this.lSupplierID.TabIndex = 2;
             this.lSupplierID.Text = "Mã nhà cung cấp";
             this.lSupplierID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -216,7 +213,7 @@
             this.txtSupplierID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSupplierID.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtSupplierID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSupplierID.Location = new System.Drawing.Point(0, 30);
+            this.txtSupplierID.Location = new System.Drawing.Point(0, 31);
             this.txtSupplierID.MaxLength = 10;
             this.txtSupplierID.Name = "txtSupplierID";
             this.txtSupplierID.Size = new System.Drawing.Size(300, 30);
@@ -226,9 +223,9 @@
             // 
             this.pManufacturerID.Controls.Add(this.lManufacturerID);
             this.pManufacturerID.Controls.Add(this.txtManufacturerID);
-            this.pManufacturerID.Location = new System.Drawing.Point(18, 282);
+            this.pManufacturerID.Location = new System.Drawing.Point(17, 286);
             this.pManufacturerID.Name = "pManufacturerID";
-            this.pManufacturerID.Size = new System.Drawing.Size(300, 60);
+            this.pManufacturerID.Size = new System.Drawing.Size(300, 61);
             this.pManufacturerID.TabIndex = 7;
             // 
             // lManufacturerID
@@ -237,7 +234,7 @@
             this.lManufacturerID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lManufacturerID.Location = new System.Drawing.Point(0, 0);
             this.lManufacturerID.Name = "lManufacturerID";
-            this.lManufacturerID.Size = new System.Drawing.Size(300, 30);
+            this.lManufacturerID.Size = new System.Drawing.Size(300, 31);
             this.lManufacturerID.TabIndex = 2;
             this.lManufacturerID.Text = "Mã hãng sản xuất";
             this.lManufacturerID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -247,7 +244,7 @@
             this.txtManufacturerID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtManufacturerID.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtManufacturerID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtManufacturerID.Location = new System.Drawing.Point(0, 30);
+            this.txtManufacturerID.Location = new System.Drawing.Point(0, 31);
             this.txtManufacturerID.MaxLength = 10;
             this.txtManufacturerID.Name = "txtManufacturerID";
             this.txtManufacturerID.Size = new System.Drawing.Size(300, 30);
@@ -257,7 +254,7 @@
             // 
             this.pMedicineEffect.Controls.Add(this.lMedicineEffect);
             this.pMedicineEffect.Controls.Add(this.rtxtMedicineEffect);
-            this.pMedicineEffect.Location = new System.Drawing.Point(18, 348);
+            this.pMedicineEffect.Location = new System.Drawing.Point(17, 353);
             this.pMedicineEffect.Name = "pMedicineEffect";
             this.pMedicineEffect.Size = new System.Drawing.Size(300, 100);
             this.pMedicineEffect.TabIndex = 8;
@@ -292,11 +289,11 @@
             this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpButtons.Controls.Add(this.btnCancel, 0, 0);
             this.tlpButtons.Controls.Add(this.btnSave, 1, 0);
-            this.tlpButtons.Location = new System.Drawing.Point(18, 454);
+            this.tlpButtons.Location = new System.Drawing.Point(17, 459);
             this.tlpButtons.Name = "tlpButtons";
             this.tlpButtons.RowCount = 1;
             this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpButtons.Size = new System.Drawing.Size(300, 41);
+            this.tlpButtons.Size = new System.Drawing.Size(300, 40);
             this.tlpButtons.TabIndex = 9;
             // 
             // btnCancel
@@ -310,11 +307,10 @@
             this.btnCancel.Location = new System.Drawing.Point(3, 4);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(144, 33);
+            this.btnCancel.Size = new System.Drawing.Size(144, 32);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -327,33 +323,32 @@
             this.btnSave.Location = new System.Drawing.Point(153, 4);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(144, 33);
+            this.btnSave.Size = new System.Drawing.Size(144, 32);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // fMedicine
+            // fMedicineInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 570);
-            this.Controls.Add(this.gbMedicineInfo);
+            this.ClientSize = new System.Drawing.Size(365, 540);
+            this.Controls.Add(this.pMedicineInfo);
             this.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.Name = "fMedicine";
+            this.Name = "fMedicineInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "fMedicine";
-            this.gbMedicineInfo.ResumeLayout(false);
+            this.Text = "Thông tin thuốc";
+            this.pMedicineInfo.ResumeLayout(false);
             this.flpMedicineInfo.ResumeLayout(false);
             this.pMedicineID.ResumeLayout(false);
             this.pMedicineID.PerformLayout();
             this.pMedicineName.ResumeLayout(false);
             this.pMedicineName.PerformLayout();
-            this.ptlMedicineTypeID.ResumeLayout(false);
-            this.ptlMedicineTypeID.PerformLayout();
+            this.pMedicineTypeID.ResumeLayout(false);
+            this.pMedicineTypeID.PerformLayout();
             this.pSupplierID.ResumeLayout(false);
             this.pSupplierID.PerformLayout();
             this.pManufacturerID.ResumeLayout(false);
@@ -366,7 +361,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gbMedicineInfo;
+        private System.Windows.Forms.Panel pMedicineInfo;
         private System.Windows.Forms.FlowLayoutPanel flpMedicineInfo;
         private System.Windows.Forms.Panel pMedicineID;
         private System.Windows.Forms.Label lMedicineID;
@@ -374,7 +369,7 @@
         private System.Windows.Forms.Panel pMedicineName;
         private System.Windows.Forms.Label lMedicineName;
         private System.Windows.Forms.TextBox txtMedicineName;
-        private System.Windows.Forms.Panel ptlMedicineTypeID;
+        private System.Windows.Forms.Panel pMedicineTypeID;
         private System.Windows.Forms.Label lMedicineTypeID;
         private System.Windows.Forms.TextBox txtlMedicineTypeID;
         private System.Windows.Forms.Panel pSupplierID;
