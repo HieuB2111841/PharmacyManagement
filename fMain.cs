@@ -121,6 +121,7 @@ namespace QLNhaThuoc
             this.dgvMedicines_FormatColumn();
             if (medicinesTable.Rows.Count <= 0)
             {
+                this.tabMedicines_ResetSideBar();
                 if (message != MyPublics.SUCCESS_MESSAGE)
                     MessageBox.Show($"Lỗi: {message}", "Lỗi", MessageBoxButtons.OK);
             }
@@ -158,6 +159,17 @@ namespace QLNhaThuoc
             }
         }
 
+        private void tabMedicines_ResetSideBar()
+        {
+            txtMedicineID.Text = string.Empty;
+            txtMedicineName.Text = string.Empty;
+            txtMedicineType.Text = string.Empty;
+            txtMedicineManufacturer.Text = string.Empty;
+            txtMedicineSupplier.Text = string.Empty;
+            rtxtMedicineEffect.Text = string.Empty;
+            txtMedicineStoredQuantity.Text = string.Empty;
+        }
+
         private void btnMedicineSearch_Click(object sender, EventArgs e)
         {
             string name = txtMedicineNameSearch.Text.Trim();
@@ -176,7 +188,13 @@ namespace QLNhaThuoc
 
             dgvMedicines.DataSource = medicinesTable;
             this.dgvMedicines_FormatColumn();
+
+            if(medicinesTable.Rows.Count <= 0)
+            {
+                this.tabMedicines_ResetSideBar();
+            }
         }
+
         private void btnMedicineResetSearch_Click(object sender, EventArgs e)
         {
             txtMedicineNameSearch.Text = string.Empty;
@@ -258,6 +276,7 @@ namespace QLNhaThuoc
             this.dgvCustomers_Formatting();
             if (customerTable.Rows.Count <= 0)
             {
+                this.tabCustomers_ResetSideBar();
                 if (message != MyPublics.SUCCESS_MESSAGE)
                     MessageBox.Show($"Lỗi: {message}", "Lỗi", MessageBoxButtons.OK);
             }
@@ -315,6 +334,17 @@ namespace QLNhaThuoc
                 DataTable historyTable = MyPublics.Instance.CallProcedure("usp_lichSuMuaCuaKhachHang", ("@in_MaKhachHang", txtCustomerID.Text));
                 dgvCustomerHistoryPurchases.DataSource = historyTable;
             }
+        }
+
+        private void tabCustomers_ResetSideBar()
+        {
+            txtCustomerID.Text = string.Empty;
+            txtCustomerName.Text = string.Empty;
+            txtCustomerPhoneNumber.Text = string.Empty;
+            rtxtCustomerAddress.Text = string.Empty;
+
+            dtpCustomerBirthday.Value = new DateTime(2000, 1, 1);
+            dgvCustomerHistoryPurchases.DataSource = null;
         }
 
         private void dgvCustomerHistoryPurchases_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -375,6 +405,7 @@ namespace QLNhaThuoc
 
             if (customerTable.Rows.Count <= 0)
             {
+                tabCustomers_ResetSideBar();
                 if (message != MyPublics.SUCCESS_MESSAGE)
                     MessageBox.Show($"Lỗi: {message}", "Lỗi", MessageBoxButtons.OK);
             }
@@ -455,6 +486,7 @@ namespace QLNhaThuoc
 
             if (importTable.Rows.Count <= 0)
             {
+                this.tabImports_ResetSideBar();
                 if (message != MyPublics.SUCCESS_MESSAGE)
                     MessageBox.Show($"Lỗi: {message}", "Lỗi", MessageBoxButtons.OK);
             }
@@ -521,6 +553,22 @@ namespace QLNhaThuoc
             }
         }
 
+        private void tabImports_ResetSideBar()
+        {
+            txtImportID.Text = string.Empty;
+            txtImportEmployeeID.Text = string.Empty;
+            txtImportSupplierID.Text = string.Empty;
+            dtpImportDate.Value = new DateTime(2000, 1, 1);
+
+            txtImportDetailsMedicineName.Text = string.Empty;
+            txtImportDetailsMedicineQuantity.Text = string.Empty;
+            txtImportDetailsMedicinePrice.Text = string.Empty;
+
+            txtImportTotalPrice.Text = string.Empty;
+
+            dgvImportDetails.DataSource = null;
+        }
+
         private void dgvImportDetails_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvImportDetails.Rows[e.RowIndex];
@@ -573,7 +621,8 @@ namespace QLNhaThuoc
 
             if (importTable.Rows.Count <= 0)
             {
-                if(message != MyPublics.SUCCESS_MESSAGE)
+                this.tabImports_ResetSideBar();
+                if (message != MyPublics.SUCCESS_MESSAGE)
                     MessageBox.Show($"Lỗi: {message}", "Lỗi", MessageBoxButtons.OK);
             }
         }
@@ -636,10 +685,7 @@ namespace QLNhaThuoc
             this.dgvBills_Formating();
             if (billsTable.Rows.Count <= 0)
             {
-                txtBillID.Text = string.Empty;
-                txtBillEmployeeID.Text = string.Empty;
-                txtBillCustomerID.Text = string.Empty;
-                dtpBillDate.Text = string.Empty;
+                tabBills_ResetSideBar();
 
                 if (message != MyPublics.SUCCESS_MESSAGE)
                     MessageBox.Show($"Lỗi: {message}", "Lỗi", MessageBoxButtons.OK);
@@ -703,7 +749,20 @@ namespace QLNhaThuoc
                     ("@in_MaPX", txtBillID.Text));
                 txtBillTotalPrice.Text = StringUtils.FormatNumber(totalPrice);
             }
-            
+        }
+
+        private void tabBills_ResetSideBar()
+        {
+            txtBillID.Text = string.Empty;
+            txtBillEmployeeID.Text = string.Empty;
+            txtBillCustomerID.Text = string.Empty;
+            dtpBillDate.Value = new DateTime(2000, 1, 1);
+
+            txtBillDetailsMedicineName.Text = string.Empty;
+            txtBillDetailsMedicineQuantity.Text = string.Empty;
+            txtBillDetailsMedicinePrice.Text = string.Empty;
+
+            dgvBillDetails.DataSource = null;
         }
 
         private void dgvBillDetails_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -737,6 +796,18 @@ namespace QLNhaThuoc
             string fromDate = dtpBillDateFromSearch.Value.ToString("yyyy-MM-dd");
             string toDate = dtpBillDateToSearch.Value.ToString("yyyy-MM-dd");
 
+            if (id != string.Empty)
+            {
+                if (int.TryParse(id, out int idNumber))
+                {
+
+                }
+                else
+                {
+                    if (id[0] != 'D') MessageBox.Show("Mã phiếu xuất lỗi");
+                }
+            }
+
             DataTable billTable =
                 MyPublics.Instance.CallProcedure("Tim_Hoa_Don",
                     out string message,
@@ -749,6 +820,7 @@ namespace QLNhaThuoc
             dgvBills.DataSource = billTable;
             if (billTable.Rows.Count <= 0)
             {
+                this.tabBills_ResetSideBar();
                 if (message != MyPublics.SUCCESS_MESSAGE)
                     MessageBox.Show($"Lỗi: {message}", "Lỗi", MessageBoxButtons.OK);
             }
