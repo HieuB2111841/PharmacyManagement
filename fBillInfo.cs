@@ -28,13 +28,36 @@ namespace QLNhaThuoc
         {
             if (!MyUser.Instance.IsEmployee)
             {
-                MessageBox.Show("Bạn không có quyền thêm phiếu nhập!", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Bạn không có quyền thêm hóa đơn!", "Thông báo", MessageBoxButtons.OK);
                 this.Close();
             }
 
             txtEmployeeID.Text = MyUser.Instance.ID;
             txtEmployeeName.Text = MyUser.Instance.Name;
-            lCustomerID.Text = "Mã khách hàng (VD: U0001)";
+            lCustomer.Text = "Mã khách hàng (VD: U0001)";
+        }
+
+        private void txtCustomerID_Leave(object sender, EventArgs e)
+        {
+            if (IsCustomerIDValidate())
+            {
+                string query = "select MaUser, TenUser from user where MaUser = @id and NhanVien = 0";
+                DataTable data = MyPublics.Instance.GetData(query, out string message, ("@id", txtCustomerID.Text));
+
+                if (data.Rows.Count > 0)
+                {
+                    object[] items = data.Rows[0].ItemArray;
+                    txtCustomerName.Text = items[1].ToString();
+                }
+                else
+                {
+                    MessageBox.Show($"Mã khách hàng không tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                txtCustomerName.Text = string.Empty;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -69,7 +92,7 @@ namespace QLNhaThuoc
 
                 if(message == MyPublics.SUCCESS_MESSAGE)
                 {
-                    MessageBox.Show("Thêm phiếu nhập thành công", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Thêm phiếu xuất thành công", "Thông báo", MessageBoxButtons.OK);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
@@ -79,7 +102,7 @@ namespace QLNhaThuoc
                     {
                         if (message.Contains("MaKhachHang"))
                         {
-                            MessageBox.Show($"Nhà cung cấp không tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show($"Mã khách hàng không tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         if(message.Contains("MaThuoc"))
                         {
@@ -94,17 +117,7 @@ namespace QLNhaThuoc
 
         private bool IsValidate()
         {
-            if(txtCustomerID.Text.Length != 5)
-            {
-                MessageBox.Show("Mã khách hàng chứa 5 ký tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            if (txtCustomerID.Text[0] != 'U')
-            {
-                MessageBox.Show("Mã khách hàng bắt đầu bằng ký tự 'U'", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
+            if(!IsCustomerIDValidate()) return false;
 
             List<(string ColumnName, int RowIndex)> emptyCells = dgvBillDetails.GetEmptyCells();
             if(emptyCells.Count > 0)
@@ -210,5 +223,22 @@ namespace QLNhaThuoc
             if (dgvBillDetails.Rows.Count > 1) return true;
             return false;
         }
+
+        private bool IsCustomerIDValidate()
+        {
+            if (txtCustomerID.Text.Length != 5)
+            {
+                MessageBox.Show("Mã khách hàng chứa 5 ký tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (txtCustomerID.Text[0] != 'U')
+            {
+                MessageBox.Show("Mã nhà cung cấp bắt đầu bằng ký tự 'U'", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
     }
 }

@@ -106,8 +106,7 @@ namespace QLNhaThuoc
         #region Medicines Tab
         private void tabMedicines_Enter(object sender, EventArgs e)
         {
-            if (dgvMedicines.DataSource == null)
-                this.dgvMedicines_LoadData();
+            this.dgvMedicines_LoadData();
         }
 
         private void dgvMedicines_LoadData()
@@ -259,8 +258,7 @@ namespace QLNhaThuoc
         #region Customers Tab
         private void tabCustomers_Enter(object sender, EventArgs e)
         {
-            if (dgvCustomers.DataSource == null)
-                this.dgvCustomer_LoadData();
+            this.dgvCustomer_LoadData();
             dtpCustomerPurchaseToSearch.Value = DateTime.Today;
         }
 
@@ -470,8 +468,7 @@ namespace QLNhaThuoc
         #region Imports Tab
         private void tabImports_Enter(object sender, EventArgs e)
         {
-            if (dgvImports.DataSource == null)
-                this.dgvImports_LoadData();
+            this.dgvImports_LoadData();
         }
 
         private void dgvImports_LoadData()
@@ -669,8 +666,7 @@ namespace QLNhaThuoc
         #region Bills Tab
         private void tabBills_Enter(object sender, EventArgs e)
         {
-            if (dgvBills.DataSource == null)
-                this.dgvBills_LoadData();
+            this.dgvBills_LoadData();
 
         }
 

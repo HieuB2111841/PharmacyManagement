@@ -143,7 +143,7 @@ namespace QLNhaThuoc
 
             if (dtpCustomerBirthday.Value > DateTime.Now)
             {
-                MessageBox.Show("TNgày sinh lớn hơn ngày hiện tại", "Lỗi", MessageBoxButtons.OK);
+                MessageBox.Show("Ngày sinh lớn hơn ngày hiện tại", "Lỗi", MessageBoxButtons.OK);
                 return false;
             }
 

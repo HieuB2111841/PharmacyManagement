@@ -31,16 +31,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBillInfo));
-            this.gbBillInfo = new System.Windows.Forms.GroupBox();
+            this.pBillInfo = new System.Windows.Forms.Panel();
             this.flpBillInfo = new System.Windows.Forms.FlowLayoutPanel();
             this.pEmployee = new System.Windows.Forms.Panel();
             this.lEmployee = new System.Windows.Forms.Label();
             this.tlpEmployee = new System.Windows.Forms.TableLayoutPanel();
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.txtEmployeeName = new System.Windows.Forms.TextBox();
-            this.pCustomerID = new System.Windows.Forms.Panel();
-            this.lCustomerID = new System.Windows.Forms.Label();
+            this.pCustomer = new System.Windows.Forms.Panel();
+            this.tlpCustomer = new System.Windows.Forms.TableLayoutPanel();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
+            this.lCustomer = new System.Windows.Forms.Label();
             this.pBillDetails = new System.Windows.Forms.Panel();
             this.dgvBillDetails = new System.Windows.Forms.DataGridView();
             this.MaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,44 +52,42 @@
             this.tlpButtons = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.gbBillInfo.SuspendLayout();
+            this.pBillInfo.SuspendLayout();
             this.flpBillInfo.SuspendLayout();
             this.pEmployee.SuspendLayout();
             this.tlpEmployee.SuspendLayout();
-            this.pCustomerID.SuspendLayout();
+            this.pCustomer.SuspendLayout();
+            this.tlpCustomer.SuspendLayout();
             this.pBillDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).BeginInit();
             this.tlpButtons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gbBillInfo
+            // pBillInfo
             // 
-            this.gbBillInfo.BackColor = System.Drawing.Color.Aquamarine;
-            this.gbBillInfo.Controls.Add(this.flpBillInfo);
-            this.gbBillInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbBillInfo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.gbBillInfo.Location = new System.Drawing.Point(0, 0);
-            this.gbBillInfo.Name = "gbBillInfo";
-            this.gbBillInfo.Padding = new System.Windows.Forms.Padding(15);
-            this.gbBillInfo.Size = new System.Drawing.Size(396, 570);
-            this.gbBillInfo.TabIndex = 2;
-            this.gbBillInfo.TabStop = false;
-            this.gbBillInfo.Text = "Thông tin phiếu nhập";
+            this.pBillInfo.BackColor = System.Drawing.Color.Aquamarine;
+            this.pBillInfo.Controls.Add(this.flpBillInfo);
+            this.pBillInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pBillInfo.Location = new System.Drawing.Point(0, 0);
+            this.pBillInfo.Name = "pBillInfo";
+            this.pBillInfo.Padding = new System.Windows.Forms.Padding(15);
+            this.pBillInfo.Size = new System.Drawing.Size(396, 534);
+            this.pBillInfo.TabIndex = 0;
             // 
             // flpBillInfo
             // 
             this.flpBillInfo.BackColor = System.Drawing.Color.White;
             this.flpBillInfo.Controls.Add(this.pEmployee);
-            this.flpBillInfo.Controls.Add(this.pCustomerID);
+            this.flpBillInfo.Controls.Add(this.pCustomer);
             this.flpBillInfo.Controls.Add(this.pBillDetails);
             this.flpBillInfo.Controls.Add(this.tlpButtons);
             this.flpBillInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpBillInfo.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpBillInfo.Location = new System.Drawing.Point(15, 46);
+            this.flpBillInfo.Location = new System.Drawing.Point(15, 15);
             this.flpBillInfo.Name = "flpBillInfo";
             this.flpBillInfo.Padding = new System.Windows.Forms.Padding(15);
-            this.flpBillInfo.Size = new System.Drawing.Size(366, 509);
-            this.flpBillInfo.TabIndex = 0;
+            this.flpBillInfo.Size = new System.Drawing.Size(366, 504);
+            this.flpBillInfo.TabIndex = 1;
             this.flpBillInfo.WrapContents = false;
             // 
             // pEmployee
@@ -152,36 +152,65 @@
             this.txtEmployeeName.Size = new System.Drawing.Size(215, 30);
             this.txtEmployeeName.TabIndex = 1;
             // 
-            // pCustomerID
+            // pCustomer
             // 
-            this.pCustomerID.Controls.Add(this.lCustomerID);
-            this.pCustomerID.Controls.Add(this.txtCustomerID);
-            this.pCustomerID.Location = new System.Drawing.Point(18, 84);
-            this.pCustomerID.Name = "pCustomerID";
-            this.pCustomerID.Size = new System.Drawing.Size(330, 60);
-            this.pCustomerID.TabIndex = 3;
+            this.pCustomer.Controls.Add(this.tlpCustomer);
+            this.pCustomer.Controls.Add(this.lCustomer);
+            this.pCustomer.Location = new System.Drawing.Point(18, 84);
+            this.pCustomer.Name = "pCustomer";
+            this.pCustomer.Size = new System.Drawing.Size(330, 60);
+            this.pCustomer.TabIndex = 3;
             // 
-            // lCustomerID
+            // tlpCustomer
             // 
-            this.lCustomerID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lCustomerID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lCustomerID.Location = new System.Drawing.Point(0, 0);
-            this.lCustomerID.Name = "lCustomerID";
-            this.lCustomerID.Size = new System.Drawing.Size(330, 30);
-            this.lCustomerID.TabIndex = 2;
-            this.lCustomerID.Text = "Mã khách hàng";
-            this.lCustomerID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tlpCustomer.ColumnCount = 2;
+            this.tlpCustomer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.24242F));
+            this.tlpCustomer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.75758F));
+            this.tlpCustomer.Controls.Add(this.txtCustomerName, 0, 0);
+            this.tlpCustomer.Controls.Add(this.txtCustomerID, 0, 0);
+            this.tlpCustomer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tlpCustomer.Location = new System.Drawing.Point(0, 30);
+            this.tlpCustomer.Name = "tlpCustomer";
+            this.tlpCustomer.RowCount = 1;
+            this.tlpCustomer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpCustomer.Size = new System.Drawing.Size(330, 30);
+            this.tlpCustomer.TabIndex = 3;
+            // 
+            // txtCustomerName
+            // 
+            this.txtCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCustomerName.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtCustomerName.Enabled = false;
+            this.txtCustomerName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtCustomerName.Location = new System.Drawing.Point(115, 0);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.txtCustomerName.MaxLength = 10;
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(215, 30);
+            this.txtCustomerName.TabIndex = 2;
             // 
             // txtCustomerID
             // 
             this.txtCustomerID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCustomerID.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtCustomerID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtCustomerID.Location = new System.Drawing.Point(0, 30);
+            this.txtCustomerID.Location = new System.Drawing.Point(0, 0);
+            this.txtCustomerID.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.txtCustomerID.MaxLength = 10;
             this.txtCustomerID.Name = "txtCustomerID";
-            this.txtCustomerID.Size = new System.Drawing.Size(330, 30);
-            this.txtCustomerID.TabIndex = 0;
+            this.txtCustomerID.Size = new System.Drawing.Size(109, 30);
+            this.txtCustomerID.TabIndex = 1;
+            this.txtCustomerID.Leave += new System.EventHandler(this.txtCustomerID_Leave);
+            // 
+            // lCustomer
+            // 
+            this.lCustomer.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lCustomer.Location = new System.Drawing.Point(0, 0);
+            this.lCustomer.Name = "lCustomer";
+            this.lCustomer.Size = new System.Drawing.Size(330, 30);
+            this.lCustomer.TabIndex = 2;
+            this.lCustomer.Text = "Khách hàng";
+            this.lCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pBillDetails
             // 
@@ -197,7 +226,7 @@
             this.dgvBillDetails.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
@@ -210,7 +239,7 @@
             this.DonGia});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Aquamarine;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
@@ -245,7 +274,7 @@
             this.SoLuong.MinimumWidth = 6;
             this.SoLuong.Name = "SoLuong";
             this.SoLuong.ToolTipText = "Số lượng thuốc";
-            this.SoLuong.Width = 135;
+            this.SoLuong.Width = 107;
             // 
             // DonGia
             // 
@@ -255,7 +284,7 @@
             this.DonGia.MinimumWidth = 6;
             this.DonGia.Name = "DonGia";
             this.DonGia.ToolTipText = "Giá của thuốc";
-            this.DonGia.Width = 114;
+            this.DonGia.Width = 99;
             // 
             // lBillDetails
             // 
@@ -320,22 +349,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 570);
-            this.Controls.Add(this.gbBillInfo);
+            this.ClientSize = new System.Drawing.Size(396, 534);
+            this.Controls.Add(this.pBillInfo);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fBillInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Nhà thuốc số 8";
+            this.Text = "Thông tin phiếu xuất";
             this.Load += new System.EventHandler(this.fBillInfo_Load);
-            this.gbBillInfo.ResumeLayout(false);
+            this.pBillInfo.ResumeLayout(false);
             this.flpBillInfo.ResumeLayout(false);
             this.pEmployee.ResumeLayout(false);
             this.tlpEmployee.ResumeLayout(false);
             this.tlpEmployee.PerformLayout();
-            this.pCustomerID.ResumeLayout(false);
-            this.pCustomerID.PerformLayout();
+            this.pCustomer.ResumeLayout(false);
+            this.tlpCustomer.ResumeLayout(false);
+            this.tlpCustomer.PerformLayout();
             this.pBillDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).EndInit();
             this.tlpButtons.ResumeLayout(false);
@@ -345,24 +375,26 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gbBillInfo;
+        private System.Windows.Forms.Panel pBillInfo;
         private System.Windows.Forms.FlowLayoutPanel flpBillInfo;
         private System.Windows.Forms.Panel pEmployee;
-        private System.Windows.Forms.Panel pCustomerID;
-        private System.Windows.Forms.Label lCustomerID;
-        private System.Windows.Forms.TextBox txtCustomerID;
-        private System.Windows.Forms.Panel pBillDetails;
-        private System.Windows.Forms.TableLayoutPanel tlpButtons;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lEmployee;
         private System.Windows.Forms.TableLayoutPanel tlpEmployee;
-        private System.Windows.Forms.TextBox txtEmployeeName;
         private System.Windows.Forms.TextBox txtEmployeeID;
-        private System.Windows.Forms.Label lBillDetails;
+        private System.Windows.Forms.TextBox txtEmployeeName;
+        private System.Windows.Forms.Panel pCustomer;
+        private System.Windows.Forms.Label lCustomer;
+        private System.Windows.Forms.Panel pBillDetails;
         private System.Windows.Forms.DataGridView dgvBillDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaThuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.Label lBillDetails;
+        private System.Windows.Forms.TableLayoutPanel tlpButtons;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TableLayoutPanel tlpCustomer;
+        private System.Windows.Forms.TextBox txtCustomerID;
+        private System.Windows.Forms.TextBox txtCustomerName;
     }
 }

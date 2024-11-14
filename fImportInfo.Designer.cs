@@ -191,6 +191,7 @@
             // 
             this.txtSupplierName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSupplierName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSupplierName.Enabled = false;
             this.txtSupplierName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtSupplierName.Location = new System.Drawing.Point(114, 0);
             this.txtSupplierName.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
