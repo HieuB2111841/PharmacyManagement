@@ -67,9 +67,9 @@
             this.btnBillResetSearch = new System.Windows.Forms.Button();
             this.pBillDateSearch = new System.Windows.Forms.Panel();
             this.dtpBillDateToSearch = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lBillDateToSearch = new System.Windows.Forms.Label();
             this.dtpBillDateFromSearch = new System.Windows.Forms.DateTimePicker();
-            this.lBillDateSearch = new System.Windows.Forms.Label();
+            this.lBillDateFromSearch = new System.Windows.Forms.Label();
             this.pBillCustomerNameOrIDSearch = new System.Windows.Forms.Panel();
             this.txtBillCustomerNameOrIDSearch = new System.Windows.Forms.TextBox();
             this.lBillCustomerNameOrIDSearch = new System.Windows.Forms.Label();
@@ -122,9 +122,9 @@
             this.btnImportResetSearch = new System.Windows.Forms.Button();
             this.pImportDateSearch = new System.Windows.Forms.Panel();
             this.dtpImportDateToSearch = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lImportDateToSearch = new System.Windows.Forms.Label();
             this.dtpImportDateFromSearch = new System.Windows.Forms.DateTimePicker();
-            this.lImportDateSearch = new System.Windows.Forms.Label();
+            this.lImportDateFromSearch = new System.Windows.Forms.Label();
             this.pImportSupplierSearch = new System.Windows.Forms.Panel();
             this.txtImportSupplierSearch = new System.Windows.Forms.TextBox();
             this.lImportSupplierSearch = new System.Windows.Forms.Label();
@@ -371,7 +371,7 @@
             this.tsmiFileExportExcel,
             this.tsmiFileExit});
             this.tsmiFile.Name = "tsmiFile";
-            this.tsmiFile.Size = new System.Drawing.Size(46, 24);
+            this.tsmiFile.Size = new System.Drawing.Size(46, 26);
             this.tsmiFile.Text = "File";
             // 
             // tsmiFileExportExcel
@@ -393,7 +393,7 @@
             this.tsmiAccountInfo,
             this.tsmiAccountLogout});
             this.tsmiAccount.Name = "tsmiAccount";
-            this.tsmiAccount.Size = new System.Drawing.Size(85, 24);
+            this.tsmiAccount.Size = new System.Drawing.Size(85, 26);
             this.tsmiAccount.Text = "Tài khoản";
             // 
             // tsmiAccountInfo
@@ -418,7 +418,7 @@
             this.tsmiAccount});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
-            this.msMain.Size = new System.Drawing.Size(1000, 28);
+            this.msMain.Size = new System.Drawing.Size(1000, 30);
             this.msMain.TabIndex = 1;
             this.msMain.Text = "menuStrip1";
             // 
@@ -430,7 +430,7 @@
             this.tabBills.Location = new System.Drawing.Point(154, 4);
             this.tabBills.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabBills.Name = "tabBills";
-            this.tabBills.Size = new System.Drawing.Size(842, 614);
+            this.tabBills.Size = new System.Drawing.Size(842, 612);
             this.tabBills.TabIndex = 2;
             this.tabBills.Text = "Hóa đơn";
             this.tabBills.UseVisualStyleBackColor = true;
@@ -454,7 +454,7 @@
             this.scBill.Panel2.Controls.Add(this.flpInfoBillTotal);
             this.scBill.Panel2.Controls.Add(this.flpBillActionButtons);
             this.scBill.Panel2.Controls.Add(this.gbBillInfo);
-            this.scBill.Size = new System.Drawing.Size(842, 614);
+            this.scBill.Size = new System.Drawing.Size(842, 612);
             this.scBill.SplitterDistance = 563;
             this.scBill.TabIndex = 1;
             // 
@@ -475,8 +475,8 @@
             // 
             this.scBillContent.Panel2.BackColor = System.Drawing.Color.Transparent;
             this.scBillContent.Panel2.Controls.Add(this.gbBillDetails);
-            this.scBillContent.Size = new System.Drawing.Size(563, 614);
-            this.scBillContent.SplitterDistance = 417;
+            this.scBillContent.Size = new System.Drawing.Size(563, 612);
+            this.scBillContent.SplitterDistance = 415;
             this.scBillContent.TabIndex = 0;
             // 
             // gbBillList
@@ -486,7 +486,7 @@
             this.gbBillList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbBillList.Location = new System.Drawing.Point(0, 128);
             this.gbBillList.Name = "gbBillList";
-            this.gbBillList.Size = new System.Drawing.Size(563, 289);
+            this.gbBillList.Size = new System.Drawing.Size(563, 287);
             this.gbBillList.TabIndex = 3;
             this.gbBillList.TabStop = false;
             this.gbBillList.Text = "Danh sách hóa đơn";
@@ -530,7 +530,7 @@
             this.dgvBills.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBills.RowTemplate.Height = 24;
             this.dgvBills.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBills.Size = new System.Drawing.Size(557, 256);
+            this.dgvBills.Size = new System.Drawing.Size(557, 254);
             this.dgvBills.TabIndex = 6;
             this.dgvBills.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvBills_CellFormatting);
             this.dgvBills.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBills_RowEnter);
@@ -579,9 +579,9 @@
             // 
             this.pBillDateSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pBillDateSearch.Controls.Add(this.dtpBillDateToSearch);
-            this.pBillDateSearch.Controls.Add(this.label1);
+            this.pBillDateSearch.Controls.Add(this.lBillDateToSearch);
             this.pBillDateSearch.Controls.Add(this.dtpBillDateFromSearch);
-            this.pBillDateSearch.Controls.Add(this.lBillDateSearch);
+            this.pBillDateSearch.Controls.Add(this.lBillDateFromSearch);
             this.pBillDateSearch.Location = new System.Drawing.Point(3, 36);
             this.pBillDateSearch.Name = "pBillDateSearch";
             this.pBillDateSearch.Size = new System.Drawing.Size(537, 30);
@@ -605,17 +605,17 @@
             this.dtpBillDateToSearch.TabIndex = 1;
             this.dtpBillDateToSearch.Value = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             // 
-            // label1
+            // lBillDateToSearch
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(268, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 30);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "đến";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lBillDateToSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lBillDateToSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lBillDateToSearch.ForeColor = System.Drawing.Color.Black;
+            this.lBillDateToSearch.Location = new System.Drawing.Point(268, 0);
+            this.lBillDateToSearch.Name = "lBillDateToSearch";
+            this.lBillDateToSearch.Size = new System.Drawing.Size(94, 30);
+            this.lBillDateToSearch.TabIndex = 8;
+            this.lBillDateToSearch.Text = "đến";
+            this.lBillDateToSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtpBillDateFromSearch
             // 
@@ -635,17 +635,17 @@
             this.dtpBillDateFromSearch.TabIndex = 0;
             this.dtpBillDateFromSearch.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
-            // lBillDateSearch
+            // lBillDateFromSearch
             // 
-            this.lBillDateSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lBillDateSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lBillDateSearch.ForeColor = System.Drawing.Color.Black;
-            this.lBillDateSearch.Location = new System.Drawing.Point(0, 0);
-            this.lBillDateSearch.Name = "lBillDateSearch";
-            this.lBillDateSearch.Size = new System.Drawing.Size(117, 30);
-            this.lBillDateSearch.TabIndex = 7;
-            this.lBillDateSearch.Text = "Ngày lập từ";
-            this.lBillDateSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lBillDateFromSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lBillDateFromSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lBillDateFromSearch.ForeColor = System.Drawing.Color.Black;
+            this.lBillDateFromSearch.Location = new System.Drawing.Point(0, 0);
+            this.lBillDateFromSearch.Name = "lBillDateFromSearch";
+            this.lBillDateFromSearch.Size = new System.Drawing.Size(117, 30);
+            this.lBillDateFromSearch.TabIndex = 7;
+            this.lBillDateFromSearch.Text = "Ngày lập từ";
+            this.lBillDateFromSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pBillCustomerNameOrIDSearch
             // 
@@ -816,7 +816,7 @@
             this.flpInfoBillTotal.Controls.Add(this.lBillTotalPrice);
             this.flpInfoBillTotal.Controls.Add(this.txtBillTotalPrice);
             this.flpInfoBillTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpInfoBillTotal.Location = new System.Drawing.Point(0, 504);
+            this.flpInfoBillTotal.Location = new System.Drawing.Point(0, 502);
             this.flpInfoBillTotal.Name = "flpInfoBillTotal";
             this.flpInfoBillTotal.Size = new System.Drawing.Size(275, 69);
             this.flpInfoBillTotal.TabIndex = 12;
@@ -855,7 +855,7 @@
             this.flpBillActionButtons.Controls.Add(this.btnBillAdd);
             this.flpBillActionButtons.Controls.Add(this.btnBillDelete);
             this.flpBillActionButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpBillActionButtons.Location = new System.Drawing.Point(0, 573);
+            this.flpBillActionButtons.Location = new System.Drawing.Point(0, 571);
             this.flpBillActionButtons.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpBillActionButtons.Name = "flpBillActionButtons";
             this.flpBillActionButtons.Size = new System.Drawing.Size(275, 41);
@@ -903,7 +903,7 @@
             this.gbBillInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbBillInfo.Name = "gbBillInfo";
             this.gbBillInfo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbBillInfo.Size = new System.Drawing.Size(275, 614);
+            this.gbBillInfo.Size = new System.Drawing.Size(275, 612);
             this.gbBillInfo.TabIndex = 5;
             this.gbBillInfo.TabStop = false;
             this.gbBillInfo.Text = "Chi tiết";
@@ -922,7 +922,7 @@
             this.flpInfoBill.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpInfoBill.Location = new System.Drawing.Point(3, 31);
             this.flpInfoBill.Name = "flpInfoBill";
-            this.flpInfoBill.Size = new System.Drawing.Size(269, 579);
+            this.flpInfoBill.Size = new System.Drawing.Size(269, 577);
             this.flpInfoBill.TabIndex = 6;
             this.flpInfoBill.WrapContents = false;
             // 
@@ -1199,7 +1199,7 @@
             this.tabImports.Location = new System.Drawing.Point(154, 4);
             this.tabImports.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabImports.Name = "tabImports";
-            this.tabImports.Size = new System.Drawing.Size(842, 614);
+            this.tabImports.Size = new System.Drawing.Size(842, 612);
             this.tabImports.TabIndex = 1;
             this.tabImports.Text = "Phiếu nhập";
             this.tabImports.UseVisualStyleBackColor = true;
@@ -1223,7 +1223,7 @@
             this.scImports.Panel2.Controls.Add(this.gImportInfo);
             this.scImports.Panel2.Controls.Add(this.flpImportTotal);
             this.scImports.Panel2.Controls.Add(this.flpImportActionButtons);
-            this.scImports.Size = new System.Drawing.Size(842, 614);
+            this.scImports.Size = new System.Drawing.Size(842, 612);
             this.scImports.SplitterDistance = 563;
             this.scImports.TabIndex = 0;
             // 
@@ -1244,8 +1244,8 @@
             // 
             this.scImportContents.Panel2.BackColor = System.Drawing.Color.Transparent;
             this.scImportContents.Panel2.Controls.Add(this.gbImportDetails);
-            this.scImportContents.Size = new System.Drawing.Size(563, 614);
-            this.scImportContents.SplitterDistance = 417;
+            this.scImportContents.Size = new System.Drawing.Size(563, 612);
+            this.scImportContents.SplitterDistance = 415;
             this.scImportContents.TabIndex = 0;
             // 
             // gbImportList
@@ -1255,7 +1255,7 @@
             this.gbImportList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbImportList.Location = new System.Drawing.Point(0, 128);
             this.gbImportList.Name = "gbImportList";
-            this.gbImportList.Size = new System.Drawing.Size(563, 289);
+            this.gbImportList.Size = new System.Drawing.Size(563, 287);
             this.gbImportList.TabIndex = 2;
             this.gbImportList.TabStop = false;
             this.gbImportList.Text = "Danh sách phiếu nhập";
@@ -1299,7 +1299,7 @@
             this.dgvImports.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvImports.RowTemplate.Height = 24;
             this.dgvImports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImports.Size = new System.Drawing.Size(557, 256);
+            this.dgvImports.Size = new System.Drawing.Size(557, 254);
             this.dgvImports.TabIndex = 5;
             this.dgvImports.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvImports_CellFormatting);
             this.dgvImports.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImports_RowEnter);
@@ -1348,9 +1348,9 @@
             // 
             this.pImportDateSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pImportDateSearch.Controls.Add(this.dtpImportDateToSearch);
-            this.pImportDateSearch.Controls.Add(this.label2);
+            this.pImportDateSearch.Controls.Add(this.lImportDateToSearch);
             this.pImportDateSearch.Controls.Add(this.dtpImportDateFromSearch);
-            this.pImportDateSearch.Controls.Add(this.lImportDateSearch);
+            this.pImportDateSearch.Controls.Add(this.lImportDateFromSearch);
             this.pImportDateSearch.Location = new System.Drawing.Point(3, 36);
             this.pImportDateSearch.Name = "pImportDateSearch";
             this.pImportDateSearch.Size = new System.Drawing.Size(537, 30);
@@ -1374,17 +1374,17 @@
             this.dtpImportDateToSearch.TabIndex = 1;
             this.dtpImportDateToSearch.Value = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             // 
-            // label2
+            // lImportDateToSearch
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(268, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 30);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "đến";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lImportDateToSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lImportDateToSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lImportDateToSearch.ForeColor = System.Drawing.Color.Black;
+            this.lImportDateToSearch.Location = new System.Drawing.Point(268, 0);
+            this.lImportDateToSearch.Name = "lImportDateToSearch";
+            this.lImportDateToSearch.Size = new System.Drawing.Size(94, 30);
+            this.lImportDateToSearch.TabIndex = 1;
+            this.lImportDateToSearch.Text = "đến";
+            this.lImportDateToSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtpImportDateFromSearch
             // 
@@ -1404,17 +1404,17 @@
             this.dtpImportDateFromSearch.TabIndex = 0;
             this.dtpImportDateFromSearch.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
-            // lImportDateSearch
+            // lImportDateFromSearch
             // 
-            this.lImportDateSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lImportDateSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lImportDateSearch.ForeColor = System.Drawing.Color.Black;
-            this.lImportDateSearch.Location = new System.Drawing.Point(0, 0);
-            this.lImportDateSearch.Name = "lImportDateSearch";
-            this.lImportDateSearch.Size = new System.Drawing.Size(117, 30);
-            this.lImportDateSearch.TabIndex = 0;
-            this.lImportDateSearch.Text = "Ngày nhập từ";
-            this.lImportDateSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lImportDateFromSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lImportDateFromSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lImportDateFromSearch.ForeColor = System.Drawing.Color.Black;
+            this.lImportDateFromSearch.Location = new System.Drawing.Point(0, 0);
+            this.lImportDateFromSearch.Name = "lImportDateFromSearch";
+            this.lImportDateFromSearch.Size = new System.Drawing.Size(117, 30);
+            this.lImportDateFromSearch.TabIndex = 0;
+            this.lImportDateFromSearch.Text = "Ngày nhập từ";
+            this.lImportDateFromSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pImportSupplierSearch
             // 
@@ -1592,7 +1592,7 @@
             this.gImportInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gImportInfo.Name = "gImportInfo";
             this.gImportInfo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gImportInfo.Size = new System.Drawing.Size(275, 504);
+            this.gImportInfo.Size = new System.Drawing.Size(275, 502);
             this.gImportInfo.TabIndex = 8;
             this.gImportInfo.TabStop = false;
             this.gImportInfo.Text = "Chi tiết";
@@ -1611,7 +1611,7 @@
             this.flpInfoImport.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpInfoImport.Location = new System.Drawing.Point(3, 31);
             this.flpInfoImport.Name = "flpInfoImport";
-            this.flpInfoImport.Size = new System.Drawing.Size(269, 469);
+            this.flpInfoImport.Size = new System.Drawing.Size(269, 467);
             this.flpInfoImport.TabIndex = 6;
             this.flpInfoImport.WrapContents = false;
             // 
@@ -1885,7 +1885,7 @@
             this.flpImportTotal.Controls.Add(this.lImportTotalPrice);
             this.flpImportTotal.Controls.Add(this.txtImportTotalPrice);
             this.flpImportTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpImportTotal.Location = new System.Drawing.Point(0, 504);
+            this.flpImportTotal.Location = new System.Drawing.Point(0, 502);
             this.flpImportTotal.Name = "flpImportTotal";
             this.flpImportTotal.Size = new System.Drawing.Size(275, 69);
             this.flpImportTotal.TabIndex = 7;
@@ -1924,7 +1924,7 @@
             this.flpImportActionButtons.Controls.Add(this.btnImportAdd);
             this.flpImportActionButtons.Controls.Add(this.btnImportDelete);
             this.flpImportActionButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpImportActionButtons.Location = new System.Drawing.Point(0, 573);
+            this.flpImportActionButtons.Location = new System.Drawing.Point(0, 571);
             this.flpImportActionButtons.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpImportActionButtons.Name = "flpImportActionButtons";
             this.flpImportActionButtons.Size = new System.Drawing.Size(275, 41);
@@ -1970,7 +1970,7 @@
             this.tabCustomers.Location = new System.Drawing.Point(154, 4);
             this.tabCustomers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabCustomers.Name = "tabCustomers";
-            this.tabCustomers.Size = new System.Drawing.Size(842, 614);
+            this.tabCustomers.Size = new System.Drawing.Size(842, 612);
             this.tabCustomers.TabIndex = 3;
             this.tabCustomers.Text = "Khách hàng";
             this.tabCustomers.UseVisualStyleBackColor = true;
@@ -1994,7 +1994,7 @@
             this.scCustomer.Panel2.BackColor = System.Drawing.Color.Aquamarine;
             this.scCustomer.Panel2.Controls.Add(this.tlpCustomerActionButtons);
             this.scCustomer.Panel2.Controls.Add(this.gbCustomerInfo);
-            this.scCustomer.Size = new System.Drawing.Size(842, 614);
+            this.scCustomer.Size = new System.Drawing.Size(842, 612);
             this.scCustomer.SplitterDistance = 563;
             this.scCustomer.TabIndex = 3;
             // 
@@ -2005,7 +2005,7 @@
             this.gbCustomers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbCustomers.Location = new System.Drawing.Point(0, 128);
             this.gbCustomers.Name = "gbCustomers";
-            this.gbCustomers.Size = new System.Drawing.Size(563, 486);
+            this.gbCustomers.Size = new System.Drawing.Size(563, 484);
             this.gbCustomers.TabIndex = 2;
             this.gbCustomers.TabStop = false;
             this.gbCustomers.Text = "Danh sách khách hàng";
@@ -2049,7 +2049,7 @@
             this.dgvCustomers.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvCustomers.RowTemplate.Height = 24;
             this.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomers.Size = new System.Drawing.Size(557, 453);
+            this.dgvCustomers.Size = new System.Drawing.Size(557, 451);
             this.dgvCustomers.TabIndex = 4;
             this.dgvCustomers.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCustomers_CellFormatting);
             this.dgvCustomers.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_RowEnter);
@@ -2234,7 +2234,7 @@
             this.tlpCustomerActionButtons.Controls.Add(this.btnCustomerDelete, 1, 1);
             this.tlpCustomerActionButtons.Controls.Add(this.btnCustomerEdit, 1, 0);
             this.tlpCustomerActionButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tlpCustomerActionButtons.Location = new System.Drawing.Point(0, 536);
+            this.tlpCustomerActionButtons.Location = new System.Drawing.Point(0, 534);
             this.tlpCustomerActionButtons.Name = "tlpCustomerActionButtons";
             this.tlpCustomerActionButtons.RowCount = 2;
             this.tlpCustomerActionButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -2303,7 +2303,7 @@
             this.gbCustomerInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbCustomerInfo.Name = "gbCustomerInfo";
             this.gbCustomerInfo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbCustomerInfo.Size = new System.Drawing.Size(275, 614);
+            this.gbCustomerInfo.Size = new System.Drawing.Size(275, 612);
             this.gbCustomerInfo.TabIndex = 7;
             this.gbCustomerInfo.TabStop = false;
             this.gbCustomerInfo.Text = "Chi tiết";
@@ -2320,7 +2320,7 @@
             this.flpInfoCustomer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpInfoCustomer.Location = new System.Drawing.Point(3, 31);
             this.flpInfoCustomer.Name = "flpInfoCustomer";
-            this.flpInfoCustomer.Size = new System.Drawing.Size(269, 579);
+            this.flpInfoCustomer.Size = new System.Drawing.Size(269, 577);
             this.flpInfoCustomer.TabIndex = 6;
             this.flpInfoCustomer.WrapContents = false;
             // 
@@ -2585,7 +2585,7 @@
             this.tabMedicines.Location = new System.Drawing.Point(154, 4);
             this.tabMedicines.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabMedicines.Name = "tabMedicines";
-            this.tabMedicines.Size = new System.Drawing.Size(842, 614);
+            this.tabMedicines.Size = new System.Drawing.Size(842, 612);
             this.tabMedicines.TabIndex = 0;
             this.tabMedicines.Text = "Thuốc";
             this.tabMedicines.Enter += new System.EventHandler(this.tabMedicines_Enter);
@@ -2607,7 +2607,7 @@
             // 
             this.scMedicines.Panel2.BackColor = System.Drawing.Color.Aquamarine;
             this.scMedicines.Panel2.Controls.Add(this.gbDetails);
-            this.scMedicines.Size = new System.Drawing.Size(842, 614);
+            this.scMedicines.Size = new System.Drawing.Size(842, 612);
             this.scMedicines.SplitterDistance = 563;
             this.scMedicines.TabIndex = 2;
             // 
@@ -2618,7 +2618,7 @@
             this.gbMedicines.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbMedicines.Location = new System.Drawing.Point(0, 128);
             this.gbMedicines.Name = "gbMedicines";
-            this.gbMedicines.Size = new System.Drawing.Size(563, 486);
+            this.gbMedicines.Size = new System.Drawing.Size(563, 484);
             this.gbMedicines.TabIndex = 2;
             this.gbMedicines.TabStop = false;
             this.gbMedicines.Text = "Danh sách thuốc";
@@ -2662,7 +2662,7 @@
             this.dgvMedicines.RowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvMedicines.RowTemplate.Height = 24;
             this.dgvMedicines.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicines.Size = new System.Drawing.Size(557, 453);
+            this.dgvMedicines.Size = new System.Drawing.Size(557, 451);
             this.dgvMedicines.TabIndex = 3;
             this.dgvMedicines.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicines_RowEnter);
             this.dgvMedicines.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvMedicines_Scroll);
@@ -2861,7 +2861,7 @@
             this.gbDetails.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbDetails.Name = "gbDetails";
             this.gbDetails.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbDetails.Size = new System.Drawing.Size(275, 614);
+            this.gbDetails.Size = new System.Drawing.Size(275, 612);
             this.gbDetails.TabIndex = 3;
             this.gbDetails.TabStop = false;
             this.gbDetails.Text = "Chi tiết";
@@ -2875,7 +2875,7 @@
             this.tlpMedicineActionButtons.Controls.Add(this.btnMedicineEdit, 1, 0);
             this.tlpMedicineActionButtons.Controls.Add(this.btnMedicineDelete, 1, 1);
             this.tlpMedicineActionButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tlpMedicineActionButtons.Location = new System.Drawing.Point(3, 532);
+            this.tlpMedicineActionButtons.Location = new System.Drawing.Point(3, 530);
             this.tlpMedicineActionButtons.Name = "tlpMedicineActionButtons";
             this.tlpMedicineActionButtons.RowCount = 2;
             this.tlpMedicineActionButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -2947,7 +2947,7 @@
             this.flpMedicineInfo.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpMedicineInfo.Location = new System.Drawing.Point(3, 31);
             this.flpMedicineInfo.Name = "flpMedicineInfo";
-            this.flpMedicineInfo.Size = new System.Drawing.Size(269, 579);
+            this.flpMedicineInfo.Size = new System.Drawing.Size(269, 577);
             this.flpMedicineInfo.TabIndex = 7;
             this.flpMedicineInfo.WrapContents = false;
             // 
@@ -3210,7 +3210,7 @@
             this.pControl.Location = new System.Drawing.Point(842, 0);
             this.pControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pControl.Name = "pControl";
-            this.pControl.Size = new System.Drawing.Size(0, 614);
+            this.pControl.Size = new System.Drawing.Size(0, 612);
             this.pControl.TabIndex = 1;
             // 
             // tcMain
@@ -3224,12 +3224,12 @@
             this.tcMain.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tcMain.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tcMain.ItemSize = new System.Drawing.Size(50, 150);
-            this.tcMain.Location = new System.Drawing.Point(0, 28);
+            this.tcMain.Location = new System.Drawing.Point(0, 30);
             this.tcMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tcMain.Multiline = true;
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(1000, 622);
+            this.tcMain.Size = new System.Drawing.Size(1000, 620);
             this.tcMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcMain.TabIndex = 0;
             this.tcMain.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tcMain_DrawItem);
@@ -3419,9 +3419,9 @@
         private System.Windows.Forms.Button btnBillResetSearch;
         private System.Windows.Forms.Panel pBillDateSearch;
         private System.Windows.Forms.DateTimePicker dtpBillDateToSearch;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lBillDateToSearch;
         private System.Windows.Forms.DateTimePicker dtpBillDateFromSearch;
-        private System.Windows.Forms.Label lBillDateSearch;
+        private System.Windows.Forms.Label lBillDateFromSearch;
         private System.Windows.Forms.Panel pBillCustomerNameOrIDSearch;
         private System.Windows.Forms.TextBox txtBillCustomerNameOrIDSearch;
         private System.Windows.Forms.Label lBillCustomerNameOrIDSearch;
@@ -3474,9 +3474,9 @@
         private System.Windows.Forms.Button btnImportResetSearch;
         private System.Windows.Forms.Panel pImportDateSearch;
         private System.Windows.Forms.DateTimePicker dtpImportDateToSearch;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lImportDateToSearch;
         private System.Windows.Forms.DateTimePicker dtpImportDateFromSearch;
-        private System.Windows.Forms.Label lImportDateSearch;
+        private System.Windows.Forms.Label lImportDateFromSearch;
         private System.Windows.Forms.Panel pImportSupplierSearch;
         private System.Windows.Forms.TextBox txtImportSupplierSearch;
         private System.Windows.Forms.Label lImportSupplierSearch;

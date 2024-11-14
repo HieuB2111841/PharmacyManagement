@@ -16,9 +16,26 @@ namespace QLNhaThuoc
         public fCustomer()
         {
             InitializeComponent();
+            this.SetComponents();
+        }
+        private void SetComponents()
+        {
+            Font headerFont = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(163)));
+            this.dgvHistory.ColumnHeadersDefaultCellStyle.Font = headerFont;
+            this.dgvInfoBillDetails.ColumnHeadersDefaultCellStyle.Font = headerFont;
+
+            Font cellFont = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(163)));
+            this.dgvHistory.DefaultCellStyle.Font = cellFont;
+            this.dgvInfoBillDetails.DefaultCellStyle.Font = cellFont;
         }
 
         #region From 
+
+        private void fCustomer_Load(object sender, EventArgs e)
+        {
+            dtpBillPurchaseToSearch.Value = DateTime.Now;
+        }
+
         private void fCustomer_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Thoát ứng dụng", MessageBoxButtons.OKCancel);
@@ -34,6 +51,18 @@ namespace QLNhaThuoc
         {
             this.Close();
         }
+
+        private void tsmiChangePassword_Click(object sender, EventArgs e)
+        {
+            fChangePassword fChangePassword = new fChangePassword();
+            fChangePassword.ShowDialog();
+        }
+
+        private void tsmiLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         #endregion
 
         #region Tab Pag
@@ -77,83 +106,25 @@ namespace QLNhaThuoc
         #region Profiles tab
         private void tabProfiles_Enter(object sender, EventArgs e)
         {
-
             txtProfileName.Text = MyUser.Instance.Name;
             txtProfilePhoneNumber.Text = MyUser.Instance.PhoneNumber;
             rtxtProfileAddress.Text = MyUser.Instance.Address;
 
             if(MyUser.Instance.Birthday != DateTime.MinValue)
             {
-                dtpProfileBirthday.Text = MyUser.Instance.Birthday.ToShortDateString();
-            }
-            
-        }
-        #endregion
-
-        #region History Tab
-        private void tabHistory_Enter(object sender, EventArgs e)
-        {
-            if (dgvHistory.DataSource != null) return;
-
-            DataTable historyData = MyPublics.Instance.CallProcedure("usp_hienThiLichSuMuaThuoc", ("@in_maKhachHang", MyUser.Instance.ID));
-            if (historyData.Rows.Count > 0)
-            {
-                dgvHistory.DataSource = historyData;
+                dtpProfileBirthday.Value = MyUser.Instance.Birthday;
             }
         }
 
-        private void dgvHistory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void tabProfiles_Leave(object sender, EventArgs e)
         {
-            // cột tổng tiền
-            if(e.ColumnIndex == 3)
-            {
-                e.Value = StringUtils.FormatMoneyNumber(e.Value.ToString());
-            }
-        }
-        private void dgvHistory_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            // Kiểm tra xem hàng và cột có hợp lệ không
-            if (e.RowIndex >= 0)
-            {
-                // Lấy DataGridViewRow của hàng được chọn
-                DataGridViewRow row = dgvHistory.Rows[e.RowIndex];
-
-                txtInfoBillID.Text = row.Cells[0].Value.ToString();
-                dtpInfoBillDate.Text = row.Cells[1].Value.ToString();
-                txtInfoBillEmployeeName.Text = row.Cells[2].Value.ToString();
-
-                DataTable billDetailsTable = MyPublics.Instance.CallProcedure("usp_hienThiChiTietHoaDon", ("@in_maHoaDon", txtInfoBillID.Text));
-                
-                dgvInfoBillDetails.DataSource = billDetailsTable;
-                if(billDetailsTable.Rows.Count > 0)
-                {
-                    dgvInfoBillDetails.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                }
-
-                string totalPrice = row.Cells[3].Value.ToString();
-                txtInfoBillTotalPrice.Text = StringUtils.FormatMoneyNumber(totalPrice);
-            }
-        }
-        private void dgvInfoBillDetails_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            // cột đơn giá
-            if(e.ColumnIndex == 2)
-            {
-                e.Value = StringUtils.FormatMoneyNumber(e.Value.ToString());
-            }
-        }
-
-        #endregion
-
-        private void tsmiChangePassword_Click(object sender, EventArgs e)
-        {
-            fChangePassword fChangePassword = new fChangePassword();
-            fChangePassword.ShowDialog();
-        }
-
-        private void tsmiLogout_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            txtProfileName.ReadOnly = true;
+            dtpProfileBirthday.Enabled = false;
+            rtxtProfileAddress.ReadOnly = true;
+            txtProfilePhoneNumber.Enabled = false;
+            btnProfileEdit.Visible = true;
+            btnProfileSave.Visible = false;
+            btnProfileCancel.Visible = false;
         }
 
         private void btnProfileEdit_Click(object sender, EventArgs e)
@@ -164,7 +135,7 @@ namespace QLNhaThuoc
             txtProfilePhoneNumber.Enabled = true;
             btnProfileEdit.Visible = false;
             btnProfileSave.Visible = true;
-            btnCancel.Visible = true;
+            btnProfileCancel.Visible = true;
         }
 
         private bool ValidateUserProfile()
@@ -193,16 +164,15 @@ namespace QLNhaThuoc
             return true;
         }
 
-
         private void btnProfileSave_Click(object sender, EventArgs e)
         {
             // Kiểm tra tính hợp lệ của dữ liệu nhập vào
             if (!ValidateUserProfile()) return;
 
-            string userId = MyUser.Instance.ID;
-            string phoneNumber = txtProfilePhoneNumber.Text;
-            string userName = txtProfileName.Text;
-            string address = rtxtProfileAddress.Text;
+            string userId = MyUser.Instance.ID.Trim();
+            string phoneNumber = txtProfilePhoneNumber.Text.Trim();
+            string userName = txtProfileName.Text.Trim();
+            string address = rtxtProfileAddress.Text.Trim();
             string birthday = dtpProfileBirthday.Value.ToString("yyyy-MM-dd");
 
             // Gọi stored procedure để cập nhật thông tin người dùng
@@ -217,15 +187,9 @@ namespace QLNhaThuoc
             );
 
             // Kiểm tra kết quả trả về và hiển thị thông báo
-            if (message == "SUCCESS_MESSAGE")
+            if (message == MyPublics.SUCCESS_MESSAGE)
             {
                 MessageBox.Show("Cập nhật thông tin thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Cập nhật thông tin trên form sau khi lưu
-                //MyUser.Instance.Name = userName;
-                //MyUser.Instance.Birthday = dtpProfileBirthday.Value;
-                //MyUser.Instance.Address = address;
-                //MyUser.Instance.PhoneNumber = phoneNumber;
 
                 // Đặt lại các controls thành chế độ chỉ đọc
                 txtProfileName.ReadOnly = true;
@@ -235,7 +199,7 @@ namespace QLNhaThuoc
 
                 // Ẩn nút Lưu và Hủy, hiển thị nút Chỉnh sửa
                 btnProfileSave.Visible = false;
-                btnCancel.Visible = false;
+                btnProfileCancel.Visible = false;
                 btnProfileEdit.Visible = true;
             }
             else
@@ -244,8 +208,7 @@ namespace QLNhaThuoc
             }
         }
 
-
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnProfileCancel_Click(object sender, EventArgs e)
         {
             txtProfileName.ReadOnly = true;
             txtProfileName.Text = MyUser.Instance.Name;
@@ -264,7 +227,125 @@ namespace QLNhaThuoc
 
             btnProfileEdit.Visible = true;
             btnProfileSave.Visible = false;
-            btnCancel.Visible = false;
+            btnProfileCancel.Visible = false;
         }
+        #endregion
+
+        #region History Tab
+        private void tabHistory_Enter(object sender, EventArgs e)
+        {
+            if (dgvHistory.DataSource != null) return;
+            this.dgvHistory_LoadData();
+        }
+
+        private void tabHistory_ResetSideBar()
+        {
+            txtInfoBillID.Text = string.Empty;
+            dtpInfoBillDate.Value = new DateTime(2000, 1, 1);
+            txtInfoBillEmployeeName.Text = string.Empty;
+
+            dgvInfoBillDetails.DataSource = null;
+            
+            txtInfoBillTotalPrice.Text = string.Empty; 
+        }
+
+        private void dgvHistory_LoadData()
+        {
+            DataTable historyData = MyPublics.Instance.CallProcedure("usp_hienThiLichSuMuaThuoc",
+                out string message,
+                ("@in_maKhachHang", MyUser.Instance.ID));
+
+            dgvHistory.DataSource = historyData;
+            if (historyData.Rows.Count <= 0)
+            {
+                this.tabHistory_ResetSideBar();
+                if (message != MyPublics.SUCCESS_MESSAGE)
+                {
+                    MessageBox.Show($"Lỗi {message}", "Lỗi", MessageBoxButtons.OK);
+                }
+            }
+        }
+
+        private void dgvHistory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // cột tổng tiền
+            if(e.ColumnIndex == 3)
+            {
+                e.Value = StringUtils.FormatMoneyNumber(e.Value.ToString());
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
+        }
+
+        private void dgvHistory_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            // Kiểm tra xem hàng và cột có hợp lệ không
+            if (e.RowIndex >= 0)
+            {
+                // Lấy DataGridViewRow của hàng được chọn
+                DataGridViewRow row = dgvHistory.Rows[e.RowIndex];
+
+                txtInfoBillID.Text = row.Cells[0].Value.ToString();
+                dtpInfoBillDate.Text = row.Cells[1].Value.ToString();
+                txtInfoBillEmployeeName.Text = row.Cells[2].Value.ToString();
+
+                DataTable billDetailsTable = MyPublics.Instance.CallProcedure("usp_hienThiChiTietHoaDon", ("@in_maHoaDon", txtInfoBillID.Text));
+                
+                dgvInfoBillDetails.DataSource = billDetailsTable;
+                if(billDetailsTable.Rows.Count > 0)
+                {
+                    dgvInfoBillDetails.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dgvInfoBillDetails.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+
+                string totalPrice = row.Cells[3].Value.ToString();
+                txtInfoBillTotalPrice.Text = StringUtils.FormatMoneyNumber(totalPrice);
+            }
+        }
+
+        private void dgvInfoBillDetails_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // cột đơn giá
+            if(e.ColumnIndex == 2)
+            {
+                e.Value = StringUtils.FormatMoneyNumber(e.Value.ToString());
+                e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
+        }
+
+        private void btnBillSearch_Click(object sender, EventArgs e)
+        {
+            string id = MyUser.Instance.ID;
+            string billID = txtInfoBillID.Text.Trim();
+            string fromDate = dtpBillPurchaseFromSearch.Value.ToString("yyyy-MM-dd");
+            string toDate = dtpBillPurchaseToSearch.Value.ToString("yyyy-MM-dd");
+
+            DataTable historyData = MyPublics.Instance.CallProcedure("Tim_Hoa_Don_Cua_Khanh_Hang",
+                out string message,
+                ("@ma_khach_hang", id),
+                ("@ma_phieu_xuat", billID),
+                ("@fromDate", fromDate),
+                ("@toDate", toDate));
+
+            dgvHistory.DataSource = historyData;
+            if (historyData.Rows.Count <= 0)
+            {
+                this.tabHistory_ResetSideBar();
+                if (message != MyPublics.SUCCESS_MESSAGE)
+                {
+                    MessageBox.Show($"Lỗi {message}", "Lỗi", MessageBoxButtons.OK);
+                }
+            }
+        }
+
+        private void btnBillResetSearch_Click(object sender, EventArgs e)
+        {
+            txtBillIDSearch.Text = string.Empty;
+            dtpBillPurchaseFromSearch.Value = new DateTime(2000, 1, 1);
+            dtpBillPurchaseToSearch.Value = DateTime.Now;
+
+            this.dgvHistory_LoadData();
+        }
+        #endregion
+
     }
 }
