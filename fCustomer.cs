@@ -121,7 +121,7 @@ namespace QLNhaThuoc
             txtProfileName.ReadOnly = true;
             dtpProfileBirthday.Enabled = false;
             rtxtProfileAddress.ReadOnly = true;
-            txtProfilePhoneNumber.Enabled = false;
+            txtProfilePhoneNumber.ReadOnly = true;
             btnProfileEdit.Visible = true;
             btnProfileSave.Visible = false;
             btnProfileCancel.Visible = false;
@@ -132,7 +132,8 @@ namespace QLNhaThuoc
             txtProfileName.ReadOnly = false;
             dtpProfileBirthday.Enabled = true;
             rtxtProfileAddress.ReadOnly = false;
-            txtProfilePhoneNumber.Enabled = true;
+            txtProfilePhoneNumber.ReadOnly = false;
+
             btnProfileEdit.Visible = false;
             btnProfileSave.Visible = true;
             btnProfileCancel.Visible = true;
@@ -205,7 +206,7 @@ namespace QLNhaThuoc
                 txtProfileName.ReadOnly = true;
                 dtpProfileBirthday.Enabled = false;
                 rtxtProfileAddress.ReadOnly = true;
-                txtProfilePhoneNumber.Enabled = false;
+                txtProfilePhoneNumber.ReadOnly = true;
 
                 // Ẩn nút Lưu và Hủy, hiển thị nút Chỉnh sửa
                 btnProfileSave.Visible = false;
@@ -278,8 +279,12 @@ namespace QLNhaThuoc
 
         private void dgvHistory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            if (e.ColumnIndex == 2)
+            {
+                //e.Value = ((DateTime)e.Value).ToString("dd/MM/yyyy");
+            }
             // cột tổng tiền
-            if(e.ColumnIndex == 3)
+            if (e.ColumnIndex == 3)
             {
                 e.Value = StringUtils.FormatMoneyNumber(e.Value.ToString());
                 e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;

@@ -8,6 +8,7 @@ namespace QLNhaThuoc
 {
     public partial class fMain : Form
     {
+        private DataGridView _currentData;
         public fMain()
         {
             InitializeComponent();
@@ -59,6 +60,12 @@ namespace QLNhaThuoc
         {
             this.Close();
         }
+
+        private void tsmiFileExportExcel_Click(object sender, EventArgs e)
+        {
+            WinformUtils.ExportDataGridViewToExcel(_currentData);
+        }
+
         private void tsmiAccountInfo_Click(object sender, EventArgs e)
         {
             fEmployeeInfo employeeInfoForm = new fEmployeeInfo();
@@ -107,6 +114,7 @@ namespace QLNhaThuoc
         private void tabMedicines_Enter(object sender, EventArgs e)
         {
             this.dgvMedicines_LoadData();
+            _currentData = dgvMedicines;
         }
 
         private void dgvMedicines_LoadData()
@@ -259,6 +267,7 @@ namespace QLNhaThuoc
         private void tabCustomers_Enter(object sender, EventArgs e)
         {
             this.dgvCustomer_LoadData();
+            _currentData = dgvCustomers;
             dtpCustomerPurchaseToSearch.Value = DateTime.Today;
         }
 
@@ -469,6 +478,7 @@ namespace QLNhaThuoc
         private void tabImports_Enter(object sender, EventArgs e)
         {
             this.dgvImports_LoadData();
+            _currentData = dgvImports;
         }
 
         private void dgvImports_LoadData()
@@ -671,7 +681,7 @@ namespace QLNhaThuoc
         private void tabBills_Enter(object sender, EventArgs e)
         {
             this.dgvBills_LoadData();
-
+            _currentData = dgvBills;
         }
 
         private void dgvBills_LoadData()

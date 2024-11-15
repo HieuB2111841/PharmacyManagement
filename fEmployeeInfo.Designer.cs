@@ -205,6 +205,7 @@
             this.dtpEmployeeBirthday.CalendarTitleBackColor = System.Drawing.Color.Aquamarine;
             this.dtpEmployeeBirthday.CustomFormat = "dd/MM/yyyy";
             this.dtpEmployeeBirthday.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtpEmployeeBirthday.Enabled = false;
             this.dtpEmployeeBirthday.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpEmployeeBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEmployeeBirthday.Location = new System.Drawing.Point(0, 30);

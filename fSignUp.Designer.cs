@@ -189,7 +189,7 @@
             // dtpBirthday
             // 
             this.dtpBirthday.CustomFormat = "dd/MM/yyyy";
-            this.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBirthday.Location = new System.Drawing.Point(54, 141);
             this.dtpBirthday.Name = "dtpBirthday";
             this.dtpBirthday.Size = new System.Drawing.Size(246, 34);

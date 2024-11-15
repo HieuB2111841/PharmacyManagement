@@ -87,6 +87,12 @@ namespace QLNhaThuoc
                 txtConfirmPassword.Focus();
                 return false;
             }
+            if (dtpBirthday.Value > DateTime.Now)
+            {
+                MessageBox.Show("Ngày sinh lớn hơn ngày hiện tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpBirthday.Focus();
+                return false;
+            }
             return true;
         }
 
@@ -101,6 +107,8 @@ namespace QLNhaThuoc
             string name = txtName.Text.Trim();
             string address = txtAddress.Text.Trim();
             DateTime birthDate = dtpBirthday.Value;
+
+            
 
             // Gọi Stored Procedure `sign_up_customer`
             bool result = MyPublics.Instance.CallFunction<bool>("sign_up",

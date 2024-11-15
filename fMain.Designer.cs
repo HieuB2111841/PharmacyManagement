@@ -377,13 +377,14 @@
             // tsmiFileExportExcel
             // 
             this.tsmiFileExportExcel.Name = "tsmiFileExportExcel";
-            this.tsmiFileExportExcel.Size = new System.Drawing.Size(160, 26);
+            this.tsmiFileExportExcel.Size = new System.Drawing.Size(224, 26);
             this.tsmiFileExportExcel.Text = "Xuất Excel";
+            this.tsmiFileExportExcel.Click += new System.EventHandler(this.tsmiFileExportExcel_Click);
             // 
             // tsmiFileExit
             // 
             this.tsmiFileExit.Name = "tsmiFileExit";
-            this.tsmiFileExit.Size = new System.Drawing.Size(160, 26);
+            this.tsmiFileExit.Size = new System.Drawing.Size(224, 26);
             this.tsmiFileExit.Text = "Thoát";
             this.tsmiFileExit.Click += new System.EventHandler(this.tsmiFileExit_Click);
             // 
