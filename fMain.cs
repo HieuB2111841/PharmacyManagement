@@ -639,7 +639,11 @@ namespace QLNhaThuoc
         private void btnImportAdd_Click(object sender, EventArgs e)
         {
             fImportInfo importInfoForm = new fImportInfo();
-            importInfoForm.ShowDialog();
+            DialogResult res = importInfoForm.ShowDialog();
+            if(res == DialogResult.OK)
+            {
+                this.dgvImports_LoadData();
+            }
         }
 
         private void btnImportDelete_Click(object sender, EventArgs e)

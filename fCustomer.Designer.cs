@@ -148,12 +148,12 @@
             this.tcMain.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tcMain.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tcMain.ItemSize = new System.Drawing.Size(50, 150);
-            this.tcMain.Location = new System.Drawing.Point(0, 30);
+            this.tcMain.Location = new System.Drawing.Point(0, 28);
             this.tcMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tcMain.Multiline = true;
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(1000, 620);
+            this.tcMain.Size = new System.Drawing.Size(1000, 622);
             this.tcMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcMain.TabIndex = 0;
             this.tcMain.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tcMain_DrawItem);
@@ -231,7 +231,7 @@
             this.tabProfiles.Location = new System.Drawing.Point(154, 4);
             this.tabProfiles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabProfiles.Name = "tabProfiles";
-            this.tabProfiles.Size = new System.Drawing.Size(842, 612);
+            this.tabProfiles.Size = new System.Drawing.Size(842, 614);
             this.tabProfiles.TabIndex = 0;
             this.tabProfiles.Text = "Thông tin cá nhân";
             this.tabProfiles.Enter += new System.EventHandler(this.tabProfiles_Enter);
@@ -248,7 +248,7 @@
             this.gbProfile.Location = new System.Drawing.Point(0, 0);
             this.gbProfile.Name = "gbProfile";
             this.gbProfile.Padding = new System.Windows.Forms.Padding(15);
-            this.gbProfile.Size = new System.Drawing.Size(842, 612);
+            this.gbProfile.Size = new System.Drawing.Size(842, 614);
             this.gbProfile.TabIndex = 2;
             this.gbProfile.TabStop = false;
             this.gbProfile.Text = "Thông tin cá nhân";
@@ -265,7 +265,7 @@
             this.flpProfile.Location = new System.Drawing.Point(15, 46);
             this.flpProfile.Name = "flpProfile";
             this.flpProfile.Padding = new System.Windows.Forms.Padding(10);
-            this.flpProfile.Size = new System.Drawing.Size(812, 496);
+            this.flpProfile.Size = new System.Drawing.Size(812, 498);
             this.flpProfile.TabIndex = 0;
             // 
             // pProfileName
@@ -417,7 +417,7 @@
             // pProfileDivider
             // 
             this.pProfileDivider.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pProfileDivider.Location = new System.Drawing.Point(15, 542);
+            this.pProfileDivider.Location = new System.Drawing.Point(15, 544);
             this.pProfileDivider.Name = "pProfileDivider";
             this.pProfileDivider.Size = new System.Drawing.Size(812, 15);
             this.pProfileDivider.TabIndex = 9;
@@ -433,7 +433,7 @@
             this.tlpActionButtons.Controls.Add(this.btnProfileSave, 2, 0);
             this.tlpActionButtons.Controls.Add(this.btnProfileEdit, 0, 0);
             this.tlpActionButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tlpActionButtons.Location = new System.Drawing.Point(15, 557);
+            this.tlpActionButtons.Location = new System.Drawing.Point(15, 559);
             this.tlpActionButtons.Name = "tlpActionButtons";
             this.tlpActionButtons.RowCount = 1;
             this.tlpActionButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -501,7 +501,7 @@
             this.pControl.Location = new System.Drawing.Point(842, 0);
             this.pControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pControl.Name = "pControl";
-            this.pControl.Size = new System.Drawing.Size(0, 612);
+            this.pControl.Size = new System.Drawing.Size(0, 614);
             this.pControl.TabIndex = 1;
             // 
             // tabHistory
@@ -512,7 +512,7 @@
             this.tabHistory.Location = new System.Drawing.Point(154, 4);
             this.tabHistory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabHistory.Name = "tabHistory";
-            this.tabHistory.Size = new System.Drawing.Size(842, 614);
+            this.tabHistory.Size = new System.Drawing.Size(842, 612);
             this.tabHistory.TabIndex = 3;
             this.tabHistory.Text = "Lịch sử mua thuốc";
             this.tabHistory.UseVisualStyleBackColor = true;
@@ -535,7 +535,7 @@
             // 
             this.scHistory.Panel2.BackColor = System.Drawing.Color.Aquamarine;
             this.scHistory.Panel2.Controls.Add(this.gbBillInfo);
-            this.scHistory.Size = new System.Drawing.Size(842, 614);
+            this.scHistory.Size = new System.Drawing.Size(842, 612);
             this.scHistory.SplitterDistance = 563;
             this.scHistory.TabIndex = 3;
             // 
@@ -546,7 +546,7 @@
             this.gbHistory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbHistory.Location = new System.Drawing.Point(0, 133);
             this.gbHistory.Name = "gbHistory";
-            this.gbHistory.Size = new System.Drawing.Size(563, 481);
+            this.gbHistory.Size = new System.Drawing.Size(563, 479);
             this.gbHistory.TabIndex = 2;
             this.gbHistory.TabStop = false;
             this.gbHistory.Text = "Lịch sử";
@@ -591,7 +591,7 @@
             this.dgvHistory.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvHistory.RowTemplate.Height = 24;
             this.dgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistory.Size = new System.Drawing.Size(557, 448);
+            this.dgvHistory.Size = new System.Drawing.Size(557, 446);
             this.dgvHistory.TabIndex = 5;
             this.dgvHistory.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHistory_CellFormatting);
             this.dgvHistory.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistory_RowEnter);
@@ -761,7 +761,7 @@
             this.gbBillInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbBillInfo.Name = "gbBillInfo";
             this.gbBillInfo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbBillInfo.Size = new System.Drawing.Size(275, 614);
+            this.gbBillInfo.Size = new System.Drawing.Size(275, 612);
             this.gbBillInfo.TabIndex = 3;
             this.gbBillInfo.TabStop = false;
             this.gbBillInfo.Text = "Chi tiết";
@@ -776,7 +776,7 @@
             this.flpInfoBill.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpInfoBill.Location = new System.Drawing.Point(3, 31);
             this.flpInfoBill.Name = "flpInfoBill";
-            this.flpInfoBill.Size = new System.Drawing.Size(269, 499);
+            this.flpInfoBill.Size = new System.Drawing.Size(269, 497);
             this.flpInfoBill.TabIndex = 0;
             this.flpInfoBill.WrapContents = false;
             // 
@@ -963,7 +963,7 @@
             // 
             this.pInfoBillTotalContainer.Controls.Add(this.pInfoBillTotalPrice);
             this.pInfoBillTotalContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pInfoBillTotalContainer.Location = new System.Drawing.Point(3, 530);
+            this.pInfoBillTotalContainer.Location = new System.Drawing.Point(3, 528);
             this.pInfoBillTotalContainer.Name = "pInfoBillTotalContainer";
             this.pInfoBillTotalContainer.Padding = new System.Windows.Forms.Padding(10);
             this.pInfoBillTotalContainer.Size = new System.Drawing.Size(269, 80);
@@ -1014,7 +1014,7 @@
             this.tsmiFileExportExcel,
             this.tsmiFileExit});
             this.tsmiFile.Name = "tsmiFile";
-            this.tsmiFile.Size = new System.Drawing.Size(46, 26);
+            this.tsmiFile.Size = new System.Drawing.Size(46, 24);
             this.tsmiFile.Text = "File";
             // 
             // tsmiFileExportExcel
@@ -1036,7 +1036,7 @@
             this.tsmiChangePassword,
             this.tsmiLogout});
             this.tsmiAccount.Name = "tsmiAccount";
-            this.tsmiAccount.Size = new System.Drawing.Size(85, 26);
+            this.tsmiAccount.Size = new System.Drawing.Size(85, 24);
             this.tsmiAccount.Text = "Tài khoản";
             // 
             // tsmiChangePassword
@@ -1061,7 +1061,7 @@
             this.tsmiAccount});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
-            this.msMain.Size = new System.Drawing.Size(1000, 30);
+            this.msMain.Size = new System.Drawing.Size(1000, 28);
             this.msMain.TabIndex = 1;
             this.msMain.Text = "menuStrip1";
             // 

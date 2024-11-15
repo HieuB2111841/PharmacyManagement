@@ -61,8 +61,7 @@ CREATE TABLE PhieuNhap (
     MaNhaCungCap CHAR(5) NOT NULL,
     NgayNhap DATE NOT NULL,
     FOREIGN KEY (MaNhanVien) REFERENCES User(MaUser),
-    FOREIGN KEY (MaNhaCungCap) REFERENCES NhaCungCap(MaNhaCungCap),
-    CONSTRAINT unique_phieunhap UNIQUE (MaNhanVien,MaNhaCungCap,NgayNhap)
+    FOREIGN KEY (MaNhaCungCap) REFERENCES NhaCungCap(MaNhaCungCap)
 );
 
 -- Bảng 8: Chi tiết Phiếu nhập
@@ -84,8 +83,7 @@ CREATE TABLE PhieuXuat (
     MaKhachHang CHAR(5) NOT NULL,
     NgayXuat DATE NOT NULL,
     CONSTRAINT fk_nhanvien FOREIGN KEY (MaNhanVien) REFERENCES User(MaUser) ON DELETE CASCADE,
-    CONSTRAINT fk_khachhang FOREIGN KEY (MaKhachHang) REFERENCES User(MaUser) ON DELETE CASCADE,
-    CONSTRAINT unique_phieuxuat UNIQUE (MaNhanVien, MaKhachHang, NgayXuat)
+    CONSTRAINT fk_khachhang FOREIGN KEY (MaKhachHang) REFERENCES User(MaUser) ON DELETE CASCADE
 );
 
 -- Bảng 5: Chi tiết Phiếu xuất

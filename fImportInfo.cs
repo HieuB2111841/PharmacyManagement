@@ -48,6 +48,11 @@ namespace QLNhaThuoc
                     object[] items = data.Rows[0].ItemArray;
                     txtSupplierName.Text = items[1].ToString();
                 }
+                else
+                {
+                    MessageBox.Show($"Nhà cung cấp không tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtSupplierName.Text = string.Empty;
+                }
             }
             else
             {

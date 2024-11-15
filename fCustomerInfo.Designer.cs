@@ -186,7 +186,7 @@
             this.dtpCustomerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpCustomerBirthday.Location = new System.Drawing.Point(0, 30);
             this.dtpCustomerBirthday.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
-            this.dtpCustomerBirthday.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpCustomerBirthday.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.dtpCustomerBirthday.Name = "dtpCustomerBirthday";
             this.dtpCustomerBirthday.Size = new System.Drawing.Size(300, 30);
             this.dtpCustomerBirthday.TabIndex = 0;

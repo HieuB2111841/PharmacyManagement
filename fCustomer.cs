@@ -161,6 +161,13 @@ namespace QLNhaThuoc
                 return false;
             }
 
+            if(dtpProfileBirthday.Value > DateTime.Now)
+            {
+                MessageBox.Show("Ngày sinh lớn hơn ngày hiện tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpProfileBirthday.Focus();
+                return false;
+            }
+
             return true;
         }
 
@@ -190,7 +197,10 @@ namespace QLNhaThuoc
             if (message == MyPublics.SUCCESS_MESSAGE)
             {
                 MessageBox.Show("Cập nhật thông tin thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                
+                // Đặt lại người dùng
+                MyUser.Instance.SetUser(MyUser.Instance.ID);
+                
                 // Đặt lại các controls thành chế độ chỉ đọc
                 txtProfileName.ReadOnly = true;
                 dtpProfileBirthday.Enabled = false;
