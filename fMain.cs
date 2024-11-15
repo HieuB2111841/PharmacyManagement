@@ -63,7 +63,6 @@ namespace QLNhaThuoc
 
         private void tsmiFileExportExcel_Click(object sender, EventArgs e)
         {
-            WinformUtils.ExportDataGridViewToExcel(_currentData);
         }
 
         private void tsmiAccountInfo_Click(object sender, EventArgs e)

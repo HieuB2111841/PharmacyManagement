@@ -26,7 +26,7 @@ namespace QLNhaThuoc
         private string _server = "localhost";
         private string _database = "quanlynhathuoc";
         private string _uid = "root";
-        private string _password = "Hieub2111841";
+        private string _password = "rootpassword";
 
         /// <summary>
         ///     Tránh khởi tạo đối tượng MyPublics ở nơi khác
